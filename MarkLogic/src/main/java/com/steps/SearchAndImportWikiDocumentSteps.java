@@ -1,4 +1,4 @@
-package com.steps;
+/*package com.steps;
 
 import com.pages.SearchAndImportWikiDocumentPage;
 
@@ -66,9 +66,9 @@ public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
 		searchAndImportWikiDocument.selectImportDocuments();
 	}
 
-	/*
+	
 	 * @Step public void () { searchAndImportWikiDocument.(); }
-	 */
+	 
 
 	@StepGroup
 	public void SearchAndImportWikiDocument() {
@@ -85,3 +85,4 @@ public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
 
 	}
 }
+*/

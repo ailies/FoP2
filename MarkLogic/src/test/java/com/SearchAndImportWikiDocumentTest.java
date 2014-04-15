@@ -1,4 +1,4 @@
-package com;
+/*package com;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -37,3 +37,4 @@ public class SearchAndImportWikiDocumentTest {
 		searchAndImportWikiDocument.SearchAndImportWikiDocument();
 	}
 }
+*/
