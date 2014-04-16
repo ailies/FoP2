@@ -1,12 +1,8 @@
 package com.pages;
 
-import java.io.Serializable;
-import java.util.NoSuchElementException;
-
-import javax.naming.Name;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import net.thucydides.core.annotations.DefaultUrl;
@@ -16,132 +12,97 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
 public class CreateNewFolderPage extends PageObject {
 
-	@FindBy(css = ".filename")
-	WebElement testFolder;
+	public CreateNewFolderPage(WebDriver driver) {
+		super(driver);
+	}
 
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createContent-button-button")
-	WebElement createMenu;
+	WebElement create;
 
 	@FindBy(css = ".yuimenuitemlabel .folder-file")
 	WebElement createFolder;
 
 	@FindBy(css = "input[name='prop_cm_name']")
-	WebElement newFolderName;
+	WebElement folderName;
 
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")
 	WebElement createFolderBtn;
 
-	@FindBy(css = ".filename")
-	WebElement folder;
-
 	@FindBy(id = "")
+	WebElement testingFolder;
+
+	@FindBy(css = "a[title='Create folder from template']")
 	WebElement createFolderFromTemplate;
 
-	@FindBy(id = "")
-	WebElement contentFolder;
+	@FindBy(css = "a[title='Content Folder']")
+	WebElement createContentFolder;
 
-	@FindBy(id = "")
+	@FindBy(css = "input[id='template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name']")
 	WebElement contentFolderName;
 
-	@FindBy(id = "")
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")
 	WebElement saveContentFolderBtn;
 
-	/*
-	 * @FindBy(css = "") WebElement createFolderFromTemplate;
-	 * 
-	 * @FindBy(css = "input[name='Content Folder']") WebElement contentFolder;
-	 * 
-	 * @FindBy(id =
-	 * "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name"
-	 * ) WebElement contentFolderName;
-	 * 
-	 * @FindBy(css =
-	 * "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button"
-	 * ) WebElement saveContentFolder;
-	 */
+	@FindBy(id = "")
+	WebElement demoTestingFolder;
 
-	/*
-	 * public boolean getElementIfExists2(By by, int waitingTime, TimeUnit
-	 * timeUnit) { getDriver().manage().timeouts().implicitlyWait(waitingTime,
-	 * timeUnit); try { WebElement mainFolder = getDriver().findElement(by);
-	 * getDriver().manage().timeouts() .implicitlyWait(30, TimeUnit.SECONDS);
-	 * return true; } catch (Exception e) { getDriver().manage().timeouts()
-	 * .implicitlyWait(30, TimeUnit.SECONDS); return false; }
-	 */
-
-	/*
-	 * public void mainFolder() { if (((PageObject)
-	 * getDriver()).element("mainFolder").isDisplayed()) { mainFolder.click(); }
-	 * { ((PageObject) getDriver()).element("createMainFolder").click(); }
-	 */
-
-	public void SelectCreateMenuOption() {
-		element(createMenu).waitUntilVisible();
-		createMenu.click();
+	public void clickOnCreate() {
+		element(create).waitUntilVisible();
+		create.click();
 	}
 
-	public void SelectCreateFolder() {
+	public void clickOnCreateFolder() {
 		element(createFolder).waitUntilVisible();
 		createFolder.click();
 	}
 
-	public void InsertNewFolderName(String name) {
-		element(newFolderName).waitUntilVisible();
-		newFolderName.sendKeys(name);
+	public void inputFolderName(String name) {
+		element(folderName).waitUntilVisible();
+		folderName.clear();
+		folderName.sendKeys(name);
 	}
 
-	public void ClickCreateFolderBtn() {
+	public void clickOnCreateFolderBtn() {
 		element(createFolderBtn).waitUntilVisible();
 		createFolderBtn.click();
 	}
 
-	public void CheckNotificationMessage(String msg) {
-		WebElement message = getDriver().findElement(By.id("lightboxCaption"));
-		System.out.println("" + message.getText());
-		Assert.assertTrue("The message is correct!", message.getText()
-				.contains(msg));
+	public void clickOnTestingFolder() {
+		element(testingFolder).waitUntilVisible();
+		testingFolder.click();
 	}
 
-	/*public boolean CheckThatTheNewFolderWasCreated() {		
-		WebElement newFolder = getDriver().findElement(By.tagName("DemoTesting"));
-		Assert.assertTrue(newFolder.isDisplayed());
-			newFolder.click();
-			waitABit(1);
-		*/
-			
-		/*if (exists)
-		  {
-		     getDriver.findElement(By.tagName("DemoTesting")).click();
-		  }
-		  else
-		  {
-		     driver.findElement(By.cssSelector("xxx")).click();
-		   }*/
-	
-
-	public void OpenFolder() {
-		folder.click();
+	public void checkFolderFromTemplateWasCreated() {
+		WebElement folderFromTemplateWasCreated = getDriver().findElement(
+				By.tagName("Test"));
+		Assert.assertTrue(folderFromTemplateWasCreated.isDisplayed());
 	}
 
-	public void SelectCreateFolderFromTemplate() {
+	public void clickOnCreateFolderFromTemplate() {
+		element(createFolderFromTemplate).waitUntilVisible();
 		createFolderFromTemplate.click();
 	}
 
-	public void SelectContentFolder() {
-		contentFolder.click();
+	public void clickOnCreateContentFolder() {
+		createContentFolder.click();
 	}
 
-	public void InsertContentFolderName(String contentName) {
+	public void inputContentFolderName(String contentName) {
 		contentFolderName.sendKeys(contentName);
 	}
 
-	public void SaveContentFolder() {
+	public void clickOnSaveContentFolder() {
 		saveContentFolderBtn.click();
 	}
 
-	public void CheckContentFolderWasCreated() {
+	public void checkContentFolderWasCreated() {
 		WebElement contentFolder = getDriver().findElement(
 				By.tagName("DemoTesting"));
 		Assert.assertTrue(contentFolder.isDisplayed());
+	}
+
+	public void clickOnDemoTestingFolder() {
+		element(demoTestingFolder).waitUntilVisible();
+		demoTestingFolder.click();
 	}
 }

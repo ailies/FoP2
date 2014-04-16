@@ -19,16 +19,16 @@ import com.steps.LoginSteps;
 public class LoginTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
-	
+
 	@ManagedPages(defaultUrl = "http://172.16.10.115:8080/share/page/")
-	public Pages pages; 
-	
+	public Pages pages;
+
 	@Steps
 	public LoginSteps login;
-	
-	@Test 
-	public void login(){
-		login.login("admin", "admin");
+
+	@Test
+	public void login() {
+		login.loginToSite("admin", "admin");
 		login.GetToFolder();
 	}
 }

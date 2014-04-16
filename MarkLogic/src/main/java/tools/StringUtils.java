@@ -1,4 +1,4 @@
-package Tools;
+package tools;
 
 import java.lang.reflect.Array;
 import java.security.SecureRandom;

@@ -1,32 +1,34 @@
 package com.pages;
 
-import java.util.concurrent.TimeUnit;
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.findby.By;
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
-public class LoginPage extends PageObject {
+public class AlfrescoLoginPage extends PageObject {
+
+	public AlfrescoLoginPage(WebDriver driver) {
+		super(driver);
+	}
 
 	// --------ELEMENTS----------
 	@FindBy(css = "input[name='username']")
-	private WebElement username;
+	WebElement username;
 
 	@FindBy(css = "input[name='password']")
-	private WebElement password;
+	WebElement password;
 
 	@FindBy(css = "button#page_x002e_components_x002e_slingshot-login_x0023_default-submit-button")
-	private WebElement loginBtn;
+	WebElement loginBtn;
 
 	@FindBy(css = ".alf-menu-title-text")
-	private WebElement userDashboard;
+	WebElement userDashboard;
 
 	@FindBy(id = "HEADER_SITES_MENU")
-	private WebElement SitesTab;
+	WebElement SitesTab;
 
 	@FindBy(id = "HEADER_SITES_MENU_RECENT_test-site_text")
 	WebElement testSiteSubMenu;
@@ -34,46 +36,44 @@ public class LoginPage extends PageObject {
 	@FindBy(id = "HEADER_SITE_DOCUMENTLIBRARY_text")
 	WebElement documentLibrary;
 
-
 	// ---------METHODS-----------------
 
-	public void typeUsername(String usernameTerm) {
+	public void inputUsername(String usernameTerm) {
 		element(username).waitUntilVisible();
 		username.sendKeys(usernameTerm);
 	}
 
-	public void typePassword(String passwordTerm) {
+	public void inputPassword(String passwordTerm) {
 		element(password).waitUntilVisible();
 		password.sendKeys(passwordTerm);
 	}
 
-	public void clickLoginBtn() {
+	public void clickOnLoginBtn() {
 		element(loginBtn).waitUntilVisible();
 		element(loginBtn).click();
 	}
 
-	public void assertUserDashboardShouldBeVisible() {
+	public void assertThatUserDashboardShouldBeVisible() {
 		element(userDashboard).shouldBeVisible();
 	}
 
-	public void clickSitesMenuTab() {
+	public void clickOnSitesMenuTab() {
 		element(SitesTab).waitUntilVisible();
 		SitesTab.click();
 	}
 
-	public void clickTestSiteSubMenu() {
+	public void clickOnTestSiteSubMenu() {
 		element(testSiteSubMenu).waitUntilVisible();
 		testSiteSubMenu.click();
 	}
 
-	public void assertdocumentLibraryShouldBeVisible() {
+	public void assertThatDocumentLibraryShouldBeVisible() {
 		element(documentLibrary).shouldBeVisible();
 	}
 
-	public void clickDocumentLibrary() {
+	public void clickOnDocumentLibrary() {
 		element(documentLibrary).waitUntilVisible();
 		documentLibrary.click();
 	}
 
-	
 }

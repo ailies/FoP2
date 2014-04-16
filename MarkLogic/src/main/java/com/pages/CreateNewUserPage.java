@@ -1,6 +1,9 @@
 package com.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.FindBy;
@@ -9,75 +12,85 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
 public class CreateNewUserPage extends PageObject {
 
+	public CreateNewUserPage(WebDriver driver) {
+		super(driver);
+	}
+
 	@FindBy(id = "HEADER_ADMIN_CONSOLE_text")
-	WebElement AdminUserTab;
+	WebElement adminTools;
 
 	@FindBy(css = "a[href*='users']")
-	WebElement UsersSubMenu;
+	WebElement usersTools;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-newuser-button-button")
-	WebElement NewUser;
+	WebElement newUserBtn;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")
-	WebElement FirtsNameField;
+	WebElement firstNameField;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-email")
-	WebElement EmailField;
+	WebElement emailField;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-username")
-	WebElement UserNameField;
+	WebElement userNameField;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-password")
-	WebElement PasswordField;
+	WebElement passwordField;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")
-	WebElement VerifyPasswordField;
+	WebElement verifyPasswordField;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-createuser-ok-button-button")
-	WebElement CreateUserBtn;
+	WebElement createUserBtn;
 
-	public void clickAdminUserTab() {
-		element(AdminUserTab).waitUntilVisible();
-		AdminUserTab.click();
+	public void clickOnAdminTools() {
+		element(adminTools).waitUntilVisible();
+		adminTools.click();
 	}
 
-	public void clickUserSubMenu() {
-		element(UsersSubMenu).waitUntilVisible();
-		UsersSubMenu.click();
+	public void clickOnUserTools() {
+		element(usersTools).waitUntilVisible();
+		usersTools.click();
 	}
 
-	public void clickNewUser() {
-		element(NewUser).waitUntilVisible();
-		NewUser.click();
+	public void clickOnNewUserBtn() {
+		element(newUserBtn).waitUntilVisible();
+		newUserBtn.click();
 	}
 
-	public void typeFirstNameField(String fName) {
-		element(FirtsNameField).waitUntilVisible();
-		FirtsNameField.sendKeys(fName);
+	public void inputFirstNameField(String fName) {
+		element(firstNameField).waitUntilVisible();
+		firstNameField.clear();
+		firstNameField.sendKeys(fName);
 	}
 
-	public void typeEmailField(String mail) {
-		element(EmailField).waitUntilVisible();
-		EmailField.sendKeys(mail);
+	public void inputEmailField(String mail) {
+		element(emailField).waitUntilVisible();
+		emailField.clear();
+		emailField.sendKeys(mail);
 	}
 
-	public void clickUserNameField(String user) {
-		element(UserNameField).waitUntilVisible();
-		UserNameField.sendKeys(user);
+	public void inputUserNameField(String user) {
+		element(userNameField).waitUntilVisible();
+		userNameField.sendKeys(user);
 	}
 
-	public void clickPasswordField(String pass) {
-		element(PasswordField).waitUntilVisible();
-		PasswordField.sendKeys(pass);
+	public void inputPasswordField(String pass) {
+		element(passwordField).waitUntilVisible();
+		passwordField.clear();
+		passwordField.sendKeys(pass);
 	}
 
-	public void clickVerifyPasswordField(String pass) {
-		element(VerifyPasswordField).waitUntilVisible();
-		VerifyPasswordField.sendKeys(pass);
+	public void inputVerifyPasswordField(String pass) {
+		element(verifyPasswordField).waitUntilVisible();
+		verifyPasswordField.clear();
+		verifyPasswordField.sendKeys(pass);
 	}
 
-	public void clickCreateUserBtn() {
-		element(CreateUserBtn).waitUntilVisible();
-		CreateUserBtn.click();
+	public void clickOnCreateUserBtn() {
+		element(createUserBtn).waitUntilVisible();
+		createUserBtn.click();
+		waitFor(ExpectedConditions.invisibilityOfElementLocated(By
+				.id("message")));
 	}
 }

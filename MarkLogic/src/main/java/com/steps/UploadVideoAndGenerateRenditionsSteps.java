@@ -7,22 +7,22 @@ import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class UploadVideoAndGenerateRenditionsSteps extends ScenarioSteps{
+public class UploadVideoAndGenerateRenditionsSteps extends ScenarioSteps {
 
 	UploadVideoAndGenerateFramesPage uploadVideoAndGenerateFrames;
-	
+
 	@Step
-	public void clickVideo(){
+	public void clickVideo() {
 		uploadVideoAndGenerateFrames.clickVideo();
 	}
-	
+
 	@Step
-	public void clickGenerateFrames(){
+	public void clickGenerateFrames() {
 		uploadVideoAndGenerateFrames.clickGenerateFrames();
 	}
-	
+
 	@StepGroup
-	public void Video(){
+	public void Video() {
 		clickVideo();
 		clickGenerateFrames();
 	}

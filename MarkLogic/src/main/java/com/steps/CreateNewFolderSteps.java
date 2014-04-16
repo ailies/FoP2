@@ -16,75 +16,79 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 
 	CreateNewFolderPage createNewFolder;
 
-
 	@Step
-	public void SelectCreateMenuOption() {
-		createNewFolder.SelectCreateMenuOption();
+	public void clickOnCreate() {
+		createNewFolder.clickOnCreate();
 	}
 
 	@Step
-	public void SelectCreateFolder() {
-		createNewFolder.SelectCreateFolder();
+	public void clickOnCreateFolder() {
+		createNewFolder.clickOnCreateFolder();
 	}
 
 	@Step
-	public void InsertNewFolderName(String name) {
-		createNewFolder.InsertNewFolderName(name);
+	public void inputFolderName(String name) {
+		createNewFolder.inputFolderName(name);
 	}
 
 	@Step
-	public void ClickCreateFolderBtn() {
-		createNewFolder.ClickCreateFolderBtn();
+	public void clickOnCreateFolderBtn() {
+		createNewFolder.clickOnCreateFolderBtn();
 	}
-	
-	@Step
-    public void CheckNotificationMessage(String msg) {
-		createNewFolder.CheckNotificationMessage(msg);
-    }
-	
-	/*@Step
-	public void CheckThatTheNewFolderWasCreated(String string){
-		createNewFolder.CheckThatTheNewFolderWasCreated(string);
-	}*/
 
 	@Step
-    public void OpenFolder() {
-		createNewFolder.OpenFolder();
-    }
-	
-	@Step
-    public void SelectCreateFolderFromTemplate() {
-		createNewFolder.SelectCreateFolderFromTemplate();
-    }
-	
-	@Step
-    public void SelectContentFolder() {
-		createNewFolder.SelectContentFolder();
-    }
-	
-	@Step
-	public void InsertContentFolderName(String contentName) {
-		createNewFolder.InsertContentFolderName(contentName);
+	public void clickOnTestingFolder() {
+		createNewFolder.clickOnTestingFolder();
 	}
-	
+
 	@Step
-	public void SaveContentFolder() {
-		createNewFolder.SaveContentFolder();
+	public void checkFolderFromTemplateWasCreated() {
+		createNewFolder.checkFolderFromTemplateWasCreated();
 	}
-		
+
+	@Step
+	public void clickOnCreateFolderFromTemplate() {
+		createNewFolder.clickOnCreateFolderFromTemplate();
+	}
+
+	@Step
+	public void clickOnCreateContentFolder() {
+		createNewFolder.clickOnCreateContentFolder();
+	}
+
+	@Step
+	public void inputContentFolderName(String contentName) {
+		createNewFolder.inputContentFolderName(contentName);
+	}
+
+	@Step
+	public void clickOnSaveContentFolder() {
+		createNewFolder.clickOnSaveContentFolder();
+	}
+
+	@Step
+	public void checkContentFolderWasCreated() {
+		createNewFolder.checkContentFolderWasCreated();
+	}
+
+	@Step
+	public void clickOnDemoTestingFolder() {
+		createNewFolder.clickOnDemoTestingFolder();
+	}
+
 	@StepGroup
 	public void CreateNewFolder() {
-		// mainFolder();
-		SelectCreateMenuOption();
-		SelectCreateFolder();
-		InsertNewFolderName("Test");
-		ClickCreateFolderBtn();
-		CheckNotificationMessage("");
-//		CheckThatTheNewFolderWasCreated("");
-		OpenFolder();
-		SelectCreateMenuOption();
-		SelectCreateFolderFromTemplate();
-		SelectContentFolder();
-		InsertContentFolderName("DemoTesting");
-		SaveContentFolder();
-	}}
+		clickOnCreate();
+		clickOnCreateFolder();
+		inputFolderName("Test");
+		clickOnCreateFolderBtn();
+		checkFolderFromTemplateWasCreated();
+		clickOnTestingFolder();
+		clickOnCreateFolderFromTemplate();
+		clickOnCreateContentFolder();
+		inputContentFolderName("DemoTesting");
+		clickOnSaveContentFolder();
+		checkContentFolderWasCreated();
+		clickOnDemoTestingFolder();
+	}
+}

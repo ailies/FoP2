@@ -5,7 +5,7 @@ import java.util.Random;
 
 import org.openqa.selenium.WebElement;
 
-import Tools.StringUtils;
+import tools.StringUtils;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.By;
 import net.thucydides.core.annotations.findby.FindBy;
@@ -15,7 +15,7 @@ import net.thucydides.core.pages.PageObject;
 public class SearchAndImportWikiDocumentPage extends PageObject {
 
 	@FindBy(css = ".more-actions.hidden")
-	WebElement researchFolderMore;
+	WebElement researchFolder;
 
 	@FindBy(id = "mlSearch")
 	WebElement markLogicSearch;
@@ -29,14 +29,14 @@ public class SearchAndImportWikiDocumentPage extends PageObject {
 	@FindBy(css = ".view")
 	WebElement documentContainer;
 
-	@FindBy(tagName = "Next Content Result")
-	WebElement forwardPag;
+	@FindBy(css = "input[name='Next Content Result']")
+	WebElement forwardArrow;
 
 	@FindBy(css = ".margin-bottom:15px")
 	WebElement pageContainer;
 
-	@FindBy(tagName = "Previous Content Result")
-	WebElement backwardPag;
+	@FindBy(css = "input[name='Previous Content Result']")
+	WebElement backwardArrow;
 
 	@FindBy(css = ".block.articles .view ul li")
 	WebElement documentLink;
@@ -50,42 +50,42 @@ public class SearchAndImportWikiDocumentPage extends PageObject {
 	@FindBy(id = "button.generate")
 	WebElement importDocuments;
 
-	public void clickResearchFolderMore() {
-		element(researchFolderMore).waitUntilVisible();
-		researchFolderMore.click();
+	public void clickOnResearchFolder() {
+		element(researchFolder).waitUntilVisible();
+		researchFolder.click();
 	}
 
-	public void selectMarkLogicSearch() {
+	public void clickOnMarkLogicSearch() {
 		element(markLogicSearch).waitUntilVisible();
 		markLogicSearch.click();
 	}
 
-	public void searchTerm(String term) {
+	public void inputSearchTerm(String term) {
 		element(searchTerm).waitUntilVisible();
 		searchTerm.sendKeys(term);
 	}
 
-	public void researchBtn() {
+	public void clickOnResearchBtn() {
 		element(researchBtn).waitUntilVisible();
 		researchBtn.click();
 	}
 
-	public void selectDocumentContainer() {
+	public void clickOnDocumentContainer() {
 		element(documentContainer).waitUntilVisible();
 		documentContainer.click();
 	}
 
-	public void forwardPag() {
-		element(forwardPag).waitUntilVisible();
-		forwardPag.click();
+	public void clickOnForwardArrow() {
+		element(forwardArrow).waitUntilVisible();
+		forwardArrow.click();
 	}
 
-	public void backwardPag() {
-		element(backwardPag).waitUntilVisible();
-		backwardPag.click();
+	public void clickOnBackwardArrow() {
+		element(backwardArrow).waitUntilVisible();
+		backwardArrow.click();
 	}
 
-	private void SelectRandomDocumentAndClickOnIt() {
+	public void selectRandomDocumentAndClickOnIt() {
 		List<WebElement> searchResults = null;
 		Random r = new Random();
 		String noOfPagesContainer = getDriver()
@@ -110,17 +110,17 @@ public class SearchAndImportWikiDocumentPage extends PageObject {
 
 	}
 
-	public void selectViewFullContent() {
+	public void clickOnViewFullContent() {
 		element(viewFullContent).waitUntilVisible();
 		viewFullContent.click();
 	}
 
-	public void selectAddFullContent() {
+	public void clickOnAddFullContent() {
 		element(addFullContent).waitUntilVisible();
 		addFullContent.click();
 	}
 
-	public void selectImportDocuments() {
+	public void clickOnImportDocuments() {
 		element(importDocuments).waitUntilVisible();
 		importDocuments.click();
 	}

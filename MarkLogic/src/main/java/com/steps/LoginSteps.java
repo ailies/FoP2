@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.LoginPage;
+import com.pages.AlfrescoLoginPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -13,63 +13,63 @@ public class LoginSteps extends ScenarioSteps {
 		super(pages);
 	}
 
-	LoginPage login;
+	AlfrescoLoginPage login;
 
 	@Step
-	public void typeUsername(String usernameTerm) {
-		login.typeUsername(usernameTerm);
+	public void inputUsername(String usernameTerm) {
+		login.inputUsername(usernameTerm);
 	}
 
 	@Step
-	public void typePassword(String passwordTerm) {
-		login.typePassword(passwordTerm);
+	public void inputPassword(String passwordTerm) {
+		login.inputPassword(passwordTerm);
 	}
 
 	@Step
-	public void clickLoginBtn() {
-		login.clickLoginBtn();
+	public void clickOnLoginBtn() {
+		login.clickOnLoginBtn();
 	}
 
 	@Step
-	public void assertUserDashboardShouldBeVisible() {
-		login.assertUserDashboardShouldBeVisible();
+	public void assertThatUserDashboardShouldBeVisible() {
+		login.assertThatUserDashboardShouldBeVisible();
 	}
 
 	@Step
-	public void clickSitesMenuTab() {
-		login.clickSitesMenuTab();
+	public void clickOnSitesMenuTab() {
+		login.clickOnSitesMenuTab();
 	}
 
 	@Step
-	public void clickTestSiteSubMenu() {
-		login.clickTestSiteSubMenu();
+	public void clickOnTestSiteSubMenu() {
+		login.clickOnTestSiteSubMenu();
 	}
 
 	@Step
-	public void assertDocumentLibraryShouldBeVisible() {
-		login.assertdocumentLibraryShouldBeVisible();
+	public void assertThatDocumentLibraryShouldBeVisible() {
+		login.assertThatDocumentLibraryShouldBeVisible();
 	}
 
 	@Step
-	public void clickDocumentLibrary() {
-		login.clickDocumentLibrary();
+	public void clickOnDocumentLibrary() {
+		login.clickOnDocumentLibrary();
 	}
 
 	@StepGroup
-	public void login(String screenName, String pass) {
+	public void loginToSite(String screenName, String pass) {
 		getDriver().get("http://172.16.10.115:8080/share/page/");
-		typeUsername(screenName);
-		typePassword(pass);
-		clickLoginBtn();
-		assertUserDashboardShouldBeVisible();
+		inputUsername(screenName);
+		inputPassword(pass);
+		clickOnLoginBtn();
+		assertThatUserDashboardShouldBeVisible();
 	}
 
 	@StepGroup
 	public void GetToFolder() {
-		clickSitesMenuTab();
-		clickTestSiteSubMenu();
-		assertDocumentLibraryShouldBeVisible();
-		clickDocumentLibrary();
+		clickOnSitesMenuTab();
+		clickOnTestSiteSubMenu();
+		assertThatDocumentLibraryShouldBeVisible();
+		clickOnDocumentLibrary();
 
 	}
 }

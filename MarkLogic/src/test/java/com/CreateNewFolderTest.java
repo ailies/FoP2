@@ -32,7 +32,7 @@ public class CreateNewFolderTest {
 
 	@Test
 	public void createNewFolder() {
-		login.login("admin", "admin");
+		login.loginToSite("admin", "admin");
 		login.GetToFolder();
 		createNewFolder.CreateNewFolder();
 	}

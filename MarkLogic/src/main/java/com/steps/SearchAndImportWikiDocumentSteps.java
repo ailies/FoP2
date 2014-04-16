@@ -1,4 +1,4 @@
-/*package com.steps;
+package com.steps;
 
 import com.pages.SearchAndImportWikiDocumentPage;
 
@@ -17,72 +17,72 @@ public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
 	SearchAndImportWikiDocumentPage searchAndImportWikiDocument;
 
 	@Step
-	public void clickResearchFolderMore() {
-		searchAndImportWikiDocument.clickResearchFolderMore();
+	public void clickOnResearchFolder() {
+		searchAndImportWikiDocument.clickOnResearchFolder();
 	}
 
 	@Step
-	public void selectMarkLogicSearch() {
-		searchAndImportWikiDocument.selectMarkLogicSearch();
+	public void clickOnMarkLogicSearch() {
+		searchAndImportWikiDocument.clickOnMarkLogicSearch();
 	}
 
 	@Step
-	public void searchTerm(String term) {
-		searchAndImportWikiDocument.searchTerm(term);
+	public void inputSearchTerm(String term) {
+		searchAndImportWikiDocument.inputSearchTerm(term);
 	}
 
 	@Step
-	public void searchDocuments() {
-		searchAndImportWikiDocument.searchDocuments();
+	public void clickOnResearchBtn() {
+		searchAndImportWikiDocument.clickOnResearchBtn();
 	}
 
 	@Step
-	public void pickFirstDocument() {
-		searchAndImportWikiDocument.pickFirstDocument();
+	public void clickOnDocumentContainer() {
+		searchAndImportWikiDocument.clickOnDocumentContainer();
 	}
 
 	@Step
-	public void pickSecondDocument() {
-		searchAndImportWikiDocument.pickSecondDocument();
+	public void clickOnForwardArrow() {
+		searchAndImportWikiDocument.clickOnForwardArrow();
 	}
 
 	@Step
-	public void pickThirdDocument() {
-		searchAndImportWikiDocument.pickThirdDocument();
+	public void clickOnBackwardArrow() {
+		searchAndImportWikiDocument.clickOnBackwardArrow();
 	}
 
 	@Step
-	public void selectViewFullContent() {
-		searchAndImportWikiDocument.selectViewFullContent();
+	public void selectRandomDocumentAndClickOnIt() {
+		searchAndImportWikiDocument.selectRandomDocumentAndClickOnIt();
 	}
 
 	@Step
-	public void selectAddFullContent() {
-		searchAndImportWikiDocument.selectAddFullContent();
+	public void clickOnViewFullContent() {
+		searchAndImportWikiDocument.clickOnViewFullContent();
 	}
 
 	@Step
-	public void selectImportDocuments() {
-		searchAndImportWikiDocument.selectImportDocuments();
+	public void clickOnAddFullContent() {
+		searchAndImportWikiDocument.clickOnAddFullContent();
 	}
 
-	
-	 * @Step public void () { searchAndImportWikiDocument.(); }
-	 
+	@Step
+	public void clickOnImportDocuments() {
+		searchAndImportWikiDocument.clickOnImportDocuments();
+	}
 
 	@StepGroup
 	public void SearchAndImportWikiDocument() {
-		clickResearchFolderMore();
-		selectMarkLogicSearch();
-		searchTerm("testing");
-		searchDocuments();
-		pickFirstDocument();
-		pickSecondDocument();
-		pickThirdDocument();
-		selectViewFullContent();
-		selectAddFullContent();
-		selectImportDocuments();
-
+		clickOnResearchFolder();
+		clickOnMarkLogicSearch();
+		inputSearchTerm("testing");
+		clickOnResearchBtn();
+		clickOnDocumentContainer();
+		clickOnForwardArrow();
+		clickOnBackwardArrow();
+		selectRandomDocumentAndClickOnIt();
+		clickOnViewFullContent();
+		clickOnAddFullContent();
+		clickOnImportDocuments();
 	}
 }
-*/

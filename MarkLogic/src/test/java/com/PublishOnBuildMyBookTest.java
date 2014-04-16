@@ -23,7 +23,7 @@ public class PublishOnBuildMyBookTest {
 
 		@Test
 		public void login() {
-			login.login("admin", "admin");
+			login.loginToSite("admin", "admin");
 			login.GetToFolder();
 		}
 	}

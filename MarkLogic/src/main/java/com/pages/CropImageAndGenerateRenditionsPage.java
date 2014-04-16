@@ -1,56 +1,50 @@
-/*package com.pages;
+package com.pages;
 
+import org.openqa.selenium.WebElement;
+
+import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 
-public class CropImageAndGenerateRenditionsPage extends PageObject{
-	
+public class CropImageAndGenerateRenditionsPage extends PageObject {
+
 	@FindBy(id = "")
-	WebElement ;
-	
+	WebElement image;
+
 	@FindBy(id = "")
-	WebElement ;
-	
+	WebElement generateImageRenditions;
+
 	@FindBy(id = "")
-	WebElement ;
-	
+	WebElement cropImage;
+
 	@FindBy(id = "")
-	WebElement ;
-	
-	@FindBy(id = "")
-	WebElement ;
-	
-	@FindBy(id = "")
-	WebElement ;
-	
-	@FindBy(id = "")
-	WebElement ;
-	
-	public void (){
-		
-	}
-	
-	public void (){
-		
+	WebElement saveCroppedImageBtn;
+
+	public void clickOnImage() {
+		element(image).waitUntilVisible();
+		image.click();
 	}
 
-	public void (){
-	
+	public void clickOnGenerateImageRenditions() {
+		element(generateImageRenditions).waitUntilVisible();
+		generateImageRenditions.click();
 	}
 
-	public void (){
-		
+	public void clickOnCropImage() {
+		element(cropImage).waitUntilVisible();
+		cropImage.click();
 	}
-	
-	public void (){
-		
+
+	public void scrollToPageBottom() {
+		evaluateJavascript("window.scrollTo(0,document.body.scrollHeight);");
 	}
-	
-	public void (){
-		
+
+	public void scrollToPageTop() {
+		evaluateJavascript("window.scrollTo(0,document.body.scrollTop);");
 	}
-	
-	public void (){
-		
+
+	public void clickOnSaveCroppedImageBtn() {
+		element(saveCroppedImageBtn).waitUntilVisible();
+		saveCroppedImageBtn.click();
 	}
+
 }
-*/

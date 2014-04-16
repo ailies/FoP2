@@ -12,20 +12,20 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.LoginSteps;
-import com.steps.ModifyXMLSteps;
+import com.steps.CustomizeXMLSteps;
 
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
-public class ModifyXMLTest {
+public class CustomizeXMLTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
-	
+
 	@ManagedPages(defaultUrl = "http://172.16.10.115:8080/share/page/")
 	public Pages pages;
-	
+
 	@Steps
 	public LoginSteps login;
-	
+
 	@Steps
-	public ModifyXMLSteps modifyXML;
+	public CustomizeXMLSteps modifyXML;
 }

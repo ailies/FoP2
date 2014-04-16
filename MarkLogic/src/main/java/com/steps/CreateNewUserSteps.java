@@ -8,71 +8,70 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class CreateNewUserSteps extends ScenarioSteps{
+public class CreateNewUserSteps extends ScenarioSteps {
 
 	public CreateNewUserSteps(Pages pages) {
 		super(pages);
 	}
-	
+
 	CreateNewUserPage createNewUser;
-	
+
 	@Step
-	public void clickAdminUserTab() {
-		createNewUser.clickAdminUserTab();
+	public void clickOnAdminTools() {
+		createNewUser.clickOnAdminTools();
 	}
-	
+
 	@Step
-	public void clickUserSubMenu(){
-		createNewUser.clickUserSubMenu();
+	public void clickOnUserTools() {
+		createNewUser.clickOnUserTools();
 	}
-	
+
 	@Step
-	public void clickNewUser() {
-		createNewUser.clickNewUser();
+	public void clickOnNewUserBtn() {
+		createNewUser.clickOnNewUserBtn();
 	}
-	
+
 	@Step
-	public void typeFirstNameField(String fName) {
-		createNewUser.typeFirstNameField(fName);
+	public void inputFirstNameField(String fName) {
+		createNewUser.inputFirstNameField(fName);
 	}
-	
+
 	@Step
-	public void typeEmailField(String mail) {
-		createNewUser.typeEmailField(mail);
+	public void inputEmailField(String mail) {
+		createNewUser.inputEmailField(mail);
 	}
-	
+
 	@Step
-	public void clickUserNameField(String uName) {
-		createNewUser.clickUserNameField(uName);
+	public void inputUserNameField(String uName) {
+		createNewUser.inputUserNameField(uName);
 	}
-	
+
 	@Step
-	public void clickPasswordField(String pass) {
-		createNewUser.clickPasswordField(pass);
+	public void inputPasswordField(String pass) {
+		createNewUser.inputPasswordField(pass);
 	}
-	
+
 	@Step
-	public void clickVerifyPasswordField(String pass) {
-		createNewUser.clickVerifyPasswordField(pass);
+	public void inputVerifyPasswordField(String pass) {
+		createNewUser.inputVerifyPasswordField(pass);
 	}
-	
+
 	@Step
-	public void clickCreateUserBtn() {
-		createNewUser.clickCreateUserBtn();
+	public void clickOnCreateUserBtn() {
+		createNewUser.clickOnCreateUserBtn();
 	}
-	
-	
+
 	@StepGroup
-	public void CreateNewUser(){
-		clickAdminUserTab();
-		clickUserSubMenu();
-		clickNewUser();
-		typeFirstNameField("User");
-		typeEmailField("amelia.ilies@ixxus.co.uk");
-		clickUserNameField("TestUser");
-		clickPasswordField("password");
-		clickVerifyPasswordField("password");
-		clickCreateUserBtn();
+	public void CreateNewUser() {
+		clickOnAdminTools();
+		clickOnUserTools();
+		clickOnNewUserBtn();
+		inputFirstNameField("User");
+		inputEmailField("amelia.ilies@ixxus.co.uk");
+		inputUserNameField("TestUser");
+		inputPasswordField("password");
+		inputVerifyPasswordField("password");
+		clickOnCreateUserBtn();
 	}
-	
+
 }

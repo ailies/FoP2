@@ -27,13 +27,13 @@ public class CreateNewUserTest {
 
 	@Steps
 	public LoginSteps login;
-	
+
 	@Steps
 	public CreateNewUserSteps createNewUser;
 
-	@Test 
-	public void CreateNewUser(){
-		login.login("admin", "admin");
+	@Test
+	public void CreateNewUser() {
+		login.loginToSite("admin", "admin");
 		createNewUser.CreateNewUser();
 	}
 }
