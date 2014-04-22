@@ -1,4 +1,4 @@
-package com;
+package AlfrescoCustomization;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.LoginSteps;
 
-public class UploadVideoAndGenerateRenditionsTest {
+public class UploadVideoAndGenerateVideoFramesTest {
 	public class LoginTest {
 		@Managed(uniqueSession = true)
 		public WebDriver webdriver;

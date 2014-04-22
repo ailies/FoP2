@@ -1,4 +1,4 @@
-package com;
+package Research;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -12,12 +12,11 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.CreateNewFolderSteps;
 import com.steps.LoginSteps;
 
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
-public class CreateNewFolderTest {
+public class LoginTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -27,13 +26,9 @@ public class CreateNewFolderTest {
 	@Steps
 	public LoginSteps login;
 
-	@Steps
-	public CreateNewFolderSteps createNewFolder;
-
 	@Test
-	public void createNewFolder() {
+	public void login() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.CreateNewFolder();
 	}
 }

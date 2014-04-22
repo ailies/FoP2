@@ -51,10 +51,10 @@ public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
 		searchAndImportWikiDocument.clickOnBackwardArrow();
 	}
 
-	@Step
-	public void selectRandomDocumentAndClickOnIt() {
-		searchAndImportWikiDocument.selectRandomDocumentAndClickOnIt();
-	}
+//	@Step
+//	public void selectRandomDocumentAndClickOnIt() {
+//		searchAndImportWikiDocument.selectRandomDocumentAndClickOnIt();
+//	}
 
 	@Step
 	public void clickOnViewFullContent() {
@@ -80,7 +80,7 @@ public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
 		clickOnDocumentContainer();
 		clickOnForwardArrow();
 		clickOnBackwardArrow();
-		selectRandomDocumentAndClickOnIt();
+//		selectRandomDocumentAndClickOnIt();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
 		clickOnImportDocuments();

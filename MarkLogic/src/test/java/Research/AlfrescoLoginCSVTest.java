@@ -1,4 +1,4 @@
-package com;
+package Research;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;

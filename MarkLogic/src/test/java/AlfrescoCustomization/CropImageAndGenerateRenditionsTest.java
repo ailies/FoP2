@@ -1,4 +1,4 @@
-package com;
+package AlfrescoCustomization;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;

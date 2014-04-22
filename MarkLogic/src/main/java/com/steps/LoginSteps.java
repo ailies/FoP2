@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.AlfrescoLoginPage;
+import com.pages.LoginPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -13,7 +13,7 @@ public class LoginSteps extends ScenarioSteps {
 		super(pages);
 	}
 
-	AlfrescoLoginPage login;
+	LoginPage login;
 
 	@Step
 	public void inputUsername(String usernameTerm) {

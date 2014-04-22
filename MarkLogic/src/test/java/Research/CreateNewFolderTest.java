@@ -1,4 +1,4 @@
-package com;
+package Research;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -7,16 +7,17 @@ import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.runners.ThucydidesRunner;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
+import com.steps.CreateNewFolderSteps;
 import com.steps.LoginSteps;
-import com.steps.CustomizeXMLSteps;
 
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
-public class CustomizeXMLTest {
+public class CreateNewFolderTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -27,5 +28,12 @@ public class CustomizeXMLTest {
 	public LoginSteps login;
 
 	@Steps
-	public CustomizeXMLSteps modifyXML;
+	public CreateNewFolderSteps createNewFolder;
+
+	@Test
+	public void createNewFolder() {
+		login.loginToSite("admin", "admin");
+		login.GetToFolder();
+		createNewFolder.CreateNewFolder();
+	}
 }

@@ -4,24 +4,45 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import com.CreateNewFolderTest;
-import com.CropImageAndGenerateRenditionsTest;
-import com.CustomizeXMLTest;
-import com.GenerateVideoFramesTest;
-import com.LoginTest;
-import com.PublishingContentTest;
-import com.SearchAndImportWikiDocumentTest;
+import AlfrescoCustomization.CreateAnnotationsTest;
+import AlfrescoCustomization.CropImageAndGenerateRenditionsTest;
+import AlfrescoCustomization.GenerateMasterXMLTest;
+import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
+import PublishingContent.CheckTagsTest;
+import PublishingContent.CreateCollectionAndAddDocumentsTest;
+import PublishingContent.LoginAsAdminTest;
+import PublishingContent.PublishXMLTest;
+import PublishingContent.SwichToBuildMyBookTest;
+import Research.CreateNewFolderTest;
+import Research.LoginTest;
+import Research.MarkLogicSearchTest;
+import XMLRoundTripping.DownloadFilesFromIDFolderTest;
+import XMLRoundTripping.EditFilesWithInDesignTest;
+import XMLRoundTripping.EditHTMLFilesFromRenditionsFolderTest;
+import XMLRoundTripping.EditMasterXMLTest;
+import XMLRoundTripping.ImportFilesToIDFolderTest;
+
 
 
 @RunWith(Suite.class)
 @SuiteClasses({
 	LoginTest.class,
 	CreateNewFolderTest.class,
-	SearchAndImportWikiDocumentTest.class,
-	CustomizeXMLTest.class,
+	MarkLogicSearchTest.class,
+	GenerateMasterXMLTest.class,
+	CreateAnnotationsTest.class,
 	CropImageAndGenerateRenditionsTest.class,
-	GenerateVideoFramesTest.class,
-	PublishingContentTest.class
+	UploadVideoAndGenerateVideoFramesTest.class,
+	EditMasterXMLTest.class,
+	DownloadFilesFromIDFolderTest.class,
+	EditFilesWithInDesignTest.class,
+	ImportFilesToIDFolderTest.class,
+	EditHTMLFilesFromRenditionsFolderTest.class,
+	LoginAsAdminTest.class,
+	PublishXMLTest.class,
+	CheckTagsTest.class,
+	SwichToBuildMyBookTest.class,
+	CreateCollectionAndAddDocumentsTest.class
 })
 public class testScriptSuite {
 
