@@ -28,7 +28,7 @@ public class CreateNewFolderPage extends PageObject {
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")
 	WebElement createFolderBtn;
 
-	@FindBy(id = "")
+	@FindBy(id = "alf-id8")
 	WebElement testingFolder;
 
 	@FindBy(css = "a[title='Create folder from template']")
@@ -43,7 +43,7 @@ public class CreateNewFolderPage extends PageObject {
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")
 	WebElement saveContentFolderBtn;
 
-	@FindBy(id = "")
+	@FindBy(id = "a[title='DemoTesting']")
 	WebElement demoTestingFolder;
 
 	public void clickOnCreate() {
@@ -72,11 +72,11 @@ public class CreateNewFolderPage extends PageObject {
 		testingFolder.click();
 	}
 
-	public void checkFolderFromTemplateWasCreated() {
+	/*public void checkFolderFromTemplateWasCreated() {
 		WebElement folderFromTemplateWasCreated = getDriver().findElement(
 				By.tagName("Test"));
 		Assert.assertTrue(folderFromTemplateWasCreated.isDisplayed());
-	}
+	}*/
 
 	public void clickOnCreateFolderFromTemplate() {
 		element(createFolderFromTemplate).waitUntilVisible();

@@ -27,6 +27,9 @@ public class CreateNewUserPage extends PageObject {
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")
 	WebElement firstNameField;
+	
+	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")
+	WebElement lastNameField;
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-email")
 	WebElement emailField;
@@ -62,6 +65,12 @@ public class CreateNewUserPage extends PageObject {
 		element(firstNameField).waitUntilVisible();
 		firstNameField.clear();
 		firstNameField.sendKeys(fName);
+	}
+	
+	public void inputLastNameField(String lName) {
+		element(lastNameField).waitUntilVisible();
+		lastNameField.clear();
+		lastNameField.sendKeys(lName);
 	}
 
 	public void inputEmailField(String mail) {

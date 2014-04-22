@@ -20,6 +20,21 @@ public class CustomizeXMLSteps extends ScenarioSteps {
 	public void clickOnAssemblyView() {
 		customizeXML.clickOnAssemblyView();
 	}
+	
+	@Step
+	public void clickOnMasterXML() {
+		customizeXML.clickOnMasterXML();
+	}
+	
+	@Step
+	public void clickOnHTMLRendition() {
+		customizeXML.clickOnHTMLRendition();
+	}
+	
+	@Step
+	public void clickOnPDFRendition() {
+		customizeXML.clickOnPDFRendition();
+	}
 
 	@StepGroup
 	public void CustomizeXML() {

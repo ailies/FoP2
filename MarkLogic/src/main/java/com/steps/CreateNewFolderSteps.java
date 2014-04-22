@@ -41,10 +41,10 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 		createNewFolder.clickOnTestingFolder();
 	}
 
-	@Step
+	/*@Step
 	public void checkFolderFromTemplateWasCreated() {
 		createNewFolder.checkFolderFromTemplateWasCreated();
-	}
+	}*/
 
 	@Step
 	public void clickOnCreateFolderFromTemplate() {
@@ -82,8 +82,9 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 		clickOnCreateFolder();
 		inputFolderName("Test");
 		clickOnCreateFolderBtn();
-		checkFolderFromTemplateWasCreated();
+//		checkFolderFromTemplateWasCreated();
 		clickOnTestingFolder();
+		clickOnCreateFolder();
 		clickOnCreateFolderFromTemplate();
 		clickOnCreateContentFolder();
 		inputContentFolderName("DemoTesting");
