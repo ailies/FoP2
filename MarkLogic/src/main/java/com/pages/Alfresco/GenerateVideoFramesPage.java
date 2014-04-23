@@ -1,4 +1,4 @@
-package com.pages;
+package com.pages.Alfresco;
 
 import org.openqa.selenium.WebElement;
 

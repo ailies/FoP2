@@ -1,4 +1,4 @@
-package com.pages;
+package com.pages.Alfresco;
 
 public class PublishOnBuildMyBookPage {
 

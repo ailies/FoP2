@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.CreateNewFolderSteps;
-import com.steps.LoginSteps;
+import com.steps.AlfrescoLoginSteps;
 
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
@@ -25,7 +25,7 @@ public class CreateNewFolderTest {
 	public Pages pages;
 
 	@Steps
-	public LoginSteps login;
+	public AlfrescoLoginSteps login;
 
 	@Steps
 	public CreateNewFolderSteps createNewFolder;
@@ -34,6 +34,6 @@ public class CreateNewFolderTest {
 	public void createNewFolder() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.CreateNewFolder();
+		createNewFolder.CreateNewFolderTest("Test","DemoTesting", "Test", "DemoTesting");
 	}
 }

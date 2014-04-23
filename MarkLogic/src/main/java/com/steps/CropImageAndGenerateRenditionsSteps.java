@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.CropImageAndGenerateRenditionsPage;
+import com.pages.Alfresco.CropImageAndGenerateRenditionsPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;

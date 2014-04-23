@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.CreateNewFolderPage;
+import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -14,8 +14,16 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 		super(pages);
 	}
 
-	CreateNewFolderPage createNewFolder;
-
+	AlfrescoCreateNewFolderPage createNewFolder;
+	
+	@Step
+	public boolean verifyIfFolderExists(String... terms) {
+		 return createNewFolder.verifyIfFolderExists(terms);
+	}
+	@Step
+	public void clickOnFolder(String... terms) {
+		 createNewFolder.clickOnFolder(terms);
+	}
 	@Step
 	public void clickOnCreate() {
 		createNewFolder.clickOnCreate();
@@ -35,16 +43,6 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	public void clickOnCreateFolderBtn() {
 		createNewFolder.clickOnCreateFolderBtn();
 	}
-
-	@Step
-	public void clickOnTestingFolder() {
-		createNewFolder.clickOnTestingFolder();
-	}
-
-	/*@Step
-	public void checkFolderFromTemplateWasCreated() {
-		createNewFolder.checkFolderFromTemplateWasCreated();
-	}*/
 
 	@Step
 	public void clickOnCreateFolderFromTemplate() {
@@ -67,29 +65,43 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void checkContentFolderWasCreated() {
-		createNewFolder.checkContentFolderWasCreated();
+	public void clickOnContentFolder(String...terms) {
+		createNewFolder.clickOnContentFolder(terms);
 	}
-
-	@Step
-	public void clickOnDemoTestingFolder() {
-		createNewFolder.clickOnDemoTestingFolder();
-	}
-
+	
 	@StepGroup
-	public void CreateNewFolder() {
-		clickOnCreate();
-		clickOnCreateFolder();
-		inputFolderName("Test");
-		clickOnCreateFolderBtn();
-//		checkFolderFromTemplateWasCreated();
-		clickOnTestingFolder();
-		clickOnCreateFolder();
+	public void contentFolder(String contentFolder){
+		clickOnContentFolder(contentFolder);
+	}
+	
+	@StepGroup
+	public void CreateFolderFromTemplate(String contentFolderName, String contentFolder ) {
+		/*clickOnCreate();
 		clickOnCreateFolderFromTemplate();
 		clickOnCreateContentFolder();
-		inputContentFolderName("DemoTesting");
-		clickOnSaveContentFolder();
-		checkContentFolderWasCreated();
-		clickOnDemoTestingFolder();
+		inputContentFolderName(contentFolderName);
+		clickOnSaveContentFolder();*/
+		contentFolder(contentFolder);
+	}
+
+
+	@StepGroup
+	public void CreateNewFolderTest(String folderName,String contentFolderName, String contentFolder, String... terms) {
+		if(!verifyIfFolderExists(terms)){
+			System.out.println("Folder is created");
+			clickOnFolder(folderName);
+			CreateFolderFromTemplate(contentFolderName, contentFolder);
+		} else{
+			System.out.println("Create Test folder");
+			clickOnCreate();
+			clickOnCreateFolder();
+			inputFolderName(folderName);
+			clickOnCreateFolderBtn();
+			clickOnFolder(folderName);
+			
+			CreateFolderFromTemplate(contentFolderName, contentFolder);
+		}
+		
+			
 	}
 }

@@ -1,4 +1,4 @@
-package com.pages;
+package com.pages.Alfresco;
 
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;

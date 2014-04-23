@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.CreateNewUserPage;
+import com.pages.Alfresco.AlfrescoCreateNewUserPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -14,7 +14,7 @@ public class CreateNewUserSteps extends ScenarioSteps {
 		super(pages);
 	}
 
-	CreateNewUserPage createNewUser;
+	AlfrescoCreateNewUserPage createNewUser;
 
 	@Step
 	public void clickOnAdminTools() {

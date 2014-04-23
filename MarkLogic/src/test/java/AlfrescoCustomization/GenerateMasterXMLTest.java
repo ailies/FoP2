@@ -8,8 +8,8 @@ import net.thucydides.core.pages.Pages;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.LoginSteps;
-import com.steps.SearchAndImportWikiDocumentSteps;
+import com.steps.AlfrescoLoginSteps;
+import com.steps.MarkLogicSearchSteps;
 
 public class GenerateMasterXMLTest {
 	@Managed(uniqueSession = true)
@@ -19,15 +19,15 @@ public class GenerateMasterXMLTest {
 	public Pages pages;
 
 	@Steps
-	public LoginSteps login;
+	public AlfrescoLoginSteps login;
 
 	@Steps
-	public SearchAndImportWikiDocumentSteps searchAndImportWikiDocument;
+	public MarkLogicSearchSteps markLogicSearch;
 
 	@Test
 	public void searchAndImportWikiDocument() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		searchAndImportWikiDocument.SearchAndImportWikiDocument();
+//		markLogicSearch.markLogicSearch();
 	}
 }

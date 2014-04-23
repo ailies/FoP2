@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.BuildMyBookActionsPage;
+import com.pages.BuildMyBook.BuildMyBookActionsPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;

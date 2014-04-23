@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.LoginSteps;
+import com.steps.AlfrescoLoginSteps;
 
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
@@ -24,7 +24,7 @@ public class LoginTest {
 	public Pages pages;
 
 	@Steps
-	public LoginSteps login;
+	public AlfrescoLoginSteps login;
 
 	@Test
 	public void login() {

@@ -11,8 +11,8 @@ import org.openqa.selenium.WebDriver;
 import com.steps.CreateNewFolderSteps;
 import com.steps.CropImageAndGenerateRenditionsSteps;
 import com.steps.CustomizeXMLSteps;
-import com.steps.LoginSteps;
-import com.steps.SearchAndImportWikiDocumentSteps;
+import com.steps.AlfrescoLoginSteps;
+import com.steps.MarkLogicSearchSteps;
 
 public class CropImageAndGenerateRenditionsTest {
 	public class LoginTest {
@@ -23,13 +23,13 @@ public class CropImageAndGenerateRenditionsTest {
 		public Pages pages;
 
 		@Steps
-		public LoginSteps login;
+		public AlfrescoLoginSteps login;
 
 		@Steps
 		public CreateNewFolderSteps createNewFolder;
 
 		@Steps
-		public SearchAndImportWikiDocumentSteps searchAndImportWikiDocument;
+		public MarkLogicSearchSteps markLogicSearch;
 
 		@Steps
 		public CustomizeXMLSteps customizeXML;
@@ -41,8 +41,8 @@ public class CropImageAndGenerateRenditionsTest {
 		public void login() {
 			login.loginToSite("admin", "admin");
 			login.GetToFolder();
-			createNewFolder.CreateNewFolder();
-			searchAndImportWikiDocument.SearchAndImportWikiDocument();
+//			createNewFolder.CreateNewFolder();
+//			markLogicSearch.markLogicSearch();
 			customizeXML.CustomizeXML();
 			cropImageAndGemerateRenditions.CropImageAndCreateImageRenditions();
 		}

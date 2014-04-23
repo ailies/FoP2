@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.GenerateVideoFramesPage;
+import com.pages.Alfresco.GenerateVideoFramesPage;
 
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;

@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.AlfrescoActionsPage;
+import com.pages.Alfresco.AlfrescoActionsPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;

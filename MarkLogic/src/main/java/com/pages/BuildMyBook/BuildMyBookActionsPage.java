@@ -1,4 +1,4 @@
-package com.pages;
+package com.pages.BuildMyBook;
 
 import org.openqa.selenium.WebElement;
 

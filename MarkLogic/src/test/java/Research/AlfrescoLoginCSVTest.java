@@ -3,7 +3,7 @@ package Research;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.LoginSteps;
+import com.steps.AlfrescoLoginSteps;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -18,7 +18,7 @@ public class AlfrescoLoginCSVTest {
 	public Pages pages;
 
 	@Steps
-	private LoginSteps loginStep;
+	private AlfrescoLoginSteps loginStep;
 
 	private String username;
 	private String password;

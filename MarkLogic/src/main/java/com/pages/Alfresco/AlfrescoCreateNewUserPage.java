@@ -1,4 +1,4 @@
-package com.pages;
+package com.pages.Alfresco;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +10,9 @@ import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
-public class CreateNewUserPage extends PageObject {
+public class AlfrescoCreateNewUserPage extends PageObject {
 
-	public CreateNewUserPage(WebDriver driver) {
+	public AlfrescoCreateNewUserPage(WebDriver driver) {
 		super(driver);
 	}
 

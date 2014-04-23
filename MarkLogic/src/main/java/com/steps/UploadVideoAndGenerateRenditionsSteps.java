@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.UploadVideoAndGenerateFramesPage;
+import com.pages.Alfresco.UploadVideoAndGenerateFramesPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;

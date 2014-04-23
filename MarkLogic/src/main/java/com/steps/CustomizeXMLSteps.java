@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.CustomizeXMLPage;
+import com.pages.Alfresco.CustomizeXMLPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;

@@ -1,6 +1,6 @@
 package com.steps;
 
-import com.pages.SearchAndImportWikiDocumentPage;
+import com.pages.Alfresco.MarkLogicSearchPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -8,13 +8,13 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
+public class MarkLogicSearchSteps extends ScenarioSteps {
 
-	public SearchAndImportWikiDocumentSteps(Pages pages) {
+	public MarkLogicSearchSteps(Pages pages) {
 		super(pages);
 	}
 
-	SearchAndImportWikiDocumentPage searchAndImportWikiDocument;
+	MarkLogicSearchPage searchAndImportWikiDocument;
 
 	@Step
 	public void clickOnResearchFolder() {
@@ -40,21 +40,12 @@ public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
 	public void clickOnDocumentContainer() {
 		searchAndImportWikiDocument.clickOnDocumentContainer();
 	}
+	
+	/*@Step
+	public String getARandomLink() {
+		return searchAndImportWikiDocument.getARandomLink();
+	}*/
 
-	@Step
-	public void clickOnForwardArrow() {
-		searchAndImportWikiDocument.clickOnForwardArrow();
-	}
-
-	@Step
-	public void clickOnBackwardArrow() {
-		searchAndImportWikiDocument.clickOnBackwardArrow();
-	}
-
-//	@Step
-//	public void selectRandomDocumentAndClickOnIt() {
-//		searchAndImportWikiDocument.selectRandomDocumentAndClickOnIt();
-//	}
 
 	@Step
 	public void clickOnViewFullContent() {
@@ -72,14 +63,13 @@ public class SearchAndImportWikiDocumentSteps extends ScenarioSteps {
 	}
 
 	@StepGroup
-	public void SearchAndImportWikiDocument() {
+	public void searchAndImportWikiDocument() {
 		clickOnResearchFolder();
 		clickOnMarkLogicSearch();
 		inputSearchTerm("testing");
 		clickOnResearchBtn();
 		clickOnDocumentContainer();
-		clickOnForwardArrow();
-		clickOnBackwardArrow();
+//		getARandomLink();
 //		selectRandomDocumentAndClickOnIt();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
