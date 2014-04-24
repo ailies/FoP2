@@ -9,13 +9,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import tools.AbstractPage;
+import tools.Delay;
 import tools.StringUtils;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
-public class AlfrescoCreateNewFolderPage extends PageObject {
+public class AlfrescoCreateNewFolderPage extends AbstractPage {
 
 	public AlfrescoCreateNewFolderPage(WebDriver driver) {
 		super(driver);
@@ -66,7 +68,21 @@ public class AlfrescoCreateNewFolderPage extends PageObject {
 		createFolderBtn.click();
 	}
 
-	public boolean verifyIfFolderExists(String... terms) {
+	public void verifyIfNodesExistInBreadcrumbs(String... terms) {
+		WebElement breadcrumbsContainer = waitUntilElementExists(
+				By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-navBar"),
+				15);
+		System.out.println(breadcrumbsContainer.getText());
+		for (String term : terms) {
+			System.out.println();
+			if (!breadcrumbsContainer.getText().toLowerCase()
+					.contains(term.toLowerCase())) {
+				Assert.fail(String.format("Node not found"));
+			}
+		}
+	}
+
+	public boolean verifyIfFolderExists(String term) {
 		String noOfPagesContainer = getDriver()
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))
@@ -79,12 +95,12 @@ public class AlfrescoCreateNewFolderPage extends PageObject {
 			for (WebElement searchResult : searchResults) {
 				boolean foundRow = true;
 				if ($(searchResult).isCurrentlyVisible()) {
-					for (String term : terms) {
-						if (!searchResult.getText().toLowerCase()
-								.contains(term.toLowerCase())) {
-							foundRow = false;
-						}
+
+					if (!searchResult.getText().toLowerCase()
+							.contains(term.toLowerCase())) {
+						foundRow = false;
 					}
+
 				}
 				if (foundRow)
 					return true;
@@ -137,11 +153,11 @@ public class AlfrescoCreateNewFolderPage extends PageObject {
 		System.out.println(element.getText());
 		WebElement folder = element.findElement(By.cssSelector("span a"));
 		System.out.println(folder.getText());
-		if (element == null) {
-			Assert.fail("The folder was not found!!!!");
+		if (element != null) {
+			folder.click();
 		} else {
 
-			folder.click();
+			Assert.fail("The folder was not found!!!!");
 
 		}
 	}
@@ -164,18 +180,5 @@ public class AlfrescoCreateNewFolderPage extends PageObject {
 
 	public void clickOnSaveContentFolder() {
 		saveContentFolderBtn.click();
-	}
-
-	public void clickOnContentFolder(String... terms) {
-		WebElement element = getTheSearchedFolder(terms);
-		System.out.println(element.getText());
-		WebElement contentFolder = element
-				.findElement(By.cssSelector("span a"));
-		System.out.println(contentFolder.getText());
-		if (element == null) {
-			Assert.fail("The folder was not found!!!!");
-		} else {
-			contentFolder.click();
-		}
 	}
 }

@@ -22,6 +22,11 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 	}
 
 	@Step
+	public void clickOnMore(String fileName) {
+		searchAndImportWikiDocument.clickOnMore(fileName);
+	}
+	
+	@Step
 	public void clickOnMarkLogicSearch() {
 		searchAndImportWikiDocument.clickOnMarkLogicSearch();
 	}
@@ -63,10 +68,10 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 	}
 
 	@StepGroup
-	public void searchAndImportWikiDocument() {
-		clickOnResearchFolder();
+	public void searchAndImportWikiDocument(String fileName, String searchTerm) {
+//		clickOnMore(fileName);
 		clickOnMarkLogicSearch();
-		inputSearchTerm("testing");
+		inputSearchTerm(searchTerm);
 		clickOnResearchBtn();
 		clickOnDocumentContainer();
 //		getARandomLink();

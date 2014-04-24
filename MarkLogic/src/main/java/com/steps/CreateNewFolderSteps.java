@@ -17,9 +17,15 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	AlfrescoCreateNewFolderPage createNewFolder;
 	
 	@Step
-	public boolean verifyIfFolderExists(String... terms) {
-		 return createNewFolder.verifyIfFolderExists(terms);
+	public void verifyIfNodesExistInBreadcrumbs(String... terms) {
+		  createNewFolder.verifyIfNodesExistInBreadcrumbs(terms);
 	}
+	
+	@Step
+	public boolean verifyIfFolderExists(String term) {
+		 return createNewFolder.verifyIfFolderExists(term);
+	}
+	
 	@Step
 	public void clickOnFolder(String... terms) {
 		 createNewFolder.clickOnFolder(terms);
@@ -63,43 +69,35 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	public void clickOnSaveContentFolder() {
 		createNewFolder.clickOnSaveContentFolder();
 	}
-
-	@Step
-	public void clickOnContentFolder(String...terms) {
-		createNewFolder.clickOnContentFolder(terms);
-	}
 	
 	@StepGroup
-	public void contentFolder(String contentFolder){
-		clickOnContentFolder(contentFolder);
-	}
-	
-	@StepGroup
-	public void CreateFolderFromTemplate(String contentFolderName, String contentFolder ) {
+	public void createFolderFromTemplate(String contentFolderName, String folderName, String... nodes ) {
 		/*clickOnCreate();
 		clickOnCreateFolderFromTemplate();
 		clickOnCreateContentFolder();
 		inputContentFolderName(contentFolderName);
 		clickOnSaveContentFolder();*/
-		contentFolder(contentFolder);
+		clickOnFolder(folderName);
+		verifyIfNodesExistInBreadcrumbs(nodes);
+
 	}
 
 
 	@StepGroup
-	public void CreateNewFolderTest(String folderName,String contentFolderName, String contentFolder, String... terms) {
-		if(!verifyIfFolderExists(terms)){
-			System.out.println("Folder is created");
-			clickOnFolder(folderName);
-			CreateFolderFromTemplate(contentFolderName, contentFolder);
-		} else{
+	public void createNewFolderTest(String folderName,String contentFolderName, String term, String... nodes) {
+		if(!verifyIfFolderExists(term)){
 			System.out.println("Create Test folder");
 			clickOnCreate();
 			clickOnCreateFolder();
 			inputFolderName(folderName);
 			clickOnCreateFolderBtn();
 			clickOnFolder(folderName);
-			
-			CreateFolderFromTemplate(contentFolderName, contentFolder);
+			createFolderFromTemplate(contentFolderName, folderName);
+		} else{
+			System.out.println("Folder is created");
+			clickOnFolder(folderName);
+			verifyIfNodesExistInBreadcrumbs(nodes);
+			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		}
 		
 			

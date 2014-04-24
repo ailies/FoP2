@@ -81,6 +81,10 @@ public class BuildMyBookActionsPage extends PageObject {
 
 	@FindBy(css = "button.generate")
 	WebElement generatePublicationBtn;
+	
+	public void clickOnViewLatestPublication(){
+		viewLatestPublication.click();
+	}
 
 	public void clickOnViewArticleContent() {
 		viewArticleContent.click();

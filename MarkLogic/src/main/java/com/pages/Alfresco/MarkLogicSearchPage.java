@@ -13,14 +13,19 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import tools.AbstractPage;
+import tools.Constants;
 import tools.StringUtils;
 
-public class MarkLogicSearchPage extends PageObject {
+public class MarkLogicSearchPage extends AbstractPage {
 
 	public MarkLogicSearchPage(WebDriver driver) {
 		super(driver);
 	}
 
+	@FindBy(id = "yuievtautoid-0")
+	WebElement documentsListContainer;
+	
 	@FindBy(css = ".more-actions.hidden")
 	WebElement researchFolder;
 
@@ -61,6 +66,54 @@ public class MarkLogicSearchPage extends PageObject {
 		element(researchFolder).waitUntilVisible();
 		researchFolder.click();
 	}
+	
+	public void clickOnMore(String fileName){
+		System.out.println("(FUK YOU!)");
+		if(element(documentsListContainer).isVisible())
+		{
+			System.out.print("MATA");
+		}else
+		{
+			System.out.println("(-!-)");
+			element(documentsListContainer).waitUntilVisible();
+		}
+		waitABit(2000);
+		
+		List<WebElement> documentList = documentsListContainer.findElements(By.cssSelector("tr[class*='yui-dt-rec']"));
+		
+		for(Integer i=0; i <= documentList.size(); i++ )
+		{
+			System.out.println(documentList.toString());
+		}
+//		for (WebElement documentNow : documentList) {
+//
+//			WebElement docDetails = documentNow.findElement(By.cssSelector("h3.filename"));
+//
+//			if (docDetails.getText().contains(fileName)) {	
+//				System.out.println("fuckin' succes");
+//				//String elemHeader= docDetails.getCssValue("class");
+////				elementjQueryMouseOver("div.internal-show-more a span");
+////				waitABit(2000);
+////				
+////				elementjQueryClick("div.internal-show-more a span");
+////				waitABit(2000);
+////				
+////				WebElement moreListContainer = documentNow.findElement(By.cssSelector(".yui-dt-rec.yui-dt-even .yui-dt29-col-actions.yui-dt-col-actions.yui-dt-last .more-actions.hidden .mlsearch .action-link:nth-child(1)"));
+////				$$(".yui-dt-rec.yui-dt-even .yui-dt29-col-actions.yui-dt-col-actions.yui-dt-last .more-actions.hidden .mlsearch .action-link:nth-child(1)")
+////				yui-dt-rec.yui-dt-even .yui-dt29-col-actions.yui-dt-col-actions.yui-dt-last .yui-dt-liner .show-more
+////				
+////				System.out.println(("Searched elem ID: " + moreListContainer.getAttribute("id")));
+////				waitABit(2000);
+////				moreListContainer.sendKeys("");
+////				moreListContainer.sendKeys(" ");
+////				moreListContainer.findElement(By.tagName("MarkLogic Search")).click();
+//				waitABit(2000);
+//				
+//				break;
+//			}
+//		}
+	}
+	
 
 	public void clickOnMarkLogicSearch() {
 		element(markLogicSearch).waitUntilVisible();

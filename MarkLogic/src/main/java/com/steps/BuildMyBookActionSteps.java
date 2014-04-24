@@ -3,12 +3,18 @@ package com.steps;
 import com.pages.BuildMyBook.BuildMyBookActionsPage;
 
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
 public class BuildMyBookActionSteps extends ScenarioSteps{
 
 	BuildMyBookActionsPage buildMyBook;
+	
+	@Step
+	public void clickOnViewLatestPublication(){
+		buildMyBook.clickOnViewLatestPublication();
+	}
 	
 	@Step
 	public void clickOnViewArticleContent(){
@@ -128,5 +134,16 @@ public class BuildMyBookActionSteps extends ScenarioSteps{
 	@Step
 	public void clickOnGeneratePublicationBtn(){
 		buildMyBook.clickOnGeneratePublicationBtn();
+	}
+	
+	@StepGroup
+	public void buildMyBook(String searchTerm){
+		clickOnViewLatestPublication();
+		clickOnViewArticleContent();
+		clickOnAddAricle();
+		inputOnSearchTermInput(searchTerm);
+		clickOnSearchBtn();
+		clickOnViewArticleContent();
+		
 	}
 }
