@@ -1,20 +1,15 @@
 package com.pages.Alfresco;
 
-import java.sql.Time;
 import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import tools.AbstractPage;
-import tools.Delay;
 import tools.StringUtils;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.FindBy;
-import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
 public class AlfrescoCreateNewFolderPage extends AbstractPage {
