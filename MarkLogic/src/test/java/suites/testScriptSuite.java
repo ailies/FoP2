@@ -10,7 +10,6 @@ import AlfrescoCustomization.GenerateMasterXMLTest;
 import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
 import PublishingContent.CheckTagsTest;
 import PublishingContent.CreateCollectionAndAddDocumentsTest;
-import PublishingContent.LoginAsAdminTest;
 import PublishingContent.PublishXMLTest;
 import PublishingContent.SwichToBuildMyBookTest;
 import Research.CreateNewFolderTest;
@@ -38,7 +37,6 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	EditFilesWithInDesignTest.class,
 	ImportFilesToIDFolderTest.class,
 	EditHTMLFilesFromRenditionsFolderTest.class,
-	LoginAsAdminTest.class,
 	PublishXMLTest.class,
 	CheckTagsTest.class,
 	SwichToBuildMyBookTest.class,

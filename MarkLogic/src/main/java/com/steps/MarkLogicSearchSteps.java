@@ -1,5 +1,6 @@
 package com.steps;
 
+import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
 import com.pages.Alfresco.MarkLogicSearchPage;
 
 import net.thucydides.core.annotations.Step;
@@ -16,16 +17,18 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 
 	MarkLogicSearchPage searchAndImportWikiDocument;
 
+	AlfrescoCreateNewFolderPage createNewFolder;
+
 	@Step
 	public void clickOnResearchFolder() {
 		searchAndImportWikiDocument.clickOnResearchFolder();
 	}
 
 	@Step
-	public void clickOnMore(String fileName) {
-		searchAndImportWikiDocument.clickOnMore(fileName);
+	public void clickOnMoreResearch(String fileName) {
+		searchAndImportWikiDocument.clickOnMoreResearch(fileName);
 	}
-	
+
 	@Step
 	public void clickOnMarkLogicSearch() {
 		searchAndImportWikiDocument.clickOnMarkLogicSearch();
@@ -45,12 +48,12 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 	public void clickOnDocumentContainer() {
 		searchAndImportWikiDocument.clickOnDocumentContainer();
 	}
-	
-	/*@Step
-	public String getARandomLink() {
-		return searchAndImportWikiDocument.getARandomLink();
-	}*/
 
+	
+	@Step 
+	public void clickOnMoreOptions(String term){
+		searchAndImportWikiDocument.clickOnMoreOptions(term);
+	}
 
 	@Step
 	public void clickOnViewFullContent() {
@@ -67,15 +70,27 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 		searchAndImportWikiDocument.clickOnImportDocuments();
 	}
 
+	@Step
+	public boolean verifyIfFolderExists(String term) {
+		return createNewFolder.verifyIfFolderExists(term);
+	}
+	
+	@Step
+	public void clickOnSortDescending(){
+		searchAndImportWikiDocument.clickOnSortDescending();
+	}
+
 	@StepGroup
 	public void searchAndImportWikiDocument(String fileName, String searchTerm) {
-//		clickOnMore(fileName);
-		clickOnMarkLogicSearch();
+		
+//		clickOnSortDescending();
+//		clickOnMoreResearch(fileName);
+		clickOnMoreOptions("Research");
 		inputSearchTerm(searchTerm);
 		clickOnResearchBtn();
 		clickOnDocumentContainer();
-//		getARandomLink();
-//		selectRandomDocumentAndClickOnIt();
+		// getARandomLink();
+		// selectRandomDocumentAndClickOnIt();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
 		clickOnImportDocuments();

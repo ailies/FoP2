@@ -27,7 +27,7 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	}
 	
 	@Step
-	public void clickOnFolder(String... terms) {
+	public void clickOnFolder(String... terms ) {
 		 createNewFolder.clickOnFolder(terms);
 	}
 	@Step
@@ -72,13 +72,14 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	
 	@StepGroup
 	public void createFolderFromTemplate(String contentFolderName, String folderName, String... nodes ) {
-		/*clickOnCreate();
+		clickOnCreate();
 		clickOnCreateFolderFromTemplate();
 		clickOnCreateContentFolder();
 		inputContentFolderName(contentFolderName);
-		clickOnSaveContentFolder();*/
-		clickOnFolder(folderName);
-		verifyIfNodesExistInBreadcrumbs(nodes);
+		clickOnSaveContentFolder();
+		waitABit(10000);
+		clickOnFolder("DemoTesting");
+		verifyIfNodesExistInBreadcrumbs("DemoTesting");
 
 	}
 
@@ -92,11 +93,12 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 			inputFolderName(folderName);
 			clickOnCreateFolderBtn();
 			clickOnFolder(folderName);
-			createFolderFromTemplate(contentFolderName, folderName);
+			verifyIfNodesExistInBreadcrumbs("Test");
+			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		} else{
 			System.out.println("Folder is created");
-			clickOnFolder(folderName);
-			verifyIfNodesExistInBreadcrumbs(nodes);
+			clickOnFolder("Test");
+			verifyIfNodesExistInBreadcrumbs("Test");
 			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		}
 		

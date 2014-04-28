@@ -3,6 +3,7 @@ package com.steps;
 import org.junit.Assert;
 
 import com.pages.Alfresco.AlfrescoLoginPage;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;

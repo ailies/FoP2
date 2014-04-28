@@ -38,7 +38,7 @@ public class CropImageAndGenerateRenditionsTest {
 		public CropImageAndGenerateRenditionsSteps cropImageAndGemerateRenditions;
 
 		@Test
-		public void login() {
+		public void imageActions() {
 			login.loginToSite("admin", "admin");
 			login.GetToFolder();
 //			createNewFolder.CreateNewFolder();

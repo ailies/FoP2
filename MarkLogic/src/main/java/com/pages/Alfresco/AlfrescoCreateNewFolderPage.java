@@ -119,6 +119,7 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))
 				.getText().trim();
+		System.out.println(noOfPagesContainer.toString());
 		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
 				noOfPagesContainer).get(3);
 		for (int i = 0; i < noOfPages; i++) {
@@ -156,10 +157,8 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 		if (element != null) {
 			folder.click();
 		} else {
-
 			Assert.fail("The folder was not found!!!!");
-
-		}
+		}	
 	}
 
 	public void clickOnCreateFolderFromTemplate() {
@@ -181,4 +180,6 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 	public void clickOnSaveContentFolder() {
 		saveContentFolderBtn.click();
 	}
+
+	
 }
