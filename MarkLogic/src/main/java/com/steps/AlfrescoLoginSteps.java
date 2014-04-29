@@ -77,6 +77,7 @@ public class AlfrescoLoginSteps extends ScenarioSteps {
 
 	@StepGroup
 	public void loginToSite(String screenName, String pass) {
+		getDriver().manage().window().maximize();
 		getDriver().get("http://172.16.10.115:8080/share/page/");
 		verifyLoginPageIsOpen();
 		enterUsername(screenName);

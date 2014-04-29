@@ -19,10 +19,15 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 
 	AlfrescoCreateNewFolderPage createNewFolder;
 
-	@Step
-	public void inputSearchTerm(String term) {
-		searchAndImportWikiDocument.inputSearchTerm(term);
-	}
+	/*
+	 * @Step public void clickOnMarkLogicSearch(){
+	 * searchAndImportWikiDocument.clickOnMarkLogicSearch(); }
+	 */
+
+	/*
+	 * @Step public void inputSearchTerm(String searchKey) {
+	 * searchAndImportWikiDocument.inputSearchTerm(searchKey); }
+	 */
 
 	@Step
 	public void clickOnResearchBtn() {
@@ -62,7 +67,7 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 	@StepGroup
 	public void searchAndImportWikiDocument(String fileName, String searchTerm) {
 		clickOnMoreOptions("Research");
-		inputSearchTerm(searchTerm);
+		// inputSearchTerm("development");
 		clickOnResearchBtn();
 		clickOnDocumentContainer();
 		// getARandomLink();

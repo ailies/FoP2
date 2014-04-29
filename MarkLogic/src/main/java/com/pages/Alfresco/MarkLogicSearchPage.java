@@ -18,13 +18,10 @@ public class MarkLogicSearchPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = ".mlsearch")
-	WebElement markLogicSearch;
-
-	@FindBy(id = "searchTermInput")
+	@FindBy(using = "searchTermInput")
 	WebElement searchTerm;
 
-	@FindBy(tagName = "Research")
+	@FindBy(css = ".col.col-3>button")
 	WebElement researchBtn;
 
 	@FindBy(css = ".view")
@@ -44,9 +41,6 @@ public class MarkLogicSearchPage extends AbstractPage {
 
 	@FindBy(id = "button.generate")
 	WebElement importDocuments;
-
-	@FindBy(css = ".more-actions")
-	WebElement moreActionsOption;
 
 	public WebElement getTheSearchedElement(String... terms) {
 		String noOfPagesContainer = getDriver()
@@ -91,15 +85,22 @@ public class MarkLogicSearchPage extends AbstractPage {
 			Actions mouseOver = new Actions(getDriver());
 			mouseOver.moveToElement(element).build().perform();
 			WebElement moreButton = element.findElement(By
-					.id("onActionShowMore"));
+					.cssSelector("#onActionShowMore a"));
+			mouseOver.click(element).build().perform();
 
-			moreButton.sendKeys();
 			moreButton.click();
 
-			moreActionsOption.click();
+			WebElement markLogicSearch = element.findElement(By
+					.cssSelector("a[title='MarkLogic Search']"));
 
-			element(markLogicSearch).waitUntilVisible();
+			markLogicSearch.isDisplayed();
+			waitABit(2000);
 			markLogicSearch.click();
+			
+			WebElement searchTerm = getDriver().findElement(By
+					.cssSelector("div.input[id='searchTerm']"));
+			searchTerm.isDisplayed();
+			searchTerm.sendKeys(term);
 		}
 	}
 
@@ -139,11 +140,18 @@ public class MarkLogicSearchPage extends AbstractPage {
 	 * break; } } }
 	 */
 
-	public void inputSearchTerm(String term) {
-		element(searchTerm).waitUntilVisible();
+/*	public void inputSearchTerm(String term) {
+		WebElement searchTerm = getDriver().findElement(By
+				.xpath(".//*[@id='searchTermInput']"));
+		searchTerm.isDisplayed();
 		searchTerm.sendKeys(term);
+	}*/
+	
+	/*public void inputSearchTerm(String searchKey) {
+		element(searchTerm).waitUntilVisible();
+		searchTerm.sendKeys(searchKey);
 	}
-
+*/
 	public void clickOnResearchBtn() {
 		element(researchBtn).waitUntilVisible();
 		researchBtn.click();
@@ -204,8 +212,8 @@ public class MarkLogicSearchPage extends AbstractPage {
 		element(importDocuments).waitUntilVisible();
 		importDocuments.click();
 	}
-	
-	public void verifyIfFilesWereImported(){
-		
+
+	public void verifyIfFilesWereImported() {
+
 	}
 }
