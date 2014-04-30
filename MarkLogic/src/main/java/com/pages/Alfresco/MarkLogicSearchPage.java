@@ -121,22 +121,22 @@ public class MarkLogicSearchPage extends AbstractPage {
 	public String getARandomLink() {
 		List<WebElement> listOfLinks = new ArrayList<WebElement>();
 		Random r = new Random();
-		String noOfPagesContainer = getDriver()
-				.findElement(By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]")).getText()
-				.trim();
-		System.out.println(noOfPagesContainer);
-		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
-				noOfPagesContainer).get(1);
-		for (int i = 0; i < noOfPages; i++) {
-			listOfLinks.addAll(getDriver().findElements(
-					By.cssSelector(".block.articles .view ul li")));
+		/*
+		 * String noOfPagesContainer = getDriver()
+		 * .findElement(By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]"
+		 * )).getText() .trim(); System.out.println(noOfPagesContainer); int
+		 * noOfPages = StringUtils.getAllIntegerNumbersFromString(
+		 * noOfPagesContainer).get(1); for (int i = 0; i < noOfPages; i++) {
+		 */
+		listOfLinks.addAll(getDriver().findElements(
+				By.cssSelector(".block.articles .view ul li")));
 
-			/*if (i < noOfPages - 1) {
-				getDriver().findElement(
-						By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]/a")).click();
-				waitABit(2000);
-			}*/
-		}
+		/*
+		 * if (i < noOfPages - 1) { getDriver().findElement(
+		 * By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]/a")).click();
+		 * waitABit(2000); }
+		 */
+
 		int listSize = listOfLinks.size();
 		System.out.println(String.valueOf(listSize));
 		int index = r.nextInt(listSize);
@@ -145,11 +145,12 @@ public class MarkLogicSearchPage extends AbstractPage {
 
 	}
 
-//	String link = getARandomLink();
+	
 
-	public void clickOnARandomLink(String term) {
+	public void clickOnARandomLink() {
+		String term = getARandomLink();
 		String noOfPagesContainer = getDriver()
-				.findElement(By.id(".margin-bottom:15px")).getText().trim();
+				.findElement(By.id("/html/body/div/div/div[2]/div[1]/div/div[3]/a")).getText().trim();
 		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
 				noOfPagesContainer).get(0);
 		boolean foundTerms = false;
@@ -160,16 +161,20 @@ public class MarkLogicSearchPage extends AbstractPage {
 				if (searchResult.getText().toLowerCase()
 						.contains(term.toLowerCase())) {
 					foundTerms = true;
-					searchResult.click();
+					searchResult.findElement(By.cssSelector("a")).click();;
 					break;
 				}
 			}
-			if (i < noOfPages - 1 && !foundTerms) {
-				getDriver().findElement(
-						By.cssSelector(".ui-icon.ui-icon-seek-next")).click();
+			if (i < noOfPages - 1) {
+				getDriver()
+						.findElement(
+								By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]/a"))
+						.click();
+				waitABit(2000);
 			} else
 				break;
 		}
+
 		Assert.assertTrue("The link was not found!", foundTerms);
 	}
 
