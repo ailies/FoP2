@@ -19,29 +19,29 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 
 	AlfrescoCreateNewFolderPage createNewFolder;
 
-	/*
-	 * @Step public void clickOnMarkLogicSearch(){
-	 * searchAndImportWikiDocument.clickOnMarkLogicSearch(); }
-	 */
-
-	/*
-	 * @Step public void inputSearchTerm(String searchKey) {
-	 * searchAndImportWikiDocument.inputSearchTerm(searchKey); }
-	 */
-
 	@Step
-	public void clickOnResearchBtn() {
-		searchAndImportWikiDocument.clickOnResearchBtn();
+	public String getARandomLink() {
+		return searchAndImportWikiDocument.getARandomLink();
 	}
-
-	@Step
-	public void clickOnDocumentContainer() {
-		searchAndImportWikiDocument.clickOnDocumentContainer();
-	}
-
+	
 	@Step
 	public void clickOnMoreOptions(String term) {
 		searchAndImportWikiDocument.clickOnMoreOptions(term);
+	}
+	
+	@Step
+	public void inputSearchTerm(String term) {
+		searchAndImportWikiDocument.inputSearchTerm(term);
+	}
+	
+/*	@Step
+	public void clickOnARandomLink(String term) {
+		searchAndImportWikiDocument.clickOnARandomLink(term);
+	}*/
+	
+	@Step
+	public void clickOnDocumentContainer() {
+		searchAndImportWikiDocument.clickOnDocumentContainer();
 	}
 
 	@Step
@@ -67,11 +67,10 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 	@StepGroup
 	public void searchAndImportWikiDocument(String fileName, String searchTerm) {
 		clickOnMoreOptions("Research");
-		// inputSearchTerm("development");
-		clickOnResearchBtn();
+		inputSearchTerm("development");
 		clickOnDocumentContainer();
-		// getARandomLink();
-		// selectRandomDocumentAndClickOnIt();
+		getARandomLink();
+//		clickOnARandomLink();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
 		clickOnImportDocuments();

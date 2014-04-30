@@ -1,6 +1,9 @@
 package com.pages.Alfresco;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 import net.thucydides.core.annotations.findby.By;
 import net.thucydides.core.annotations.findby.FindBy;
 
@@ -18,10 +21,10 @@ public class MarkLogicSearchPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(using = "searchTermInput")
-	WebElement searchTerm;
+	@FindBy(css = "input#searchTermInput")
+	WebElement inputSearch;
 
-	@FindBy(css = ".col.col-3>button")
+	@FindBy(css = "button:nth-child(1) > span")
 	WebElement researchBtn;
 
 	@FindBy(css = ".view")
@@ -96,64 +99,17 @@ public class MarkLogicSearchPage extends AbstractPage {
 			markLogicSearch.isDisplayed();
 			waitABit(2000);
 			markLogicSearch.click();
-			
-			WebElement searchTerm = getDriver().findElement(By
-					.cssSelector("div.input[id='searchTerm']"));
-			searchTerm.isDisplayed();
-			searchTerm.sendKeys(term);
 		}
 	}
 
-	/*
-	 * public void clickOnMoreResearch(String fileName) {
-	 * System.out.println("(FUK YOU!)"); if
-	 * (element(documentsListContainer).isDisplayed()) {
-	 * System.out.print("MATA"); } else { System.out.println("(-!-)");
-	 * element(documentsListContainer).waitUntilVisible(); } waitABit(2000);
-	 * 
-	 * List<WebElement> documentList = documentsListContainer.findElements(By
-	 * .cssSelector("tr[class*='yui-dt-rec']"));
-	 * 
-	 * // for(Integer i=0; i <= documentList.size(); i++ ) // { //
-	 * System.out.println(documentList.toString()); // }
-	 * 
-	 * for (WebElement documentNow : documentList) {
-	 * 
-	 * WebElement docDetails = documentNow.findElement(By
-	 * .cssSelector("h3.filename"));
-	 * 
-	 * if (docDetails.getText().contains(fileName)) {
-	 * System.out.println("fuckin' succes"); String elemHeader =
-	 * docDetails.getCssValue("class");
-	 * elementjQueryMouseOver("div.internal-show-more a span"); waitABit(2000);
-	 * 
-	 * elementjQueryClick("div.internal-show-more a span"); waitABit(2000);
-	 * 
-	 * WebElement moreListContainer = documentNow.findElement(By
-	 * .cssSelector("div.more-actions div.mlsearch"));
-	 * System.out.println(("Searched elem ID: " + moreListContainer
-	 * .getAttribute("id"))); waitABit(Constants.WAIT_TIME_SHORT);
-	 * moreListContainer.sendKeys(""); moreListContainer.sendKeys(" ");
-	 * moreListContainer.findElement(By.tagName("a")).click();
-	 * waitABit(Constants.WAIT_TIME_LONG);
-	 * 
-	 * break; } } }
-	 */
+	public void inputSearchTerm(String term) {
+		getDriver().switchTo().frame(
+				getDriver().findElement(By.id("mlSearchArticleIframe")));
+		WebElement searchIframe = getDriver().switchTo().activeElement();
+		searchIframe.click();
+		element(inputSearch).waitUntilVisible();
+		inputSearch.sendKeys(term);
 
-/*	public void inputSearchTerm(String term) {
-		WebElement searchTerm = getDriver().findElement(By
-				.xpath(".//*[@id='searchTermInput']"));
-		searchTerm.isDisplayed();
-		searchTerm.sendKeys(term);
-	}*/
-	
-	/*public void inputSearchTerm(String searchKey) {
-		element(searchTerm).waitUntilVisible();
-		searchTerm.sendKeys(searchKey);
-	}
-*/
-	public void clickOnResearchBtn() {
-		element(researchBtn).waitUntilVisible();
 		researchBtn.click();
 	}
 
@@ -162,41 +118,60 @@ public class MarkLogicSearchPage extends AbstractPage {
 		documentContainer.click();
 	}
 
-	/*
-	 * public String getARandomLink() { List<WebElement> listOfLinks = new
-	 * ArrayList<WebElement>(); Random r = new Random(); String
-	 * noOfPagesContainer = getDriver()
-	 * .findElement(By.cssSelector(".margin-bottom:15px")).getText() .trim();
-	 * int noOfPages = StringUtils.getAllIntegerNumbersFromString(
-	 * noOfPagesContainer).get(1); for (int i = 0; i < noOfPages; i++) {
-	 * listOfLinks.addAll(getDriver().findElements(
-	 * By.cssSelector(".block.articles .view ul li")));
-	 * 
-	 * if (i < noOfPages - 1) { getDriver().findElement(
-	 * By.cssSelector(".ui-icon.ui-icon-seek-next")).click(); waitABit(2000); }
-	 * } int listSize = listOfLinks.size();
-	 * System.out.println(String.valueOf(listSize)); int index =
-	 * r.nextInt(listSize);
-	 * 
-	 * return (listOfLinks.get(index)).toString();
-	 * 
-	 * }
-	 * 
-	 * String link = getARandomLink();
-	 * 
-	 * public void clickOnARandomLink(String term) { String noOfPagesContainer =
-	 * getDriver() .findElement(By.id(".margin-bottom:15px")).getText().trim();
-	 * int noOfPages = StringUtils.getAllIntegerNumbersFromString(
-	 * noOfPagesContainer).get(0); boolean foundTerms = false; for (int i = 0; i
-	 * < noOfPages; i++) { List<WebElement> searchResults =
-	 * getDriver().findElements( By.cssSelector(".block.articles .view ul li"));
-	 * for (WebElement searchResult : searchResults) { if
-	 * (searchResult.getText().toLowerCase() .contains(term.toLowerCase())) {
-	 * foundTerms = true; searchResult.click(); break; } } if (i < noOfPages - 1
-	 * && !foundTerms) { getDriver().findElement(
-	 * By.cssSelector(".ui-icon.ui-icon-seek-next")).click(); } else break; }
-	 * Assert.assertTrue("The link was not found!", foundTerms); }
-	 */
+	public String getARandomLink() {
+		List<WebElement> listOfLinks = new ArrayList<WebElement>();
+		Random r = new Random();
+		String noOfPagesContainer = getDriver()
+				.findElement(By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]")).getText()
+				.trim();
+		System.out.println(noOfPagesContainer);
+		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
+				noOfPagesContainer).get(1);
+		for (int i = 0; i < noOfPages; i++) {
+			listOfLinks.addAll(getDriver().findElements(
+					By.cssSelector(".block.articles .view ul li")));
+
+			/*if (i < noOfPages - 1) {
+				getDriver().findElement(
+						By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]/a")).click();
+				waitABit(2000);
+			}*/
+		}
+		int listSize = listOfLinks.size();
+		System.out.println(String.valueOf(listSize));
+		int index = r.nextInt(listSize);
+		System.out.println(listOfLinks.get(index).getText());
+		return (listOfLinks.get(index)).toString();
+
+	}
+
+//	String link = getARandomLink();
+
+	public void clickOnARandomLink(String term) {
+		String noOfPagesContainer = getDriver()
+				.findElement(By.id(".margin-bottom:15px")).getText().trim();
+		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
+				noOfPagesContainer).get(0);
+		boolean foundTerms = false;
+		for (int i = 0; i < noOfPages; i++) {
+			List<WebElement> searchResults = getDriver().findElements(
+					By.cssSelector(".block.articles .view ul li"));
+			for (WebElement searchResult : searchResults) {
+				if (searchResult.getText().toLowerCase()
+						.contains(term.toLowerCase())) {
+					foundTerms = true;
+					searchResult.click();
+					break;
+				}
+			}
+			if (i < noOfPages - 1 && !foundTerms) {
+				getDriver().findElement(
+						By.cssSelector(".ui-icon.ui-icon-seek-next")).click();
+			} else
+				break;
+		}
+		Assert.assertTrue("The link was not found!", foundTerms);
+	}
 
 	public void clickOnViewFullContent() {
 		element(viewFullContent).waitUntilVisible();
