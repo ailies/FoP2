@@ -17,14 +17,14 @@ public class AlfrescoLoginSteps extends ScenarioSteps {
 	}
 
 	AlfrescoLoginPage alfrescoLoginPage;
-	
+
 	@Step
-    public void verifyLoginPageIsOpen() {
-        Assert.assertTrue(
-                "Current page is not the login page!",
-                alfrescoLoginPage.getDriver().getTitle()
-                        .matches("Alfresco.*Login"));
-    }
+	public void verifyLoginPageIsOpen() {
+		Assert.assertTrue(
+				"Current page is not the login page!",
+				alfrescoLoginPage.getDriver().getTitle()
+						.matches("Alfresco.*Login"));
+	}
 
 	@Step
 	public void enterUsername(String usernameTerm) {
@@ -35,15 +35,15 @@ public class AlfrescoLoginSteps extends ScenarioSteps {
 	public void enterPassword(String passwordTerm) {
 		alfrescoLoginPage.enterPassword(passwordTerm);
 	}
-	
+
 	@Step
-    public void enterPasswordAndCheckPasswordField(String password) {
-        enterPassword(password);
-        Assert.assertEquals(password.length(),
-                alfrescoLoginPage.getEnteredPasswordLength());
-        Assert.assertEquals("password",
-                alfrescoLoginPage.getPasswordFieldType());
-    }
+	public void enterPasswordAndCheckPasswordField(String password) {
+		enterPassword(password);
+		Assert.assertEquals(password.length(),
+				alfrescoLoginPage.getEnteredPasswordLength());
+		Assert.assertEquals("password",
+				alfrescoLoginPage.getPasswordFieldType());
+	}
 
 	@Step
 	public void clickOnLoginBtn() {

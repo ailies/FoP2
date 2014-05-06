@@ -18,22 +18,22 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 	MarkLogicSearchPage searchAndImportWikiDocument;
 
 	AlfrescoCreateNewFolderPage createNewFolder;
-	
+
 	@Step
 	public void clickOnMoreOptions(String term) {
 		searchAndImportWikiDocument.clickOnMoreOptions(term);
 	}
-	
+
 	@Step
 	public void inputSearchTerm(String term) {
 		searchAndImportWikiDocument.inputSearchTerm(term);
 	}
-	
+
 	@Step
 	public void clickOnARandomLink() {
 		searchAndImportWikiDocument.clickOnARandomLink();
 	}
-	
+
 	@Step
 	public void clickOnDocumentContainer() {
 		searchAndImportWikiDocument.clickOnDocumentContainer();

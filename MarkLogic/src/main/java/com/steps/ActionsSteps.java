@@ -270,9 +270,4 @@ public class ActionsSteps extends ScenarioSteps{
 	public void clickOnDetailedViewAsDefaultForThisFolder(){
 		alfrescoActions.clickOnDetailedViewAsDefaultForThisFolder();
 	}
-	
-	@StepGroup
-	public void createNewFolderActions(){
-		
-	}
 }

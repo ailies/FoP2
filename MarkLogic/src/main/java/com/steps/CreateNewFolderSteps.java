@@ -15,21 +15,22 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	}
 
 	AlfrescoCreateNewFolderPage createNewFolder;
-	
+
 	@Step
 	public void verifyIfNodesExistInBreadcrumbs(String... terms) {
-		  createNewFolder.verifyIfNodesExistInBreadcrumbs(terms);
+		createNewFolder.verifyIfNodesExistInBreadcrumbs(terms);
 	}
-	
+
 	@Step
 	public boolean verifyIfFolderExists(String term) {
-		 return createNewFolder.verifyIfFolderExists(term);
+		return createNewFolder.verifyIfFolderExists(term);
 	}
-	
+
 	@Step
-	public void clickOnFolder(String... terms ) {
-		 createNewFolder.clickOnFolder(terms);
+	public void clickOnFolder(String... terms) {
+		createNewFolder.clickOnFolder(terms);
 	}
+
 	@Step
 	public void clickOnCreate() {
 		createNewFolder.clickOnCreate();
@@ -69,9 +70,10 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 	public void clickOnSaveContentFolder() {
 		createNewFolder.clickOnSaveContentFolder();
 	}
-	
+
 	@StepGroup
-	public void createFolderFromTemplate(String contentFolderName, String folderName, String... nodes ) {
+	public void createFolderFromTemplate(String contentFolderName,
+			String folderName, String... nodes) {
 		clickOnCreate();
 		clickOnCreateFolderFromTemplate();
 		clickOnCreateContentFolder();
@@ -83,10 +85,10 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 
 	}
 
-
 	@StepGroup
-	public void createNewFolderTest(String folderName,String contentFolderName, String term, String... nodes) {
-		if(!verifyIfFolderExists(term)){
+	public void createNewFolderTest(String folderName,
+			String contentFolderName, String term, String... nodes) {
+		if (!verifyIfFolderExists(term)) {
 			System.out.println("Create Test folder");
 			clickOnCreate();
 			clickOnCreateFolder();
@@ -95,13 +97,12 @@ public class CreateNewFolderSteps extends ScenarioSteps {
 			clickOnFolder(folderName);
 			verifyIfNodesExistInBreadcrumbs("Test");
 			createFolderFromTemplate(contentFolderName, folderName, nodes);
-		} else{
+		} else {
 			System.out.println("Folder is created");
 			clickOnFolder("Test");
 			verifyIfNodesExistInBreadcrumbs("Test");
 			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		}
-		
-			
+
 	}
 }

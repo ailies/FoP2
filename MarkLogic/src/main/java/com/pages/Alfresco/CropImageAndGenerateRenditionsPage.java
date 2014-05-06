@@ -11,7 +11,7 @@ import net.thucydides.core.pages.PageObject;
 
 public class CropImageAndGenerateRenditionsPage extends PageObject {
 
-	@FindBy(css = "[attribute*='value']" )
+	@FindBy(css = "[attribute*='value']")
 	WebElement image;
 
 	@FindBy(id = "")
@@ -22,7 +22,7 @@ public class CropImageAndGenerateRenditionsPage extends PageObject {
 
 	@FindBy(id = "")
 	WebElement saveCroppedImageBtn;
-	
+
 	public WebElement selectAPicture(String... terms) {
 		String noOfPagesContainer = getDriver()
 				.findElement(

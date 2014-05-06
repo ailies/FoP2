@@ -2,10 +2,9 @@ package tools;
 
 public class Constants {
 
-	
 	public static final long WAIT_TIME_LONG = 9000;
 	public static final long WAIT_TIME_SHORT = 2000;
-	
+
 	// API LOGIN
 	public static final String ALFRESCO_USER_LOGIN = "admin";
 	public static final String ALFRESCO_PASS_LOGIN = "admin";

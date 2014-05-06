@@ -1,5 +1,7 @@
 package com.pages.Alfresco;
 
-public class PublishOnBuildMyBookPage {
+import net.thucydides.core.pages.PageObject;
+
+public class PublishOnBuildMyBookPage extends PageObject{
 
 }

@@ -27,7 +27,7 @@ public class AlfrescoCreateNewUserPage extends PageObject {
 
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")
 	WebElement firstNameField;
-	
+
 	@FindBy(id = "page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")
 	WebElement lastNameField;
 
@@ -66,7 +66,7 @@ public class AlfrescoCreateNewUserPage extends PageObject {
 		firstNameField.clear();
 		firstNameField.sendKeys(fName);
 	}
-	
+
 	public void inputLastNameField(String lName) {
 		element(lastNameField).waitUntilVisible();
 		lastNameField.clear();

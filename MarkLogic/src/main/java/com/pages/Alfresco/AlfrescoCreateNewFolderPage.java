@@ -153,7 +153,7 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 			folder.click();
 		} else {
 			Assert.fail("The folder was not found!!!!");
-		}	
+		}
 	}
 
 	public void clickOnCreateFolderFromTemplate() {
@@ -164,7 +164,6 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 	public void clickOnCreateContentFolder() {
 		element(createContentFolder).waitUntilVisible();
 		element(createContentFolder).click();
-		// waitABit(2000);
 	}
 
 	public void inputContentFolderName(String contentName) {
@@ -176,5 +175,4 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 		saveContentFolderBtn.click();
 	}
 
-	
 }

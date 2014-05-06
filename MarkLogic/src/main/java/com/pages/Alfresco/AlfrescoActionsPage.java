@@ -89,104 +89,103 @@ public class AlfrescoActionsPage extends PageObject {
 
 	@FindBy(css = "a[title='Submit to publish']")
 	private WebElement submitToPublish;
-	
-	@FindBy(css ="a[title='Change Type']")
+
+	@FindBy(css = "a[title='Change Type']")
 	private WebElement changeType;
-	
-	@FindBy(css ="a[title='Annotations']")
+
+	@FindBy(css = "a[title='Annotations']")
 	private WebElement annotations;
-	
-	@FindBy(id ="template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button")
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button")
 	private WebElement assemblyView;
-	
-	@FindBy(id ="template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-sortAscending-button-button")
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-sortAscending-button-button")
 	private WebElement sortBtn;
-	
-	@FindBy(id ="template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-sortField-button-button")
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-sortField-button-button")
 	private WebElement sortFieldByName;
-	
-	@FindBy(css ="a[title='Name']")
+
+	@FindBy(css = "a[title='Name']")
 	private WebElement sortByName;
-	
-	@FindBy(css ="a[title='Popularity']")
+
+	@FindBy(css = "a[title='Popularity']")
 	private WebElement sortByPopularity;
-	
-	@FindBy(css ="a[title='Title']")
+
+	@FindBy(css = "a[title='Title']")
 	private WebElement sortByTitle;
-	
-	@FindBy(css ="a[title='Description']")
+
+	@FindBy(css = "a[title='Description']")
 	private WebElement sortByDescription;
-	
-	@FindBy(css ="a[title='Created']")
+
+	@FindBy(css = "a[title='Created']")
 	private WebElement sortByCreated;
-	
-	@FindBy(css ="a[title='Creator']")
+
+	@FindBy(css = "a[title='Creator']")
 	private WebElement sortByCreator;
-	
-	@FindBy(css ="a[title='Modified']")
+
+	@FindBy(css = "a[title='Modified']")
 	private WebElement sortByModified;
-	
-	@FindBy(css ="a[title='Modifier']")
+
+	@FindBy(css = "a[title='Modifier']")
 	private WebElement sortByModifier;
-	
-	@FindBy(css ="a[title='Size']")
+
+	@FindBy(css = "a[title='Size']")
 	private WebElement sortBySize;
-	
-	@FindBy(css ="a[title='Mimetype']")
+
+	@FindBy(css = "a[title='Mimetype']")
 	private WebElement sortByMimetype;
-	
-	@FindBy(css ="a[title='Type']")
+
+	@FindBy(css = "a[title='Type']")
 	private WebElement sortByType;
-	
-	
-	@FindBy(id ="template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-options-button-button")
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-options-button-button")
 	private WebElement defaultOptionsBtn;
-	
-	@FindBy(css =".hideFolders")
+
+	@FindBy(css = ".hideFolders")
 	private WebElement hideFolders;
-	
-	@FindBy(css =".hidePath")
+
+	@FindBy(css = ".hidePath")
 	private WebElement hideBreadCrumb;
-	
-	@FindBy(css =".rss")
+
+	@FindBy(css = ".rss")
 	private WebElement RSSFeed;
-	
-	@FindBy(css =".fullWindow")
+
+	@FindBy(css = ".fullWindow")
 	private WebElement fullWindow;
-	
-	@FindBy(css =".yuimenuitemlabel .fullScreen")
+
+	@FindBy(css = ".yuimenuitemlabel .fullScreen")
 	private WebElement fullScreen;
-	
-	@FindBy(css =".view.simple")
+
+	@FindBy(css = ".view.simple")
 	private WebElement simpleView;
-	
-	@FindBy(css =".view.detailed")
+
+	@FindBy(css = ".view.detailed")
 	private WebElement detailedView;
-	
-	@FindBy(css =".view.gallery")
+
+	@FindBy(css = ".view.gallery")
 	private WebElement galleryView;
-	
-	@FindBy(css =".view.gallery")
+
+	@FindBy(css = ".view.gallery")
 	private WebElement filmstripView;
-	
-	@FindBy(css =".view.gallery")
+
+	@FindBy(css = ".view.gallery")
 	private WebElement tableView;
-	
-	@FindBy(css =".view.gallery")
+
+	@FindBy(css = ".view.gallery")
 	private WebElement audioView;
-	
-	@FindBy(css =".view.gallery")
+
+	@FindBy(css = ".view.gallery")
 	private WebElement mediaView;
-	
-	@FindBy(css =".bottomscrollbar.bottomscrollbar_disabled")
+
+	@FindBy(css = ".bottomscrollbar.bottomscrollbar_disabled")
 	private WebElement bottomScrollBar;
-	
-	@FindBy(css =".hd.topscrollbar")
+
+	@FindBy(css = ".hd.topscrollbar")
 	private WebElement topScrollBar;
-	
-	@FindBy(css =".view.gallery")
+
+	@FindBy(css = ".view.gallery")
 	private WebElement DetailedViewAsDefaultForThisFolder;
-	
+
 	// ------------folder methods--------------
 	public void clickOnDownloadAsZip() {
 		element(downloadAsZip).waitUntilVisible();
@@ -303,123 +302,123 @@ public class AlfrescoActionsPage extends PageObject {
 		element(submitToPublish).waitUntilVisible();
 		submitToPublish.click();
 	}
-	
+
 	public void clickOnAnnotations() {
 		element(annotations).waitUntilVisible();
 		annotations.click();
 	}
-	
+
 	public void clickOnAssemblyView() {
 		element(assemblyView).waitUntilVisible();
 		assemblyView.click();
 	}
-	
+
 	public void clickOnSortBtn() {
 		sortBtn.click();
 	}
-	
+
 	public void clickOnSortFieldByName() {
 		sortFieldByName.click();
 	}
-	
+
 	public void clickOnSortByName() {
 		sortByName.click();
 	}
-	
+
 	public void clickOnSortByPopularity() {
 		sortByPopularity.click();
 	}
-	
+
 	public void clickOnSortByTitle() {
 		sortByTitle.click();
 	}
-	
+
 	public void clickOnSortByDescription() {
 		sortByDescription.click();
 	}
-	
+
 	public void clickOnSortByCreated() {
 		sortByCreated.click();
 	}
-	
+
 	public void clickOnSortByCreator() {
 		sortByCreator.click();
 	}
-	
+
 	public void clickOnSortByModified() {
 		sortByModified.click();
 	}
-	
+
 	public void clickOnSortByModifier() {
 		sortByModifier.click();
 	}
-	
+
 	public void clickOnSortBySize() {
 		sortBySize.click();
 	}
-	
+
 	public void clickOnSortByMimetype() {
 		sortByMimetype.click();
 	}
-	
+
 	public void clickOnSortByType() {
 		sortByType.click();
 	}
-	
+
 	public void clickOnDefaultOptionsBtn() {
 		defaultOptionsBtn.click();
 	}
-	
+
 	public void clickOnHideFolders() {
 		hideFolders.click();
 	}
-	
+
 	public void clickOnHideBreadcrumb() {
 		hideBreadCrumb.click();
 	}
-	
+
 	public void clickOnRSSFeed() {
 		RSSFeed.click();
 	}
-	
+
 	public void clickOnFullWindow() {
 		fullWindow.click();
 	}
-	
+
 	public void clickOnFullScreen() {
 		fullScreen.click();
 	}
-	
+
 	public void clickOnSimpleView() {
 		simpleView.click();
 	}
-	
+
 	public void clickOnDetailedView() {
 		detailedView.click();
 	}
-	
+
 	public void clickOnGalleryView() {
 		galleryView.click();
 	}
-	
+
 	public void clickOnFilmstripView() {
 		filmstripView.click();
 	}
-	
+
 	public void clickOnTableView() {
 		tableView.click();
 	}
-	
+
 	public void clickOnAudioView() {
 		audioView.click();
 	}
-	
+
 	public void clickOnMediaView() {
 		mediaView.click();
 	}
-	
+
 	public void clickOnDetailedViewAsDefaultForThisFolder() {
 		DetailedViewAsDefaultForThisFolder.click();
 	}
-	
+
 }

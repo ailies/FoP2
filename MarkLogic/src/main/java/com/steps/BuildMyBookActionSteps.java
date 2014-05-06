@@ -7,143 +7,143 @@ import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class BuildMyBookActionSteps extends ScenarioSteps{
+public class BuildMyBookActionSteps extends ScenarioSteps {
 
 	BuildMyBookActionsPage buildMyBook;
-	
+
 	@Step
-	public void clickOnViewLatestPublication(){
+	public void clickOnViewLatestPublication() {
 		buildMyBook.clickOnViewLatestPublication();
 	}
-	
+
 	@Step
-	public void clickOnViewArticleContent(){
+	public void clickOnViewArticleContent() {
 		buildMyBook.clickOnViewArticleContent();
 	}
-	
+
 	@Step
-	public void inputOnSearchTermInput(String searchTerm){
+	public void inputOnSearchTermInput(String searchTerm) {
 		buildMyBook.inputOnSearchTermInput(searchTerm);
 	}
-	
+
 	@Step
-	public void clickOnSearchOptionDropDown(){
+	public void clickOnSearchOptionDropDown() {
 		buildMyBook.clickOnSearchOptionDropDown();
 	}
-	
+
 	@Step
-	public void clickOnSearchWithinAll(){
+	public void clickOnSearchWithinAll() {
 		buildMyBook.clickOnSearchWithinAll();
 	}
-	
+
 	@Step
-	public void clickOnSearchWithintTitle(){
+	public void clickOnSearchWithintTitle() {
 		buildMyBook.clickOnSearchWithintTitle();
 	}
-	
+
 	@Step
-	public void clickOnSearchWithinSummary(){
+	public void clickOnSearchWithinSummary() {
 		buildMyBook.clickOnSearchWithinSummary();
 	}
-	
+
 	@Step
-	public void clickOnSearchWithinContent(){
+	public void clickOnSearchWithinContent() {
 		buildMyBook.clickOnSearchWithinContent();
 	}
-	
+
 	@Step
-	public void clickOnSearchWithinCategories(){
+	public void clickOnSearchWithinCategories() {
 		buildMyBook.clickOnSearchWithinCategories();
 	}
-	
+
 	@Step
-	public void clickOnSearchBtn(){
+	public void clickOnSearchBtn() {
 		buildMyBook.clickOnSearchBtn();
 	}
-	
+
 	@Step
-	public void clickOnAddArticleToCollection(){
+	public void clickOnAddArticleToCollection() {
 		buildMyBook.clickOnAddArticleToCollection();
 	}
-	
+
 	@Step
-	public void clickOnBackToResultsBtn(){
+	public void clickOnBackToResultsBtn() {
 		buildMyBook.clickOnBackToResultsBtn();
 	}
-	
+
 	@Step
-	public void clickOnAddAricle(){
+	public void clickOnAddAricle() {
 		buildMyBook.clickOnAddAricle();
 	}
-	
+
 	@Step
-	public void clickOnMyCollectionContainer(){
+	public void clickOnMyCollectionContainer() {
 		buildMyBook.clickOnMyCollectionContainer();
 	}
-	
+
 	@Step
-	public void clickOnCloseMyCollection(){
+	public void clickOnCloseMyCollection() {
 		buildMyBook.clickOnCloseMyCollection();
 	}
-	
+
 	@Step
-	public void clickOnArticleTitleFromMyCollection(){
+	public void clickOnArticleTitleFromMyCollection() {
 		buildMyBook.clickOnArticleTitleFromMyCollection();
 	}
-	
+
 	@Step
-	public void clickOnRemoveArticleFromMyCollection(){
+	public void clickOnRemoveArticleFromMyCollection() {
 		buildMyBook.clickOnRemoveArticleFromMyCollection();
 	}
-	
+
 	@Step
-	public void clickOnMoveUpArticle(){
+	public void clickOnMoveUpArticle() {
 		buildMyBook.clickOnMoveUpArticle();
 	}
-	
+
 	@Step
-	public void clickOnMoveDownArticle(){
+	public void clickOnMoveDownArticle() {
 		buildMyBook.clickOnMoveDownArticle();
 	}
-	
+
 	@Step
-	public void clickOnFormatPDF(){
+	public void clickOnFormatPDF() {
 		buildMyBook.clickOnFormatPDF();
 	}
-	
+
 	@Step
-	public void clickOnFormatKindle(){
+	public void clickOnFormatKindle() {
 		buildMyBook.clickOnFormatKindle();
 	}
-	
+
 	@Step
-	public void clickOnFormatEPUB(){
+	public void clickOnFormatEPUB() {
 		buildMyBook.clickOnFormatEPUB();
 	}
-	
+
 	@Step
-	public void clickOnFormatMobi(){
+	public void clickOnFormatMobi() {
 		buildMyBook.clickOnFormatMobi();
 	}
-	
+
 	@Step
-	public void inputPublicationTitle(String setPublicationTitle){
+	public void inputPublicationTitle(String setPublicationTitle) {
 		buildMyBook.inputPublicationTitle(setPublicationTitle);
 	}
-	
+
 	@Step
-	public void clickOnGeneratePublicationBtn(){
+	public void clickOnGeneratePublicationBtn() {
 		buildMyBook.clickOnGeneratePublicationBtn();
 	}
-	
+
 	@StepGroup
-	public void buildMyBook(String searchTerm){
+	public void buildMyBook(String searchTerm) {
 		clickOnViewLatestPublication();
 		clickOnViewArticleContent();
 		clickOnAddAricle();
 		inputOnSearchTermInput(searchTerm);
 		clickOnSearchBtn();
 		clickOnViewArticleContent();
-		
+
 	}
 }

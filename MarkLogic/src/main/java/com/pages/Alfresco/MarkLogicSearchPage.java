@@ -45,6 +45,13 @@ public class MarkLogicSearchPage extends AbstractPage {
 	@FindBy(id = "button.generate")
 	WebElement importDocuments;
 
+	@FindBy(linkText = "http://172.16.10.115:8080/share/page/site/test-site/mlsearch?nodeRef=workspace://SpacesStore/abca693e-a8bc-4f2f-9b7a-f2b3b5b4779a&#filter=path|/Test/DemoTesting|&page=1")
+	WebElement link;
+
+	public void getToURL() {
+		link.submit();
+	}
+
 	public WebElement getTheSearchedElement(String... terms) {
 		String noOfPagesContainer = getDriver()
 				.findElement(
@@ -145,12 +152,12 @@ public class MarkLogicSearchPage extends AbstractPage {
 
 	}
 
-	
-
 	public void clickOnARandomLink() {
 		String term = getARandomLink();
 		String noOfPagesContainer = getDriver()
-				.findElement(By.id("/html/body/div/div/div[2]/div[1]/div/div[3]/a")).getText().trim();
+				.findElement(
+						By.id("/html/body/div/div/div[2]/div[1]/div/div[3]/a"))
+				.getText().trim();
 		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
 				noOfPagesContainer).get(0);
 		boolean foundTerms = false;
@@ -161,7 +168,8 @@ public class MarkLogicSearchPage extends AbstractPage {
 				if (searchResult.getText().toLowerCase()
 						.contains(term.toLowerCase())) {
 					foundTerms = true;
-					searchResult.findElement(By.cssSelector("a")).click();;
+					searchResult.findElement(By.cssSelector("a")).click();
+					;
 					break;
 				}
 			}
