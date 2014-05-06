@@ -15,9 +15,8 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 		super(pages);
 	}
 
-	MarkLogicSearchPage searchAndImportWikiDocument;
-
 	AlfrescoCreateNewFolderPage createNewFolder;
+	MarkLogicSearchPage searchAndImportWikiDocument;
 
 	@Step
 	public void clickOnMoreOptions(String term) {
@@ -29,9 +28,14 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 		searchAndImportWikiDocument.inputSearchTerm(term);
 	}
 
+	/*
+	 * @Step public void clickOnARandomLink() {
+	 * searchAndImportWikiDocument.clickOnARandomLink(); }
+	 */
+
 	@Step
-	public void clickOnARandomLink() {
-		searchAndImportWikiDocument.clickOnARandomLink();
+	public void getARandomLink() {
+		searchAndImportWikiDocument.getARandomLink();
 	}
 
 	@Step
@@ -64,7 +68,13 @@ public class MarkLogicSearchSteps extends ScenarioSteps {
 		clickOnMoreOptions("Research");
 		inputSearchTerm("development");
 		clickOnDocumentContainer();
-		clickOnARandomLink();
+		getARandomLink();
+		clickOnViewFullContent();
+		clickOnAddFullContent();
+		getARandomLink();
+		clickOnViewFullContent();
+		clickOnAddFullContent();
+		getARandomLink();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
 		clickOnImportDocuments();
