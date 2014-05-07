@@ -44,7 +44,7 @@ public class MarkLogicSearchPage extends AbstractPage {
 	@FindBy(css = ".yui-dt29-col-actions.yui-dt-col-actions.yui-dt-last .yui-dt-liner .action-set .internal-show-more")
 	WebElement moremoremore;
 
-	@FindBy(id = ".button.generate")
+	@FindBy(id = ".button-container .button.generate")
 	WebElement importDocuments;
 
 	@FindBy(linkText = "http://172.16.10.115:8080/share/page/site/test-site/mlsearch?nodeRef=workspace://SpacesStore/abca693e-a8bc-4f2f-9b7a-f2b3b5b4779a&#filter=path|/Test/DemoTesting|&page=1")
@@ -130,87 +130,38 @@ public class MarkLogicSearchPage extends AbstractPage {
 	public void getARandomLink() {
 		List<WebElement> listOfLinks = new ArrayList<WebElement>();
 		Random r = new Random();
-		/*
-		 * String noOfPagesContainer = getDriver()
-		 * .findElement(By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]"
-		 * )).getText() .trim(); System.out.println(noOfPagesContainer); int
-		 * noOfPages = StringUtils.getAllIntegerNumbersFromString(
-		 * noOfPagesContainer).get(1); for (int i = 0; i < noOfPages; i++) {
-		 */
+		
 		listOfLinks.addAll(getDriver().findElements(
 				By.cssSelector(".block.articles .view ul li")));
-
-		/*
-		 * if (i < noOfPages - 1) { getDriver().findElement(
-		 * By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]/a")).click();
-		 * waitABit(2000); }
-		 */
-
 		int listSize = listOfLinks.size();
 		System.out.println(String.valueOf(listSize));
+		
 		int index = r.nextInt(listSize);
 		System.out.println(listOfLinks.get(index).getText());
-		String compare = listOfLinks.get(index).getText().toLowerCase().toString();
-//		return (listOfLinks.get(index)).toString();
+		String compare = listOfLinks.get(index).getText().toLowerCase()
+				.toString();
 		
 		List<WebElement> searchResults = getDriver().findElements(
 				By.cssSelector(".block.articles .view ul li"));
-		try{
-		for (WebElement searchResult : searchResults) {
-			String var = searchResult.getText().toLowerCase().toString();
-			System.out.println(var);
-			 if (var.contains(compare)){
-			 
-			 System.out.println(searchResult);
-//			 foundTerms = true;
+		try {
+			for (WebElement searchResult : searchResults) {
+				String var = searchResult.getText().toLowerCase().toString();
+				System.out.println(var);
+				
+				if (var.contains(compare)) {
+					System.out.println(searchResult);
+					searchResult.findElement(By.cssSelector("a")).click();
+					
+				} else {
+					
+					System.out.println("Element not found!");
+				}
+			}
+		} catch (Exception e) {
 
-			searchResult.findElement(By.cssSelector("a")).click();
-		} else
-		{
-			System.out.println("Element not found!");
-		}}	
-		}catch(Exception e){
-			
 		}
 	}
 
-	/*public void clickOnARandomLink() {
-//		String term = getARandomLink();
-		System.out.println(term);
-		 String noOfPagesContainer = getDriver() .findElement(
-		 By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]/a"))
-		 .getText().trim(); int noOfPages =
-		 StringUtils.getAllIntegerNumbersFromString(
-		 noOfPagesContainer).get(0);
-		 
-//		 boolean foundTerms = false;
-		 for (int i = 0; i < noOfPages; i++) {
-		List<WebElement> searchResults = getDriver().findElements(
-				By.cssSelector(".block.articles .view ul li"));
-		System.out.println("TEST");
-		for (WebElement searchResult : searchResults) {
-			String var = searchResult.getText().toLowerCase().toString();
-			System.out.println(var);
-			 if (var.contains("unix")){
-			 
-			 System.out.println(searchResult);
-//			 foundTerms = true;
-
-			searchResult.findElement(By.cssSelector("a")).click();
-		} else
-		{
-			System.out.println("Element not found!");
-		}
-	}
-	}
-	
-	 if (i < noOfPages - 1) { getDriver() .findElement(
-	 By.xpath("/html/body/div/div/div[2]/div[1]/div/div[3]/a")) .click();
-	 waitABit(2000); } else break; }
-	 
-	 Assert.assertTrue("The link was not found!", foundTerms);
-//	}
-*/
 	public void clickOnViewFullContent() {
 		element(viewFullContent).waitUntilVisible();
 		viewFullContent.click();
@@ -222,13 +173,10 @@ public class MarkLogicSearchPage extends AbstractPage {
 	}
 
 	public void clickOnImportDocuments() {
-		if(element(importDocuments).isDisplayed())
-		{importDocuments.click();}
-		else 
+		if (element(importDocuments).isDisplayed()) {
+			importDocuments.click();
+			importDocuments.click();
+		} else
 			System.out.println("Make that f button visible");
-	}
-
-	public void verifyIfFilesWereImported() {
-
 	}
 }

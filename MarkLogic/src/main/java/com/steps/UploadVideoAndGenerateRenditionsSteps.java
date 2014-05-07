@@ -1,24 +1,26 @@
 package com.steps;
 
-import com.pages.Alfresco.UploadVideoAndGenerateFramesPage;
+import tools.AbstractSteps;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
-import net.thucydides.core.steps.ScenarioSteps;
+import net.thucydides.core.pages.Pages;
 
 @SuppressWarnings("serial")
-public class UploadVideoAndGenerateRenditionsSteps extends ScenarioSteps {
-
-	UploadVideoAndGenerateFramesPage uploadVideoAndGenerateFrames;
+public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
+	
+	public UploadVideoAndGenerateRenditionsSteps(Pages pages) {
+		super(pages);
+	}
 
 	@Step
 	public void clickVideo() {
-		uploadVideoAndGenerateFrames.clickVideo();
+		uploadVideoAndGenerateFramesPage().clickVideo();
 	}
 
 	@Step
 	public void clickGenerateFrames() {
-		uploadVideoAndGenerateFrames.clickGenerateFrames();
+		uploadVideoAndGenerateFramesPage().clickGenerateFrames();
 	}
 
 	@StepGroup

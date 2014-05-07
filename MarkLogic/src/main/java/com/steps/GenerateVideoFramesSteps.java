@@ -1,16 +1,14 @@
 package com.steps;
 
-import com.pages.Alfresco.GenerateVideoFramesPage;
+import tools.AbstractSteps;
 
 import net.thucydides.core.pages.Pages;
-import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class GenerateVideoFramesSteps extends ScenarioSteps {
+public class GenerateVideoFramesSteps extends AbstractSteps {
 
 	public GenerateVideoFramesSteps(Pages pages) {
 		super(pages);
 	}
 
-	GenerateVideoFramesPage generateVideoFrames;
 }

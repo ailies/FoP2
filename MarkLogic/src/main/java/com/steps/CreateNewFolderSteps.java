@@ -1,5 +1,7 @@
 package com.steps;
 
+import tools.AbstractSteps;
+
 import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
 
 import net.thucydides.core.annotations.Step;
@@ -8,67 +10,65 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class CreateNewFolderSteps extends ScenarioSteps {
+public class CreateNewFolderSteps extends AbstractSteps {
 
 	public CreateNewFolderSteps(Pages pages) {
 		super(pages);
 	}
 
-	AlfrescoCreateNewFolderPage createNewFolder;
-
 	@Step
 	public void verifyIfNodesExistInBreadcrumbs(String... terms) {
-		createNewFolder.verifyIfNodesExistInBreadcrumbs(terms);
+		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(terms);
 	}
 
 	@Step
 	public boolean verifyIfFolderExists(String term) {
-		return createNewFolder.verifyIfFolderExists(term);
+		return alfrescoCreateNewFolderPage().verifyIfFolderExists(term);
 	}
 
 	@Step
 	public void clickOnFolder(String... terms) {
-		createNewFolder.clickOnFolder(terms);
+		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
 
 	@Step
 	public void clickOnCreate() {
-		createNewFolder.clickOnCreate();
+		alfrescoCreateNewFolderPage().clickOnCreate();
 	}
 
 	@Step
 	public void clickOnCreateFolder() {
-		createNewFolder.clickOnCreateFolder();
+		alfrescoCreateNewFolderPage().clickOnCreateFolder();
 	}
 
 	@Step
 	public void inputFolderName(String name) {
-		createNewFolder.inputFolderName(name);
+		alfrescoCreateNewFolderPage().inputFolderName(name);
 	}
 
 	@Step
 	public void clickOnCreateFolderBtn() {
-		createNewFolder.clickOnCreateFolderBtn();
+		alfrescoCreateNewFolderPage().clickOnCreateFolderBtn();
 	}
 
 	@Step
 	public void clickOnCreateFolderFromTemplate() {
-		createNewFolder.clickOnCreateFolderFromTemplate();
+		alfrescoCreateNewFolderPage().clickOnCreateFolderFromTemplate();
 	}
 
 	@Step
 	public void clickOnCreateContentFolder() {
-		createNewFolder.clickOnCreateContentFolder();
+		alfrescoCreateNewFolderPage().clickOnCreateContentFolder();
 	}
 
 	@Step
 	public void inputContentFolderName(String contentName) {
-		createNewFolder.inputContentFolderName(contentName);
+		alfrescoCreateNewFolderPage().inputContentFolderName(contentName);
 	}
 
 	@Step
 	public void clickOnSaveContentFolder() {
-		createNewFolder.clickOnSaveContentFolder();
+		alfrescoCreateNewFolderPage().clickOnSaveContentFolder();
 	}
 
 	@StepGroup

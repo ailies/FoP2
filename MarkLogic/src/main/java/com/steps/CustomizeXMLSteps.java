@@ -1,5 +1,7 @@
 package com.steps;
 
+import tools.AbstractSteps;
+
 import com.pages.Alfresco.CustomizeXMLPage;
 
 import net.thucydides.core.annotations.Step;
@@ -8,32 +10,30 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class CustomizeXMLSteps extends ScenarioSteps {
+public class CustomizeXMLSteps extends AbstractSteps {
 
 	public CustomizeXMLSteps(Pages pages) {
 		super(pages);
 	}
 
-	CustomizeXMLPage customizeXML;
-
 	@Step
 	public void clickOnAssemblyView() {
-		customizeXML.clickOnAssemblyView();
+		customizeXMLPage().clickOnAssemblyView();
 	}
 
 	@Step
 	public void clickOnMasterXML() {
-		customizeXML.clickOnMasterXML();
+		customizeXMLPage().clickOnMasterXML();
 	}
 
 	@Step
 	public void clickOnHTMLRendition() {
-		customizeXML.clickOnHTMLRendition();
+		customizeXMLPage().clickOnHTMLRendition();
 	}
 
 	@Step
 	public void clickOnPDFRendition() {
-		customizeXML.clickOnPDFRendition();
+		customizeXMLPage().clickOnPDFRendition();
 	}
 
 	@StepGroup

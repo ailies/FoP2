@@ -33,7 +33,8 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 	@FindBy(css = ".yuimenu.yui-module.yui-overlay.yui-button-menu.yui-menu-button-menu.visible >.bd ul:nth-child(2) li:nth-child(2) a")
 	private WebElement createFolderFromTemplate;
 
-	@FindBy(css = ".yuimenu.yui-module.yui-overlay.yui-button-menu.yui-menu-button-menu.visible >.bd ul:nth-child(2) li:nth-child(2) .first-of-type .yuimenuitem.first-of-type")
+//	@FindBy(css = ".yuimenu.yui-module.yui-overlay.yui-button-menu.yui-menu-button-menu.visible >.bd ul:nth-child(2) li:nth-child(2) .first-of-type .yuimenuitem.first-of-type")
+	@FindBy(css = "span[title='']")
 	private WebElement createContentFolder;
 
 	@FindBy(css = "input[id='template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name']")

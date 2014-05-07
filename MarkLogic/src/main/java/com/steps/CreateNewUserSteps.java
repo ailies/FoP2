@@ -1,5 +1,7 @@
 package com.steps;
 
+import tools.AbstractSteps;
+
 import com.pages.Alfresco.AlfrescoCreateNewUserPage;
 
 import net.thucydides.core.annotations.Step;
@@ -8,57 +10,55 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class CreateNewUserSteps extends ScenarioSteps {
+public class CreateNewUserSteps extends AbstractSteps {
 
 	public CreateNewUserSteps(Pages pages) {
 		super(pages);
 	}
 
-	AlfrescoCreateNewUserPage createNewUser;
-
 	@Step
 	public void clickOnAdminTools() {
-		createNewUser.clickOnAdminTools();
+		alfrescoCreateNewUserPage().clickOnAdminTools();
 	}
 
 	@Step
 	public void clickOnUserTools() {
-		createNewUser.clickOnUserTools();
+		alfrescoCreateNewUserPage().clickOnUserTools();
 	}
 
 	@Step
 	public void clickOnNewUserBtn() {
-		createNewUser.clickOnNewUserBtn();
+		alfrescoCreateNewUserPage().clickOnNewUserBtn();
 	}
 
 	@Step
 	public void inputFirstNameField(String fName) {
-		createNewUser.inputFirstNameField(fName);
+		alfrescoCreateNewUserPage().inputFirstNameField(fName);
 	}
 
 	@Step
 	public void inputEmailField(String mail) {
-		createNewUser.inputEmailField(mail);
+		alfrescoCreateNewUserPage().inputEmailField(mail);
 	}
 
 	@Step
 	public void inputUserNameField(String uName) {
-		createNewUser.inputUserNameField(uName);
+		alfrescoCreateNewUserPage().inputUserNameField(uName);
 	}
 
 	@Step
 	public void inputPasswordField(String pass) {
-		createNewUser.inputPasswordField(pass);
+		alfrescoCreateNewUserPage().inputPasswordField(pass);
 	}
 
 	@Step
 	public void inputVerifyPasswordField(String pass) {
-		createNewUser.inputVerifyPasswordField(pass);
+		alfrescoCreateNewUserPage().inputVerifyPasswordField(pass);
 	}
 
 	@Step
 	public void clickOnCreateUserBtn() {
-		createNewUser.clickOnCreateUserBtn();
+		alfrescoCreateNewUserPage().clickOnCreateUserBtn();
 	}
 
 	@StepGroup

@@ -1,44 +1,50 @@
 package com.steps;
 
+import tools.AbstractSteps;
+
 import com.pages.Alfresco.CropImageAndGenerateRenditionsPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
-import net.thucydides.core.steps.ScenarioSteps;
+import net.thucydides.core.pages.Pages;
 
 @SuppressWarnings("serial")
-public class CropImageAndGenerateRenditionsSteps extends ScenarioSteps {
+public class CropImageAndGenerateRenditionsSteps extends AbstractSteps {
+
+	public CropImageAndGenerateRenditionsSteps(Pages pages) {
+		super(pages);
+	}
 
 	CropImageAndGenerateRenditionsPage cropImageAngGenerateRenditions;
 
 	@Step
 	public void clickOnImage() {
-		cropImageAngGenerateRenditions.clickOnImage();
+		cropImageAndGenerateRenditionsPage().clickOnImage();
 	}
 
 	@Step
 	public void clickOnGenerateImageRenditions() {
-		cropImageAngGenerateRenditions.clickOnGenerateImageRenditions();
+		cropImageAndGenerateRenditionsPage().clickOnGenerateImageRenditions();
 	}
 
 	@Step
 	public void clickOnCropImage() {
-		cropImageAngGenerateRenditions.clickOnCropImage();
+		cropImageAndGenerateRenditionsPage().clickOnCropImage();
 	}
 
 	@Step
 	public void scrollToPageBottom() {
-		cropImageAngGenerateRenditions.scrollToPageBottom();
+		cropImageAndGenerateRenditionsPage().scrollToPageBottom();
 	}
 
 	@Step
 	public void scrollToPageTop() {
-		cropImageAngGenerateRenditions.scrollToPageTop();
+		cropImageAndGenerateRenditionsPage().scrollToPageTop();
 	}
 
 	@Step
 	public void clickOnSaveCroppedImageBtn() {
-		cropImageAngGenerateRenditions.clickOnSaveCroppedImageBtn();
+		cropImageAndGenerateRenditionsPage().clickOnSaveCroppedImageBtn();
 	}
 
 	@StepGroup

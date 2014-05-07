@@ -1,66 +1,59 @@
 package com.steps;
 
+import tools.AbstractSteps;
+
 import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
 import com.pages.Alfresco.MarkLogicSearchPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class MarkLogicSearchSteps extends ScenarioSteps {
+public class MarkLogicSearchSteps extends AbstractSteps {
 
 	public MarkLogicSearchSteps(Pages pages) {
 		super(pages);
 	}
 
-	AlfrescoCreateNewFolderPage createNewFolder;
-	MarkLogicSearchPage searchAndImportWikiDocument;
-
 	@Step
 	public void clickOnMoreOptions(String term) {
-		searchAndImportWikiDocument.clickOnMoreOptions(term);
+		markLogicSearchPage().clickOnMoreOptions(term);
 	}
 
 	@Step
 	public void inputSearchTerm(String term) {
-		searchAndImportWikiDocument.inputSearchTerm(term);
+		markLogicSearchPage().inputSearchTerm(term);
 	}
-
-	/*
-	 * @Step public void clickOnARandomLink() {
-	 * searchAndImportWikiDocument.clickOnARandomLink(); }
-	 */
 
 	@Step
 	public void getARandomLink() {
-		searchAndImportWikiDocument.getARandomLink();
+		markLogicSearchPage().getARandomLink();
 	}
 
 	@Step
 	public void clickOnDocumentContainer() {
-		searchAndImportWikiDocument.clickOnDocumentContainer();
+		markLogicSearchPage().clickOnDocumentContainer();
 	}
 
 	@Step
 	public void clickOnViewFullContent() {
-		searchAndImportWikiDocument.clickOnViewFullContent();
+		markLogicSearchPage().clickOnViewFullContent();
 	}
 
 	@Step
 	public void clickOnAddFullContent() {
-		searchAndImportWikiDocument.clickOnAddFullContent();
+		markLogicSearchPage().clickOnAddFullContent();
 	}
 
 	@Step
 	public void clickOnImportDocuments() {
-		searchAndImportWikiDocument.clickOnImportDocuments();
+		markLogicSearchPage().clickOnImportDocuments();
 	}
 
 	@Step
 	public boolean verifyIfFolderExists(String term) {
-		return createNewFolder.verifyIfFolderExists(term);
+		return alfrescoCreateNewFolderPage().verifyIfFolderExists(term);
 	}
 
 	@StepGroup
