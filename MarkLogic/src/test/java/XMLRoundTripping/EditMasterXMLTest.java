@@ -39,7 +39,6 @@ public class EditMasterXMLTest {
 		login.GetToFolder();
 		createNewFolder.clickOnFolder("Test");
 		createNewFolder.clickOnFolder("DemoTesting");
-		
 		xmlCustomize.xmlFiles();
 	}
 }

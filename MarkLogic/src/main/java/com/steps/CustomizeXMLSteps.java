@@ -26,9 +26,15 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
 	
+	@Step
+	public void verifyIfRenditionsExists(){
+		customizeXMLPage().verifyIfRenditionsExists();
+	}
+	
 	@StepGroup
 	public void xmlFiles(){
 		verifyIfXMLFileExists("DemoTesting.xml");
 		clickOnXMLFile("DemoTesting.xml");
+		verifyIfRenditionsExists();
 	}
 }
