@@ -15,30 +15,20 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	public CustomizeXMLSteps(Pages pages) {
 		super(pages);
 	}
-
+	
 	@Step
-	public void clickOnAssemblyView() {
-		customizeXMLPage().clickOnAssemblyView();
+	public boolean verifyIfXMLFileExists(String term) {
+		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
 
 	@Step
-	public void clickOnMasterXML() {
-		customizeXMLPage().clickOnMasterXML();
+	public void clickOnXMLFile(String... terms) {
+		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
-
-	@Step
-	public void clickOnHTMLRendition() {
-		customizeXMLPage().clickOnHTMLRendition();
-	}
-
-	@Step
-	public void clickOnPDFRendition() {
-		customizeXMLPage().clickOnPDFRendition();
-	}
-
+	
 	@StepGroup
-	public void CustomizeXML() {
-		clickOnAssemblyView();
+	public void xmlFiles(){
+		verifyIfXMLFileExists("DemoTesting.xml");
+		clickOnXMLFile("DemoTesting.xml");
 	}
-
 }

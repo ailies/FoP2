@@ -43,8 +43,20 @@ public class MarkLogicSearchPage extends AbstractPage {
 
 	@FindBy(css = ".yui-dt29-col-actions.yui-dt-col-actions.yui-dt-last .yui-dt-liner .action-set .internal-show-more")
 	WebElement moremoremore;
+	
+	@FindBy(css = ".actions .move.up")
+	WebElement upArrow;
+	
+	@FindBy(css = ".actions .move.down")
+	WebElement downArrow;
+	
+	@FindBy(css = ".list .remove")
+	WebElement removeArticle;
+	
+	@FindBy(css = ".clear")
+	WebElement clearSearchBtn;
 
-	@FindBy(id = ".button-container .button.generate")
+	@FindBy(css = ".button.generate")
 	WebElement importDocuments;
 
 	@FindBy(linkText = "http://172.16.10.115:8080/share/page/site/test-site/mlsearch?nodeRef=workspace://SpacesStore/abca693e-a8bc-4f2f-9b7a-f2b3b5b4779a&#filter=path|/Test/DemoTesting|&page=1")
@@ -171,12 +183,24 @@ public class MarkLogicSearchPage extends AbstractPage {
 		element(addFullContent).waitUntilVisible();
 		addFullContent.click();
 	}
+	
+	public void clickOnUpArrow(){
+		element(upArrow).waitUntilVisible();
+		upArrow.click();
+	}
+	
+	public void clickOnRemoveArticle(){
+		element(removeArticle).waitUntilVisible();
+		removeArticle.click();
+	}
+	
+	public void clickOnClearSearchBtn(){
+		element(clearSearchBtn).waitUntilVisible();
+		clearSearchBtn.click();
+	}
 
 	public void clickOnImportDocuments() {
-		if (element(importDocuments).isDisplayed()) {
 			importDocuments.click();
-			importDocuments.click();
-		} else
-			System.out.println("Make that f button visible");
+			waitABit(2000);
 	}
 }

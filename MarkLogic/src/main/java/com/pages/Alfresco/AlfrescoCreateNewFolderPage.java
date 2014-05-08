@@ -78,7 +78,7 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 		}
 	}
 
-	public boolean verifyIfFolderExists(String term) {
+	public boolean verifyIfElementExists(String term) {
 		String noOfPagesContainer = getDriver()
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))

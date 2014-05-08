@@ -43,7 +43,7 @@ public class CropImageAndGenerateRenditionsTest {
 			login.GetToFolder();
 //			createNewFolder.CreateNewFolder();
 //			markLogicSearch.markLogicSearch();
-			customizeXML.CustomizeXML();
+			
 			cropImageAndGemerateRenditions.CropImageAndCreateImageRenditions();
 		}
 	}

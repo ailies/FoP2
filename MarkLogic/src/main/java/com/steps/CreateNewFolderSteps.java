@@ -23,7 +23,7 @@ public class CreateNewFolderSteps extends AbstractSteps {
 
 	@Step
 	public boolean verifyIfFolderExists(String term) {
-		return alfrescoCreateNewFolderPage().verifyIfFolderExists(term);
+		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
 
 	@Step

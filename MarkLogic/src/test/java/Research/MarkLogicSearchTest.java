@@ -39,8 +39,8 @@ public class MarkLogicSearchTest {
 	public void markLogicSearch() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
+		createNewFolder.createNewFolderTest("Test", "DemoTesting1", "Test",
 				"DemoTesting");
-		markLogicSearch.searchAndImportWikiDocument("Research", "test");
+		markLogicSearch.searchAndImportWikiDocument("Research", "test", "DemoTesting");
 	}
 }
