@@ -31,10 +31,16 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		customizeXMLPage().verifyIfRenditionsExists();
 	}
 	
+	@Step
+	public void clickOnRendition(){
+		customizeXMLPage().clickOnRendition();
+	}
+	
 	@StepGroup
 	public void xmlFiles(){
 		verifyIfXMLFileExists("DemoTesting.xml");
 		clickOnXMLFile("DemoTesting.xml");
 		verifyIfRenditionsExists();
+		clickOnRendition();
 	}
 }

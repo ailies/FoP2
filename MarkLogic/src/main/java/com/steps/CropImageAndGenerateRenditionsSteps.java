@@ -16,10 +16,17 @@ public class CropImageAndGenerateRenditionsSteps extends AbstractSteps {
 	}
 
 	CropImageAndGenerateRenditionsPage cropImageAngGenerateRenditions;
+	
+	
+	
+	@Step
+	public boolean verifyIfImagesExists(String term){
+		return cropImageAndGenerateRenditionsPage().verifyIfImagesExists(term);
+	}
 
 	@Step
-	public void clickOnImage() {
-		cropImageAndGenerateRenditionsPage().clickOnImage();
+	public void clickOnImage(String terms) {
+		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
 
 	@Step
@@ -46,10 +53,23 @@ public class CropImageAndGenerateRenditionsSteps extends AbstractSteps {
 	public void clickOnSaveCroppedImageBtn() {
 		cropImageAndGenerateRenditionsPage().clickOnSaveCroppedImageBtn();
 	}
+	
+	@Step
+	public boolean verifyIfFolderExists(String term) {
+		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
+	}
+
+	@Step
+	public void clickOnFolder(String... terms) {
+		alfrescoCreateNewFolderPage().clickOnFolder(terms);
+	}
 
 	@StepGroup
 	public void CropImageAndCreateImageRenditions() {
-		clickOnImage();
+		verifyIfFolderExists("Research");
+		clickOnFolder("Research");
+		verifyIfImagesExists(".jpg");
+		clickOnImage(".jpg");
 		clickOnGenerateImageRenditions();
 		clickOnCropImage();
 		scrollToPageBottom();

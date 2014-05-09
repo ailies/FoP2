@@ -23,12 +23,12 @@ public class UploadVideoAndGenerateFramesPage extends PageObject {
 		(new Actions(getDriver())).dragAndDrop(element, target).perform();
 	}
 
-	public void clickVideo() {
+	public void clickOnVideo() {
 		element(video).waitUntilVisible();
 		video.click();
 	}
 
-	public void clickGenerateFrames() {
+	public void clickOnGenerateFrames() {
 		element(generateFrames).waitUntilVisible();
 		generateFrames.click();
 	}

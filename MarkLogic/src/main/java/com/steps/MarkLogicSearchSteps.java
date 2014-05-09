@@ -78,21 +78,8 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 
 	@StepGroup
 	public void searchAndImportWikiDocument(String fileName, String searchTerm, String term) {
+		
 		clickOnMoreOptions("Research");
-		/*inputSearchTerm("development");
-		clickOnDocumentContainer();
-		
-		getARandomLink();
-		clickOnViewFullContent();
-		clickOnAddFullContent();
-		
-		getARandomLink();
-		clickOnViewFullContent();
-		clickOnAddFullContent();
-		
-		clickOnUpArrow(); 
-		clickOnRemoveArticle();
-		clickOnClearSearchBtn();*/
 		
 		inputSearchTerm("music");
 		clickOnDocumentContainer();
@@ -111,10 +98,15 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 
 		clickOnImportDocuments();
 		waitABit(2000);
+		
 		if (!verifyIfXMLFileExists(term)) {
+			
 			clickOnFolder("DemoTesting.xml");
+			
 		} else {
+			
 			System.out.println("Master XML does not exist!");
+		
 		}
 	}
 }

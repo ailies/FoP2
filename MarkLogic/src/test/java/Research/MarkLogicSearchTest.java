@@ -10,7 +10,6 @@ import net.thucydides.junit.runners.ThucydidesRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.internal.seleniumemulation.Windows;
 
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
