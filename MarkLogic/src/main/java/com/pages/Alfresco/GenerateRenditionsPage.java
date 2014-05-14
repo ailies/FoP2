@@ -4,30 +4,26 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
 import tools.StringUtils;
 import net.thucydides.core.annotations.findby.FindBy;
 
-public class CropImageAndGenerateRenditionsPage extends AbstractPage {
+public class GenerateRenditionsPage extends AbstractPage {
 
-	public CropImageAndGenerateRenditionsPage(WebDriver driver) {
+	public GenerateRenditionsPage(WebDriver driver) {
 		super(driver);
 	}
 
 	@FindBy(css = "[attribute*='value']")
 	WebElement image;
 
-	@FindBy(css = ".#generateImgRenditions > a")
+	@FindBy(css = "#generateImgRenditions > a")
 	WebElement generateImageRenditions;
-
-	@FindBy(id = "")
-	WebElement cropImage;
-
-	@FindBy(id = "")
-	WebElement saveCroppedImageBtn;
 
 	public boolean verifyIfImagesExists(String term) {
 		String noOfPagesContainer = getDriver()
@@ -70,7 +66,7 @@ public class CropImageAndGenerateRenditionsPage extends AbstractPage {
 				noOfPagesContainer).get(3);
 		for (int i = 0; i < noOfPages; i++) {
 			List<WebElement> searchResults = getDriver().findElements(
-					By.cssSelector("a[title*='.jpg']"));
+					By.cssSelector("a[title*='.png']"));
 			System.out.println(searchResults.size());
 			for (WebElement searchResult : searchResults) {
 				System.out.println(searchResult.getText());
@@ -110,24 +106,18 @@ public class CropImageAndGenerateRenditionsPage extends AbstractPage {
 	public void clickOnGenerateImageRenditions() {
 		element(generateImageRenditions).waitUntilVisible();
 		generateImageRenditions.click();
+		generateImageRenditions.click();
+		waitABit(10000);
 	}
 
-	public void clickOnCropImage() {
-		element(cropImage).waitUntilVisible();
-		cropImage.click();
-	}
+	public WebElement verifyIfImageRenditionsWereGenerated() {
+		List<WebElement> renditions = getDriver()
+				.findElement(
+						By.id("template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl"))
+				.findElements(By.cssSelector("a"));
+		System.out.println(renditions.size());
+		return null;
 
-	public void scrollToPageBottom() {
-		evaluateJavascript("window.scrollTo(0,document.body.scrollHeight);");
-	}
-
-	public void scrollToPageTop() {
-		evaluateJavascript("window.scrollTo(0,document.body.scrollTop);");
-	}
-
-	public void clickOnSaveCroppedImageBtn() {
-		element(saveCroppedImageBtn).waitUntilVisible();
-		saveCroppedImageBtn.click();
 	}
 
 }

@@ -12,12 +12,16 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
+import com.steps.CreateNewFolderSteps;
+import com.steps.GenerateRenditionsSteps;
+import com.steps.CustomizeXMLSteps;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.MarkLogicSearchSteps;
 
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
-public class GenerateMasterXMLTest {
+public class GenerateRenditionsTest {
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -28,12 +32,25 @@ public class GenerateMasterXMLTest {
 	public AlfrescoLoginSteps login;
 
 	@Steps
+	public CreateNewFolderSteps createNewFolder;
+
+	@Steps
 	public MarkLogicSearchSteps markLogicSearch;
 
+	@Steps
+	public CustomizeXMLSteps customizeXML;
+
+	@Steps
+	public GenerateRenditionsSteps cropImageAndGemerateRenditions;
+
 	@Test
-	public void searchAndImportWikiDocument() {
+	public void imageActions() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-//		markLogicSearch.markLogicSearch();
+		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
+				"DemoTesting");
+		markLogicSearch.searchAndImportWikiDocument("Research", "test",
+				"DemoTesting");
+		cropImageAndGemerateRenditions.GenerateImageRenditions();
 	}
 }

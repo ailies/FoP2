@@ -12,16 +12,13 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.CreateNewFolderSteps;
-import com.steps.CropImageAndGenerateRenditionsSteps;
-import com.steps.CustomizeXMLSteps;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.MarkLogicSearchSteps;
+import com.steps.CreateNewFolderSteps;
+import com.steps.CropImageSteps;
 
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
-public class CropImageAndGenerateRenditionsTest {
-
+public class CropImageTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -30,27 +27,19 @@ public class CropImageAndGenerateRenditionsTest {
 
 	@Steps
 	public AlfrescoLoginSteps login;
-
+	
 	@Steps
 	public CreateNewFolderSteps createNewFolder;
 
 	@Steps
-	public MarkLogicSearchSteps markLogicSearch;
-
-	@Steps
-	public CustomizeXMLSteps customizeXML;
-
-	@Steps
-	public CropImageAndGenerateRenditionsSteps cropImageAndGemerateRenditions;
+	public CropImageSteps cropImage;
 
 	@Test
-	public void imageActions() {
+	public void cropImage() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-//		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
-//				"DemoTesting");
-//		markLogicSearch.searchAndImportWikiDocument("Research", "test",
-//				"DemoTesting");
-		cropImageAndGemerateRenditions.GenerateImageRenditions();
+		createNewFolder.createNewFolderTest("Test", "DemoTesting1", "Test",
+				"DemoTesting");
+		cropImage.cropImage();
 	}
 }

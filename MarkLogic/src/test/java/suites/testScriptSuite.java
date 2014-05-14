@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import AlfrescoCustomization.CreateAnnotationsTest;
-import AlfrescoCustomization.CropImageAndGenerateRenditionsTest;
+import AlfrescoCustomization.GenerateRenditionsTest;
 import AlfrescoCustomization.GenerateMasterXMLTest;
 import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
 import PublishingContent.CheckTagsTest;
@@ -30,7 +30,7 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	MarkLogicSearchTest.class,
 	GenerateMasterXMLTest.class,
 	CreateAnnotationsTest.class,
-	CropImageAndGenerateRenditionsTest.class,
+	GenerateRenditionsTest.class,
 	UploadVideoAndGenerateVideoFramesTest.class,
 	EditMasterXMLTest.class,
 	DownloadFilesFromIDFolderTest.class,

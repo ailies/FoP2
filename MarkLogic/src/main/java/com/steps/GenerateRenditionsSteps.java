@@ -2,26 +2,24 @@ package com.steps;
 
 import tools.AbstractSteps;
 
-import com.pages.Alfresco.CropImageAndGenerateRenditionsPage;
+import com.pages.Alfresco.GenerateRenditionsPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
 
 @SuppressWarnings("serial")
-public class CropImageAndGenerateRenditionsSteps extends AbstractSteps {
+public class GenerateRenditionsSteps extends AbstractSteps {
 
-	public CropImageAndGenerateRenditionsSteps(Pages pages) {
+	public GenerateRenditionsSteps(Pages pages) {
 		super(pages);
 	}
 
-	CropImageAndGenerateRenditionsPage cropImageAngGenerateRenditions;
-	
-	
-	
+	GenerateRenditionsPage cropImageAngGenerateRenditions;
+
 	@Step
-	public boolean verifyIfImagesExists(String term){
-		return cropImageAndGenerateRenditionsPage().verifyIfImagesExists(term);
+	public boolean verifyIfImagesExists(String term) {
+		return generateRenditionsPage().verifyIfImagesExists(term);
 	}
 
 	@Step
@@ -31,29 +29,24 @@ public class CropImageAndGenerateRenditionsSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnGenerateImageRenditions() {
-		cropImageAndGenerateRenditionsPage().clickOnGenerateImageRenditions();
+		generateRenditionsPage().clickOnGenerateImageRenditions();
 	}
 
 	@Step
-	public void clickOnCropImage() {
-		cropImageAndGenerateRenditionsPage().clickOnCropImage();
+	public void verifyIfImageRenditionsWereGenerated() {
+		generateRenditionsPage().verifyIfImageRenditionsWereGenerated();
 	}
 
 	@Step
 	public void scrollToPageBottom() {
-		cropImageAndGenerateRenditionsPage().scrollToPageBottom();
+		generateRenditionsPage().scrollToPageBottom();
 	}
 
 	@Step
 	public void scrollToPageTop() {
-		cropImageAndGenerateRenditionsPage().scrollToPageTop();
+		generateRenditionsPage().scrollToPageTop();
 	}
 
-	@Step
-	public void clickOnSaveCroppedImageBtn() {
-		cropImageAndGenerateRenditionsPage().clickOnSaveCroppedImageBtn();
-	}
-	
 	@Step
 	public boolean verifyIfFolderExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
@@ -74,8 +67,6 @@ public class CropImageAndGenerateRenditionsSteps extends AbstractSteps {
 		clickOnImage(".jpg");
 		clickOnGenerateImageRenditions();
 		waitABit(2000);
-		/*clickOnCropImage();
-		scrollToPageBottom();
-		clickOnSaveCroppedImageBtn();*/
+		verifyIfImageRenditionsWereGenerated();
 	}
 }

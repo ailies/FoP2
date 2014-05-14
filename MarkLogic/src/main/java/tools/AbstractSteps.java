@@ -3,7 +3,8 @@ package tools;
 import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
 import com.pages.Alfresco.AlfrescoCreateNewUserPage;
 import com.pages.Alfresco.AlfrescoLoginPage;
-import com.pages.Alfresco.CropImageAndGenerateRenditionsPage;
+import com.pages.Alfresco.CropImagePage;
+import com.pages.Alfresco.GenerateRenditionsPage;
 import com.pages.Alfresco.CustomizeXMLPage;
 import com.pages.Alfresco.GenerateVideoFramesPage;
 import com.pages.Alfresco.MarkLogicSearchPage;
@@ -45,9 +46,14 @@ public class AbstractSteps extends ScenarioSteps {
 		return getPages().currentPageAt(AlfrescoCreateNewUserPage.class);
 	}
 
-	protected CropImageAndGenerateRenditionsPage cropImageAndGenerateRenditionsPage() {
+	protected GenerateRenditionsPage generateRenditionsPage() {
 		return getPages().currentPageAt(
-				CropImageAndGenerateRenditionsPage.class);
+				GenerateRenditionsPage.class);
+	}
+	
+	protected CropImagePage cropImagePage() {
+		return getPages().currentPageAt(
+				CropImagePage.class);
 	}
 	
 	protected CustomizeXMLPage customizeXMLPage() {
