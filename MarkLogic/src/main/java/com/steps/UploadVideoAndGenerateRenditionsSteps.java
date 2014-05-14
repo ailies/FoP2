@@ -14,18 +14,25 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void clickVideo() {
-		uploadVideoAndGenerateFramesPage().clickOnVideo();
+	public void clickOnUploadBtn() {
+		uploadVideoAndGenerateFramesPage().clickOnUploadBtn();
 	}
 
 	@Step
-	public void clickGenerateFrames() {
-		uploadVideoAndGenerateFramesPage().clickOnGenerateFrames();
+	public void selectFilesToUpload() {
+		uploadVideoAndGenerateFramesPage().selectFilesToUpload();
 	}
+	
+	@Step
+	public void uploadVideoToResearchFolder() {
+		uploadVideoAndGenerateFramesPage().uploadVideoToResearchFolder();
+	}
+
 
 	@StepGroup
 	public void Video() {
-		clickVideo();
-		clickGenerateFrames();
+		clickOnUploadBtn();
+		selectFilesToUpload();
+		uploadVideoToResearchFolder();
 	}
 }

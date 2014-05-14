@@ -36,7 +36,8 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 	@FindBy(css = "span[title='']")
 	private WebElement createContentFolder;
 
-	@FindBy(css = "input[id='templat e_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name']")
+	@FindBy(css = "#template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name")
+//			+ "input[id='templat e_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name']")
 	private WebElement contentFolderName;
 
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")

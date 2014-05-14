@@ -74,7 +74,7 @@ public class CreateNewFolderSteps extends AbstractSteps {
 		clickOnCreate();
 		clickOnCreateFolderFromTemplate();
 		clickOnCreateContentFolder();
-		inputContentFolderName(contentFolderName);
+		inputContentFolderName("DemoTesting");
 		clickOnSaveContentFolder();
 		waitABit(10000);
 		clickOnFolder("DemoTesting");
@@ -96,10 +96,20 @@ public class CreateNewFolderSteps extends AbstractSteps {
 			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		} else {
 			System.out.println("Folder is created");
-			clickOnFolder("Test");
+			clickOnFolder(folderName);
 			verifyIfNodesExistInBreadcrumbs("Test");
-			createFolderFromTemplate(contentFolderName, folderName, nodes);
+			createFolderFromTemplate("DemoTesting", "DemoTesting", nodes);
 		}
 
+	}
+
+	@StepGroup
+	public void getToResearchFolder(String folderName, String... nodes) {
+		clickOnFolder(folderName);
+		verifyIfNodesExistInBreadcrumbs("Test");
+		clickOnFolder(folderName);
+		verifyIfNodesExistInBreadcrumbs("DemoTesting");
+		clickOnFolder("Research");
+		verifyIfNodesExistInBreadcrumbs("Research");
 	}
 }

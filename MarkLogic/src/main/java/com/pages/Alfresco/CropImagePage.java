@@ -15,7 +15,7 @@ public class CropImagePage extends AbstractPage{
 		super(driver);
 	}
 	
-	@FindBy(id = "#cropImage > a")
+	@FindBy(css = "#cropImage > a")
 	WebElement cropImage;
 
 	@FindBy(id = "save-crop-button")
@@ -23,6 +23,7 @@ public class CropImagePage extends AbstractPage{
 	
 	public void clickOnCropImage() {
 		element(cropImage).waitUntilVisible();
+		cropImage.click();
 		cropImage.click();
 	}
 

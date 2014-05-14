@@ -38,8 +38,8 @@ public class CropImageTest {
 	public void cropImage() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.createNewFolderTest("Test", "DemoTesting1", "Test",
-				"DemoTesting");
+		createNewFolder.getToResearchFolder("Test", "DemoTesting", "Test",
+				"DemoTesting","Research");
 		cropImage.cropImage();
 	}
 }
