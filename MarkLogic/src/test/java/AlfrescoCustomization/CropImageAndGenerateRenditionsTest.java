@@ -47,10 +47,10 @@ public class CropImageAndGenerateRenditionsTest {
 	public void imageActions() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
-				"DemoTesting");
-		markLogicSearch.searchAndImportWikiDocument("Research", "test",
-				"DemoTesting");
-		cropImageAndGemerateRenditions.CropImageAndCreateImageRenditions();
+//		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
+//				"DemoTesting");
+//		markLogicSearch.searchAndImportWikiDocument("Research", "test",
+//				"DemoTesting");
+		cropImageAndGemerateRenditions.GenerateImageRenditions();
 	}
 }

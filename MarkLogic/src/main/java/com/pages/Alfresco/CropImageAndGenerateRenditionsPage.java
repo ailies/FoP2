@@ -20,7 +20,7 @@ public class CropImageAndGenerateRenditionsPage extends AbstractPage {
 	@FindBy(css = "[attribute*='value']")
 	WebElement image;
 
-	@FindBy(id = "")
+	@FindBy(css = ".#generateImgRenditions > a")
 	WebElement generateImageRenditions;
 
 	@FindBy(id = "")

@@ -65,14 +65,17 @@ public class CropImageAndGenerateRenditionsSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void CropImageAndCreateImageRenditions() {
+	public void GenerateImageRenditions() {
+		clickOnFolder("Test");
+		clickOnFolder("DemoTesting");
 		verifyIfFolderExists("Research");
 		clickOnFolder("Research");
 		verifyIfImagesExists(".jpg");
 		clickOnImage(".jpg");
 		clickOnGenerateImageRenditions();
-		clickOnCropImage();
+		waitABit(2000);
+		/*clickOnCropImage();
 		scrollToPageBottom();
-		clickOnSaveCroppedImageBtn();
+		clickOnSaveCroppedImageBtn();*/
 	}
 }
