@@ -1,14 +1,13 @@
 package com.steps;
 
 import tools.AbstractSteps;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
 
 @SuppressWarnings("serial")
 public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
-	
+
 	public UploadVideoAndGenerateRenditionsSteps(Pages pages) {
 		super(pages);
 	}
@@ -22,17 +21,40 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 	public void selectFilesToUpload() {
 		uploadVideoAndGenerateFramesPage().selectFilesToUpload();
 	}
-	
+
 	@Step
 	public void uploadVideoToResearchFolder() {
 		uploadVideoAndGenerateFramesPage().uploadVideoToResearchFolder();
 	}
 
+	@Step
+	public void verifyIfVideoExists(String term) {
+		uploadVideoAndGenerateFramesPage().verifyIfVideoExists(term);
+	}
+
+	@Step
+	public void clickOnVideo() {
+		uploadVideoAndGenerateFramesPage().clickOnVideo();
+	}
+
+	@Step
+	public void clickOnGenerateVideoFrames() {
+		uploadVideoAndGenerateFramesPage().clickOnGenerateVideoFrames();
+	}
+
+	@Step
+	public void verifyIfVideoFramesWereGenerated() {
+		uploadVideoAndGenerateFramesPage().verifyIfVideoFramesWereGenerated();
+	}
 
 	@StepGroup
-	public void Video() {
-		clickOnUploadBtn();
-		selectFilesToUpload();
-		uploadVideoToResearchFolder();
+	public void Video(String term) {
+//		clickOnUploadBtn();
+//		selectFilesToUpload();
+//		uploadVideoToResearchFolder();
+		verifyIfVideoExists(term);
+		clickOnVideo();
+		clickOnGenerateVideoFrames();
+		verifyIfVideoFramesWereGenerated();
 	}
 }

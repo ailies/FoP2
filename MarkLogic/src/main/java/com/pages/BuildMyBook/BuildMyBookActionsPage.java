@@ -7,28 +7,28 @@ import net.thucydides.core.pages.PageObject;
 
 public class BuildMyBookActionsPage extends PageObject {
 
-	@FindBy(css = "a[title='View Latest Publications']")
+	@FindBy(css = "div.module.module-latest-publication > div > div.row > div.col.col-2 > div > p.button-container > a")
 	WebElement viewLatestPublication;
 
 	@FindBy(css = "input[id='searchTermInput']")
 	WebElement searchTermInput;
 
-	@FindBy(id = "searchType")
+	@FindBy(css = "select#filter")
 	WebElement searchOptionDropDown;
 
-	@FindBy(css = "a[title='All']")
+	@FindBy(css = "option:nth-child(1)")
 	WebElement searchWithinAll;
 
-	@FindBy(css = "a[title='Title']")
+	@FindBy(css = "option:nth-child(2)")
 	WebElement searchWithinTitle;
 
-	@FindBy(css = "a[title='Summary']")
+	@FindBy(css = "option:nth-child(3)")
 	WebElement searchWithinSummary;
 
-	@FindBy(css = "a[title='Content']")
+	@FindBy(css = "option:nth-child(4)")
 	WebElement searchWithinContent;
 
-	@FindBy(css = "a[title='Categories']")
+	@FindBy(css = "option:nth-child(5)")
 	WebElement searchWithinCategories;
 
 	@FindBy(css = ".col.col-2>button")
