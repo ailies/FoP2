@@ -6,13 +6,12 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import AlfrescoCustomization.CreateAnnotationsTest;
 import AlfrescoCustomization.CropImageTest;
-import AlfrescoCustomization.GenerateRenditionsTest;
 import AlfrescoCustomization.GenerateMasterXMLTest;
+import AlfrescoCustomization.GenerateRenditionsTest;
 import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
 import PublishingContent.CheckTagsTest;
 import PublishingContent.CreateCollectionAndAddDocumentsTest;
 import PublishingContent.PublishXMLTest;
-import PublishingContent.SwichToBuildMyBookTest;
 import Research.CreateNewFolderTest;
 import Research.LoginTest;
 import Research.MarkLogicSearchTest;
@@ -29,20 +28,19 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	LoginTest.class,
 	CreateNewFolderTest.class,
 	MarkLogicSearchTest.class,
-//	GenerateMasterXMLTest.class,
-//	CreateAnnotationsTest.class,
+	GenerateMasterXMLTest.class,
+	CreateAnnotationsTest.class,
 	GenerateRenditionsTest.class,
-//	CropImageTest.class,
-//	UploadVideoAndGenerateVideoFramesTest.class,
-//	EditMasterXMLTest.class,
-//	DownloadFilesFromIDFolderTest.class,
-//	EditFilesWithInDesignTest.class,
-//	ImportFilesToIDFolderTest.class,
-//	EditHTMLFilesFromRenditionsFolderTest.class,
-//	PublishXMLTest.class,
-//	CheckTagsTest.class,
-//	SwichToBuildMyBookTest.class,
-//	CreateCollectionAndAddDocumentsTest.class
+	CropImageTest.class,
+	UploadVideoAndGenerateVideoFramesTest.class,
+	EditMasterXMLTest.class,
+	DownloadFilesFromIDFolderTest.class,
+	EditFilesWithInDesignTest.class,
+	ImportFilesToIDFolderTest.class,
+	EditHTMLFilesFromRenditionsFolderTest.class,
+	PublishXMLTest.class,
+	CheckTagsTest.class,
+	CreateCollectionAndAddDocumentsTest.class
 })
 public class testScriptSuite {
 

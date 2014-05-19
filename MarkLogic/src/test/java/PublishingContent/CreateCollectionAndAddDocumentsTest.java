@@ -2,7 +2,6 @@ package PublishingContent;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
@@ -21,7 +20,7 @@ public class CreateCollectionAndAddDocumentsTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
-	@ManagedPages(defaultUrl = "http://172.16.10.116:9002/")
+	@ManagedPages(defaultUrl = "http://admin:admin@172.16.10.116:9002/")
 	public Pages pages;
 
 	@Steps

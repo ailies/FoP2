@@ -73,8 +73,9 @@ public class BuildMyBookActionSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void clickOnAddAricle() {
+	public void clickOnAddArticle() {
 		buildMyBookActionsPage().clickOnAddAricle();
+		waitABit(2000);
 	}
 
 	@Step
@@ -140,14 +141,14 @@ public class BuildMyBookActionSteps extends AbstractSteps {
 	@StepGroup
 	public void buildMyBook(String searchTerm) {
 		getDriver().manage().window().maximize();
-		getDriver().get("http://172.16.10.116:9002/");
+		getDriver().get("http://admin:admin@172.16.10.116:9002/");
 		clickOnViewLatestPublication();
 		clickOnViewArticleContent();
-		clickOnAddAricle();
+		clickOnAddArticle();
 		inputOnSearchTermInput(searchTerm);
 		clickOnSearchBtn();
 		clickOnViewArticleContent();
-		clickOnAddAricle();
+		clickOnAddArticle();
 		inputPublicationTitle("test");
 		clickOnFormatPDF();
 		clickOnGeneratePublicationBtn();

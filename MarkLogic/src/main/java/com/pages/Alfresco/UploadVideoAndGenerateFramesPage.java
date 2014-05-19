@@ -135,7 +135,6 @@ public class UploadVideoAndGenerateFramesPage extends PageObject {
 		return null;
 	}
 
-	@SuppressWarnings("unused")
 	public void clickOnVideo(String... terms) {
 		WebElement element = selectVideo(terms);
 		System.out.println(element.getText());

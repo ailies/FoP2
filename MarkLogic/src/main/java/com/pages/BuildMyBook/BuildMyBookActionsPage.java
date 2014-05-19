@@ -34,7 +34,7 @@ public class BuildMyBookActionsPage extends PageObject {
 	@FindBy(css = ".col.col-2>button")
 	WebElement searchBtn;
 
-	@FindBy(css = ".button.view-article")
+	@FindBy(css = "div:nth-child(1) > div > div.col.col-7 > p > a.button.view-article")
 	WebElement viewArticleContent;
 
 	@FindBy(css = ".button.add-to-my-book")
@@ -43,7 +43,7 @@ public class BuildMyBookActionsPage extends PageObject {
 	@FindBy(css = ".button.back-to-summary")
 	WebElement backToResultsBtn;
 
-	@FindBy(css = ".button.add-article")
+	@FindBy(css = "div.content-container > div:nth-child(3) > div > div > ul > li:nth-child(2) > a")
 	WebElement addAricle;
 
 	@FindBy(css = ".module.module-my-book")

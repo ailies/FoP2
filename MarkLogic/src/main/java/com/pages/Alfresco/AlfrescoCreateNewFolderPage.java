@@ -2,14 +2,16 @@ package com.pages.Alfresco;
 
 import java.util.List;
 
+import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.annotations.findby.FindBy;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import tools.AbstractPage;
 import tools.StringUtils;
-import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.findby.FindBy;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
 public class AlfrescoCreateNewFolderPage extends AbstractPage {
@@ -37,7 +39,8 @@ public class AlfrescoCreateNewFolderPage extends AbstractPage {
 	private WebElement createContentFolder;
 
 	@FindBy(css = "#template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name")
-//			+ "input[id='templat e_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name']")
+	// +
+	// "input[id='templat e_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name']")
 	private WebElement contentFolderName;
 
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")
