@@ -2,12 +2,11 @@ package com.pages.Alfresco;
 
 import java.util.List;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
 public class CustomizeXMLPage extends PageObject {
@@ -38,9 +37,9 @@ public class CustomizeXMLPage extends PageObject {
 		if (element != null) {
 			rendition.click();
 
-		} else {
+		} /*else {
 			Assert.fail("The rendition was not found!!!!");
-		}
+		}*/
 
 	}
 

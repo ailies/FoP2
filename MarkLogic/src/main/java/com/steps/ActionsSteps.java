@@ -1,10 +1,9 @@
 package com.steps;
 
-import com.pages.Alfresco.AlfrescoActionsPage;
-
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
+
+import com.pages.Alfresco.AlfrescoActionsPage;
 
 @SuppressWarnings("serial")
 public class ActionsSteps extends ScenarioSteps{

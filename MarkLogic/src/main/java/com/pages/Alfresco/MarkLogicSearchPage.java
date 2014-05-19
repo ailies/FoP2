@@ -1,7 +1,6 @@
 package com.pages.Alfresco;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -9,7 +8,6 @@ import net.thucydides.core.annotations.findby.By;
 import net.thucydides.core.annotations.findby.FindBy;
 
 import org.junit.Assert;
-import org.openqa.jetty.html.Link;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

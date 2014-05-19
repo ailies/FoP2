@@ -1,16 +1,12 @@
 package com.steps;
 
-import org.junit.Assert;
-
-import tools.AbstractSteps;
-
-import com.pages.Alfresco.AlfrescoLoginPage;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.core.steps.ScenarioSteps;
+
+import org.junit.Assert;
+
+import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
 public class AlfrescoLoginSteps extends AbstractSteps {

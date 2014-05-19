@@ -5,6 +5,7 @@ import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
 import tools.AbstractSteps;
 
+@SuppressWarnings("serial")
 public class CropImageSteps extends AbstractSteps {
 
 	public CropImageSteps(Pages pages) {
