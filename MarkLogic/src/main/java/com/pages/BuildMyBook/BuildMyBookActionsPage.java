@@ -2,9 +2,11 @@ package com.pages.BuildMyBook;
 
 import org.openqa.selenium.WebElement;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 
+@DefaultUrl("http://172.16.10.116:9002/")
 public class BuildMyBookActionsPage extends PageObject {
 
 	@FindBy(css = "div.module.module-latest-publication > div > div.row > div.col.col-2 > div > p.button-container > a")
@@ -81,8 +83,8 @@ public class BuildMyBookActionsPage extends PageObject {
 
 	@FindBy(css = "button.generate")
 	WebElement generatePublicationBtn;
-	
-	public void clickOnViewLatestPublication(){
+
+	public void clickOnViewLatestPublication() {
 		viewLatestPublication.click();
 	}
 
@@ -132,6 +134,8 @@ public class BuildMyBookActionsPage extends PageObject {
 
 	public void clickOnAddAricle() {
 		addAricle.click();
+		addAricle.click();
+		waitABit(2000);
 	}
 
 	public void clickOnMyCollectionContainer() {
