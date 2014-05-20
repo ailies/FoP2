@@ -18,8 +18,8 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void selectFilesToUpload() {
-		uploadVideoAndGenerateFramesPage().selectFilesToUpload();
+	public void clickOnSelectFilesToUpload() {
+		uploadVideoAndGenerateFramesPage().clickOnSelectFilesToUpload();
 	}
 
 	@Step
@@ -49,12 +49,12 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 
 	@StepGroup
 	public void Video(String term) {
-//		clickOnUploadBtn();
-//		selectFilesToUpload();
+		clickOnUploadBtn();
+		clickOnSelectFilesToUpload();
 //		uploadVideoToResearchFolder();
-		verifyIfVideoExists(term);
-		clickOnVideo();
-		clickOnGenerateVideoFrames();
-		verifyIfVideoFramesWereGenerated();
+//		verifyIfVideoExists(term);
+//		clickOnVideo();
+//		clickOnGenerateVideoFrames();
+//		verifyIfVideoFramesWereGenerated();
 	}
 }

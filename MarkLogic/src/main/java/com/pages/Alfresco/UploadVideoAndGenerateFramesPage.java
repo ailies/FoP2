@@ -20,7 +20,7 @@ public class UploadVideoAndGenerateFramesPage extends PageObject {
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button")
 	WebElement uploadBtn;
 
-	@FindBy(css = ".dnd-file-selection-button")
+	@FindBy(id = "template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-file-selection-button-overlay")
 	WebElement selectFilesToUpload;
 
 	@FindBy(id = "template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-cancelOk-button-button")
@@ -33,8 +33,9 @@ public class UploadVideoAndGenerateFramesPage extends PageObject {
 		uploadBtn.click();
 	}
 
-	public void selectFilesToUpload() {
-		uploadBtn.click();
+	public void clickOnSelectFilesToUpload() {
+		selectFilesToUpload.click();
+		selectFilesToUpload.click();
 	}
 
 	public void uploadVideoToResearchFolder() {
