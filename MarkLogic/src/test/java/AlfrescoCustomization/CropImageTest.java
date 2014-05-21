@@ -27,7 +27,7 @@ public class CropImageTest {
 
 	@Steps
 	public AlfrescoLoginSteps login;
-	
+
 	@Steps
 	public CreateNewFolderSteps createNewFolder;
 
@@ -38,8 +38,6 @@ public class CropImageTest {
 	public void cropImage() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.getToResearchFolder("Test", "DemoTesting", "Test",
-				"DemoTesting","Research");
 		cropImage.cropImage();
 	}
 }

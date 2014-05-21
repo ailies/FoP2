@@ -34,6 +34,7 @@ public class CreateNewFolderTest {
 	public void createNewFolder() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.createNewFolderTest("Test","DemoTesting", "Test", "DemoTesting");
+		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
+				"DemoTesting");
 	}
 }

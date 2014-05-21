@@ -16,7 +16,6 @@ import Research.CreateNewFolderTest;
 import Research.LoginTest;
 import Research.MarkLogicSearchTest;
 import XMLRoundTripping.DownloadFilesFromIDFolderTest;
-import XMLRoundTripping.EditFilesWithInDesignTest;
 import XMLRoundTripping.EditHTMLFilesFromRenditionsFolderTest;
 import XMLRoundTripping.EditMasterXMLTest;
 import XMLRoundTripping.ImportFilesToIDFolderTest;
@@ -35,7 +34,6 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	UploadVideoAndGenerateVideoFramesTest.class,
 	EditMasterXMLTest.class,
 	DownloadFilesFromIDFolderTest.class,
-	EditFilesWithInDesignTest.class,
 	ImportFilesToIDFolderTest.class,
 	EditHTMLFilesFromRenditionsFolderTest.class,
 	PublishXMLTest.class,

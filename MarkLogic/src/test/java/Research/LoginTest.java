@@ -29,6 +29,5 @@ public class LoginTest {
 	@Test
 	public void login() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
 	}
 }

@@ -30,9 +30,10 @@ public class EditMasterXMLTest {
 
 	@Steps
 	public CreateNewFolderSteps createNewFolder;
-	
+
 	@Steps
 	public CustomizeXMLSteps xmlCustomize;
+
 	@Test
 	public void createNewFolder() {
 		login.loginToSite("admin", "admin");

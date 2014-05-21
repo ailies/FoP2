@@ -34,6 +34,6 @@ public class GenerateMasterXMLTest {
 	public void searchAndImportWikiDocument() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-//		markLogicSearch.markLogicSearch();
+		// markLogicSearch.markLogicSearch();
 	}
 }

@@ -1,6 +1,7 @@
 package AlfrescoCustomization;
 
 import net.thucydides.core.annotations.Managed;
+
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
@@ -15,32 +16,30 @@ import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
 import com.steps.UploadVideoAndGenerateRenditionsSteps;
+
 @Story(Application.Login.login.class)
 @RunWith(ThucydidesRunner.class)
 public class UploadVideoAndGenerateVideoFramesTest {
 
-		@Managed(uniqueSession = true)
-		public WebDriver webdriver;
+	@Managed(uniqueSession = true)
+	public WebDriver webdriver;
 
-		@ManagedPages(defaultUrl = "http://172.16.10.115:8080/share/page/")
-		public Pages pages;
+	@ManagedPages(defaultUrl = "http://172.16.10.115:8080/share/page/")
+	public Pages pages;
 
-		@Steps
-		public AlfrescoLoginSteps login;
+	@Steps
+	public AlfrescoLoginSteps login;
 
-		@Steps
-		public CreateNewFolderSteps createNewFolderSteps;
+	@Steps
+	public CreateNewFolderSteps createNewFolderSteps;
 
-		@Steps
-		public UploadVideoAndGenerateRenditionsSteps uploadVideoAndGenerateRenditionsSteps;
+	@Steps
+	public UploadVideoAndGenerateRenditionsSteps uploadVideoAndGenerateRenditionsSteps;
 
-		@Test
-		public void login() {
-			login.loginToSite("admin", "admin");
-			login.GetToFolder();
-			createNewFolderSteps.getToResearchFolder("Test", "DemoTesting",
-					"Test", "DemoTesting", "Research");
-			uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
-		}
+	@Test
+	public void login() {
+		login.loginToSite("admin", "admin");
+		login.GetToFolder();
+		uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
 	}
-
+}

@@ -38,7 +38,6 @@ public class AlfrescoLoginCSVTest {
 
 	@Test
 	public void loginToAlfrescoSite() {
-
 		loginStep.loginToSite(username, password);
 	}
 
