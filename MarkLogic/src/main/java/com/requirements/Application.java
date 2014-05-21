@@ -20,6 +20,7 @@ public class Application {
 		public class ReorderArticles {}
 		public class EditFiles {}
 		public class PublishArticle {}
+		public class AddAnnotation {}
 	}
 
 	@Feature

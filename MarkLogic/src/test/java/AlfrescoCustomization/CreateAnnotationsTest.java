@@ -4,13 +4,20 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
+import net.thucydides.junit.runners.ThucydidesRunner;
 
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
+import com.steps.AnnotationModuleSteps;
 import com.steps.CreateNewFolderSteps;
 
+@Story(Application.Articles.AddAnnotation.class)
+@RunWith(ThucydidesRunner.class)
 public class CreateAnnotationsTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -24,6 +31,9 @@ public class CreateAnnotationsTest {
 	@Steps
 	public CreateNewFolderSteps createNewFolderSteps;
 	
+	@Steps
+	public AnnotationModuleSteps annotationModuleSteps;
+	
 	@StepGroup
 	public void createAnnotation(){
 		loginSteps.loginToSite("admin", "admin");
@@ -31,5 +41,6 @@ public class CreateAnnotationsTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder("Research");
+		annotationModuleSteps.createAnnotation("message", "", "", "");
 	}
 }

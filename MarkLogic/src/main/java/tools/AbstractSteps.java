@@ -7,6 +7,7 @@ import com.pages.Alfresco.AlfrescoActionsPage;
 import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
 import com.pages.Alfresco.AlfrescoCreateNewUserPage;
 import com.pages.Alfresco.AlfrescoLoginPage;
+import com.pages.Alfresco.AnnotationsModulePage;
 import com.pages.Alfresco.CropImagePage;
 import com.pages.Alfresco.CustomizeXMLPage;
 import com.pages.Alfresco.GenerateImageRenditionsPage;
@@ -55,6 +56,10 @@ public class AbstractSteps extends ScenarioSteps {
 
 	protected GenerateImageRenditionsPage generateRenditionsPage() {
 		return getPages().currentPageAt(GenerateImageRenditionsPage.class);
+	}
+	
+	protected AnnotationsModulePage annotationsModulePage() {
+		return getPages().currentPageAt(AnnotationsModulePage.class);
 	}
 
 	protected CropImagePage cropImagePage() {
