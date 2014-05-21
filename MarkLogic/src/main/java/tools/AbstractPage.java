@@ -47,6 +47,11 @@ public class AbstractPage extends PageObject {
 
 	@FindBy(id = "template_x002e_folder-actions_x002e_folder-details_x0023_default-heading")
 	private WebElement actionsFolderArrow;
+	
+	public void disableFlash() {
+		  String script = "Alfresco.util.setVar(\"noflash\", true)";
+		  evaluateJavascript(script);
+		 }
 
 	public void verifyNotificationMessage(String... message) {
 		// waitForAllStringsToAppear(By.cssSelector("div#message"),
@@ -1183,11 +1188,6 @@ public class AbstractPage extends PageObject {
 
 	public void refreshPage() {
 		getDriver().navigate().refresh();
-	}
-
-	public void disableFlash() {
-		String script = "Alfresco.util.setVar(\"noflash\", true)";
-		evaluateJavascript(script);
 	}
 
 	public void scrollToPageBottom() {

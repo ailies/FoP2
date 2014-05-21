@@ -13,18 +13,8 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void clickOnUploadBtn() {
-		uploadVideoAndGenerateFramesPage().clickOnUploadBtn();
-	}
-
-	@Step
-	public void clickOnSelectFilesToUpload() {
-		uploadVideoAndGenerateFramesPage().clickOnSelectFilesToUpload();
-	}
-
-	@Step
-	public void uploadVideoToResearchFolder() {
-		uploadVideoAndGenerateFramesPage().uploadVideoToResearchFolder();
+	public void uploadDocument(String filePath) {
+		uploadVideoAndGenerateFramesPage().uploadDocument(filePath);
 	}
 
 	@Step
@@ -33,8 +23,8 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void clickOnVideo() {
-		uploadVideoAndGenerateFramesPage().clickOnVideo();
+	public void clickOnVideo(String... terms) {
+		uploadVideoAndGenerateFramesPage().clickOnVideo(terms);
 	}
 
 	@Step
@@ -49,12 +39,10 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 
 	@StepGroup
 	public void Video(String term) {
-		clickOnUploadBtn();
-		clickOnSelectFilesToUpload();
-//		uploadVideoToResearchFolder();
-//		verifyIfVideoExists(term);
-//		clickOnVideo();
-//		clickOnGenerateVideoFrames();
-//		verifyIfVideoFramesWereGenerated();
+//		uploadDocument("C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv");
+		verifyIfVideoExists("Wildlife.wmv");
+		clickOnVideo("Wildlife.wmv");
+		clickOnGenerateVideoFrames();
+		verifyIfVideoFramesWereGenerated();
 	}
 }

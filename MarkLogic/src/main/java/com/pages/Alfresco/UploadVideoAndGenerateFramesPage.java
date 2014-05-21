@@ -2,73 +2,55 @@ package com.pages.Alfresco;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
+import java.io.File;
 import java.util.List;
 
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.FindBy;
-import net.thucydides.core.pages.PageObject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
+import tools.AbstractPage;
+import tools.Constants;
 import tools.StringUtils;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
-public class UploadVideoAndGenerateFramesPage extends PageObject {
+public class UploadVideoAndGenerateFramesPage extends AbstractPage {
+
+	public UploadVideoAndGenerateFramesPage(WebDriver driver) {
+		super(driver);
+	}
 
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button")
-	WebElement uploadBtn;
+	WebElement uploadButton;
 
-	@FindBy(id = "template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-file-selection-button-overlay")
+	// @FindBy(css =
+	// ".yui-panel-container.yui-dialog.shadow .dnd-upload.yui-module.yui-overlay.yui-panel .bd .browse-wrapper .center.dnd-file-selection-control .yui-button.yui-push-button .dnd-file-selection-button-overlay")
+	@FindBy(css = "input.dnd-file-selection-button")
 	WebElement selectFilesToUpload;
 
 	@FindBy(id = "template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-cancelOk-button-button")
 	WebElement cancelUploadFiles;
-	
+
 	@FindBy(id = "#generateFrames > a > span")
 	WebElement generateFramesBtn;
 
-	public void clickOnUploadBtn() {
-		uploadBtn.click();
+	public void uploadDocument(String filePath) {
+		disableFlash();
+		element(uploadButton).waitUntilVisible();
+		uploadButton.click();
+		uploadButton.sendKeys(" ");
+		File fNewTwo = new File(filePath);
+		String fileName1 = fNewTwo.getAbsolutePath();
+		System.out.println("File path absolute : " + fileName1);
+		getDriver().findElement(
+				By.cssSelector("input.dnd-file-selection-button")).sendKeys(
+				fileName1);
+		waitABit(Constants.WAIT_TIME_LONG);
 	}
 
-	public void clickOnSelectFilesToUpload() {
-		selectFilesToUpload.click();
-		selectFilesToUpload.click();
-	}
-
-	public void uploadVideoToResearchFolder() {
-		getDriver().findElement(By.id("urid")).sendKeys("Videos\\Wildlife.wmv");
-
-		WebElement element = getDriver().findElement(By.name(""));
-		WebElement target = getDriver().findElement(By.name("Wildlife"));
-		(new Actions(getDriver())).dragAndDrop(element, target).perform();
-	}
-
-	public static void setClipboardData(String string) {
-		StringSelection stringSelection = new StringSelection(string);
-		Toolkit.getDefaultToolkit().getSystemClipboard()
-				.setContents(stringSelection, null);
-	}
-
-	public void uploadDocument(String fileName) {
-		// disableFlash();
-
-		// element(uploadBtn).waitUntilVisible();
-		// uploadBtn.click();
-		// uploadBtn.sendKeys(" ");
-		//
-		// System.out.println("File path absolute : " + fileName);
-		// element(uploadInputNoFlash).waitUntilVisible();
-		//
-		// uploadInputNoFlash.sendKeys(fileName);
-		//
-		// element(uploadBtn).waitUntilPresent();
-		// uploadBtn.click();
-		// waitABit(Constants.WAIT_TIME_LONG);
-	}
-	
 	public boolean verifyIfVideoExists(String term) {
 		String noOfPagesContainer = getDriver()
 				.findElement(
@@ -142,17 +124,17 @@ public class UploadVideoAndGenerateFramesPage extends PageObject {
 		System.out.println(video.getText());
 		if (element != null) {
 			video.click();
-		} /*else {
-			Assert.fail("Video was not found!!!!");
-		}	*/
+		} /*
+		 * else { Assert.fail("Video was not found!!!!"); }
+		 */
 	}
-	
-	public void clickOnGenerateVideoFrames(){
+
+	public void clickOnGenerateVideoFrames() {
 		generateFramesBtn.click();
 		generateFramesBtn.click();
 		waitABit(10000);
 	}
-	
+
 	public WebElement verifyIfVideoFramesWereGenerated() {
 		List<WebElement> frames = getDriver()
 				.findElement(
@@ -162,4 +144,5 @@ public class UploadVideoAndGenerateFramesPage extends PageObject {
 		return null;
 
 	}
+
 }
