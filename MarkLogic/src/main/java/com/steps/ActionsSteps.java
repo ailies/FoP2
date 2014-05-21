@@ -1,272 +1,273 @@
 package com.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
-
-import com.pages.Alfresco.AlfrescoActionsPage;
+import net.thucydides.core.pages.Pages;
+import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
-public class ActionsSteps extends ScenarioSteps{
+public class ActionsSteps extends AbstractSteps {
 
-	AlfrescoActionsPage alfrescoActions;
-	
-	@Step
-	public void clickOnDownloadAsZip(){
-		alfrescoActions.clickOnDownloadAsZip();
+	public ActionsSteps(Pages pages) {
+		super(pages);
 	}
-	
+
 	@Step
-	public void clickOnViewDetails(){
-		alfrescoActions.clickOnViewDetails();
+	public void clickOnDownloadAsZip() {
+		alfrescoActionsPage().clickOnDownloadAsZip();
 	}
-	
+
 	@Step
-	public void clickOnEditProperties(){
-		alfrescoActions.clickOnEditProperties();
+	public void clickOnViewDetails() {
+		alfrescoActionsPage().clickOnViewDetails();
 	}
-	
+
 	@Step
-	public void clickOnCopyTo(){
-		alfrescoActions.clickOnCopyTo();
+	public void clickOnEditProperties() {
+		alfrescoActionsPage().clickOnEditProperties();
 	}
-	
+
 	@Step
-	public void clickOnMoveTo(){
-		alfrescoActions.clickOnMoveTo();
+	public void clickOnCopyTo() {
+		alfrescoActionsPage().clickOnCopyTo();
 	}
-	
+
 	@Step
-	public void clickOnLinkTo(){
-		alfrescoActions.clickOnLinkTo();
+	public void clickOnMoveTo() {
+		alfrescoActionsPage().clickOnMoveTo();
 	}
-	
+
 	@Step
-	public void clickOnManageRules(){
-		alfrescoActions.clickOnManageRules();
+	public void clickOnLinkTo() {
+		alfrescoActionsPage().clickOnLinkTo();
 	}
-	
+
 	@Step
-	public void clickOnDeleteFolder(){
-		alfrescoActions.clickOnDeleteFolder();
+	public void clickOnManageRules() {
+		alfrescoActionsPage().clickOnManageRules();
 	}
-	
+
 	@Step
-	public void clickOnManagePermissions(){
-		alfrescoActions.clickOnManagePermissions();
+	public void clickOnDeleteFolder() {
+		alfrescoActionsPage().clickOnDeleteFolder();
 	}
-	
+
 	@Step
-	public void clickOnManageAspects(){
-		alfrescoActions.clickOnManageAspects();
+	public void clickOnManagePermissions() {
+		alfrescoActionsPage().clickOnManagePermissions();
 	}
-	
+
 	@Step
-	public void clickOnMarkLogicSearch(){
-		alfrescoActions.clickOnMarkLogicSearch();
+	public void clickOnManageAspects() {
+		alfrescoActionsPage().clickOnManageAspects();
 	}
-	
+
 	@Step
-	public void clickOnDownload(){
-		alfrescoActions.clickOnDownload();
+	public void clickOnMarkLogicSearch() {
+		alfrescoActionsPage().clickOnMarkLogicSearch();
 	}
-	
+
 	@Step
-	public void clickOnFindeDuplicates(){
-		alfrescoActions.clickOnFindeDuplicates();
+	public void clickOnDownload() {
+		alfrescoActionsPage().clickOnDownload();
 	}
-	
+
 	@Step
-	public void clickOnViewInBrowser(){
-		alfrescoActions.clickOnViewInBrowser();
+	public void clickOnFindeDuplicates() {
+		alfrescoActionsPage().clickOnFindeDuplicates();
 	}
-	
+
 	@Step
-	public void clickOnUploadNewVersion(){
-		alfrescoActions.clickOnUploadNewVersion();
+	public void clickOnViewInBrowser() {
+		alfrescoActionsPage().clickOnViewInBrowser();
 	}
-	
+
 	@Step
-	public void clickOnInlineEdit(){
-		alfrescoActions.clickOnInlineEdit();
+	public void clickOnUploadNewVersion() {
+		alfrescoActionsPage().clickOnUploadNewVersion();
 	}
-	
+
 	@Step
-	public void clickOnEditOffline(){
-		alfrescoActions.clickOnEditOffline();
+	public void clickOnInlineEdit() {
+		alfrescoActionsPage().clickOnInlineEdit();
 	}
-	
+
 	@Step
-	public void clickOnDeleteDocument(){
-		alfrescoActions.clickOnDeleteDocument();
+	public void clickOnEditOffline() {
+		alfrescoActionsPage().clickOnEditOffline();
 	}
-	
+
 	@Step
-	public void clickOnStartWorkFlow(){
-		alfrescoActions.clickOnStartWorkFlow();
+	public void clickOnDeleteDocument() {
+		alfrescoActionsPage().clickOnDeleteDocument();
 	}
-	
+
 	@Step
-	public void clickOnPublish(){
-		alfrescoActions.clickOnPublish();
+	public void clickOnStartWorkFlow() {
+		alfrescoActionsPage().clickOnStartWorkFlow();
 	}
-	
+
 	@Step
-	public void clickOnAutomaticallyTag(){
-		alfrescoActions.clickOnAutomaticallyTag();
+	public void clickOnPublish() {
+		alfrescoActionsPage().clickOnPublish();
 	}
-	
+
 	@Step
-	public void clickOnSubmitToReview(){
-		alfrescoActions.clickOnSubmitToReview();
+	public void clickOnAutomaticallyTag() {
+		alfrescoActionsPage().clickOnAutomaticallyTag();
 	}
-	
+
 	@Step
-	public void clickOnSubmitToPublish(){
-		alfrescoActions.clickOnSubmitToPublish();
+	public void clickOnSubmitToReview() {
+		alfrescoActionsPage().clickOnSubmitToReview();
 	}
-	
+
 	@Step
-	public void clickOnAnnotations(){
-		alfrescoActions.clickOnAnnotations();
+	public void clickOnSubmitToPublish() {
+		alfrescoActionsPage().clickOnSubmitToPublish();
 	}
-	
+
 	@Step
-	public void clickOnAssemblyView(){
-		alfrescoActions.clickOnAssemblyView();
+	public void clickOnAnnotations() {
+		alfrescoActionsPage().clickOnAnnotations();
 	}
-	
+
 	@Step
-	public void clickOnSortBtn(){
-		alfrescoActions.clickOnSortBtn();
+	public void clickOnAssemblyView() {
+		alfrescoActionsPage().clickOnAssemblyView();
 	}
-	
+
 	@Step
-	public void clickOnSortFieldByName(){
-		alfrescoActions.clickOnSortFieldByName();
+	public void clickOnSortBtn() {
+		alfrescoActionsPage().clickOnSortBtn();
 	}
-	
+
 	@Step
-	public void clickOnSortByName(){
-		alfrescoActions.clickOnSortByName();
+	public void clickOnSortFieldByName() {
+		alfrescoActionsPage().clickOnSortFieldByName();
 	}
-	
+
 	@Step
-	public void clickOnSortByPopularity(){
-		alfrescoActions.clickOnSortByPopularity();
+	public void clickOnSortByName() {
+		alfrescoActionsPage().clickOnSortByName();
 	}
-	
+
 	@Step
-	public void clickOnSortByTitle(){
-		alfrescoActions.clickOnSortByTitle();
+	public void clickOnSortByPopularity() {
+		alfrescoActionsPage().clickOnSortByPopularity();
 	}
-	
+
 	@Step
-	public void clickOnSortByDescription(){
-		alfrescoActions.clickOnSortByDescription();
+	public void clickOnSortByTitle() {
+		alfrescoActionsPage().clickOnSortByTitle();
 	}
-	
+
 	@Step
-	public void clickOnSortByCreated(){
-		alfrescoActions.clickOnSortByCreated();
+	public void clickOnSortByDescription() {
+		alfrescoActionsPage().clickOnSortByDescription();
 	}
-	
+
 	@Step
-	public void clickOnSortByCreator(){
-		alfrescoActions.clickOnSortByCreator();
+	public void clickOnSortByCreated() {
+		alfrescoActionsPage().clickOnSortByCreated();
 	}
-	
+
 	@Step
-	public void clickOnSortByModified(){
-		alfrescoActions.clickOnSortByModified();
+	public void clickOnSortByCreator() {
+		alfrescoActionsPage().clickOnSortByCreator();
 	}
-	
+
 	@Step
-	public void clickOnSortByModifier(){
-		alfrescoActions.clickOnSortByModifier();
+	public void clickOnSortByModified() {
+		alfrescoActionsPage().clickOnSortByModified();
 	}
-	
+
 	@Step
-	public void clickOnSortBySize(){
-		alfrescoActions.clickOnSortBySize();
+	public void clickOnSortByModifier() {
+		alfrescoActionsPage().clickOnSortByModifier();
 	}
-	
+
 	@Step
-	public void clickOnSortByMimetype(){
-		alfrescoActions.clickOnSortByMimetype();
+	public void clickOnSortBySize() {
+		alfrescoActionsPage().clickOnSortBySize();
 	}
-	
+
 	@Step
-	public void clickOnSortByType(){
-		alfrescoActions.clickOnSortByType();
+	public void clickOnSortByMimetype() {
+		alfrescoActionsPage().clickOnSortByMimetype();
 	}
-	
+
 	@Step
-	public void clickOnDefaultOptionsBtn(){
-		alfrescoActions.clickOnDefaultOptionsBtn();
+	public void clickOnSortByType() {
+		alfrescoActionsPage().clickOnSortByType();
 	}
-	
+
 	@Step
-	public void clickOnHideFolders(){
-		alfrescoActions.clickOnHideFolders();
+	public void clickOnDefaultOptionsBtn() {
+		alfrescoActionsPage().clickOnDefaultOptionsBtn();
 	}
-	
+
 	@Step
-	public void clickOnHideBreadcrumb(){
-		alfrescoActions.clickOnHideBreadcrumb();
+	public void clickOnHideFolders() {
+		alfrescoActionsPage().clickOnHideFolders();
 	}
-	
+
 	@Step
-	public void clickOnRSSFeed(){
-		alfrescoActions.clickOnRSSFeed();
+	public void clickOnHideBreadcrumb() {
+		alfrescoActionsPage().clickOnHideBreadcrumb();
 	}
-	
+
 	@Step
-	public void clickOnFullWindow(){
-		alfrescoActions.clickOnFullWindow();
+	public void clickOnRSSFeed() {
+		alfrescoActionsPage().clickOnRSSFeed();
 	}
-	
+
 	@Step
-	public void clickOnFullScreen(){
-		alfrescoActions.clickOnFullScreen();
+	public void clickOnFullWindow() {
+		alfrescoActionsPage().clickOnFullWindow();
 	}
-	
+
 	@Step
-	public void clickOnSimpleView(){
-		alfrescoActions.clickOnSimpleView();
+	public void clickOnFullScreen() {
+		alfrescoActionsPage().clickOnFullScreen();
 	}
-	
+
 	@Step
-	public void clickOnDetailedView(){
-		alfrescoActions.clickOnDetailedView();
+	public void clickOnSimpleView() {
+		alfrescoActionsPage().clickOnSimpleView();
 	}
-	
+
 	@Step
-	public void clickOnGalleryView(){
-		alfrescoActions.clickOnGalleryView();
+	public void clickOnDetailedView() {
+		alfrescoActionsPage().clickOnDetailedView();
 	}
-	
+
 	@Step
-	public void clickOnFilmstripView(){
-		alfrescoActions.clickOnFilmstripView();
+	public void clickOnGalleryView() {
+		alfrescoActionsPage().clickOnGalleryView();
 	}
-	
+
 	@Step
-	public void clickOnTableView(){
-		alfrescoActions.clickOnTableView();
+	public void clickOnFilmstripView() {
+		alfrescoActionsPage().clickOnFilmstripView();
 	}
-	
+
 	@Step
-	public void clickOnAudioView(){
-		alfrescoActions.clickOnAudioView();
+	public void clickOnTableView() {
+		alfrescoActionsPage().clickOnTableView();
 	}
-	
+
 	@Step
-	public void clickOnMediaView(){
-		alfrescoActions.clickOnMediaView();
+	public void clickOnAudioView() {
+		alfrescoActionsPage().clickOnAudioView();
 	}
-	
+
 	@Step
-	public void clickOnDetailedViewAsDefaultForThisFolder(){
-		alfrescoActions.clickOnDetailedViewAsDefaultForThisFolder();
+	public void clickOnMediaView() {
+		alfrescoActionsPage().clickOnMediaView();
+	}
+
+	@Step
+	public void clickOnDetailedViewAsDefaultForThisFolder() {
+		alfrescoActionsPage().clickOnDetailedViewAsDefaultForThisFolder();
 	}
 }

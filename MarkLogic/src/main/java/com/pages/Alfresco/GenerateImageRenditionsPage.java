@@ -11,9 +11,9 @@ import org.openqa.selenium.WebElement;
 import tools.AbstractPage;
 import tools.StringUtils;
 
-public class GenerateRenditionsPage extends AbstractPage {
+public class GenerateImageRenditionsPage extends AbstractPage {
 
-	public GenerateRenditionsPage(WebDriver driver) {
+	public GenerateImageRenditionsPage(WebDriver driver) {
 		super(driver);
 	}
 

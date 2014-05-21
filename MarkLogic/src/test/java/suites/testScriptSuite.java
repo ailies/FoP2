@@ -11,7 +11,7 @@ import AlfrescoCustomization.GenerateImageRenditionsTest;
 import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
 import PublishingContent.CheckTagsTest;
 import PublishingContent.CreateCollectionTest;
-import PublishingContent.PublishXMLTest;
+import PublishingContent.PublishArticleTest;
 import Research.CreateNewFolderTest;
 import Research.LoginTest;
 import Research.MarkLogicSearchTest;
@@ -36,7 +36,7 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	DownloadFilesFromIDFolderTest.class,
 	ImportFilesToIDFolderTest.class,
 	EditHTMLFilesFromRenditionsFolderTest.class,
-	PublishXMLTest.class,
+	PublishArticleTest.class,
 	CheckTagsTest.class,
 	CreateCollectionTest.class
 })

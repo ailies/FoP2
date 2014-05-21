@@ -24,7 +24,7 @@ public class AlfrescoLoginCSVTest {
 	public Pages pages;
 
 	@Steps
-	private AlfrescoLoginSteps loginStep;
+	private AlfrescoLoginSteps loginSteps;
 
 	private String username;
 	private String password;
@@ -44,7 +44,7 @@ public class AlfrescoLoginCSVTest {
 
 	@Test
 	public void loginToAlfrescoSite() {
-		loginStep.loginToSite(username, password);
+		loginSteps.loginToSite(username, password);
 	}
 
 }

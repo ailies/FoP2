@@ -25,16 +25,16 @@ public class CreateNewFolderTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolder;
+	public CreateNewFolderSteps createNewFolderSteps;
 
 	@Test
 	public void createNewFolder() {
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
-		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.createNewFolderTest("Test", "DemoTesting", "Test",
 				"DemoTesting");
 	}
 }

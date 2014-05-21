@@ -12,12 +12,12 @@ import org.openqa.selenium.interactions.Actions;
 import tools.AbstractPage;
 import tools.StringUtils;
 
-public class PublishOnBuildMyBookPage extends AbstractPage{
+public class PublishArticlePage extends AbstractPage {
 
-	public PublishOnBuildMyBookPage(WebDriver driver) {
+	public PublishArticlePage(WebDriver driver) {
 		super(driver);
 	}
-	
+
 	public WebElement getTheSearchedElement(String... terms) {
 		String noOfPagesContainer = getDriver()
 				.findElement(
@@ -74,7 +74,5 @@ public class PublishOnBuildMyBookPage extends AbstractPage{
 			markLogicSearch.click();
 		}
 	}
-	
-	
 
 }

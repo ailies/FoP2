@@ -1,11 +1,11 @@
 package com.steps;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.security.Credentials;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
+
+import org.openqa.selenium.Alert;
+
 import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
@@ -143,29 +143,27 @@ public class BuildMyBookActionSteps extends AbstractSteps {
 	@StepGroup
 	public void buildMyBook(String searchTerm) {
 		getDriver().manage().window().maximize();
-		//getDriver().get("http://admin:admin@172.16.10.116:9002/");
+		// getDriver().get("http://admin:admin@172.16.10.116:9002/");
 		getDriver().get("http://172.16.10.116:9002/");
-		
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		Alert alert = getDriver().switchTo().alert();
-		
+
 		alert.sendKeys("admin");
 		alert.sendKeys("	");
 		alert.sendKeys("admin");
 		alert.accept();
-		
 
 		clickOnViewLatestPublication();
 		clickOnViewArticleContent();
 		clickOnAddArticle();
-		 inputOnSearchTermInput(searchTerm);
-		 clickOnSearchBtn();
+		inputOnSearchTermInput(searchTerm);
+		clickOnSearchBtn();
 		// clickOnViewArticleContent();
 		// clickOnAddArticle();
 		// inputPublicationTitle("test");

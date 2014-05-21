@@ -41,17 +41,17 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 	public void clickOnAddFullContent() {
 		markLogicSearchPage().clickOnAddFullContent();
 	}
-	
+
 	@Step
 	public void clickOnUpArrow() {
 		markLogicSearchPage().clickOnUpArrow();
 	}
-	
+
 	@Step
 	public void clickOnRemoveArticle() {
 		markLogicSearchPage().clickOnRemoveArticle();
 	}
-	
+
 	@Step
 	public void clickOnClearSearchBtn() {
 		markLogicSearchPage().clickOnClearSearchBtn();
@@ -66,43 +66,44 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 	public boolean verifyIfXMLFileExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
-	
+
 	@Step
 	public void clickOnFolder(String... terms) {
 		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
 
 	@StepGroup
-	public void searchAndImportWikiDocument(String fileName, String searchTerm, String term) {
-		
+	public void searchAndImportWikiDocument(String fileName, String searchTerm,
+			String term) {
+
 		clickOnMoreOptions("Research");
-		
+
 		inputSearchTerm("music");
 		clickOnDocumentContainer();
-		
+
 		getARandomLink();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
-		
+
 		getARandomLink();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
-		
+
 		getARandomLink();
 		clickOnViewFullContent();
 		clickOnAddFullContent();
 
 		clickOnImportDocuments();
 		waitABit(2000);
-		
+
 		if (!verifyIfXMLFileExists(term)) {
-			
+
 			clickOnFolder("DemoTesting.xml");
-			
+
 		} else {
-			
+
 			System.out.println("Master XML does not exist!");
-		
+
 		}
 	}
 }

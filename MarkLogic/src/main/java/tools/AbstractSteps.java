@@ -1,19 +1,20 @@
 package tools;
 
+import net.thucydides.core.pages.Pages;
+import net.thucydides.core.steps.ScenarioSteps;
+
+import com.pages.Alfresco.AlfrescoActionsPage;
 import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
 import com.pages.Alfresco.AlfrescoCreateNewUserPage;
 import com.pages.Alfresco.AlfrescoLoginPage;
 import com.pages.Alfresco.CropImagePage;
-import com.pages.Alfresco.GenerateRenditionsPage;
 import com.pages.Alfresco.CustomizeXMLPage;
+import com.pages.Alfresco.GenerateImageRenditionsPage;
 import com.pages.Alfresco.GenerateVideoFramesPage;
 import com.pages.Alfresco.MarkLogicSearchPage;
-import com.pages.Alfresco.PublishOnBuildMyBookPage;
+import com.pages.Alfresco.PublishArticlePage;
 import com.pages.Alfresco.UploadVideoAndGenerateFramesPage;
 import com.pages.BuildMyBook.BuildMyBookActionsPage;
-
-import net.thucydides.core.pages.Pages;
-import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
 public class AbstractSteps extends ScenarioSteps {
@@ -30,6 +31,10 @@ public class AbstractSteps extends ScenarioSteps {
 
 	protected void refreshPage() {
 		getDriver().navigate().refresh();
+	}
+	
+	protected AlfrescoActionsPage alfrescoActionsPage() {
+		return getPages().currentPageAt(AlfrescoActionsPage.class);
 	}
 
 	protected AbstractPage abstractPage() {
@@ -48,8 +53,8 @@ public class AbstractSteps extends ScenarioSteps {
 		return getPages().currentPageAt(AlfrescoCreateNewUserPage.class);
 	}
 
-	protected GenerateRenditionsPage generateRenditionsPage() {
-		return getPages().currentPageAt(GenerateRenditionsPage.class);
+	protected GenerateImageRenditionsPage generateRenditionsPage() {
+		return getPages().currentPageAt(GenerateImageRenditionsPage.class);
 	}
 
 	protected CropImagePage cropImagePage() {
@@ -68,8 +73,8 @@ public class AbstractSteps extends ScenarioSteps {
 		return getPages().currentPageAt(MarkLogicSearchPage.class);
 	}
 
-	protected PublishOnBuildMyBookPage publishOnBuildMyBookPage() {
-		return getPages().currentPageAt(PublishOnBuildMyBookPage.class);
+	protected PublishArticlePage publishOnBuildMyBookPage() {
+		return getPages().currentPageAt(PublishArticlePage.class);
 	}
 
 	protected UploadVideoAndGenerateFramesPage uploadVideoAndGenerateFramesPage() {

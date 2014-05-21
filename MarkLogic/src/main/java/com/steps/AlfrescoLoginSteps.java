@@ -14,8 +14,6 @@ public class AlfrescoLoginSteps extends AbstractSteps {
 		super(pages);
 	}
 
-//	AlfrescoLoginPage alfrescoLoginPage;
-
 	@Step
 	public void verifyLoginPageIsOpen() {
 		Assert.assertTrue(
@@ -37,10 +35,10 @@ public class AlfrescoLoginSteps extends AbstractSteps {
 	@Step
 	public void enterPasswordAndCheckPasswordField(String password) {
 		enterPassword(password);
-		Assert.assertEquals(password.length(),
-				alfrescoLoginPage().getEnteredPasswordLength());
-		Assert.assertEquals("password",
-				alfrescoLoginPage().getPasswordFieldType());
+		Assert.assertEquals(password.length(), alfrescoLoginPage()
+				.getEnteredPasswordLength());
+		Assert.assertEquals("password", alfrescoLoginPage()
+				.getPasswordFieldType());
 	}
 
 	@Step

@@ -26,20 +26,21 @@ public class EditMasterXMLTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolder;
+	public CreateNewFolderSteps createNewFolderSteps;
 
 	@Steps
-	public CustomizeXMLSteps xmlCustomize;
+	public CustomizeXMLSteps xmlCustomizeSteps;
 
 	@Test
 	public void createNewFolder() {
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
-		createNewFolder.clickOnFolder("Test");
-		createNewFolder.clickOnFolder("DemoTesting");
-		xmlCustomize.xmlFiles();
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Research");
+		xmlCustomizeSteps.checkRenditions(".xml");
 	}
 }

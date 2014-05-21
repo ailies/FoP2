@@ -11,7 +11,7 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	public CustomizeXMLSteps(Pages pages) {
 		super(pages);
 	}
-	
+
 	@Step
 	public boolean verifyIfXMLFileExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
@@ -21,19 +21,41 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	public void clickOnXMLFile(String... terms) {
 		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
-	
+
 	@Step
-	public void verifyIfRenditionsExists(){
+	public void verifyIfRenditionsExists() {
 		customizeXMLPage().verifyIfRenditionsExists();
 	}
-	
+
 	@Step
-	public void clickOnRendition(){
+	public void clickOnRendition() {
 		customizeXMLPage().clickOnRendition();
+	}
+
+	@Step
+	public void clickOnAssemblyView() {
+		customizeXMLPage().clickOnAssemblyView();
+	}
+
+	@Step
+	public void verifyIfAssemblyViewTreeIsDisplayed() {
+		customizeXMLPage().verifyIfAssemblyViewTreeIsDisplayed();
+	}
+
+	@Step
+	public void reorderXMLFilesInTree(String fileTitle) {
+		customizeXMLPage().reorderXMLFilesInTree(fileTitle);
+	}
+
+	@StepGroup
+	public void reorderFiles(String fileTitle) {
+		clickOnAssemblyView();
+		verifyIfAssemblyViewTreeIsDisplayed();
+		reorderXMLFilesInTree(fileTitle);
 	}
 	
 	@StepGroup
-	public void xmlFiles(){
+	public void checkRenditions(String term){
 		verifyIfXMLFileExists("DemoTesting.xml");
 		clickOnXMLFile("DemoTesting.xml");
 		verifyIfRenditionsExists();

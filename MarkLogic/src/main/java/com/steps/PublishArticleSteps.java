@@ -4,9 +4,9 @@ import net.thucydides.core.pages.Pages;
 import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
-public class PublishOnBuildMyBookSteps  extends AbstractSteps{
+public class PublishArticleSteps extends AbstractSteps {
 
-	public PublishOnBuildMyBookSteps(Pages pages) {
+	public PublishArticleSteps(Pages pages) {
 		super(pages);
 	}
 

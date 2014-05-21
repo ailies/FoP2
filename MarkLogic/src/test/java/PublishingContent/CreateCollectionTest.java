@@ -24,10 +24,10 @@ public class CreateCollectionTest {
 	public Pages pages;
 
 	@Steps
-	BuildMyBookActionSteps buildMyBookActions;
+	BuildMyBookActionSteps buildMyBookActionsSteps;
 
 	@Test
 	public void searchArticle() {
-		buildMyBookActions.buildMyBook("2014");
+		buildMyBookActionsSteps.buildMyBook("2014");
 	}
 }

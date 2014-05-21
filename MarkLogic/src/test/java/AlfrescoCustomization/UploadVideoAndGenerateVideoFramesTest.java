@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
-import com.steps.UploadVideoAndGenerateRenditionsSteps;
+import com.steps.UploadVideoSteps;
 
 @Story(Application.MediaFiles.UploadVideo.class)
 @RunWith(ThucydidesRunner.class)
@@ -28,25 +28,31 @@ public class UploadVideoAndGenerateVideoFramesTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
 	public CreateNewFolderSteps createNewFolderSteps;
 
 	@Steps
-	public UploadVideoAndGenerateRenditionsSteps uploadVideoAndGenerateRenditionsSteps;
+	public UploadVideoSteps uploadVideoAndGenerateRenditionsSteps;
 
 	@Test
 	public void uploadVideoTest() {
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Research");
 		uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
 	}
 	
 	@Test
 	public void generateVideoFramesTest() {
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Research");
 		uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
 	}
 }

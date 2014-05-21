@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.CreateNewFolderSteps;
-import com.steps.GenerateRenditionsSteps;
+import com.steps.GenerateImageRenditionsSteps;
 import com.steps.CustomizeXMLSteps;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.MarkLogicSearchSteps;
@@ -29,24 +29,27 @@ public class GenerateImageRenditionsTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolder;
+	public CreateNewFolderSteps createNewFolderSteps;
 
 	@Steps
-	public MarkLogicSearchSteps markLogicSearch;
+	public MarkLogicSearchSteps markLogicSearchSteps;
 
 	@Steps
-	public CustomizeXMLSteps customizeXML;
+	public CustomizeXMLSteps customizeXMLSteps;
 
 	@Steps
-	public GenerateRenditionsSteps cropImageAndGemerateRenditions;
+	public GenerateImageRenditionsSteps cropImageAndGemerateRenditionsSteps;
 
 	@Test
 	public void imageActions() {
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
-		cropImageAndGemerateRenditions.GenerateImageRenditions();
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Research");
+		cropImageAndGemerateRenditionsSteps.GenerateImageRenditions();
 	}
 }

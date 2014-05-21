@@ -26,18 +26,21 @@ public class CropImageTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolder;
+	public CreateNewFolderSteps createNewFolderSteps;
 
 	@Steps
-	public CropImageSteps cropImage;
+	public CropImageSteps cropImageSteps;
 
 	@Test
 	public void cropImage() {
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
-		cropImage.cropImage();
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Research");
+		cropImageSteps.cropImage();
 	}
 }

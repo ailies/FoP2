@@ -3,13 +3,19 @@ package com.pages.Alfresco;
 import java.util.List;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
-@DefaultUrl("http://172.16.10.115:8080/share/page/")
-public class CustomizeXMLPage extends PageObject {
+import tools.AbstractPage;
+
+public class CustomizeXMLPage extends AbstractPage {
+
+	public CustomizeXMLPage(WebDriver driver) {
+		super(driver);
+	}
 
 	public WebElement verifyIfRenditionsExists() {
 		List<WebElement> searchResults = getDriver()
@@ -37,10 +43,31 @@ public class CustomizeXMLPage extends PageObject {
 		if (element != null) {
 			rendition.click();
 
-		} /*else {
-			Assert.fail("The rendition was not found!!!!");
-		}*/
+		}
 
+	}
+
+	public void clickOnAssemblyView() {
+		WebElement assemblyViewButton = getDriver()
+				.findElement(
+						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button"));
+		assemblyViewButton.click();
+	}
+
+	public void verifyIfAssemblyViewTreeIsDisplayed() {
+		WebElement assemblyViewTree = getDriver().findElement(
+				By.cssSelector("div#assembly-view-tree"));
+		element(assemblyViewTree).shouldBeVisible();
+	}
+
+	public void reorderXMLFilesInTree(String fileTitle) {
+		WebElement files = getElementWithSpecifiedTextFromList(
+				By.cssSelector(".dynatree-node.dynatree-exp-c.dynatree-ico-c a"),
+				false, false, fileTitle).findElement(By.tagName(".xml"));
+		WebElement xmlFile = getDriver().findElement(
+				By.cssSelector("div.current-pages > ul.page-list"));
+		Actions action = new Actions(getDriver());
+		action.dragAndDrop(files, xmlFile).build().perform();
 	}
 
 }

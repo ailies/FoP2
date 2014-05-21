@@ -26,19 +26,22 @@ public class MarkLogicSearchTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolder;
+	public CreateNewFolderSteps createNewFolderSteps;
 
 	@Steps
-	public MarkLogicSearchSteps markLogicSearch;
+	public MarkLogicSearchSteps markLogicSearchSteps;
 
 	@Test
 	public void markLogicSearch() {
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
-		markLogicSearch.searchAndImportWikiDocument("Research", "test",
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Research");
+		markLogicSearchSteps.searchAndImportWikiDocument("Research", "test",
 				"DemoTesting");
 	}
 }

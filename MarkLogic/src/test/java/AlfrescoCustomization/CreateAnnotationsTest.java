@@ -19,16 +19,17 @@ public class CreateAnnotationsTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolder;
+	public CreateNewFolderSteps createNewFolderSteps;
 	
 	@StepGroup
 	public void createAnnotation(){
-		login.loginToSite("admin", "admin");
-		login.navigateToFolder();
-		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
-				"DemoTesting");
+		loginSteps.loginToSite("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Research");
 	}
 }

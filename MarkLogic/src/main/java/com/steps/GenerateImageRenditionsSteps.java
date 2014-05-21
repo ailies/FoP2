@@ -1,21 +1,16 @@
 package com.steps;
 
-import tools.AbstractSteps;
-
-import com.pages.Alfresco.GenerateRenditionsPage;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
+import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
-public class GenerateRenditionsSteps extends AbstractSteps {
+public class GenerateImageRenditionsSteps extends AbstractSteps {
 
-	public GenerateRenditionsSteps(Pages pages) {
+	public GenerateImageRenditionsSteps(Pages pages) {
 		super(pages);
 	}
-
-	GenerateRenditionsPage cropImageAngGenerateRenditions;
 
 	@Step
 	public boolean verifyIfImagesExists(String term) {

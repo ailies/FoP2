@@ -24,10 +24,10 @@ public class LoginTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps login;
+	public AlfrescoLoginSteps loginSteps;
 
 	@Test
 	public void login() {
-		login.loginToSite("admin", "admin");
+		loginSteps.loginToSite("admin", "admin");
 	}
 }
