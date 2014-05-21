@@ -47,10 +47,6 @@ public class GenerateRenditionsTest {
 	public void imageActions() {
 		login.loginToSite("admin", "admin");
 		login.GetToFolder();
-		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
-				"DemoTesting");
-		markLogicSearch.searchAndImportWikiDocument("Research", "test",
-				"DemoTesting");
 		cropImageAndGemerateRenditions.GenerateImageRenditions();
 	}
 }

@@ -40,7 +40,7 @@ public class UploadVideoAndGenerateVideoFramesTest {
 			login.GetToFolder();
 			createNewFolderSteps.getToResearchFolder("Test", "DemoTesting",
 					"Test", "DemoTesting", "Research");
-			uploadVideoAndGenerateRenditionsSteps.Video("Wildlife.wmv");
+			uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
 		}
 	}
 
