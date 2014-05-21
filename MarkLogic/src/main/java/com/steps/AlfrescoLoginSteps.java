@@ -86,7 +86,7 @@ public class AlfrescoLoginSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void GetToFolder() {
+	public void navigateToFolder() {
 		clickOnSitesMenuTab();
 		clickOnTestSiteSubMenu();
 		assertThatDocumentLibraryShouldBeVisible();

@@ -18,9 +18,9 @@ import com.steps.CustomizeXMLSteps;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.MarkLogicSearchSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.MediaFiles.GenerateImageRenditions.class)
 @RunWith(ThucydidesRunner.class)
-public class GenerateRenditionsTest {
+public class GenerateImageRenditionsTest {
 
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -46,7 +46,7 @@ public class GenerateRenditionsTest {
 	@Test
 	public void imageActions() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
+		login.navigateToFolder();
 		cropImageAndGemerateRenditions.GenerateImageRenditions();
 	}
 }

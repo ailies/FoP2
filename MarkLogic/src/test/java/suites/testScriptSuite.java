@@ -7,10 +7,10 @@ import org.junit.runners.Suite.SuiteClasses;
 import AlfrescoCustomization.CreateAnnotationsTest;
 import AlfrescoCustomization.CropImageTest;
 import AlfrescoCustomization.GenerateMasterXMLTest;
-import AlfrescoCustomization.GenerateRenditionsTest;
+import AlfrescoCustomization.GenerateImageRenditionsTest;
 import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
 import PublishingContent.CheckTagsTest;
-import PublishingContent.CreateCollectionAndAddDocumentsTest;
+import PublishingContent.CreateCollectionTest;
 import PublishingContent.PublishXMLTest;
 import Research.CreateNewFolderTest;
 import Research.LoginTest;
@@ -29,7 +29,7 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	MarkLogicSearchTest.class,
 	GenerateMasterXMLTest.class,
 	CreateAnnotationsTest.class,
-	GenerateRenditionsTest.class,
+	GenerateImageRenditionsTest.class,
 	CropImageTest.class,
 	UploadVideoAndGenerateVideoFramesTest.class,
 	EditMasterXMLTest.class,
@@ -38,7 +38,7 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	EditHTMLFilesFromRenditionsFolderTest.class,
 	PublishXMLTest.class,
 	CheckTagsTest.class,
-	CreateCollectionAndAddDocumentsTest.class
+	CreateCollectionTest.class
 })
 public class testScriptSuite {
 

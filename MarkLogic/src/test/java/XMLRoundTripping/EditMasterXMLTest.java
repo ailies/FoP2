@@ -16,7 +16,7 @@ import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
 import com.steps.CustomizeXMLSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.Articles.EditFiles.class)
 @RunWith(ThucydidesRunner.class)
 public class EditMasterXMLTest {
 	@Managed(uniqueSession = true)
@@ -37,7 +37,7 @@ public class EditMasterXMLTest {
 	@Test
 	public void createNewFolder() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
+		login.navigateToFolder();
 		createNewFolder.clickOnFolder("Test");
 		createNewFolder.clickOnFolder("DemoTesting");
 		xmlCustomize.xmlFiles();

@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.BasicFunctionality.Login.class)
 @RunWith(ThucydidesRunner.class)
 public class LoginTest {
 	@Managed(uniqueSession = true)

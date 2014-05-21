@@ -16,7 +16,7 @@ import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
 import com.steps.CropImageSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.MediaFiles.CropImage.class)
 @RunWith(ThucydidesRunner.class)
 public class CropImageTest {
 	@Managed(uniqueSession = true)
@@ -37,7 +37,7 @@ public class CropImageTest {
 	@Test
 	public void cropImage() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
+		login.navigateToFolder();
 		cropImage.cropImage();
 	}
 }

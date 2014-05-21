@@ -16,7 +16,7 @@ import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
 import com.steps.MarkLogicSearchSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.Articles.SearchArticles.class)
 @RunWith(ThucydidesRunner.class)
 public class MarkLogicSearchTest {
 	@Managed(uniqueSession = true)
@@ -37,7 +37,7 @@ public class MarkLogicSearchTest {
 	@Test
 	public void markLogicSearch() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
+		login.navigateToFolder();
 		markLogicSearch.searchAndImportWikiDocument("Research", "test",
 				"DemoTesting");
 	}

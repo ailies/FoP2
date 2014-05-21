@@ -41,6 +41,11 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 	public void uploadVideo(String term) {
 		uploadDocument("C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv");
 		verifyIfVideoExists("Wildlife.wmv");
+	}
+	
+	@StepGroup
+	public void generateVideoFrames(String term) {
+		verifyIfVideoExists("Wildlife.wmv");
 		clickOnVideo("Wildlife.wmv");
 		clickOnGenerateVideoFrames();
 //		verifyIfVideoFramesWereGenerated();

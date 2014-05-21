@@ -17,7 +17,7 @@ import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
 import com.steps.UploadVideoAndGenerateRenditionsSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.MediaFiles.UploadVideo.class)
 @RunWith(ThucydidesRunner.class)
 public class UploadVideoAndGenerateVideoFramesTest {
 
@@ -37,9 +37,16 @@ public class UploadVideoAndGenerateVideoFramesTest {
 	public UploadVideoAndGenerateRenditionsSteps uploadVideoAndGenerateRenditionsSteps;
 
 	@Test
-	public void login() {
+	public void uploadVideoTest() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
+		login.navigateToFolder();
+		uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
+	}
+	
+	@Test
+	public void generateVideoFramesTest() {
+		login.loginToSite("admin", "admin");
+		login.navigateToFolder();
 		uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
 	}
 }

@@ -15,7 +15,7 @@ import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.MarkLogicSearchSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.Articles.ReorderArticles.class)
 @RunWith(ThucydidesRunner.class)
 public class GenerateMasterXMLTest {
 	@Managed(uniqueSession = true)
@@ -33,7 +33,7 @@ public class GenerateMasterXMLTest {
 	@Test
 	public void searchAndImportWikiDocument() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
-		// markLogicSearch.markLogicSearch();
+		login.navigateToFolder();
+//		 markLogicSearch.markLogicSearch();
 	}
 }

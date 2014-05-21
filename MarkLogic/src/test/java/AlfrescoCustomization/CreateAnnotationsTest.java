@@ -27,7 +27,7 @@ public class CreateAnnotationsTest {
 	@StepGroup
 	public void createAnnotation(){
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
+		login.navigateToFolder();
 		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
 				"DemoTesting");
 	}

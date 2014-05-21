@@ -15,7 +15,7 @@ import com.requirements.Application;
 import com.steps.CreateNewFolderSteps;
 import com.steps.AlfrescoLoginSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.BasicFunctionality.CreateFolder.class)
 @RunWith(ThucydidesRunner.class)
 public class CreateNewFolderTest {
 	@Managed(uniqueSession = true)
@@ -33,7 +33,7 @@ public class CreateNewFolderTest {
 	@Test
 	public void createNewFolder() {
 		login.loginToSite("admin", "admin");
-		login.GetToFolder();
+		login.navigateToFolder();
 		createNewFolder.createNewFolderTest("Test", "DemoTesting", "Test",
 				"DemoTesting");
 	}

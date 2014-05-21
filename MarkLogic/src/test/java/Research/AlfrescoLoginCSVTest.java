@@ -1,15 +1,21 @@
 package Research;
 
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-
-import com.steps.AlfrescoLoginSteps;
-
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
+import net.thucydides.junit.runners.ThucydidesParameterizedRunner;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+
+import com.requirements.Application;
+import com.steps.AlfrescoLoginSteps;
+
+@Story(Application.BasicFunctionality.Login.class)
+@RunWith(ThucydidesParameterizedRunner.class)
 public class AlfrescoLoginCSVTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;

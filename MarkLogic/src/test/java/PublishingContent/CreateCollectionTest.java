@@ -14,9 +14,9 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.BuildMyBookActionSteps;
 
-@Story(Application.Login.login.class)
+@Story(Application.BuildMyBook.CreateCollection.class)
 @RunWith(ThucydidesRunner.class)
-public class CreateCollectionAndAddDocumentsTest {
+public class CreateCollectionTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
