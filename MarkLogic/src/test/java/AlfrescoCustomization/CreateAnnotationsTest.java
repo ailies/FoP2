@@ -2,12 +2,12 @@ package AlfrescoCustomization;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.runners.ThucydidesRunner;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -19,6 +19,7 @@ import com.steps.CreateNewFolderSteps;
 @Story(Application.Articles.AddAnnotation.class)
 @RunWith(ThucydidesRunner.class)
 public class CreateAnnotationsTest {
+	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -34,7 +35,7 @@ public class CreateAnnotationsTest {
 	@Steps
 	public AnnotationModuleSteps annotationModuleSteps;
 	
-	@StepGroup
+	@Test
 	public void createAnnotation(){
 		loginSteps.loginToSite("admin", "admin");
 		loginSteps.navigateToFolder();

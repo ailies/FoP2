@@ -34,7 +34,7 @@ public class AnnotationsModulePage extends AbstractPage {
 
 	@FindBy(css = "#ice-note-cancel-button > span")
 	WebElement cancelAnnotation;
-	
+
 	@FindBy(css = "div.navigation-bar > div > span")
 	WebElement goBackLink;
 
