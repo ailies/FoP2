@@ -19,12 +19,12 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 
 	@Step
 	public void verifyIfVideoExists(String term) {
-		uploadVideoAndGenerateFramesPage().verifyIfVideoExists(term);
+		alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
 
 	@Step
 	public void clickOnVideo(String... terms) {
-		uploadVideoAndGenerateFramesPage().clickOnVideo(terms);
+		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
 
 	@Step
@@ -38,11 +38,11 @@ public class UploadVideoAndGenerateRenditionsSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void Video(String term) {
-//		uploadDocument("C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv");
+	public void uploadVideo(String term) {
+		uploadDocument("C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv");
 		verifyIfVideoExists("Wildlife.wmv");
 		clickOnVideo("Wildlife.wmv");
 		clickOnGenerateVideoFrames();
-		verifyIfVideoFramesWereGenerated();
+//		verifyIfVideoFramesWereGenerated();
 	}
 }

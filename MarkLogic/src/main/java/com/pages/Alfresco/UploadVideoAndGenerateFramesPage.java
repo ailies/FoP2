@@ -34,7 +34,8 @@ public class UploadVideoAndGenerateFramesPage extends AbstractPage {
 	@FindBy(id = "template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-cancelOk-button-button")
 	WebElement cancelUploadFiles;
 
-	@FindBy(id = "#generateFrames > a > span")
+	@FindBy(css = "a[title='Generate Frames'] > span")
+//			#generateFrames > a > span
 	WebElement generateFramesBtn;
 
 	public void uploadDocument(String filePath) {
@@ -139,8 +140,8 @@ public class UploadVideoAndGenerateFramesPage extends AbstractPage {
 		List<WebElement> frames = getDriver()
 				.findElement(
 						By.id("template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_ixpdc_frames-cntrl"))
-				.findElements(By.cssSelector("a"));
-		System.out.println(frames.size() + "video frames were generated");
+				.findElements(By.cssSelector("a href"));
+		System.out.println(frames.size());
 		return null;
 
 	}

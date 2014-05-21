@@ -17,8 +17,10 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
 public class AbstractSteps extends ScenarioSteps {
+
 	public AbstractSteps(Pages pages) {
 		super(pages);
+
 	}
 
 	public void navigateToURL(String URL) {
@@ -37,7 +39,7 @@ public class AbstractSteps extends ScenarioSteps {
 	protected AlfrescoLoginPage alfrescoLoginPage() {
 		return getPages().currentPageAt(AlfrescoLoginPage.class);
 	}
-	
+
 	protected AlfrescoCreateNewFolderPage alfrescoCreateNewFolderPage() {
 		return getPages().currentPageAt(AlfrescoCreateNewFolderPage.class);
 	}
@@ -47,15 +49,13 @@ public class AbstractSteps extends ScenarioSteps {
 	}
 
 	protected GenerateRenditionsPage generateRenditionsPage() {
-		return getPages().currentPageAt(
-				GenerateRenditionsPage.class);
+		return getPages().currentPageAt(GenerateRenditionsPage.class);
 	}
-	
+
 	protected CropImagePage cropImagePage() {
-		return getPages().currentPageAt(
-				CropImagePage.class);
+		return getPages().currentPageAt(CropImagePage.class);
 	}
-	
+
 	protected CustomizeXMLPage customizeXMLPage() {
 		return getPages().currentPageAt(CustomizeXMLPage.class);
 	}
