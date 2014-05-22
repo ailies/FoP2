@@ -2,8 +2,6 @@ package com.pages.Alfresco;
 
 import java.util.List;
 
-import net.thucydides.core.annotations.DefaultUrl;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,19 +32,44 @@ public class CustomizeXMLPage extends AbstractPage {
 	}
 
 	public void clickOnRendition() {
-		WebElement element = verifyIfRenditionsExists();
-		System.out.println(element.getText());
-		WebElement rendition = element
-				.findElement(By
-						.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a > img:nht-child(1)"));
-
-		if (element != null) {
-			rendition.click();
+		List<WebElement> searchResultList = getDriver()
+				.findElements(
+						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl a"));
+		for (WebElement searchResult : searchResultList) {
+			searchResult.click();
+			waitABit(2000);
+			checkTheMimetype();
+			waitABit(2000);
+			navigateBack();
 
 		}
+	}
+
+	public void checkTheMimetype() {
+		WebElement mimetype = getDriver().findElement(
+				By.cssSelector("div:nth-child(4) > div > span.viewmode-value"));
+		if (mimetype.getText().contains("Adobe PDF Document")) {
+			System.out.println("PDF rendition was generated");
+		} else {
+			if (mimetype.getText().contains("HTML")) {
+				System.out.println("HTML rendition was generated");
+			} else {
+				if (mimetype.getText().contains(
+						"{http://www.alfresco.org/model/content/1.0}content")) {
+					System.out.println("Thumbnail is visible");
+				} else {
+					System.out.println("F*** you");
+				}
+			}
+		}
+	}
+
+	public void navigateBack() {
+		getDriver().navigate().back();
 
 	}
 
+	// ------------generate master xml with assembly view----------------
 	public void clickOnAssemblyView() {
 		WebElement assemblyViewButton = getDriver()
 				.findElement(

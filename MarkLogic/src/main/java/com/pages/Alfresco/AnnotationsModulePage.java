@@ -5,12 +5,13 @@ import java.util.Date;
 import java.util.List;
 
 import net.thucydides.core.annotations.findby.FindBy;
-
 import tools.DateUtils;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
 
@@ -46,6 +47,13 @@ public class AnnotationsModulePage extends AbstractPage {
 		annotationsBtn.click();
 		waitABit(2000);
 	}
+	
+	public void canvasSomethingFuckingShuuuut(){
+		WebElement someShit = getDriver().findElement(
+				By.cssSelector("#svgRoot"));
+		Actions actions = new Actions(getDriver());
+		actions.dragAndDropBy(someShit, 50, 70).perform();
+	}
 
 	public void insertCommentForAnnotation(String annotation) {
 		element(commentContentInput).waitUntilVisible();
@@ -57,11 +65,6 @@ public class AnnotationsModulePage extends AbstractPage {
 		getDriver().switchTo().defaultContent();
 		submitCommentButton.click();
 	}
-
-	// public void insertCommentContent(String content) {
-	// getDriver().switchTo().frame(commentContentIframe);
-	// commentContentInput.sendKeys(content);
-	// }
 
 	public void navigateToNextPage() {
 		WebElement nextButton = getDriver()
@@ -171,14 +174,6 @@ public class AnnotationsModulePage extends AbstractPage {
 		Assert.assertTrue(
 				String.format("The '%s' comment was not found!", message),
 				foundComment);
-	}
-
-	public void checkIfDocumentIsLocked(String message) {
-		WebElement notification = getDriver()
-				.findElement(
-						By.cssSelector("div[class*='node-header']>div:first-child span"));
-		Assert.assertTrue("The notification is not present", notification
-				.getText().contains(message));
 	}
 
 	public void checkThatDateCorespondWithSystemTime(Date systemDate) {

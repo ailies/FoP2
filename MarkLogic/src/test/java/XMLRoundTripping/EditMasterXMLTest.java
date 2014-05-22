@@ -40,7 +40,6 @@ public class EditMasterXMLTest {
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder("Research");
 		xmlCustomizeSteps.checkRenditions(".xml");
 	}
 }

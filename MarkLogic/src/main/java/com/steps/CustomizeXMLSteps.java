@@ -32,6 +32,12 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		customizeXMLPage().clickOnRendition();
 	}
 
+
+	@Step
+	public void checkTheMimetype() {
+		customizeXMLPage().checkTheMimetype();
+	}
+
 	@Step
 	public void clickOnAssemblyView() {
 		customizeXMLPage().clickOnAssemblyView();
@@ -47,18 +53,34 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		customizeXMLPage().reorderXMLFilesInTree(fileTitle);
 	}
 
+	@Step
+	public void navigateBack(){
+		customizeXMLPage().navigateBack();
+	}
+
 	@StepGroup
 	public void reorderFiles(String fileTitle) {
 		clickOnAssemblyView();
 		verifyIfAssemblyViewTreeIsDisplayed();
 		reorderXMLFilesInTree(fileTitle);
 	}
-	
+
 	@StepGroup
 	public void checkRenditions(String term){
 		verifyIfXMLFileExists("DemoTesting.xml");
 		clickOnXMLFile("DemoTesting.xml");
 		verifyIfRenditionsExists();
+
 		clickOnRendition();
+//		checkTheMimetype();
+		navigateBack();
+
+		//		clickOnSecondRendition();
+		//		checkTheMimetype();
+		//		navigateBack();
+		//		
+		//		clickOnThirdRendition();
+		//		checkTheMimetype();
+		//		navigateBack();
 	}
 }

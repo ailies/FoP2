@@ -35,7 +35,6 @@ public class UploadVideoAndGenerateFramesPage extends AbstractPage {
 	WebElement cancelUploadFiles;
 
 	@FindBy(css = "a[title='Generate Frames'] > span")
-//			#generateFrames > a > span
 	WebElement generateFramesBtn;
 
 	public void uploadDocument(String filePath) {
