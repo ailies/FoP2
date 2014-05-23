@@ -31,18 +31,45 @@ public class CustomizeXMLPage extends AbstractPage {
 
 	}
 
-	public void clickOnRendition() {
-		List<WebElement> searchResultList = getDriver()
-				.findElements(
-						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl a"));
-		for (WebElement searchResult : searchResultList) {
-			searchResult.click();
-			waitABit(2000);
-			checkTheMimetype();
-			waitABit(2000);
-			navigateBack();
+	/*
+	 * public void clickOnRendition() { List<WebElement> searchResultList =
+	 * getDriver() .findElements( By.cssSelector(
+	 * "#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl a"
+	 * )); for (WebElement searchResult : searchResultList) {
+	 * searchResult.click(); waitABit(2000); checkTheMimetype(); waitABit(2000);
+	 * goBack();
+	 * 
+	 * } }
+	 */
 
-		}
+	public void clickOnFirstRendition() {
+		WebElement firstRendition = getDriver()
+				.findElement(
+						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(1) > img"));
+		firstRendition.click();
+		waitABit(2000);
+		checkTheMimetype();
+		goBack();
+	}
+
+	public void clickOnSecondRendition() {
+		WebElement secondRendition = getDriver()
+				.findElement(
+						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(2) > img"));
+		secondRendition.click();
+		waitABit(2000);
+		checkTheMimetype();
+		goBack();
+	}
+
+	public void clickOnThirdRendition() {
+		WebElement thirdRendition = getDriver()
+				.findElement(
+						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(3) > img"));
+		thirdRendition.click();
+		waitABit(2000);
+		checkTheMimetype();
+		goBack();
 	}
 
 	public void checkTheMimetype() {
@@ -62,11 +89,6 @@ public class CustomizeXMLPage extends AbstractPage {
 				}
 			}
 		}
-	}
-
-	public void navigateBack() {
-		getDriver().navigate().back();
-
 	}
 
 	// ------------generate master xml with assembly view----------------

@@ -20,10 +20,15 @@ public class AnnotationModuleSteps extends AbstractSteps {
 	}
 
 	@Step
+	public void clickOnPDFRendition() {
+		annotationsModulePage().clickOnPDFRendition();
+	}
+
+	@Step
 	public void canvasSomethingFuckingShuuuut() {
 		annotationsModulePage().canvasSomethingFuckingShuuuut();
 	}
-	
+
 	@Step
 	public void clickOnAnnotations() {
 		annotationsModulePage().clickOnAnnotations();
@@ -76,13 +81,12 @@ public class AnnotationModuleSteps extends AbstractSteps {
 	public void createAnnotation(String annotation, String userName,
 			String message) {
 		verifyIfFilePreviewIsDisplayed();
+		clickOnPDFRendition();
 		clickOnAnnotations();
 		canvasSomethingFuckingShuuuut();
-		insertCommentForAnnotation("message");
-		clickOnSubmitCommentButton();
-		// nativateToMainPage();
-		checkIfCommentDoesntExists(userName, message);
-		// checkThatDateCorespondWithSystemTime(null);
+//		insertCommentForAnnotation("message");
+//		clickOnSubmitCommentButton();
+//		checkIfCommentDoesntExists(userName, message);
 	}
 
 }

@@ -28,10 +28,19 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void clickOnRendition() {
-		customizeXMLPage().clickOnRendition();
+	public void clickOnFirstRendition() {
+		customizeXMLPage().clickOnFirstRendition();
 	}
 
+	@Step
+	public void clickOnSecondRendition() {
+		customizeXMLPage().clickOnSecondRendition();
+	}
+
+	@Step
+	public void clickOnThirdRendition() {
+		customizeXMLPage().clickOnThirdRendition();
+	}
 
 	@Step
 	public void checkTheMimetype() {
@@ -53,11 +62,6 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		customizeXMLPage().reorderXMLFilesInTree(fileTitle);
 	}
 
-	@Step
-	public void navigateBack(){
-		customizeXMLPage().navigateBack();
-	}
-
 	@StepGroup
 	public void reorderFiles(String fileTitle) {
 		clickOnAssemblyView();
@@ -66,21 +70,12 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void checkRenditions(String term){
+	public void checkRenditions(String term) {
 		verifyIfXMLFileExists("DemoTesting.xml");
 		clickOnXMLFile("DemoTesting.xml");
 		verifyIfRenditionsExists();
-
-		clickOnRendition();
-//		checkTheMimetype();
-		navigateBack();
-
-		//		clickOnSecondRendition();
-		//		checkTheMimetype();
-		//		navigateBack();
-		//		
-		//		clickOnThirdRendition();
-		//		checkTheMimetype();
-		//		navigateBack();
+		clickOnFirstRendition();
+		clickOnSecondRendition();
+		clickOnThirdRendition();
 	}
 }

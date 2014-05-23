@@ -24,7 +24,7 @@ public class AnnotationsModulePage extends AbstractPage {
 	@FindBy(id = "template_x002e_web-preview_x002e_document-details_x0023_default-previewer-div")
 	WebElement filePreview;
 
-	@FindBy(css = "#onActionAnnotate")
+	@FindBy(css = "#onActionAnnotate > a > span")
 	WebElement annotationsBtn;
 
 	@FindBy(css = "#ice-note-panel > textarea")
@@ -43,16 +43,23 @@ public class AnnotationsModulePage extends AbstractPage {
 		element(filePreview).isCurrentlyVisible();
 	}
 
+	public void clickOnPDFRendition() {
+		WebElement pdfRendition = getDriver()
+				.findElement(
+						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(1) > img"));
+		pdfRendition.click();
+		waitABit(2000);
+	}
+
 	public void clickOnAnnotations() {
 		annotationsBtn.click();
 		waitABit(2000);
 	}
-	
-	public void canvasSomethingFuckingShuuuut(){
-		WebElement someShit = getDriver().findElement(
-				By.cssSelector("#svgRoot"));
+
+	public void canvasSomethingFuckingShuuuut() {
+		WebElement annotate = getDriver().findElement(By.cssSelector("#svgRoot > g"));
 		Actions actions = new Actions(getDriver());
-		actions.dragAndDropBy(someShit, 50, 70).perform();
+		actions.moveToElement(annotate, 50, 70).clickAndHold().release();
 	}
 
 	public void insertCommentForAnnotation(String annotation) {
