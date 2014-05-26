@@ -36,7 +36,7 @@ public class CheckTagsTest {
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder("Research");
+		createNewFolderSteps.clickOnFolder(".xml");
 		
 	}
 }

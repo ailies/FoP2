@@ -63,7 +63,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		firstRendition.click();
 		waitABit(2000);
 		checkTheMimetype();
-		goBack();
+//		goBack();
 	}
 
 	public void clickOnSecondRendition() {
@@ -99,10 +99,12 @@ public class CustomizeXMLPage extends AbstractPage {
 						"{http://www.alfresco.org/model/content/1.0}content")) {
 					System.out.println("Thumbnail is visible");
 				} else {
-					System.out.println("F*** you");
+					System.out.println(mimetype);
 				}
 			}
 		}
 	}
+
+	// -----------tags----------------
 
 }

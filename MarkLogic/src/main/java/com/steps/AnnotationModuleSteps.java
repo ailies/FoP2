@@ -89,6 +89,10 @@ public class AnnotationModuleSteps extends AbstractSteps {
 		checkIfCommentDoesntExists(userName, message);
 		System.out.println(userName);
 		System.out.println(message);
+		nativateToMainPage();
+		checkIfCommentDoesntExists(userName, message);
+		checkIfCommentIsPresent(userName, message);
+//		checkThatDateCorespondWithSystemTime(systemDate);
 	}
 
 }

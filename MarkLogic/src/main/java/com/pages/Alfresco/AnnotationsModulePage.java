@@ -104,16 +104,16 @@ public class AnnotationsModulePage extends AbstractPage {
 	public void checkIfCommentIsPresent(String userName, String message) {
 		List<WebElement> commentList = getDriver()
 				.findElements(
-						By.cssSelector("div[id*='comments-list'] table > tbody[class*='data'] > tr"));
+						By.cssSelector("#ice-notes-list > div"));
 		boolean foundUser = false;
 		boolean foundComment = false;
 		for (WebElement comment : commentList) {
 			WebElement username = comment.findElement(By
-					.cssSelector("div[class*='details'] > span:first-child a"));
+					.cssSelector("#ice-notes-list > div > div > div:nth-child(1) > div.ice-note-header > span.icex-user-name.ice-note-author"));
 			if (username.getText().contains(userName)) {
 				foundUser = true;
 				WebElement commentText = comment.findElement(By
-						.cssSelector("div[class*='details'] div:nth-child(3)"));
+						.cssSelector("d#ice-notes-list > div > div > div.ice-note.ui-state-selected > div.ice-note-content > div.ice-note-comment > div > p"));
 				if (commentText.getText().contains(message)) {
 					foundComment = true;
 					break;

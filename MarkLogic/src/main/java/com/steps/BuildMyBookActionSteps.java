@@ -146,7 +146,7 @@ public class BuildMyBookActionSteps extends AbstractSteps {
 		// getDriver().get("http://admin:admin@172.16.10.116:9002/");
 		getDriver().get("http://172.16.10.116:9002/");
 
-		try {
+		/*try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -157,7 +157,7 @@ public class BuildMyBookActionSteps extends AbstractSteps {
 		alert.sendKeys("admin");
 		alert.sendKeys("	");
 		alert.sendKeys("admin");
-		alert.accept();
+		alert.accept();*/
 
 		clickOnViewLatestPublication();
 		clickOnViewArticleContent();

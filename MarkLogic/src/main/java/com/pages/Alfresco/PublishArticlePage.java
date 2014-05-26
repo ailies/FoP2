@@ -12,7 +12,6 @@ import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
 import tools.Constants;
-import tools.StringUtils;
 
 public class PublishArticlePage extends AbstractPage {
 
