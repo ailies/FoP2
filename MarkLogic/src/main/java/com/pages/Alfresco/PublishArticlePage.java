@@ -3,6 +3,7 @@ package com.pages.Alfresco;
 import java.util.List;
 
 import net.thucydides.core.annotations.findby.By;
+import net.thucydides.core.annotations.findby.FindBy;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,9 @@ public class PublishArticlePage extends AbstractPage {
 	public PublishArticlePage(WebDriver driver) {
 		super(driver);
 	}
+
+	@FindBy(css = "#onPublishWorkflow > a > span")
+	WebElement submitToPublish;
 
 	public WebElement getTheSearchedElement(String... terms) {
 		String noOfPagesContainer = getDriver()
@@ -66,13 +70,17 @@ public class PublishArticlePage extends AbstractPage {
 
 			moreButton.click();
 
-			WebElement markLogicSearch = element.findElement(By
-					.cssSelector("a[title='Submit to publish']"));
+			WebElement submitToPublish = element.findElement(By
+					.cssSelector("a[title='Submit To Publish']"));
 
-			markLogicSearch.isDisplayed();
+			submitToPublish.isDisplayed();
 			waitABit(2000);
-			markLogicSearch.click();
+			submitToPublish.click();
 		}
+	}
+	
+	public void clickOnSubmitToPublish(){
+		submitToPublish.click();
 	}
 
 }

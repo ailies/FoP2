@@ -84,9 +84,9 @@ public class AnnotationModuleSteps extends AbstractSteps {
 		clickOnPDFRendition();
 		clickOnAnnotations();
 		canvasSomethingFuckingShuuuut();
-//		insertCommentForAnnotation("message");
-//		clickOnSubmitCommentButton();
-//		checkIfCommentDoesntExists(userName, message);
+		insertCommentForAnnotation("message");
+		clickOnSubmitCommentButton();
+		checkIfCommentDoesntExists(userName, message);
 	}
 
 }

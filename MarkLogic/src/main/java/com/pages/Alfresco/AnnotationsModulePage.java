@@ -57,9 +57,10 @@ public class AnnotationsModulePage extends AbstractPage {
 	}
 
 	public void canvasSomethingFuckingShuuuut() {
-		WebElement annotate = getDriver().findElement(By.cssSelector("#svgRoot > g"));
 		Actions actions = new Actions(getDriver());
-		actions.moveToElement(annotate, 50, 70).clickAndHold().release();
+		WebElement svgObject = getDriver().findElement(By.cssSelector("div#ice-canvas > embed"));
+		svgObject.click();
+		actions.dragAndDropBy(svgObject, 800, 800).perform();
 	}
 
 	public void insertCommentForAnnotation(String annotation) {

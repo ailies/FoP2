@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
+import com.steps.PublishArticleSteps;
 
 @Story(Application.Articles.PublishArticle.class)
 @RunWith(ThucydidesRunner.class)
@@ -30,13 +31,16 @@ public class PublishArticleTest {
 	@Steps
 	public CreateNewFolderSteps createNewFolderSteps;
 	
+	@Steps
+	public PublishArticleSteps publishArticleSteps;
+	
 	@Test
 	public void publishArticle(){
 		loginSteps.loginToSite("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder("Research");
-		
+		createNewFolderSteps.clickOnFolder(".xml");
+		publishArticleSteps.publishArticle("DemoTesting.xml' publish workflow started");
 	}
 }

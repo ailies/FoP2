@@ -40,7 +40,7 @@ public class MarkLogicSearchTest {
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder("Research");
+//		createNewFolderSteps.clickOnFolder("Research");
 		markLogicSearchSteps.searchAndImportWikiDocument("Research", "test",
 				"DemoTesting");
 	}
