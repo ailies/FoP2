@@ -43,22 +43,15 @@ public class AnnotationsModulePage extends AbstractPage {
 		element(filePreview).isCurrentlyVisible();
 	}
 
-	public void clickOnPDFRendition() {
-		WebElement pdfRendition = getDriver()
-				.findElement(
-						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(1) > img"));
-		pdfRendition.click();
-		waitABit(2000);
-	}
-
 	public void clickOnAnnotations() {
 		annotationsBtn.click();
 		waitABit(2000);
 	}
 
-	public void canvasSomethingFuckingShuuuut() {
+	public void drawALine() {
 		Actions actions = new Actions(getDriver());
-		WebElement svgObject = getDriver().findElement(By.cssSelector("div#ice-canvas > embed"));
+		WebElement svgObject = getDriver().findElement(
+				By.cssSelector("div#ice-canvas > embed"));
 		svgObject.click();
 		actions.dragAndDropBy(svgObject, 800, 800).perform();
 	}

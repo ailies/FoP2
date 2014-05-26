@@ -41,6 +41,6 @@ public class PublishArticleTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder(".xml");
-		publishArticleSteps.publishArticle("DemoTesting.xml' publish workflow started");
+		publishArticleSteps.publishArticle();
 	}
 }

@@ -14,7 +14,7 @@ public class UploadVideoSteps extends AbstractSteps {
 
 	@Step
 	public void uploadDocument(String filePath) {
-		uploadVideoAndGenerateFramesPage().uploadDocument(filePath);
+		uploadFile().uploadDocument(filePath);
 	}
 
 	@Step

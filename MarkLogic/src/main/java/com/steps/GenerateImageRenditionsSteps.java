@@ -14,7 +14,7 @@ public class GenerateImageRenditionsSteps extends AbstractSteps {
 
 	@Step
 	public boolean verifyIfImagesExists(String term) {
-		return generateRenditionsPage().verifyIfImagesExists(term);
+		return generateRenditionsPage().verifyIfElementExists(term);
 	}
 
 	@Step

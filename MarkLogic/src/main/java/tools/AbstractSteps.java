@@ -14,7 +14,7 @@ import com.pages.Alfresco.GenerateImageRenditionsPage;
 import com.pages.Alfresco.GenerateVideoFramesPage;
 import com.pages.Alfresco.MarkLogicSearchPage;
 import com.pages.Alfresco.PublishArticlePage;
-import com.pages.Alfresco.UploadVideoAndGenerateFramesPage;
+import com.pages.Alfresco.UploadFilePage;
 import com.pages.BuildMyBook.BuildMyBookActionsPage;
 
 @SuppressWarnings("serial")
@@ -82,8 +82,8 @@ public class AbstractSteps extends ScenarioSteps {
 		return getPages().currentPageAt(PublishArticlePage.class);
 	}
 
-	protected UploadVideoAndGenerateFramesPage uploadVideoAndGenerateFramesPage() {
-		return getPages().currentPageAt(UploadVideoAndGenerateFramesPage.class);
+	protected UploadFilePage uploadFile() {
+		return getPages().currentPageAt(UploadFilePage.class);
 	}
 
 	protected BuildMyBookActionsPage buildMyBookActionsPage() {

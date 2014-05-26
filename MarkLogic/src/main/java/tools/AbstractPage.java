@@ -47,11 +47,171 @@ public class AbstractPage extends PageObject {
 
 	@FindBy(id = "template_x002e_folder-actions_x002e_folder-details_x0023_default-heading")
 	private WebElement actionsFolderArrow;
-	
+
 	public void disableFlash() {
-		  String script = "Alfresco.util.setVar(\"noflash\", true)";
-		  evaluateJavascript(script);
-		 }
+		String script = "Alfresco.util.setVar(\"noflash\", true)";
+		evaluateJavascript(script);
+	}
+
+	public boolean verifyIfElementExists(String term) {
+		String noOfPagesContainer = getDriver()
+				.findElement(
+						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))
+				.getText().trim();
+		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
+				noOfPagesContainer).get(3);
+		for (int i = 0; i < noOfPages; i++) {
+			List<WebElement> searchResults = getDriver().findElements(
+					By.cssSelector(".filename"));
+			for (WebElement searchResult : searchResults) {
+				boolean foundRow = true;
+				if ($(searchResult).isCurrentlyVisible()) {
+
+					if (!searchResult.getText().toLowerCase()
+							.contains(term.toLowerCase())) {
+						foundRow = false;
+					}
+
+				}
+				if (foundRow)
+					return true;
+			}
+			if (i < noOfPages - 1) {
+				getDriver().findElement(By.cssSelector(".yui-pg-next")).click();
+
+				waitABit(2000);
+			}
+		}
+		return false;
+	}
+
+	public WebElement getTheSearchedElement(String... terms) {
+		String noOfPagesContainer = getDriver()
+				.findElement(
+						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))
+				.getText().trim();
+		System.out.println(noOfPagesContainer.toString());
+		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
+				noOfPagesContainer).get(3);
+		for (int i = 0; i < noOfPages; i++) {
+			List<WebElement> searchResults = getDriver().findElements(
+					By.cssSelector(".yui-dt-rec"));
+			System.out.println(searchResults.size());
+			for (WebElement searchResult : searchResults) {
+				System.out.println(searchResult.getText());
+				boolean foundRow = true;
+				if ($(searchResult).isCurrentlyVisible()) {
+					for (String term : terms) {
+						if (!searchResult.getText().toLowerCase()
+								.contains(term.toLowerCase())) {
+							foundRow = false;
+						}
+					}
+				}
+				if (foundRow)
+					return searchResult;
+			}
+			if (i < noOfPages - 1) {
+				getDriver().findElement(By.cssSelector(".yui-pg-next")).click();
+
+				waitABit(2000);
+			}
+		}
+		return null;
+	}
+	
+	public WebElement selectMediaFile(String... terms) {
+		String noOfPagesContainer = getDriver()
+				.findElement(
+						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))
+				.getText().trim();
+		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
+				noOfPagesContainer).get(3);
+		for (int i = 0; i < noOfPages; i++) {
+			List<WebElement> searchResults = getDriver().findElements(
+					By.cssSelector("a[title*='.png']"));
+			System.out.println(searchResults.size());
+			for (WebElement searchResult : searchResults) {
+				System.out.println(searchResult.getText());
+				boolean foundRow = true;
+				if ($(searchResult).isCurrentlyVisible()) {
+					for (String term : terms) {
+						if (!searchResult.getText().toLowerCase()
+								.contains(term.toLowerCase())) {
+							foundRow = false;
+						}
+					}
+				}
+				if (foundRow)
+					return searchResult;
+			}
+			if (i < noOfPages - 1) {
+				getDriver().findElement(By.cssSelector(".yui-pg-next")).click();
+
+				waitABit(2000);
+			}
+		}
+		return null;
+	}
+	
+	public WebElement selectVideo(String... terms) {
+		String noOfPagesContainer = getDriver()
+				.findElement(
+						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))
+				.getText().trim();
+		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
+				noOfPagesContainer).get(3);
+		for (int i = 0; i < noOfPages; i++) {
+			List<WebElement> searchResults = getDriver().findElements(
+					By.cssSelector("a[title*='.wmv']"));
+			System.out.println(searchResults.size());
+			for (WebElement searchResult : searchResults) {
+				System.out.println(searchResult.getText());
+				boolean foundRow = true;
+				if ($(searchResult).isCurrentlyVisible()) {
+					for (String term : terms) {
+						if (!searchResult.getText().toLowerCase()
+								.contains(term.toLowerCase())) {
+							foundRow = false;
+						}
+					}
+				}
+				if (foundRow)
+					return searchResult;
+			}
+			if (i < noOfPages - 1) {
+				getDriver().findElement(By.cssSelector(".yui-pg-next")).click();
+
+				waitABit(2000);
+			}
+		}
+		return null;
+	}
+
+
+	public void clickOnElement(String... terms) {
+		WebElement element = getTheSearchedFolder(terms);
+		System.out.println(element.getText());
+		WebElement folder = element.findElement(By.cssSelector("span a"));
+		System.out.println(folder.getText());
+		if (element != null) {
+			folder.click();
+		}
+	}
+
+	public void verifyIfNodesExistInBreadcrumbs(String... terms) {
+		WebElement breadcrumbsContainer = waitUntilElementExists(
+				By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-navBar"),
+				15);
+		System.out.println(breadcrumbsContainer.getText());
+		for (String term : terms) {
+			System.out.println();
+			if (!breadcrumbsContainer.getText().toLowerCase()
+					.contains(term.toLowerCase())) {
+				Assert.fail(String.format("Node not found"));
+			}
+		}
+	}
 
 	public void verifyNotificationMessage(String... message) {
 		// waitForAllStringsToAppear(By.cssSelector("div#message"),
@@ -1237,10 +1397,9 @@ public class AbstractPage extends PageObject {
 		}
 		return date1.equals(date2);
 	}
-	
-	
-	//	---------------------------Get Folder/ Click On Folder
-	
+
+	// ---------------------------Get Folder/ Click On Folder
+
 	public WebElement getTheSearchedFolder(String... terms) {
 		String noOfPagesContainer = getDriver()
 				.findElement(

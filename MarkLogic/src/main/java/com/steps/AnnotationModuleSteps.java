@@ -21,12 +21,12 @@ public class AnnotationModuleSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnPDFRendition() {
-		annotationsModulePage().clickOnPDFRendition();
+		customizeXMLPage().clickOnFirstRendition();
 	}
 
 	@Step
-	public void canvasSomethingFuckingShuuuut() {
-		annotationsModulePage().canvasSomethingFuckingShuuuut();
+	public void drawALine() {
+		annotationsModulePage().drawALine();
 	}
 
 	@Step
@@ -83,10 +83,12 @@ public class AnnotationModuleSteps extends AbstractSteps {
 		verifyIfFilePreviewIsDisplayed();
 		clickOnPDFRendition();
 		clickOnAnnotations();
-		canvasSomethingFuckingShuuuut();
+		drawALine();
 		insertCommentForAnnotation("message");
 		clickOnSubmitCommentButton();
 		checkIfCommentDoesntExists(userName, message);
+		System.out.println(userName);
+		System.out.println(message);
 	}
 
 }

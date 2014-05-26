@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
+import tools.Constants;
 import tools.StringUtils;
 
 public class PublishArticlePage extends AbstractPage {
@@ -22,40 +23,23 @@ public class PublishArticlePage extends AbstractPage {
 	@FindBy(css = "#onPublishWorkflow > a > span")
 	WebElement submitToPublish;
 
-	public WebElement getTheSearchedElement(String... terms) {
-		String noOfPagesContainer = getDriver()
-				.findElement(
-						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-paginatorBottom"))
-				.getText().trim();
-		System.out.println(noOfPagesContainer.toString());
-		int noOfPages = StringUtils.getAllIntegerNumbersFromString(
-				noOfPagesContainer).get(3);
-		for (int i = 0; i < noOfPages; i++) {
-			List<WebElement> searchResults = getDriver().findElements(
-					By.cssSelector(".yui-dt-rec"));
-			System.out.println(searchResults.size());
-			for (WebElement searchResult : searchResults) {
-				System.out.println(searchResult.getText());
-				boolean foundRow = true;
-				if ($(searchResult).isCurrentlyVisible()) {
-					for (String term : terms) {
-						if (!searchResult.getText().toLowerCase()
-								.contains(term.toLowerCase())) {
-							foundRow = false;
-						}
-					}
-				}
-				if (foundRow)
-					return searchResult;
-			}
-			if (i < noOfPages - 1) {
-				getDriver().findElement(By.cssSelector(".yui-pg-next")).click();
+	@FindBy(css = "#HEADER_TASKS_text")
+	WebElement tasksMenu;
 
-				waitABit(2000);
-			}
-		}
-		return null;
-	}
+	@FindBy(css = "#HEADER_MY_WORKFLOWS")
+	WebElement workflowsStartedSubmenu;
+
+	@FindBy(css = "div#template_x002e_workflow-type-filter_x002e_my-workflows")
+	private WebElement workflowTypeContainer;
+
+	@FindBy(css = "div[id*='default-workflows']")
+	private WebElement workflowsListContainer;
+
+	@FindBy(css = ".yui-dt-rec.yui-dt-last > td > div > h3 > a")
+	private WebElement currentTaskContainer;
+
+	@FindBy(css = "div.start-workflow")
+	private WebElement startWorkflowContainer;
 
 	public void clickOnMoreOptions(String term) {
 		WebElement element = getTheSearchedElement(term);
@@ -78,9 +62,113 @@ public class PublishArticlePage extends AbstractPage {
 			submitToPublish.click();
 		}
 	}
-	
-	public void clickOnSubmitToPublish(){
+
+	public void clickOnSubmitToPublish() {
 		submitToPublish.click();
+	}
+
+	public void clickOnTasksMenu() {
+		tasksMenu.click();
+		tasksMenu.click();
+	}
+
+	public void clickOnWorkflowsStartedSubmenu() {
+		workflowsStartedSubmenu.click();
+	}
+
+	public void selectWorkflowTypeFilter(String workflowType) {
+		element(workflowTypeContainer).waitUntilVisible();
+
+		List<WebElement> list = workflowTypeContainer.findElements(By
+				.cssSelector("li a"));
+
+		for (WebElement item : list) {
+			if (item.getText().equals(workflowType)) {
+				item.sendKeys("");
+				item.click();
+				break;
+			}
+		}
+	}
+
+	public void selectTheReviewedWorkflow(String workflowName) {
+		element(workflowsListContainer).waitUntilVisible();
+
+		List<WebElement> list = workflowsListContainer.findElements(By
+				.cssSelector("div.yui-dt-liner h3 a"));
+
+		for (WebElement item : list) {
+			if (item.getText().equals(workflowName)) {
+				item.sendKeys("");
+				item.click();
+				break;
+			}
+		}
+	}
+
+	public void selectWorkflowType(String workflow) {
+		element(startWorkflowContainer).waitUntilVisible();
+		WebElement workflowButton = startWorkflowContainer
+				.findElement(By
+						.cssSelector("button[id*='default-workflow-definition-button-button']"));
+
+		workflowButton.click();
+		waitABit(Constants.WAIT_TIME_SHORT);
+
+		WebElement workflowDropdown = startWorkflowContainer.findElement(By
+				.cssSelector("div[id*='default-workflow-definition-menu']"));
+		List<WebElement> workflowOptions = workflowDropdown.findElements(By
+				.cssSelector("li span:first-child"));
+
+		for (WebElement elementNow : workflowOptions) {
+
+			if (elementNow.getText().contentEquals(workflow)) {
+				elementNow.click();
+				break;
+			}
+		}
+	}
+
+	public void verifyCurrentTaskStatus(String workflowApproved) {
+		element(currentTaskContainer).waitUntilVisible();
+		currentTaskContainer.click();
+	}
+
+	public void clickOnTask() {
+		element(currentTaskContainer).waitUntilVisible();
+		currentTaskContainer.click();
+	}
+
+	public void clickOnEditCurrentTask() {
+		WebElement currentTask = getDriver()
+				.findElement(
+						By.cssSelector(".yui-dt-rec.yui-dt-last.yui-dt-odd .yui-dt-liner a.task-details"));
+		currentTask.click();
+	}
+
+	public void clickOnEditBtn() {
+		WebElement editBtn = getDriver()
+				.findElement(
+						By.id("page_x002e_data-actions_x002e_task-details_x0023_default-edit-button"));
+		editBtn.click();
+	}
+
+	public void editWorkflowStatus() {
+		WebElement status = getDriver()
+				.findElement(
+						By.cssSelector("select#page_x002e_data-form_x002e_task-edit_x0023_default_prop_bpm_status"));
+		status.click();
+		WebElement statusType = getDriver()
+				.findElement(
+						By.cssSelector("#page_x002e_data-form_x002e_task-edit_x0023_default_prop_bpm_status > option:nth-child(5)"));
+		statusType.click();
+	}
+
+	public void clickOnPublishBtn() {
+		WebElement publishBtn = getDriver()
+				.findElement(
+						By.cssSelector("#page_x002e_data-form_x002e_task-edit_x0023_default_prop_ixpdc_publishOutcome-Publish"));
+		publishBtn.click();
 	}
 
 }

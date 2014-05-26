@@ -24,12 +24,12 @@ public class GenerateVideoFramesSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnGenerateVideoFrames() {
-		uploadVideoAndGenerateFramesPage().clickOnGenerateVideoFrames();
+		generateVideoFramesPage().clickOnGenerateVideoFrames();
 	}
 
 	@Step
 	public void verifyIfVideoFramesWereGenerated() {
-		uploadVideoAndGenerateFramesPage().verifyIfVideoFramesWereGenerated();
+		generateVideoFramesPage().verifyIfVideoFramesWereGenerated();
 	}
 
 	@StepGroup
@@ -37,7 +37,6 @@ public class GenerateVideoFramesSteps extends AbstractSteps {
 		verifyIfVideoExists("Wildlife.wmv");
 		clickOnVideo("Wildlife.wmv");
 		clickOnGenerateVideoFrames();
-		// verifyIfVideoFramesWereGenerated();
 	}
 
 }

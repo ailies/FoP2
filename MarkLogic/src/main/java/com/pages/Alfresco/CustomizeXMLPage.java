@@ -15,6 +15,31 @@ public class CustomizeXMLPage extends AbstractPage {
 		super(driver);
 	}
 
+	// ------------generate master xml with assembly view----------------
+	public void clickOnAssemblyView() {
+		WebElement assemblyViewButton = getDriver()
+				.findElement(
+						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button"));
+		assemblyViewButton.click();
+	}
+
+	public void verifyIfAssemblyViewTreeIsDisplayed() {
+		WebElement assemblyViewTree = getDriver().findElement(
+				By.cssSelector("div#assembly-view-tree"));
+		element(assemblyViewTree).shouldBeVisible();
+	}
+
+	public void reorderXMLFilesInTree(String fileTitle) {
+		WebElement files = getElementWithSpecifiedTextFromList(
+				By.cssSelector(".dynatree-node.dynatree-exp-c.dynatree-ico-c a"),
+				false, false, fileTitle).findElement(By.tagName(".xml"));
+		WebElement xmlFile = getDriver().findElement(
+				By.cssSelector("div.current-pages > ul.page-list"));
+		Actions action = new Actions(getDriver());
+		action.dragAndDrop(files, xmlFile).build().perform();
+	}
+
+	// ----------------verify Renditions----------------
 	public WebElement verifyIfRenditionsExists() {
 		List<WebElement> searchResults = getDriver()
 				.findElement(
@@ -30,17 +55,6 @@ public class CustomizeXMLPage extends AbstractPage {
 		return null;
 
 	}
-
-	/*
-	 * public void clickOnRendition() { List<WebElement> searchResultList =
-	 * getDriver() .findElements( By.cssSelector(
-	 * "#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl a"
-	 * )); for (WebElement searchResult : searchResultList) {
-	 * searchResult.click(); waitABit(2000); checkTheMimetype(); waitABit(2000);
-	 * goBack();
-	 * 
-	 * } }
-	 */
 
 	public void clickOnFirstRendition() {
 		WebElement firstRendition = getDriver()
@@ -89,30 +103,6 @@ public class CustomizeXMLPage extends AbstractPage {
 				}
 			}
 		}
-	}
-
-	// ------------generate master xml with assembly view----------------
-	public void clickOnAssemblyView() {
-		WebElement assemblyViewButton = getDriver()
-				.findElement(
-						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button"));
-		assemblyViewButton.click();
-	}
-
-	public void verifyIfAssemblyViewTreeIsDisplayed() {
-		WebElement assemblyViewTree = getDriver().findElement(
-				By.cssSelector("div#assembly-view-tree"));
-		element(assemblyViewTree).shouldBeVisible();
-	}
-
-	public void reorderXMLFilesInTree(String fileTitle) {
-		WebElement files = getElementWithSpecifiedTextFromList(
-				By.cssSelector(".dynatree-node.dynatree-exp-c.dynatree-ico-c a"),
-				false, false, fileTitle).findElement(By.tagName(".xml"));
-		WebElement xmlFile = getDriver().findElement(
-				By.cssSelector("div.current-pages > ul.page-list"));
-		Actions action = new Actions(getDriver());
-		action.dragAndDrop(files, xmlFile).build().perform();
 	}
 
 }
