@@ -43,7 +43,7 @@ public class UploadVideoAndGenerateVideoFramesTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder("Research");
-		uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
+		uploadVideoAndGenerateRenditionsSteps.uploadVideo("C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv", "Wildlife.wmv");
 	}
 	
 	@Test
@@ -53,6 +53,6 @@ public class UploadVideoAndGenerateVideoFramesTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder("Research");
-		uploadVideoAndGenerateRenditionsSteps.uploadVideo("Wildlife.wmv");
+		uploadVideoAndGenerateRenditionsSteps.uploadVideo("C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv","Wildlife.wmv");
 	}
 }

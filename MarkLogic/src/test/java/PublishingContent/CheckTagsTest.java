@@ -2,12 +2,12 @@ package PublishingContent;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.runners.ThucydidesRunner;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -30,8 +30,8 @@ public class CheckTagsTest {
 	@Steps
 	public CreateNewFolderSteps createNewFolderSteps;
 	
-	@StepGroup
-	public void createAnnotation(){
+	@Test
+	public void checkTags(){
 		loginSteps.loginToSite("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");

@@ -50,6 +50,6 @@ public class GenerateImageRenditionsTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder("Research");
-		cropImageAndGemerateRenditionsSteps.GenerateImageRenditions();
+		cropImageAndGemerateRenditionsSteps.GenerateImageRenditions(".jpg");
 	}
 }

@@ -74,11 +74,11 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 
 	@StepGroup
 	public void searchAndImportWikiDocument(String fileName, String searchTerm,
-			String term) {
+			String term, String... terms) {
 
-		clickOnMoreOptions("Research");
+		clickOnMoreOptions(term);
 
-		inputSearchTerm("music");
+		inputSearchTerm(term);
 		clickOnDocumentContainer();
 
 		getARandomLink();
@@ -98,7 +98,7 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 
 		if (!verifyIfXMLFileExists(term)) {
 
-			clickOnFolder("DemoTesting.xml");
+			clickOnFolder(terms);
 
 		} else {
 

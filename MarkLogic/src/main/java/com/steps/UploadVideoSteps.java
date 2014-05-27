@@ -23,9 +23,9 @@ public class UploadVideoSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void uploadVideo(String term) {
-		uploadDocument("C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv");
-		verifyIfVideoExists("Wildlife.wmv");
+	public void uploadVideo(String filePath, String term) {
+		uploadDocument(filePath);
+		verifyIfVideoExists(term);
 	}
 
 }

@@ -41,6 +41,6 @@ public class CropImageTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder("Research");
-		cropImageSteps.cropImage();
+		cropImageSteps.cropImage(".jpg");
 	}
 }

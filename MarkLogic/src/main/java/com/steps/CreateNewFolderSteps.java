@@ -86,19 +86,17 @@ public class CreateNewFolderSteps extends AbstractSteps {
 	public void createNewFolderTest(String folderName,
 			String contentFolderName, String term, String... nodes) {
 		if (!verifyIfFolderExists(term)) {
-			System.out.println("Create Test folder");
 			clickOnCreate();
 			clickOnCreateFolder();
 			inputFolderName(folderName);
 			clickOnCreateFolderBtn();
 			clickOnFolder(folderName);
-			verifyIfNodesExistInBreadcrumbs("Test");
+			verifyIfNodesExistInBreadcrumbs(nodes);
 			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		} else {
-			System.out.println("Folder is created");
 			clickOnFolder(folderName);
-			verifyIfNodesExistInBreadcrumbs("Test");
-			createFolderFromTemplate("DemoTesting", "DemoTesting", nodes);
+			verifyIfNodesExistInBreadcrumbs(nodes);
+			createFolderFromTemplate(contentFolderName, contentFolderName, nodes);
 		}
 
 	}
@@ -106,9 +104,9 @@ public class CreateNewFolderSteps extends AbstractSteps {
 	@StepGroup
 	public void getToResearchFolder(String folderName, String... nodes) {
 		clickOnFolder(folderName);
-		verifyIfNodesExistInBreadcrumbs("Test");
+		verifyIfNodesExistInBreadcrumbs(folderName);
 		clickOnFolder(folderName);
-		verifyIfNodesExistInBreadcrumbs("DemoTesting");
+		verifyIfNodesExistInBreadcrumbs(nodes);
 		clickOnFolder("Research");
 		verifyIfNodesExistInBreadcrumbs("Research");
 	}

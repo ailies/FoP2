@@ -53,13 +53,9 @@ public class GenerateImageRenditionsSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void GenerateImageRenditions() {
-		clickOnFolder("Test");
-		clickOnFolder("DemoTesting");
-		verifyIfFolderExists("Research");
-		clickOnFolder("Research");
-		verifyIfImagesExists(".jpg");
-		clickOnImage(".jpg");
+	public void GenerateImageRenditions(String term) {
+		verifyIfImagesExists(term);
+		clickOnImage(term);
 		clickOnGenerateImageRenditions();
 		waitABit(2000);
 		verifyIfImageRenditionsWereGenerated();

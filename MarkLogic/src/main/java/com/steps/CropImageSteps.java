@@ -38,9 +38,9 @@ public class CropImageSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void cropImage() {
-		verifyIfImagesExists(".jpg");
-		clickOnImage(".jpg");
+	public void cropImage(String term) {
+		verifyIfImagesExists(term);
+		clickOnImage(term);
 		clickOnCropImage();
 		selectCaptureSize();
 		clickOnSaveCroppedImageBtn();

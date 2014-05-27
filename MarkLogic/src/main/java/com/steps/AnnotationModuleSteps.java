@@ -84,7 +84,7 @@ public class AnnotationModuleSteps extends AbstractSteps {
 		clickOnPDFRendition();
 		clickOnAnnotations();
 		drawALine();
-		insertCommentForAnnotation("");
+		insertCommentForAnnotation(message);
 		clickOnSubmitCommentButton();
 		checkIfCommentDoesntExists(userName, message);
 		System.out.println(userName);
