@@ -35,11 +35,13 @@ public class EditMasterXMLTest {
 	public CustomizeXMLSteps xmlCustomizeSteps;
 
 	@Test
-	public void createNewFolder() {
+	public void checkRenditions() {
 		loginSteps.loginToSite("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		xmlCustomizeSteps.checkRenditions(".xml");
 	}
+	
+	
 }

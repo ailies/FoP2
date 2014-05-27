@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateNewFolderSteps;
+import com.steps.CustomizeXMLSteps;
 import com.steps.MarkLogicSearchSteps;
 
 @Story(Application.Articles.ReorderArticles.class)
@@ -33,14 +34,18 @@ public class GenerateMasterXMLTest {
 	
 	@Steps
 	public CreateNewFolderSteps createNewFolder;
+	
+	@Steps
+	public CustomizeXMLSteps customizeXMLSteps;
 
 	@Test
-	public void searchAndImportWikiDocument() {
+	public void reorderFilesUsingAssemblyView() {
 		loginSteps.loginToSite("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolder.clickOnFolder("Test");
 		createNewFolder.clickOnFolder("DemoTesting");
 		createNewFolder.clickOnFolder("Research");
-//		 markLogicSearch.markLogicSearch();
+		customizeXMLSteps.reorderFiles(".xml");
+		
 	}
 }

@@ -42,6 +42,6 @@ public class CreateAnnotationsTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder(".xml");
-		annotationModuleSteps.createAnnotation("message", "admin", "message");
+		annotationModuleSteps.createAnnotation("message", "admin", "");
 	}
 }

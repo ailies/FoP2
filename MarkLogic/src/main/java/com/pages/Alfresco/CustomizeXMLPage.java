@@ -2,10 +2,10 @@ package com.pages.Alfresco;
 
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
 
@@ -30,14 +30,32 @@ public class CustomizeXMLPage extends AbstractPage {
 	}
 
 	public void reorderXMLFilesInTree(String fileTitle) {
-		WebElement files = getElementWithSpecifiedTextFromList(
-				By.cssSelector(".dynatree-node.dynatree-exp-c.dynatree-ico-c a"),
-				false, false, fileTitle).findElement(By.tagName(".xml"));
-		WebElement xmlFile = getDriver().findElement(
-				By.cssSelector("div.current-pages > ul.page-list"));
-		Actions action = new Actions(getDriver());
-		action.dragAndDrop(files, xmlFile).build().perform();
+		/*
+		 * WebElement files = getElementWithSpecifiedTextFromList(
+		 * By.cssSelector(".dynatree-node.dynatree-exp-c.dynatree-ico-c a"),
+		 * false, false, fileTitle).findElement(By.tagName(".xml")); WebElement
+		 * xmlFile = getDriver().findElement(
+		 * By.cssSelector("div.current-pages > ul.page-list")); Actions action =
+		 * new Actions(getDriver()); action.dragAndDrop(files,
+		 * xmlFile).build().perform();
+		 */
 	}
+
+//	public void checkIfXMLFileIsPresent(String XMLFiles) {
+//		List<WebElement> files = getDriver()
+//				.findElements(
+//						By.cssSelector("div#assembly-view-container > div > div > div > ul > li > ul > li > span > a"));
+//		boolean foundXMLFiles = false;
+//
+//		System.out.println(files.size());
+//
+//		for (WebElement file : files) {
+//			if (file.getText().contains(XMLFiles)) {
+//				foundXMLFiles = true;
+//				break;
+//			}
+//		}
+//	}
 
 	// ----------------verify Renditions----------------
 	public WebElement verifyIfRenditionsExists() {
@@ -63,7 +81,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		firstRendition.click();
 		waitABit(2000);
 		checkTheMimetype();
-//		goBack();
+		// goBack();
 	}
 
 	public void clickOnSecondRendition() {

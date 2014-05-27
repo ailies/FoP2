@@ -13,6 +13,36 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	}
 
 	@Step
+	public void clickOnAssemblyView() {
+		customizeXMLPage().clickOnAssemblyView();
+	}
+
+	@Step
+	public void verifyIfAssemblyViewTreeIsDisplayed() {
+		customizeXMLPage().verifyIfAssemblyViewTreeIsDisplayed();
+	}
+
+	@Step
+	public void reorderXMLFilesInTree(String fileTitle) {
+		customizeXMLPage().reorderXMLFilesInTree(fileTitle);
+	}
+	
+//	@Step
+//	public void checkIfXMLFileIsPresent(String XMLFiles){
+//		customizeXMLPage().checkIfXMLFileIsPresent(XMLFiles);
+//	}
+
+	@StepGroup
+	public void reorderFiles(String fileTitle) {
+		clickOnAssemblyView();
+		verifyIfAssemblyViewTreeIsDisplayed();
+//		checkIfXMLFileIsPresent(".xml");
+//		reorderXMLFilesInTree(fileTitle);
+	}
+
+
+	// -----------renditions--------------
+	@Step
 	public boolean verifyIfXMLFileExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
@@ -47,28 +77,6 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		customizeXMLPage().checkTheMimetype();
 	}
 
-	@Step
-	public void clickOnAssemblyView() {
-		customizeXMLPage().clickOnAssemblyView();
-	}
-
-	@Step
-	public void verifyIfAssemblyViewTreeIsDisplayed() {
-		customizeXMLPage().verifyIfAssemblyViewTreeIsDisplayed();
-	}
-
-	@Step
-	public void reorderXMLFilesInTree(String fileTitle) {
-		customizeXMLPage().reorderXMLFilesInTree(fileTitle);
-	}
-
-	@StepGroup
-	public void reorderFiles(String fileTitle) {
-		clickOnAssemblyView();
-		verifyIfAssemblyViewTreeIsDisplayed();
-		reorderXMLFilesInTree(fileTitle);
-	}
-
 	@StepGroup
 	public void checkRenditions(String term) {
 		verifyIfXMLFileExists("DemoTesting.xml");
@@ -78,4 +86,5 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		clickOnSecondRendition();
 		clickOnThirdRendition();
 	}
+
 }

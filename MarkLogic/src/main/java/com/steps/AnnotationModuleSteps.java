@@ -84,13 +84,14 @@ public class AnnotationModuleSteps extends AbstractSteps {
 		clickOnPDFRendition();
 		clickOnAnnotations();
 		drawALine();
-		insertCommentForAnnotation("message");
+		insertCommentForAnnotation("");
 		clickOnSubmitCommentButton();
 		checkIfCommentDoesntExists(userName, message);
 		System.out.println(userName);
 		System.out.println(message);
-		nativateToMainPage();
+//		nativateToMainPage();
 		checkIfCommentDoesntExists(userName, message);
+		waitABit(2000);
 		checkIfCommentIsPresent(userName, message);
 //		checkThatDateCorespondWithSystemTime(systemDate);
 	}
