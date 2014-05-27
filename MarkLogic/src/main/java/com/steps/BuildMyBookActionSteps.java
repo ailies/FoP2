@@ -143,21 +143,7 @@ public class BuildMyBookActionSteps extends AbstractSteps {
 	@StepGroup
 	public void buildMyBook(String searchTerm) {
 		getDriver().manage().window().maximize();
-		// getDriver().get("http://admin:admin@172.16.10.116:9002/");
 		getDriver().get("http://172.16.10.116:9002/");
-
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		Alert alert = getDriver().switchTo().alert();
-
-		alert.sendKeys("admin");
-		alert.sendKeys("	");
-		alert.sendKeys("admin");
-		alert.accept();*/
 
 		clickOnViewLatestPublication();
 		clickOnViewArticleContent();

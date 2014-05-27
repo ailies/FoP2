@@ -26,20 +26,24 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	public void reorderXMLFilesInTree(String fileTitle) {
 		customizeXMLPage().reorderXMLFilesInTree(fileTitle);
 	}
-	
+
 //	@Step
-//	public void checkIfXMLFileIsPresent(String XMLFiles){
+//	public void checkIfXMLFileIsPresent(String XMLFiles) {
 //		customizeXMLPage().checkIfXMLFileIsPresent(XMLFiles);
 //	}
+
+	@Step
+	public void getTheSearchedElement(String... terms) {
+		customizeXMLPage().getTheSearchedElement(terms);
+	}
 
 	@StepGroup
 	public void reorderFiles(String fileTitle) {
 		clickOnAssemblyView();
 		verifyIfAssemblyViewTreeIsDisplayed();
-//		checkIfXMLFileIsPresent(".xml");
-//		reorderXMLFilesInTree(fileTitle);
+		getTheSearchedElement("xml");
+		// reorderXMLFilesInTree(fileTitle);
 	}
-
 
 	// -----------renditions--------------
 	@Step

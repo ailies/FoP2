@@ -2,10 +2,10 @@ package com.pages.Alfresco;
 
 import java.util.List;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
 
@@ -30,32 +30,59 @@ public class CustomizeXMLPage extends AbstractPage {
 	}
 
 	public void reorderXMLFilesInTree(String fileTitle) {
-		/*
-		 * WebElement files = getElementWithSpecifiedTextFromList(
-		 * By.cssSelector(".dynatree-node.dynatree-exp-c.dynatree-ico-c a"),
-		 * false, false, fileTitle).findElement(By.tagName(".xml")); WebElement
-		 * xmlFile = getDriver().findElement(
-		 * By.cssSelector("div.current-pages > ul.page-list")); Actions action =
-		 * new Actions(getDriver()); action.dragAndDrop(files,
-		 * xmlFile).build().perform();
-		 */
+
+		WebElement files = getElementWithSpecifiedTextFromList(
+				By.cssSelector(".dynatree-node.dynatree-exp-c.dynatree-ico-c a"),
+				false, false, fileTitle).findElement(By.tagName(".xml"));
+		WebElement xmlFile = getDriver().findElement(
+				By.cssSelector("div.current-pages > ul.page-list"));
+		Actions action = new Actions(getDriver());
+		action.dragAndDrop(files, xmlFile).build().perform();
+
 	}
 
-//	public void checkIfXMLFileIsPresent(String XMLFiles) {
-//		List<WebElement> files = getDriver()
-//				.findElements(
-//						By.cssSelector("div#assembly-view-container > div > div > div > ul > li > ul > li > span > a"));
-//		boolean foundXMLFiles = false;
-//
-//		System.out.println(files.size());
-//
-//		for (WebElement file : files) {
-//			if (file.getText().contains(XMLFiles)) {
-//				foundXMLFiles = true;
-//				break;
-//			}
-//		}
-//	}
+	// public void checkIfXMLFileIsPresent(String XMLFiles) {
+	// List<WebElement> files = getDriver()
+	// .findElements(
+	// By.cssSelector("div#assembly-view-container > div > div > div > ul > li > ul > li > span > a"));
+	// boolean foundXMLFiles = false;
+	//
+	// System.out.println(files.size());
+	//
+	// for (WebElement file : files) {
+	// // if (file.getText().contains(XMLFiles)) {
+	// // foundXMLFiles = true;
+	// // break;
+	// }
+	// }
+
+	// public boolean verifyIfXMLExists(String term) {
+	// List<WebElement> searchResults = getDriver().findElements(
+	// By.cssSelector(".dynatree-node"));
+	// for (WebElement searchResult : searchResults) {
+	// boolean foundRow = true;
+	// if ($(searchResult).isCurrentlyVisible()) {
+	//
+	// if (!searchResult.getText().toLowerCase()
+	// .contains(term.toLowerCase())) {
+	// foundRow = false;
+	// }
+	// }
+	// if (foundRow)
+	// return true;
+	// }
+	// return false;
+	// }
+
+	// public WebElement getTheXML(String... terms) {
+	// List<WebElement> searchResults = getDriver().findElements(
+	// By.cssSelector(".treeview ul .dynatree-node"));
+	// System.out.println(searchResults.size());
+	// if(searchResults.contains(terms)){
+	// System.out.println(searchResults.size()); }
+	// return searchResult;
+	// return null;
+	// }
 
 	// ----------------verify Renditions----------------
 	public WebElement verifyIfRenditionsExists() {
