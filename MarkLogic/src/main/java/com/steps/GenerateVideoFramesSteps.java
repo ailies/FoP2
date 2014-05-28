@@ -19,7 +19,7 @@ public class GenerateVideoFramesSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnVideo(String... terms) {
-		alfrescoCreateNewFolderPage().clickOnFolder(terms);
+		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
 	@Step

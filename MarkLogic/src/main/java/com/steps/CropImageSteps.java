@@ -19,7 +19,7 @@ public class CropImageSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnImage(String terms) {
-		alfrescoCreateNewFolderPage().clickOnFolder(terms);
+		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
 	@Step

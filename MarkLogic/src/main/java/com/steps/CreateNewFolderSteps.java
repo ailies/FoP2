@@ -25,7 +25,7 @@ public class CreateNewFolderSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnFolder(String... terms) {
-		alfrescoCreateNewFolderPage().clickOnFolder(terms);
+		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
 	@Step
@@ -91,11 +91,11 @@ public class CreateNewFolderSteps extends AbstractSteps {
 			inputFolderName(folderName);
 			clickOnCreateFolderBtn();
 			clickOnFolder(folderName);
-			verifyIfNodesExistInBreadcrumbs(nodes);
+			verifyIfNodesExistInBreadcrumbs("Test");
 			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		} else {
 			clickOnFolder(folderName);
-			verifyIfNodesExistInBreadcrumbs(nodes);
+			verifyIfNodesExistInBreadcrumbs("Test");
 			createFolderFromTemplate(contentFolderName, contentFolderName, nodes);
 		}
 

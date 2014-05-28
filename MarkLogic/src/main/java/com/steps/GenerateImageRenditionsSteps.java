@@ -19,7 +19,7 @@ public class GenerateImageRenditionsSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnImage(String terms) {
-		alfrescoCreateNewFolderPage().clickOnFolder(terms);
+		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
 	@Step
@@ -45,11 +45,6 @@ public class GenerateImageRenditionsSteps extends AbstractSteps {
 	@Step
 	public boolean verifyIfFolderExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
-	}
-
-	@Step
-	public void clickOnFolder(String... terms) {
-		alfrescoCreateNewFolderPage().clickOnFolder(terms);
 	}
 
 	@StepGroup

@@ -53,7 +53,7 @@ public class CustomizeXMLSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnXMLFile(String... terms) {
-		alfrescoCreateNewFolderPage().clickOnFolder(terms);
+		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
 	@Step

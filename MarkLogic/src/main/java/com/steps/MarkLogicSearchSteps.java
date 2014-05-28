@@ -69,14 +69,14 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnFolder(String... terms) {
-		alfrescoCreateNewFolderPage().clickOnFolder(terms);
+		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
 	@StepGroup
 	public void searchAndImportWikiDocument(String fileName, String searchTerm,
 			String term) {
 
-		clickOnMoreOptions("Research");
+/*		clickOnMoreOptions("Research");
 
 		inputSearchTerm("music");
 		clickOnDocumentContainer();
@@ -94,8 +94,8 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 		clickOnAddFullContent();
 
 		clickOnImportDocuments();
-		waitABit(2000);
-
+		waitABit(6000);
+*/
 		if (!verifyIfXMLFileExists(term)) {
 
 			clickOnFolder("DemoTesting.xml");

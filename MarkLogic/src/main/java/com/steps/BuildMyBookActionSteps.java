@@ -3,9 +3,6 @@ package com.steps;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
-
-import org.openqa.selenium.Alert;
-
 import tools.AbstractSteps;
 
 @SuppressWarnings("serial")

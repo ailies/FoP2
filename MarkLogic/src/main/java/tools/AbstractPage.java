@@ -196,6 +196,8 @@ public class AbstractPage extends PageObject {
 		System.out.println(folder.getText());
 		if (element != null) {
 			folder.click();
+		} else {
+			Assert.fail("The folder was not found!!!!");
 		}
 	}
 
@@ -1435,16 +1437,6 @@ public class AbstractPage extends PageObject {
 		return null;
 	}
 
-	public void clickOnFolder(String... terms) {
-		WebElement element = getTheSearchedFolder(terms);
-		System.out.println(element.getText());
-		WebElement folder = element.findElement(By.cssSelector("span a"));
-		System.out.println(folder.getText());
-		if (element != null) {
-			folder.click();
-		} else {
-			Assert.fail("The folder was not found!!!!");
-		}
-	}
+	
 
 }

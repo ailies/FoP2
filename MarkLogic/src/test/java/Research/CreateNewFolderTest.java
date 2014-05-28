@@ -34,7 +34,7 @@ public class CreateNewFolderTest {
 	public void createNewFolder() {
 		loginSteps.loginToSite("admin", "admin");
 		loginSteps.navigateToFolder();
-		createNewFolderSteps.createNewFolderTest("Test", "DemoTesting", "Test",
+		createNewFolderSteps.createNewFolderTest("Test", "Test", "Test",
 				"DemoTesting");
 	}
 }
