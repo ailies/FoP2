@@ -1,4 +1,4 @@
-package PublishingContent;
+package Research;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -12,12 +12,12 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
+import com.steps.AlfrescoLoginSteps;
 
-@Story(Application.Articles.PublishArticle.class)
+@Story(Application.BasicFunctionality.CreateFolder.class)
 @RunWith(ThucydidesRunner.class)
-public class CheckTagsTest {
+public class CreateFolderTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -29,14 +29,12 @@ public class CheckTagsTest {
 
 	@Steps
 	public CreateFolderSteps createNewFolderSteps;
-	
+
 	@Test
-	public void checkFileTags(){
+	public void createNewFolder() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
-		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder(".xml");
-		
+		createNewFolderSteps.createNewFolderTest("Test", "Test", "Test",
+				"DemoTesting");
 	}
 }

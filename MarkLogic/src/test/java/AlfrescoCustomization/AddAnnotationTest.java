@@ -1,4 +1,4 @@
-package Research;
+package AlfrescoCustomization;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -12,12 +12,14 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.CreateFolderSteps;
 import com.steps.AlfrescoLoginSteps;
+import com.steps.AnnotationModuleSteps;
+import com.steps.CreateFolderSteps;
 
-@Story(Application.BasicFunctionality.CreateFolder.class)
+@Story(Application.Articles.AddAnnotation.class)
 @RunWith(ThucydidesRunner.class)
-public class CreateNewFolderTest {
+public class AddAnnotationTest {
+	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -29,12 +31,17 @@ public class CreateNewFolderTest {
 
 	@Steps
 	public CreateFolderSteps createNewFolderSteps;
-
+	
+	@Steps
+	public AnnotationModuleSteps annotationModuleSteps;
+	
 	@Test
-	public void createNewFolder() {
+	public void createAnnotation(){
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
-		createNewFolderSteps.createNewFolderTest("Test", "Test", "Test",
-				"DemoTesting");
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder(".xml");
+		annotationModuleSteps.createAnnotation("message", "admin", "");
 	}
 }

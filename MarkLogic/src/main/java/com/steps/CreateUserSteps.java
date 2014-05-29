@@ -1,6 +1,5 @@
 package com.steps;
 
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
 import tools.AbstractSteps;
@@ -12,62 +11,17 @@ public class CreateUserSteps extends AbstractSteps {
 		super(pages);
 	}
 
-	@Step
-	public void clickOnAdminTools() {
-		alfrescoCreateNewUserPage().clickOnAdminTools();
-	}
-
-	@Step
-	public void clickOnUserTools() {
-		alfrescoCreateNewUserPage().clickOnUserTools();
-	}
-
-	@Step
-	public void clickOnNewUserBtn() {
-		alfrescoCreateNewUserPage().clickOnNewUserBtn();
-	}
-
-	@Step
-	public void inputFirstNameField(String fName) {
-		alfrescoCreateNewUserPage().inputFirstNameField(fName);
-	}
-
-	@Step
-	public void inputEmailField(String mail) {
-		alfrescoCreateNewUserPage().inputEmailField(mail);
-	}
-
-	@Step
-	public void inputUserNameField(String uName) {
-		alfrescoCreateNewUserPage().inputUserNameField(uName);
-	}
-
-	@Step
-	public void inputPasswordField(String pass) {
-		alfrescoCreateNewUserPage().inputPasswordField(pass);
-	}
-
-	@Step
-	public void inputVerifyPasswordField(String pass) {
-		alfrescoCreateNewUserPage().inputVerifyPasswordField(pass);
-	}
-
-	@Step
-	public void clickOnCreateUserBtn() {
-		alfrescoCreateNewUserPage().clickOnCreateUserBtn();
-	}
-
 	@StepGroup
 	public void CreateNewUser() {
-		clickOnAdminTools();
-		clickOnUserTools();
-		clickOnNewUserBtn();
-		inputFirstNameField("User");
-		inputEmailField("amelia.ilies@ixxus.co.uk");
-		inputUserNameField("TestUser");
-		inputPasswordField("password");
-		inputVerifyPasswordField("password");
-		clickOnCreateUserBtn();
+		alfrescoCreateUserPage().clickOnAdminTools();
+		alfrescoCreateUserPage().clickOnUserTools();
+		alfrescoCreateUserPage().clickOnNewUserBtn();
+		alfrescoCreateUserPage().inputFirstNameField("User");
+		alfrescoCreateUserPage().inputEmailField("amelia.ilies@ixxus.co.uk");
+		alfrescoCreateUserPage().inputUserNameField("TestUser");
+		alfrescoCreateUserPage().inputPasswordField("password");
+		alfrescoCreateUserPage().inputVerifyPasswordField("password");
+		alfrescoCreateUserPage().clickOnCreateUserBtn();
 	}
 
 }

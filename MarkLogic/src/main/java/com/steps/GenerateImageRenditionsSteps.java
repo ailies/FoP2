@@ -28,21 +28,6 @@ public class GenerateImageRenditionsSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void verifyIfImageRenditionsWereGenerated() {
-		generateRenditionsPage().verifyIfImageRenditionsWereGenerated();
-	}
-
-	@Step
-	public void scrollToPageBottom() {
-		generateRenditionsPage().scrollToPageBottom();
-	}
-
-	@Step
-	public void scrollToPageTop() {
-		generateRenditionsPage().scrollToPageTop();
-	}
-
-	@Step
 	public boolean verifyIfFolderExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
@@ -50,9 +35,8 @@ public class GenerateImageRenditionsSteps extends AbstractSteps {
 	@StepGroup
 	public void GenerateImageRenditions(String term) {
 		verifyIfImagesExists(term);
-		clickOnImage(term);
-		clickOnGenerateImageRenditions();
-		waitABit(2000);
-		verifyIfImageRenditionsWereGenerated();
+		alfrescoCreateNewFolderPage().clickOnElement(term);
+		generateRenditionsPage().clickOnGenerateImageRenditions();
+		generateRenditionsPage().verifyIfImageRenditionsWereGenerated();
 	}
 }

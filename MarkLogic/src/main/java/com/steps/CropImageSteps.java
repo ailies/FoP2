@@ -17,32 +17,12 @@ public class CropImageSteps extends AbstractSteps {
 		return generateRenditionsPage().verifyIfElementExists(term);
 	}
 
-	@Step
-	public void clickOnImage(String terms) {
-		alfrescoCreateNewFolderPage().clickOnElement(terms);
-	}
-
-	@Step
-	public void clickOnCropImage() {
-		cropImagePage().clickOnCropImage();
-	}
-
-	@Step
-	public void selectCaptureSize() {
-		cropImagePage().selectCaptureSize();
-	}
-
-	@Step
-	public void clickOnSaveCroppedImageBtn() {
-		cropImagePage().clickOnSaveCroppedImageBtn();
-	}
-
 	@StepGroup
 	public void cropImage(String term) {
 		verifyIfImagesExists(term);
-		clickOnImage(term);
-		clickOnCropImage();
-		selectCaptureSize();
-		clickOnSaveCroppedImageBtn();
+		alfrescoCreateNewFolderPage().clickOnElement(term);
+		cropImagePage().clickOnCropImage();
+		cropImagePage().selectCaptureSize();
+		cropImagePage().clickOnSaveCroppedImageBtn();
 	}
 }

@@ -1,4 +1,4 @@
-package AlfrescoCustomization;
+package XMLRoundTripping;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -13,13 +13,13 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.AnnotationModuleSteps;
 import com.steps.CreateFolderSteps;
+import com.steps.DownloadFilesSteps;
 
-@Story(Application.Articles.AddAnnotation.class)
+@Story(Application.FilesActions.DownloadMultipleFiles.class)
 @RunWith(ThucydidesRunner.class)
-public class CreateAnnotationsTest {
-	
+public class DownloadFilesTest {
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -31,17 +31,17 @@ public class CreateAnnotationsTest {
 
 	@Steps
 	public CreateFolderSteps createNewFolderSteps;
-	
+
 	@Steps
-	public AnnotationModuleSteps annotationModuleSteps;
+	public DownloadFilesSteps downloadFilesSteps;
 	
 	@Test
-	public void createAnnotation(){
+	public void downloadFiles(){
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder(".xml");
-		annotationModuleSteps.createAnnotation("message", "admin", "");
+		createNewFolderSteps.clickOnFolder("id");
+		downloadFilesSteps.downloadFiles("");
 	}
 }

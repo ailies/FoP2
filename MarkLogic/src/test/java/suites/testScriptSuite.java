@@ -4,18 +4,18 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import AlfrescoCustomization.CreateAnnotationsTest;
+import AlfrescoCustomization.AddAnnotationTest;
 import AlfrescoCustomization.CropImageTest;
 import AlfrescoCustomization.GenerateMasterXMLTest;
 import AlfrescoCustomization.GenerateImageRenditionsTest;
 import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
 import PublishingContent.CheckTagsTest;
-import PublishingContent.CreateCollectionTest;
+import PublishingContent.GenerateCollectionTest;
 import PublishingContent.PublishArticleTest;
-import Research.CreateNewFolderTest;
+import Research.CreateFolderTest;
 import Research.LoginTest;
 import Research.MarkLogicSearchTest;
-import XMLRoundTripping.DownloadFilesFromIDFolderTest;
+import XMLRoundTripping.DownloadFilesTest;
 import XMLRoundTripping.EditHTMLFilesFromRenditionsFolderTest;
 import XMLRoundTripping.EditMasterXMLTest;
 import XMLRoundTripping.ImportFilesToIDFolderTest;
@@ -25,20 +25,20 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 @RunWith(Suite.class)
 @SuiteClasses({
 	LoginTest.class,
-	CreateNewFolderTest.class,
+	CreateFolderTest.class,
 	MarkLogicSearchTest.class,
 	GenerateMasterXMLTest.class,
-	CreateAnnotationsTest.class,
+	AddAnnotationTest.class,
 	GenerateImageRenditionsTest.class,
 	CropImageTest.class,
 	UploadVideoAndGenerateVideoFramesTest.class,
 	EditMasterXMLTest.class,
-	DownloadFilesFromIDFolderTest.class,
+	DownloadFilesTest.class,
 	ImportFilesToIDFolderTest.class,
 	EditHTMLFilesFromRenditionsFolderTest.class,
 	PublishArticleTest.class,
 	CheckTagsTest.class,
-	CreateCollectionTest.class
+	GenerateCollectionTest.class
 })
 public class testScriptSuite {
 

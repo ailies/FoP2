@@ -15,9 +15,9 @@ import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
 
-public class AnnotationsModulePage extends AbstractPage {
+public class AnnotationModulePage extends AbstractPage {
 
-	public AnnotationsModulePage(WebDriver driver) {
+	public AnnotationModulePage(WebDriver driver) {
 		super(driver);
 	}
 

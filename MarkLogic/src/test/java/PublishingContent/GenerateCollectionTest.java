@@ -16,7 +16,7 @@ import com.steps.BuildMyBookActionSteps;
 
 @Story(Application.BuildMyBook.CreateCollection.class)
 @RunWith(ThucydidesRunner.class)
-public class CreateCollectionTest {
+public class GenerateCollectionTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 

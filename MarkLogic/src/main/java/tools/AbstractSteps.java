@@ -7,9 +7,10 @@ import com.pages.Alfresco.AlfrescoActionsPage;
 import com.pages.Alfresco.AlfrescoCreateFolderPage;
 import com.pages.Alfresco.AlfrescoCreateUserPage;
 import com.pages.Alfresco.AuthenticationPage;
-import com.pages.Alfresco.AnnotationsModulePage;
+import com.pages.Alfresco.AnnotationModulePage;
 import com.pages.Alfresco.CropImagePage;
 import com.pages.Alfresco.CustomizeXMLPage;
+import com.pages.Alfresco.DownloadFilesPage;
 import com.pages.Alfresco.GenerateImageRenditionsPage;
 import com.pages.Alfresco.GenerateVideoFramesPage;
 import com.pages.Alfresco.MarkLogicSearchPage;
@@ -33,7 +34,7 @@ public class AbstractSteps extends ScenarioSteps {
 	protected void refreshPage() {
 		getDriver().navigate().refresh();
 	}
-	
+
 	protected AlfrescoActionsPage alfrescoActionsPage() {
 		return getPages().currentPageAt(AlfrescoActionsPage.class);
 	}
@@ -50,16 +51,16 @@ public class AbstractSteps extends ScenarioSteps {
 		return getPages().currentPageAt(AlfrescoCreateFolderPage.class);
 	}
 
-	protected AlfrescoCreateUserPage alfrescoCreateNewUserPage() {
+	protected AlfrescoCreateUserPage alfrescoCreateUserPage() {
 		return getPages().currentPageAt(AlfrescoCreateUserPage.class);
 	}
 
 	protected GenerateImageRenditionsPage generateRenditionsPage() {
 		return getPages().currentPageAt(GenerateImageRenditionsPage.class);
 	}
-	
-	protected AnnotationsModulePage annotationsModulePage() {
-		return getPages().currentPageAt(AnnotationsModulePage.class);
+
+	protected AnnotationModulePage annotationsModulePage() {
+		return getPages().currentPageAt(AnnotationModulePage.class);
 	}
 
 	protected CropImagePage cropImagePage() {
@@ -80,6 +81,10 @@ public class AbstractSteps extends ScenarioSteps {
 
 	protected PublishArticlePage publishOnBuildMyBookPage() {
 		return getPages().currentPageAt(PublishArticlePage.class);
+	}
+
+	protected DownloadFilesPage downloadFilesPage() {
+		return getPages().currentPageAt(DownloadFilesPage.class);
 	}
 
 	protected UploadFilePage uploadFile() {

@@ -14,11 +14,6 @@ public class CreateFolderSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void verifyIfNodesExistInBreadcrumbs(String... terms) {
-		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(terms);
-	}
-
-	@Step
 	public boolean verifyIfFolderExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
@@ -28,57 +23,18 @@ public class CreateFolderSteps extends AbstractSteps {
 		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
-	@Step
-	public void clickOnCreate() {
-		alfrescoCreateNewFolderPage().clickOnCreate();
-	}
-
-	@Step
-	public void clickOnCreateFolder() {
-		alfrescoCreateNewFolderPage().clickOnCreateFolder();
-	}
-
-	@Step
-	public void inputFolderName(String name) {
-		alfrescoCreateNewFolderPage().inputFolderName(name);
-	}
-
-	@Step
-	public void clickOnCreateFolderBtn() {
-		alfrescoCreateNewFolderPage().clickOnCreateFolderBtn();
-	}
-
-	@Step
-	public void clickOnCreateFolderFromTemplate() {
-		alfrescoCreateNewFolderPage().clickOnCreateFolderFromTemplate();
-	}
-
-	@Step
-	public void clickOnCreateContentFolder() {
-		alfrescoCreateNewFolderPage().clickOnCreateContentFolder();
-	}
-
-	@Step
-	public void inputContentFolderName(String contentName) {
-		alfrescoCreateNewFolderPage().inputContentFolderName(contentName);
-	}
-
-	@Step
-	public void clickOnSaveContentFolder() {
-		alfrescoCreateNewFolderPage().clickOnSaveContentFolder();
-	}
-
 	@StepGroup
 	public void createFolderFromTemplate(String contentFolderName,
 			String folderName, String... nodes) {
-		clickOnCreate();
-		clickOnCreateFolderFromTemplate();
-		clickOnCreateContentFolder();
-		inputContentFolderName("DemoTesting");
-		clickOnSaveContentFolder();
+		alfrescoCreateNewFolderPage().clickOnCreate();
+		alfrescoCreateNewFolderPage().clickOnCreateFolderFromTemplate();
+		alfrescoCreateNewFolderPage().clickOnCreateContentFolder();
+		alfrescoCreateNewFolderPage().inputContentFolderName("DemoTesting");
+		alfrescoCreateNewFolderPage().clickOnSaveContentFolder();
 		waitABit(10000);
 		clickOnFolder("DemoTesting");
-		verifyIfNodesExistInBreadcrumbs("DemoTesting");
+		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(
+				"DemoTesting");
 
 	}
 
@@ -86,17 +42,20 @@ public class CreateFolderSteps extends AbstractSteps {
 	public void createNewFolderTest(String folderName,
 			String contentFolderName, String term, String... nodes) {
 		if (!verifyIfFolderExists(term)) {
-			clickOnCreate();
-			clickOnCreateFolder();
-			inputFolderName(folderName);
-			clickOnCreateFolderBtn();
+			alfrescoCreateNewFolderPage().clickOnCreate();
+			alfrescoCreateNewFolderPage().clickOnCreateFolder();
+			alfrescoCreateNewFolderPage().inputFolderName(folderName);
+			alfrescoCreateNewFolderPage().clickOnCreateFolderBtn();
 			clickOnFolder(folderName);
-			verifyIfNodesExistInBreadcrumbs("Test");
+			alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(
+					"Test");
 			createFolderFromTemplate(contentFolderName, folderName, nodes);
 		} else {
 			clickOnFolder(folderName);
-			verifyIfNodesExistInBreadcrumbs("Test");
-			createFolderFromTemplate(contentFolderName, contentFolderName, nodes);
+			alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(
+					"Test");
+			createFolderFromTemplate(contentFolderName, contentFolderName,
+					nodes);
 		}
 
 	}
@@ -104,10 +63,12 @@ public class CreateFolderSteps extends AbstractSteps {
 	@StepGroup
 	public void getToResearchFolder(String folderName, String... nodes) {
 		clickOnFolder(folderName);
-		verifyIfNodesExistInBreadcrumbs(folderName);
+		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(
+				folderName);
 		clickOnFolder(folderName);
-		verifyIfNodesExistInBreadcrumbs(nodes);
+		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(nodes);
 		clickOnFolder("Research");
-		verifyIfNodesExistInBreadcrumbs("Research");
+		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(
+				"Research");
 	}
 }

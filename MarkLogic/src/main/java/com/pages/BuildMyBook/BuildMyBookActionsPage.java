@@ -46,7 +46,7 @@ public class BuildMyBookActionsPage extends PageObject {
 	WebElement backToResultsBtn;
 
 	@FindBy(css = "div.content-container > div:nth-child(3) > div > div > ul > li:nth-child(2) > a")
-	WebElement addAricle;
+	WebElement addArticle;
 
 	@FindBy(css = ".module.module-my-book")
 	WebElement myCollectionContainer;
@@ -132,9 +132,9 @@ public class BuildMyBookActionsPage extends PageObject {
 		backToResultsBtn.click();
 	}
 
-	public void clickOnAddAricle() {
-		addAricle.click();
-		addAricle.click();
+	public void clickOnAddArticle() {
+		addArticle.click();
+		addArticle.click();
 		waitABit(2000);
 	}
 

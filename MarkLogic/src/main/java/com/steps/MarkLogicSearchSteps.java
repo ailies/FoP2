@@ -13,92 +13,37 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 	}
 
 	@Step
-	public void clickOnMoreOptions(String term) {
-		markLogicSearchPage().clickOnMoreOptions(term);
-	}
-
-	@Step
-	public void inputSearchTerm(String term) {
-		markLogicSearchPage().inputSearchTerm(term);
-	}
-
-	@Step
-	public void getARandomLink() {
-		markLogicSearchPage().getARandomLink();
-	}
-
-	@Step
-	public void clickOnDocumentContainer() {
-		markLogicSearchPage().clickOnDocumentContainer();
-	}
-
-	@Step
-	public void clickOnViewFullContent() {
-		markLogicSearchPage().clickOnViewFullContent();
-	}
-
-	@Step
-	public void clickOnAddFullContent() {
-		markLogicSearchPage().clickOnAddFullContent();
-	}
-
-	@Step
-	public void clickOnUpArrow() {
-		markLogicSearchPage().clickOnUpArrow();
-	}
-
-	@Step
-	public void clickOnRemoveArticle() {
-		markLogicSearchPage().clickOnRemoveArticle();
-	}
-
-	@Step
-	public void clickOnClearSearchBtn() {
-		markLogicSearchPage().clickOnClearSearchBtn();
-	}
-
-	@Step
-	public void clickOnImportDocuments() {
-		markLogicSearchPage().clickOnImportDocuments();
-	}
-
-	@Step
 	public boolean verifyIfXMLFileExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
-	}
-
-	@Step
-	public void clickOnFile(String... terms) {
-		alfrescoCreateNewFolderPage().clickOnElement(terms);
 	}
 
 	@StepGroup
 	public void searchAndImportWikiDocument(String fileName, String searchTerm,
 			String term) {
 
-		clickOnMoreOptions("Research");
+		markLogicSearchPage().clickOnMoreOptions("Research");
 
-		inputSearchTerm("music");
-		clickOnDocumentContainer();
+		markLogicSearchPage().inputSearchTerm("music");
+		markLogicSearchPage().clickOnDocumentContainer();
 
-		getARandomLink();
-		clickOnViewFullContent();
-		clickOnAddFullContent();
+		markLogicSearchPage().getARandomLink();
+		markLogicSearchPage().clickOnViewFullContent();
+		markLogicSearchPage().clickOnAddFullContent();
 
-		getARandomLink();
-		clickOnViewFullContent();
-		clickOnAddFullContent();
+		markLogicSearchPage().getARandomLink();
+		markLogicSearchPage().clickOnViewFullContent();
+		markLogicSearchPage().clickOnAddFullContent();
 
-		getARandomLink();
-		clickOnViewFullContent();
-		clickOnAddFullContent();
+		markLogicSearchPage().getARandomLink();
+		markLogicSearchPage().clickOnViewFullContent();
+		markLogicSearchPage().clickOnAddFullContent();
 
-		clickOnImportDocuments();
+		markLogicSearchPage().clickOnImportDocuments();
 		waitABit(6000);
 
 		if (verifyIfXMLFileExists(term)) {
 
-			clickOnFile("DemoTesting.xml");
+			alfrescoCreateNewFolderPage().clickOnElement("DemoTesting.xml");
 
 		} else {
 
