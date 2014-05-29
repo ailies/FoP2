@@ -9,9 +9,9 @@ import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
-public class AlfrescoLoginPage extends PageObject {
+public class AuthenticationPage extends PageObject {
 
-	public AlfrescoLoginPage(WebDriver driver) {
+	public AuthenticationPage(WebDriver driver) {
 		super(driver);
 	}
 

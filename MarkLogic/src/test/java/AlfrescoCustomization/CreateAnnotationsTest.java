@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.AnnotationModuleSteps;
-import com.steps.CreateNewFolderSteps;
+import com.steps.CreateFolderSteps;
 
 @Story(Application.Articles.AddAnnotation.class)
 @RunWith(ThucydidesRunner.class)
@@ -30,14 +30,14 @@ public class CreateAnnotationsTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolderSteps;
+	public CreateFolderSteps createNewFolderSteps;
 	
 	@Steps
 	public AnnotationModuleSteps annotationModuleSteps;
 	
 	@Test
 	public void createAnnotation(){
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

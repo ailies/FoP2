@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateNewFolderSteps;
+import com.steps.CreateFolderSteps;
 import com.steps.UploadVideoSteps;
 
 @Story(Application.MediaFiles.UploadVideo.class)
@@ -31,14 +31,14 @@ public class UploadVideoAndGenerateVideoFramesTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolderSteps;
+	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
 	public UploadVideoSteps uploadVideoAndGenerateRenditionsSteps;
 
 	@Test
 	public void uploadVideoTest() {
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
@@ -48,7 +48,7 @@ public class UploadVideoAndGenerateVideoFramesTest {
 	
 	@Test
 	public void generateVideoFramesTest() {
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

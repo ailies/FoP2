@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateNewFolderSteps;
+import com.steps.CreateFolderSteps;
 import com.steps.CropImageSteps;
 
 @Story(Application.MediaFiles.CropImage.class)
@@ -29,14 +29,14 @@ public class CropImageTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolderSteps;
+	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
 	public CropImageSteps cropImageSteps;
 
 	@Test
 	public void cropImage() {
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

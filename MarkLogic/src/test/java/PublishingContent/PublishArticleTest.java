@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateNewFolderSteps;
+import com.steps.CreateFolderSteps;
 import com.steps.PublishArticleSteps;
 
 @Story(Application.Articles.PublishArticle.class)
@@ -29,14 +29,14 @@ public class PublishArticleTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolderSteps;
+	public CreateFolderSteps createNewFolderSteps;
 	
 	@Steps
 	public PublishArticleSteps publishArticleSteps;
 	
 	@Test
 	public void publishArticle(){
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

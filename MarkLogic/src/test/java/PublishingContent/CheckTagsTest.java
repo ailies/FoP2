@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateNewFolderSteps;
+import com.steps.CreateFolderSteps;
 
 @Story(Application.Articles.PublishArticle.class)
 @RunWith(ThucydidesRunner.class)
@@ -28,11 +28,11 @@ public class CheckTagsTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolderSteps;
+	public CreateFolderSteps createNewFolderSteps;
 	
 	@Test
 	public void checkTags(){
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

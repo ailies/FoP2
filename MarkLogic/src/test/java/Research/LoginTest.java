@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 
-@Story(Application.BasicFunctionality.Login.class)
+@Story(Application.BasicFunctionality.Authentication.class)
 @RunWith(ThucydidesRunner.class)
 public class LoginTest {
 	@Managed(uniqueSession = true)
@@ -28,6 +28,6 @@ public class LoginTest {
 
 	@Test
 	public void login() {
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 	}
 }

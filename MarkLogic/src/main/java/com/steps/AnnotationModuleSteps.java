@@ -31,7 +31,7 @@ public class AnnotationModuleSteps extends AbstractSteps {
 
 	@Step
 	public void clickOnAnnotations() {
-		annotationsModulePage().clickOnAnnotations();
+		alfrescoActionsPage().clickOnAnnotations();
 	}
 
 	@Step

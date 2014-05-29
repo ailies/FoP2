@@ -72,7 +72,7 @@ public class AlfrescoLoginSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void loginToSite(String screenName, String pass) {
+	public void authentication(String screenName, String pass) {
 		getDriver().manage().window().maximize();
 		getDriver().get("http://172.16.10.115:8080/share/page/");
 		verifyLoginPageIsOpen();

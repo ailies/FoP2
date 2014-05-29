@@ -6,7 +6,7 @@ public class Application {
 
 	@Feature
 	public class BasicFunctionality {
-		public class Login {}
+		public class Authentication {}
 		public class CreateNewUser {}
 		public class CreateFolder {}
 		public class DeleteFolder {}

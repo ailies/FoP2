@@ -7,9 +7,9 @@ import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
 
 @SuppressWarnings("serial")
-public class CreateNewFolderSteps extends AbstractSteps {
+public class CreateFolderSteps extends AbstractSteps {
 
-	public CreateNewFolderSteps(Pages pages) {
+	public CreateFolderSteps(Pages pages) {
 		super(pages);
 	}
 

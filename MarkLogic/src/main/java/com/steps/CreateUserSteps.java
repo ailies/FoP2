@@ -6,9 +6,9 @@ import net.thucydides.core.pages.Pages;
 import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
-public class CreateNewUserSteps extends AbstractSteps {
+public class CreateUserSteps extends AbstractSteps {
 
-	public CreateNewUserSteps(Pages pages) {
+	public CreateUserSteps(Pages pages) {
 		super(pages);
 	}
 

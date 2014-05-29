@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.CreateNewFolderSteps;
+import com.steps.CreateFolderSteps;
 import com.steps.GenerateImageRenditionsSteps;
 import com.steps.CustomizeXMLSteps;
 import com.steps.AlfrescoLoginSteps;
@@ -32,7 +32,7 @@ public class GenerateImageRenditionsTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolderSteps;
+	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
 	public MarkLogicSearchSteps markLogicSearchSteps;
@@ -45,7 +45,7 @@ public class GenerateImageRenditionsTest {
 
 	@Test
 	public void imageActions() {
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

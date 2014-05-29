@@ -93,7 +93,7 @@ public class AlfrescoActionsPage extends PageObject {
 	@FindBy(css = "a[title='Change Type']")
 	private WebElement changeType;
 
-	@FindBy(css = "a[title='Annotations']")
+	@FindBy(css = "#onActionAnnotate > a > span")
 	private WebElement annotations;
 
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button")

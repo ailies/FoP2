@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 
-@Story(Application.BasicFunctionality.Login.class)
+@Story(Application.BasicFunctionality.Authentication.class)
 @RunWith(ThucydidesParameterizedRunner.class)
 public class AlfrescoLoginCSVTest {
 	@Managed(uniqueSession = true)
@@ -44,7 +44,7 @@ public class AlfrescoLoginCSVTest {
 
 	@Test
 	public void loginToAlfrescoSite() {
-		loginSteps.loginToSite(username, password);
+		loginSteps.authentication(username, password);
 	}
 
 }

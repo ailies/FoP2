@@ -9,9 +9,9 @@ import org.openqa.selenium.WebElement;
 import tools.AbstractPage;
 
 @DefaultUrl("http://172.16.10.115:8080/share/page/")
-public class AlfrescoCreateNewFolderPage extends AbstractPage {
+public class AlfrescoCreateFolderPage extends AbstractPage {
 
-	public AlfrescoCreateNewFolderPage(WebDriver driver) {
+	public AlfrescoCreateFolderPage(WebDriver driver) {
 		super(driver);
 	}
 

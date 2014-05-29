@@ -4,9 +4,9 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import com.pages.Alfresco.AlfrescoActionsPage;
-import com.pages.Alfresco.AlfrescoCreateNewFolderPage;
-import com.pages.Alfresco.AlfrescoCreateNewUserPage;
-import com.pages.Alfresco.AlfrescoLoginPage;
+import com.pages.Alfresco.AlfrescoCreateFolderPage;
+import com.pages.Alfresco.AlfrescoCreateUserPage;
+import com.pages.Alfresco.AuthenticationPage;
 import com.pages.Alfresco.AnnotationsModulePage;
 import com.pages.Alfresco.CropImagePage;
 import com.pages.Alfresco.CustomizeXMLPage;
@@ -42,16 +42,16 @@ public class AbstractSteps extends ScenarioSteps {
 		return getPages().currentPageAt(AbstractPage.class);
 	}
 
-	protected AlfrescoLoginPage alfrescoLoginPage() {
-		return getPages().currentPageAt(AlfrescoLoginPage.class);
+	protected AuthenticationPage alfrescoLoginPage() {
+		return getPages().currentPageAt(AuthenticationPage.class);
 	}
 
-	protected AlfrescoCreateNewFolderPage alfrescoCreateNewFolderPage() {
-		return getPages().currentPageAt(AlfrescoCreateNewFolderPage.class);
+	protected AlfrescoCreateFolderPage alfrescoCreateNewFolderPage() {
+		return getPages().currentPageAt(AlfrescoCreateFolderPage.class);
 	}
 
-	protected AlfrescoCreateNewUserPage alfrescoCreateNewUserPage() {
-		return getPages().currentPageAt(AlfrescoCreateNewUserPage.class);
+	protected AlfrescoCreateUserPage alfrescoCreateNewUserPage() {
+		return getPages().currentPageAt(AlfrescoCreateUserPage.class);
 	}
 
 	protected GenerateImageRenditionsPage generateRenditionsPage() {

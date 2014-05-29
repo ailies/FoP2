@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.CreateNewFolderSteps;
+import com.steps.CreateFolderSteps;
 import com.steps.AlfrescoLoginSteps;
 
 @Story(Application.BasicFunctionality.CreateFolder.class)
@@ -28,11 +28,11 @@ public class CreateNewFolderTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateNewFolderSteps createNewFolderSteps;
+	public CreateFolderSteps createNewFolderSteps;
 
 	@Test
 	public void createNewFolder() {
-		loginSteps.loginToSite("admin", "admin");
+		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.createNewFolderTest("Test", "Test", "Test",
 				"DemoTesting");
