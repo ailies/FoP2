@@ -152,7 +152,7 @@ public class CustomizeXMLPage extends AbstractPage {
 	}
 
 	// -----------edit the master XML with XOPUS----------------
-	
+
 	public void clickOnInlineEdit(String term) {
 		WebElement element = getTheSearchedElement(term);
 		if (element == null) {
@@ -165,14 +165,63 @@ public class CustomizeXMLPage extends AbstractPage {
 			mouseOver.click(element).build().perform();
 
 			moreOptionsButton.click();
-
+			scrollPageDown();
 			WebElement inlineEditButton = element.findElement(By
 					.cssSelector("a[title='Inline Edit']"));
 
-			inlineEditButton.isDisplayed();
-			waitABit(2000);
+			element(inlineEditButton).waitUntilVisible();
 			inlineEditButton.click();
 		}
+	}
+
+	public void updateXMLTitle(String title) {
+
+		getDriver().switchTo().frame(
+				getDriver().findElement(By.cssSelector("#xopusFrame")));
+		WebElement xopusFrame = getDriver().switchTo().activeElement();
+		waitABit(6000);
+		xopusFrame.click();
+
+		getDriver().switchTo().frame(
+				getDriver().findElement(By.cssSelector(".iframe")));
+		WebElement iframe = getDriver().switchTo().activeElement();
+		iframe.click();
+
+		waitABit(2000);
+		WebElement fileTitle = getDriver().findElement(
+				By.id("a0#*b42[a0*]b45b248[a1*]b48b257[a0#*]b32|x0"));
+
+		fileTitle.click();
+		// fileTitle.clear();
+		fileTitle.sendKeys(title);
+		scrollToPageBottom();
+
+		System.out.println(iframe.getSize());
+
+		waitABit(2000);
+		
+		getDriver().switchTo().defaultContent();
+
+		// Screen s = new Screen();
+		//
+		// Pattern preRoll = new Pattern("imgs/preRollVideoClickUrl.png");
+		// Pattern preBox = new Pattern("imgs/preRollVideoClickUrlTextBox.png");
+		// Rectangle screenResolution = new
+		// Rectangle(Toolkit.getDefaultToolkit()
+		// .getScreenSize());
+		// org.sikuli.script.Region testr = new org.sikuli.script.Region(
+		// screenResolution);
+		// testr = testr.find(preRoll.similar((float) .9));
+		// testr.inside().click(preBox, 0);
+		// testr.type("ABC", 0);
+	}
+
+	public void clickOnSubmitButton() {
+		WebElement submitUpdate = getDriver()
+				.findElement(
+						By.id("template_x002e_inline-edit_x002e_inline-edit_x0023_default-form-submit-button"));
+		scrollPageDown();
+		submitUpdate.click();
 	}
 
 }

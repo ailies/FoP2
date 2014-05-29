@@ -37,8 +37,10 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void editWithXopus(String term) {
+	public void editWithXopus(String term, String title) {
 		customizeXMLPage().clickOnInlineEdit(term);
+		customizeXMLPage().updateXMLTitle(title);
+		customizeXMLPage().clickOnSubmitButton();
 	}
 
 }
