@@ -36,7 +36,7 @@ public class CheckTagsTest {
 
 	@Test
 	public void verifyFileTags() {
-		loginSteps.authentication("admin", "admin");
+		loginSteps.authentication("publisher", "demo");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

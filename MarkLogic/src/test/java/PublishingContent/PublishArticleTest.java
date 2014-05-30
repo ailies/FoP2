@@ -16,6 +16,7 @@ import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
 import com.steps.PublishArticleSteps;
 
+
 @Story(Application.Articles.PublishArticle.class)
 @RunWith(ThucydidesRunner.class)
 public class PublishArticleTest {
@@ -36,7 +37,7 @@ public class PublishArticleTest {
 	
 	@Test
 	public void publishArticle(){
-		loginSteps.authentication("admin", "admin");
+		loginSteps.authentication("publisher", "demo");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");

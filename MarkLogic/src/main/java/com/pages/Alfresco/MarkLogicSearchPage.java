@@ -119,6 +119,7 @@ public class MarkLogicSearchPage extends AbstractPage {
 			waitABit(2000);
 			element(markLogicSearch).waitUntilVisible();
 			markLogicSearch.click();
+			waitABit(2000);
 		}
 	}
 
@@ -126,6 +127,7 @@ public class MarkLogicSearchPage extends AbstractPage {
 		getDriver().switchTo().frame(
 				getDriver().findElement(By.id("mlSearchArticleIframe")));
 		WebElement searchIframe = getDriver().switchTo().activeElement();
+				element(searchIframe).waitUntilVisible();
 		searchIframe.click();
 		element(inputSearch).waitUntilVisible();
 		inputSearch.sendKeys(term);
