@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.CreateFolderSteps;
 import com.steps.GenerateImageRenditionsSteps;
-import com.steps.CustomizeXMLSteps;
+import com.steps.CustomiseXMLSteps;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.MarkLogicSearchSteps;
 
@@ -38,7 +38,7 @@ public class GenerateImageRenditionsTest {
 	public MarkLogicSearchSteps markLogicSearchSteps;
 
 	@Steps
-	public CustomizeXMLSteps customizeXMLSteps;
+	public CustomiseXMLSteps customizeXMLSteps;
 
 	@Steps
 	public GenerateImageRenditionsSteps cropImageAndGemerateRenditionsSteps;

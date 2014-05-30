@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
-import com.steps.CustomizeXMLSteps;
+import com.steps.CustomiseXMLSteps;
 
 public class VerifyRenditionsTest {
 	@Managed(uniqueSession = true)
@@ -26,7 +26,7 @@ public class VerifyRenditionsTest {
 	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
-	public CustomizeXMLSteps xmlCustomizeSteps;
+	public CustomiseXMLSteps xmlCustomizeSteps;
 
 	@Test
 	public void checkRenditions() {

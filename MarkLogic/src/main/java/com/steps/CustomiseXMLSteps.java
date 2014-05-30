@@ -6,9 +6,9 @@ import net.thucydides.core.pages.Pages;
 import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
-public class CustomizeXMLSteps extends AbstractSteps {
+public class CustomiseXMLSteps extends AbstractSteps {
 
-	public CustomizeXMLSteps(Pages pages) {
+	public CustomiseXMLSteps(Pages pages) {
 		super(pages);
 	}
 
@@ -47,5 +47,12 @@ public class CustomizeXMLSteps extends AbstractSteps {
 	public void verifyTags() {
 		customizeXMLPage().verifyIfSemanticTagsWereGenerated();
 	}
+	
+	@StepGroup
+	public void uploadFiles(String filePath, String term) {
+		uploadFile().uploadDocument(filePath);
+		alfrescoCreateNewFolderPage().verifyIfElementExists(term);
+	}
+
 
 }

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
-import com.steps.CustomizeXMLSteps;
+import com.steps.CustomiseXMLSteps;
 import com.steps.MarkLogicSearchSteps;
 import com.steps.UploadVideoSteps;
 
@@ -31,7 +31,7 @@ public class GenerateVideoFramesTest {
 	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
-	public CustomizeXMLSteps customizeXMLSteps;
+	public CustomiseXMLSteps customizeXMLSteps;
 
 	@Steps
 	public UploadVideoSteps generateRenditionsSteps;

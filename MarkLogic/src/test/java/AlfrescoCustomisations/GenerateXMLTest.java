@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
-import com.steps.CustomizeXMLSteps;
+import com.steps.CustomiseXMLSteps;
 import com.steps.MarkLogicSearchSteps;
 
 public class GenerateXMLTest {
@@ -30,7 +30,7 @@ public class GenerateXMLTest {
 	public CreateFolderSteps createNewFolder;
 
 	@Steps
-	public CustomizeXMLSteps customizeXMLSteps;
+	public CustomiseXMLSteps customizeXMLSteps;
 
 	@Test
 	public void reorderFilesUsingAssemblyView() {

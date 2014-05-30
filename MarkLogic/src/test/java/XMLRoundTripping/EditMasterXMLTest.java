@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
-import com.steps.CustomizeXMLSteps;
+import com.steps.CustomiseXMLSteps;
 
 @Story(Application.Articles.EditFiles.class)
 @RunWith(ThucydidesRunner.class)
@@ -32,7 +32,7 @@ public class EditMasterXMLTest {
 	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
-	public CustomizeXMLSteps xmlCustomizeSteps;
+	public CustomiseXMLSteps xmlCustomizeSteps;
 
 	@Test
 	public void updateTitle() {
