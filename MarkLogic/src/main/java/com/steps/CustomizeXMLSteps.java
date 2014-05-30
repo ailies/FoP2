@@ -43,4 +43,9 @@ public class CustomizeXMLSteps extends AbstractSteps {
 		customizeXMLPage().clickOnSubmitButton();
 	}
 
+	@StepGroup
+	public void verifyTags() {
+		customizeXMLPage().verifyIfSemanticTagsWereGenerated();
+	}
+
 }

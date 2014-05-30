@@ -187,11 +187,11 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement iframe = getDriver().switchTo().activeElement();
 		iframe.click();
 
-		waitABit(2000);
+		waitABit(6000);
 		WebElement fileTitle = getDriver().findElement(
 				By.id("a0#*b42[a0*]b45b248[a1*]b48b257[a0#*]b32|x0"));
 
-		fileTitle.click();
+//		fileTitle.click();
 		// fileTitle.clear();
 		fileTitle.sendKeys(title);
 		scrollToPageBottom();
@@ -199,21 +199,8 @@ public class CustomizeXMLPage extends AbstractPage {
 		System.out.println(iframe.getSize());
 
 		waitABit(2000);
-		
-		getDriver().switchTo().defaultContent();
 
-		// Screen s = new Screen();
-		//
-		// Pattern preRoll = new Pattern("imgs/preRollVideoClickUrl.png");
-		// Pattern preBox = new Pattern("imgs/preRollVideoClickUrlTextBox.png");
-		// Rectangle screenResolution = new
-		// Rectangle(Toolkit.getDefaultToolkit()
-		// .getScreenSize());
-		// org.sikuli.script.Region testr = new org.sikuli.script.Region(
-		// screenResolution);
-		// testr = testr.find(preRoll.similar((float) .9));
-		// testr.inside().click(preBox, 0);
-		// testr.type("ABC", 0);
+		getDriver().switchTo().defaultContent();
 	}
 
 	public void clickOnSubmitButton() {
@@ -222,6 +209,18 @@ public class CustomizeXMLPage extends AbstractPage {
 						By.id("template_x002e_inline-edit_x002e_inline-edit_x0023_default-form-submit-button"));
 		scrollPageDown();
 		submitUpdate.click();
+	}
+	
+//	---------------Verify if tags were generated---------------
+
+	public void verifyIfSemanticTagsWereGenerated() {
+		WebElement semanticTagsContainer = getDriver().findElement(
+				By.cssSelector(".form-field.inlineable"));
+
+		Assert.assertTrue("! Semantic Tags were not generated "
+				+ semanticTagsContainer.isDisplayed(),
+				semanticTagsContainer.isDisplayed());
+
 	}
 
 }

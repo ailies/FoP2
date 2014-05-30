@@ -33,24 +33,13 @@ public class EditMasterXMLTest {
 
 	@Steps
 	public CustomizeXMLSteps xmlCustomizeSteps;
-	
+
 	@Test
-	public void updateTitle(){
+	public void updateTitle() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		xmlCustomizeSteps.editWithXopus("DemoTesting.xml", "Test");
 	}
-
-//	@Test
-//	public void checkRenditions() {
-//		loginSteps.authentication("admin", "admin");
-//		loginSteps.navigateToFolder();
-//		createNewFolderSteps.clickOnFolder("Test");
-//		createNewFolderSteps.clickOnFolder("DemoTesting");
-//		xmlCustomizeSteps.checkRenditions(".xml");
-//	}
-	
-	
 }

@@ -1,6 +1,7 @@
-package AlfrescoCustomization;
+package AlfrescoCustomisations;
 
 import net.thucydides.core.annotations.Managed;
+
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
@@ -14,11 +15,12 @@ import org.openqa.selenium.WebDriver;
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
-import com.steps.CropImageSteps;
+import com.steps.UploadVideoSteps;
 
-@Story(Application.MediaFiles.CropImage.class)
+@Story(Application.MediaFiles.UploadVideo.class)
 @RunWith(ThucydidesRunner.class)
-public class CropImageTest {
+public class UploadVideoTest {
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -32,15 +34,18 @@ public class CropImageTest {
 	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
-	public CropImageSteps cropImageSteps;
+	public UploadVideoSteps uploadVideoSteps;
 
 	@Test
-	public void cropImage() {
+	public void uploadVideoTest() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder("Research");
-		cropImageSteps.cropImage(".jpg");
+		uploadVideoSteps.uploadVideo(
+				"C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv",
+				"Wildlife.wmv");
 	}
+
 }

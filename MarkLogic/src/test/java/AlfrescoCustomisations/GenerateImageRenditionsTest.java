@@ -1,4 +1,4 @@
-package PublishingContent;
+package AlfrescoCustomisations;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -12,13 +12,16 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
+import com.steps.GenerateImageRenditionsSteps;
 import com.steps.CustomizeXMLSteps;
+import com.steps.AlfrescoLoginSteps;
+import com.steps.MarkLogicSearchSteps;
 
-@Story(Application.Articles.PublishArticle.class)
+@Story(Application.MediaFiles.GenerateImageRenditions.class)
 @RunWith(ThucydidesRunner.class)
-public class CheckTagsTest {
+public class GenerateImageRenditionsTest {
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -32,15 +35,21 @@ public class CheckTagsTest {
 	public CreateFolderSteps createNewFolderSteps;
 
 	@Steps
+	public MarkLogicSearchSteps markLogicSearchSteps;
+
+	@Steps
 	public CustomizeXMLSteps customizeXMLSteps;
 
+	@Steps
+	public GenerateImageRenditionsSteps cropImageAndGemerateRenditionsSteps;
+
 	@Test
-	public void verifyFileTags() {
+	public void imageActions() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder(".xml");
-		customizeXMLSteps.verifyTags();
+		createNewFolderSteps.clickOnFolder("Research");
+		cropImageAndGemerateRenditionsSteps.GenerateImageRenditions(".jpg");
 	}
 }

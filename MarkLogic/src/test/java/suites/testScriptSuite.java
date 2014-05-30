@@ -4,16 +4,17 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import AlfrescoCustomization.AddAnnotationTest;
-import AlfrescoCustomization.CropImageTest;
-import AlfrescoCustomization.GenerateMasterXMLTest;
-import AlfrescoCustomization.GenerateImageRenditionsTest;
-import AlfrescoCustomization.UploadVideoAndGenerateVideoFramesTest;
+import AlfrescoCustomisations.AddAnnotationTest;
+import AlfrescoCustomisations.CropImageTest;
+import AlfrescoCustomisations.GenerateImageRenditionsTest;
+import AlfrescoCustomisations.GenerateXMLTest;
+import AlfrescoCustomisations.UploadVideoTest;
+import AlfrescoCustomisations.VerifyRenditionsTest;
 import PublishingContent.CheckTagsTest;
 import PublishingContent.GenerateCollectionTest;
 import PublishingContent.PublishArticleTest;
+import Research.AuthenticationTest;
 import Research.CreateFolderTest;
-import Research.LoginTest;
 import Research.MarkLogicSearchTest;
 import XMLRoundTripping.DownloadFilesTest;
 import XMLRoundTripping.EditHTMLFilesFromRenditionsFolderTest;
@@ -24,22 +25,33 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	LoginTest.class,
+	
+//	Research
+	AuthenticationTest.class,
 	CreateFolderTest.class,
 	MarkLogicSearchTest.class,
-	GenerateMasterXMLTest.class,
+	
+//	Alfresco Customisations
+	GenerateXMLTest.class,
+	VerifyRenditionsTest.class,
 	AddAnnotationTest.class,
-	GenerateImageRenditionsTest.class,
 	CropImageTest.class,
-	UploadVideoAndGenerateVideoFramesTest.class,
+	GenerateImageRenditionsTest.class,
+	UploadVideoTest.class,
+	
+//	XML round-tripping
 	EditMasterXMLTest.class,
 	DownloadFilesTest.class,
+	
 	ImportFilesToIDFolderTest.class,
 	EditHTMLFilesFromRenditionsFolderTest.class,
+	
+//	Publishing content
 	PublishArticleTest.class,
 	CheckTagsTest.class,
 	GenerateCollectionTest.class
 })
+
 public class testScriptSuite {
 
 }

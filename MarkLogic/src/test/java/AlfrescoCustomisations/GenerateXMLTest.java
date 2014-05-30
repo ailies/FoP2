@@ -1,24 +1,19 @@
-package PublishingContent;
+package AlfrescoCustomisations;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.junit.runners.ThucydidesRunner;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
 import com.steps.CustomizeXMLSteps;
+import com.steps.MarkLogicSearchSteps;
 
-@Story(Application.Articles.PublishArticle.class)
-@RunWith(ThucydidesRunner.class)
-public class CheckTagsTest {
+public class GenerateXMLTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -29,18 +24,22 @@ public class CheckTagsTest {
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateFolderSteps createNewFolderSteps;
+	public MarkLogicSearchSteps markLogicSearch;
+
+	@Steps
+	public CreateFolderSteps createNewFolder;
 
 	@Steps
 	public CustomizeXMLSteps customizeXMLSteps;
 
 	@Test
-	public void verifyFileTags() {
+	public void reorderFilesUsingAssemblyView() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
-		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder(".xml");
-		customizeXMLSteps.verifyTags();
+		createNewFolder.clickOnFolder("Test");
+		createNewFolder.clickOnFolder("DemoTesting");
+		createNewFolder.clickOnFolder("Research");
+		customizeXMLSteps.reorderFiles(".xml");
+
 	}
 }

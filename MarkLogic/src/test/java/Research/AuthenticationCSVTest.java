@@ -5,7 +5,7 @@ import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.junit.runners.ThucydidesRunner;
+import net.thucydides.junit.runners.ThucydidesParameterizedRunner;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,8 +15,8 @@ import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 
 @Story(Application.BasicFunctionality.Authentication.class)
-@RunWith(ThucydidesRunner.class)
-public class LoginTest {
+@RunWith(ThucydidesParameterizedRunner.class)
+public class AuthenticationCSVTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -24,10 +24,27 @@ public class LoginTest {
 	public Pages pages;
 
 	@Steps
-	public AlfrescoLoginSteps loginSteps;
+	private AlfrescoLoginSteps loginSteps;
+
+	private String username;
+	private String password;
+
+	// @Qualifier
+	public String getQualifier() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	@Test
-	public void login() {
-		loginSteps.authentication("admin", "admin");
+	public void loginToAlfrescoSite() {
+		loginSteps.authentication(username, password);
 	}
+
 }

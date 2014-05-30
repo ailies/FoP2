@@ -1,25 +1,18 @@
-package AlfrescoCustomization;
+package AlfrescoCustomisations;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.junit.runners.ThucydidesRunner;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.AnnotationModuleSteps;
 import com.steps.CreateFolderSteps;
+import com.steps.CustomizeXMLSteps;
 
-@Story(Application.Articles.AddAnnotation.class)
-@RunWith(ThucydidesRunner.class)
-public class AddAnnotationTest {
-	
+public class VerifyRenditionsTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -31,17 +24,16 @@ public class AddAnnotationTest {
 
 	@Steps
 	public CreateFolderSteps createNewFolderSteps;
-	
+
 	@Steps
-	public AnnotationModuleSteps annotationModuleSteps;
-	
+	public CustomizeXMLSteps xmlCustomizeSteps;
+
 	@Test
-	public void createAnnotation(){
+	public void checkRenditions() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder(".xml");
-		annotationModuleSteps.createAnnotation("message", "admin", "");
+		xmlCustomizeSteps.checkRenditions(".xml");
 	}
 }

@@ -1,4 +1,4 @@
-package AlfrescoCustomization;
+package Research;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -13,13 +13,10 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.CustomizeXMLSteps;
-import com.steps.MarkLogicSearchSteps;
 
-@Story(Application.Articles.ReorderArticles.class)
+@Story(Application.BasicFunctionality.Authentication.class)
 @RunWith(ThucydidesRunner.class)
-public class GenerateMasterXMLTest {
+public class AuthenticationTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -29,23 +26,8 @@ public class GenerateMasterXMLTest {
 	@Steps
 	public AlfrescoLoginSteps loginSteps;
 
-	@Steps
-	public MarkLogicSearchSteps markLogicSearch;
-	
-	@Steps
-	public CreateFolderSteps createNewFolder;
-	
-	@Steps
-	public CustomizeXMLSteps customizeXMLSteps;
-
 	@Test
-	public void reorderFilesUsingAssemblyView() {
+	public void login() {
 		loginSteps.authentication("admin", "admin");
-		loginSteps.navigateToFolder();
-		createNewFolder.clickOnFolder("Test");
-		createNewFolder.clickOnFolder("DemoTesting");
-		createNewFolder.clickOnFolder("Research");
-		customizeXMLSteps.reorderFiles(".xml");
-		
 	}
 }

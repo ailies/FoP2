@@ -117,6 +117,7 @@ public class MarkLogicSearchPage extends AbstractPage {
 
 			markLogicSearch.isDisplayed();
 			waitABit(2000);
+			element(markLogicSearch).waitUntilVisible();
 			markLogicSearch.click();
 		}
 	}
@@ -128,7 +129,6 @@ public class MarkLogicSearchPage extends AbstractPage {
 		searchIframe.click();
 		element(inputSearch).waitUntilVisible();
 		inputSearch.sendKeys(term);
-
 		researchBtn.click();
 	}
 

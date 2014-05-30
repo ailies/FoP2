@@ -1,4 +1,4 @@
-package AlfrescoCustomization;
+package AlfrescoCustomisations;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -12,16 +12,14 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
-import com.steps.CreateFolderSteps;
-import com.steps.GenerateImageRenditionsSteps;
-import com.steps.CustomizeXMLSteps;
 import com.steps.AlfrescoLoginSteps;
-import com.steps.MarkLogicSearchSteps;
+import com.steps.AnnotationModuleSteps;
+import com.steps.CreateFolderSteps;
 
-@Story(Application.MediaFiles.GenerateImageRenditions.class)
+@Story(Application.Articles.AddAnnotation.class)
 @RunWith(ThucydidesRunner.class)
-public class GenerateImageRenditionsTest {
-
+public class AddAnnotationTest {
+	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -33,23 +31,17 @@ public class GenerateImageRenditionsTest {
 
 	@Steps
 	public CreateFolderSteps createNewFolderSteps;
-
+	
 	@Steps
-	public MarkLogicSearchSteps markLogicSearchSteps;
-
-	@Steps
-	public CustomizeXMLSteps customizeXMLSteps;
-
-	@Steps
-	public GenerateImageRenditionsSteps cropImageAndGemerateRenditionsSteps;
-
+	public AnnotationModuleSteps annotationModuleSteps;
+	
 	@Test
-	public void imageActions() {
+	public void createAnnotation(){
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder("Research");
-		cropImageAndGemerateRenditionsSteps.GenerateImageRenditions(".jpg");
+		createNewFolderSteps.clickOnFolder(".xml");
+		annotationModuleSteps.createAnnotation("message", "admin", "");
 	}
 }
