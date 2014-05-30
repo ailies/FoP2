@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
-import com.steps.CustomiseXMLSteps;
+import com.steps.MarkLogicSearchSteps;
 
 public class VerifyRenditionsTest {
 	@Managed(uniqueSession = true)
@@ -19,17 +19,18 @@ public class VerifyRenditionsTest {
 	@ManagedPages(defaultUrl = "http://172.16.10.115:8080/share/page/")
 	public Pages pages;
 
+
 	@Steps
 	public AlfrescoLoginSteps loginSteps;
 
 	@Steps
-	public CreateFolderSteps createNewFolderSteps;
+	public MarkLogicSearchSteps markLogicSearch;
 
 	@Steps
-	public CustomiseXMLSteps xmlCustomizeSteps;
-
+	public CreateFolderSteps createNewFolder;
+	
 	@Test
-	public void checkRenditions() {
+	public void verifyRenditions() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");

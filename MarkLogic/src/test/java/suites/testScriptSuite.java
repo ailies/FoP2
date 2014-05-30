@@ -21,37 +21,27 @@ import XMLRoundTripping.EditHTMLFilesFromRenditionsFolderTest;
 import XMLRoundTripping.EditMasterXMLTest;
 import XMLRoundTripping.UploadFilesTest;
 
-
-
 @RunWith(Suite.class)
 @SuiteClasses({
-	
-//	Research
-	AuthenticationTest.class,
-	CreateFolderTest.class,
-	MarkLogicSearchTest.class,
-	
-//	Alfresco Customisations
-	GenerateXMLTest.class,
-	VerifyRenditionsTest.class,
-	AddAnnotationTest.class,
-	CropImageTest.class,
-	GenerateImageRenditionsTest.class,
-	UploadVideoTest.class,
-	
-//	XML round-tripping
-	EditMasterXMLTest.class,
-	DownloadFilesTest.class,
-	
-	UploadFilesTest.class,
-	EditHTMLFilesFromRenditionsFolderTest.class,
-	
-//	Publishing content
-	PublishArticleTest.class,
-	CheckTagsTest.class,
-	GenerateCollectionTest.class
-})
 
+		// Research
+		AuthenticationTest.class,
+		CreateFolderTest.class,
+		MarkLogicSearchTest.class,
+
+		// Alfresco Customisations
+		GenerateXMLTest.class, VerifyRenditionsTest.class,
+		AddAnnotationTest.class, CropImageTest.class,
+		GenerateImageRenditionsTest.class, UploadVideoTest.class,
+
+		// XML round-tripping
+		EditMasterXMLTest.class, DownloadFilesTest.class,
+
+		UploadFilesTest.class, EditHTMLFilesFromRenditionsFolderTest.class,
+
+		// Publishing content
+		PublishArticleTest.class, CheckTagsTest.class,
+		GenerateCollectionTest.class })
 public class testScriptSuite {
 
 }
