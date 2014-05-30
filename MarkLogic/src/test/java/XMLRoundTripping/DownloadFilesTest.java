@@ -42,6 +42,6 @@ public class DownloadFilesTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder("id");
-		downloadFilesSteps.downloadFiles("");
+		downloadFilesSteps.downloadFiles();
 	}
 }

@@ -32,6 +32,7 @@ public class CustomiseXMLSteps extends AbstractSteps {
 		alfrescoCreateNewFolderPage().clickOnElement("DemoTesting.xml");
 		customizeXMLPage().verifyIfRenditionsExists();
 		customizeXMLPage().clickOnFirstRendition();
+		getDriver().navigate().back();
 		customizeXMLPage().clickOnSecondRendition();
 		customizeXMLPage().clickOnThirdRendition();
 	}

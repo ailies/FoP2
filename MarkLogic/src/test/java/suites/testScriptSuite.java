@@ -39,14 +39,14 @@ import XMLRoundTripping.UploadFilesTest;
 
 		// XML round-tripping
 		EditMasterXMLTest.class, 
-		DownloadFilesTest.class,
+//		DownloadFilesTest.class,
 
-		UploadFilesTest.class, 
-		EditHTMLFilesFromRenditionsFolderTest.class,
+//		UploadFilesTest.class, 
+//		EditHTMLFilesFromRenditionsFolderTest.class,
 
 		// Publishing content
 		PublishArticleTest.class, 
-		CheckTagsTest.class,
+//		CheckTagsTest.class,
 		GenerateCollectionTest.class })
 
 public class testScriptSuite {

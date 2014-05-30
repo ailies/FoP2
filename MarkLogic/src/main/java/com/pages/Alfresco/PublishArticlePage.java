@@ -54,7 +54,7 @@ public class PublishArticlePage extends AbstractPage {
 			moreButton.click();
 
 			WebElement submitToPublish = element.findElement(By
-					.cssSelector("a[title='Submit To Publish']"));
+					.cssSelector("a[title='Start Workflow']"));
 
 			submitToPublish.isDisplayed();
 			waitABit(2000);
@@ -62,16 +62,89 @@ public class PublishArticlePage extends AbstractPage {
 		}
 	}
 
+	public void clickOnWorkflowDropDown() {
+		WebElement selectWorkflow = getDriver()
+				.findElement(
+						By.id("template_x002e_start-workflow_x002e_start-workflow_x0023_default-workflow-definition-button-button"));
+		element(selectWorkflow).waitUntilVisible();
+		selectWorkflow.click();
+	}
+
+	public void clickOnWorkflowType() {
+		WebElement workflowType = getDriver()
+				.findElement(
+						By.cssSelector(".yuimenuitem.first-of-type.yui-button-selectedmenuitem"));
+		element(workflowType).waitUntilVisible();
+		workflowType.click();
+	}
+
+	public void clickOnSelectAssignee() {
+		WebElement selectAssignee = getDriver().findElement(
+				By.id("yui-gen13-button"));
+		element(selectAssignee).waitUntilVisible();
+		selectAssignee.click();
+	}
+
+	public void inputOnSearchAssigneeLabel(String assignee) {
+		WebElement searchAssigneeLabel = getDriver()
+				.findElement(
+						By.id("template_x002e_start-workflow_x002e_start-workflow_x0023_default-startWorkflowForm-alf-id3_assoc_bpm_groupAssignee-cntrl-picker-searchText"));
+		element(searchAssigneeLabel).waitUntilVisible();
+		searchAssigneeLabel.sendKeys(assignee);
+	}
+
+	public void clickOnSearchAssigneeButton() {
+		WebElement searchAssigneeButton = getDriver()
+				.findElement(
+						By.id("template_x002e_start-workflow_x002e_start-workflow_x0023_default-startWorkflowForm-alf-id3_assoc_bpm_groupAssignee-cntrl-picker-searchButton-button"));
+		element(searchAssigneeButton).waitUntilVisible();
+		searchAssigneeButton.click();
+	}
+
+	public void clickOnGroupAssignee() {
+		WebElement groupAssignee = getDriver()
+				.findElement(
+						By.cssSelector("add-item add-template_x002e_start-workflow_x002e_start-workflow_x0023_default-startWorkflowForm-alf-id3_assoc_bpm_groupAssignee-cntrl"));
+		element(groupAssignee).waitUntilVisible();
+		groupAssignee.click();
+	}
+
+	public void clickOnGroupAssigneeOkButton() {
+		WebElement groupAssigneeOkButton = getDriver()
+				.findElement(
+						By.id("template_x002e_start-workflow_x002e_start-workflow_x0023_default-startWorkflowForm-alf-id3_assoc_bpm_groupAssignee-cntrl-ok-button"));
+		element(groupAssigneeOkButton).waitUntilVisible();
+		groupAssigneeOkButton.click();
+	}
+
+	public void clickOnAddWorkflowButton() {
+		WebElement addWorkflowButton = getDriver().findElement(
+				By.cssSelector("#yui-gen33-button"));
+		element(addWorkflowButton).waitUntilVisible();
+		addWorkflowButton.click();
+	}
+
+	public void clickOnStartWorkflowButton() {
+		WebElement startWorkflowButton = getDriver()
+				.findElement(
+						By.id("template_x002e_start-workflow_x002e_start-workflow_x0023_default-startWorkflowForm-alf-id3-form-submit-button"));
+		element(startWorkflowButton).waitUntilVisible();
+		startWorkflowButton.click();
+	}
+
 	public void clickOnSubmitToPublish() {
+		element(submitToPublish).waitUntilVisible();
 		submitToPublish.click();
 	}
 
 	public void clickOnTasksMenu() {
+		element(tasksMenu).waitUntilVisible();
 		tasksMenu.click();
 		tasksMenu.click();
 	}
 
 	public void clickOnWorkflowsStartedSubmenu() {
+		element(workflowsStartedSubmenu).waitUntilVisible();
 		workflowsStartedSubmenu.click();
 	}
 
@@ -110,7 +183,7 @@ public class PublishArticlePage extends AbstractPage {
 		WebElement workflowButton = startWorkflowContainer
 				.findElement(By
 						.cssSelector("button[id*='default-workflow-definition-button-button']"));
-
+		element(workflowButton).waitUntilVisible();
 		workflowButton.click();
 		waitABit(Constants.WAIT_TIME_SHORT);
 
@@ -142,6 +215,7 @@ public class PublishArticlePage extends AbstractPage {
 		WebElement currentTask = getDriver()
 				.findElement(
 						By.cssSelector(".yui-dt-rec.yui-dt-last.yui-dt-odd .yui-dt-liner a.task-details"));
+		element(currentTask).waitUntilVisible();
 		currentTask.click();
 	}
 
@@ -149,6 +223,7 @@ public class PublishArticlePage extends AbstractPage {
 		WebElement editBtn = getDriver()
 				.findElement(
 						By.id("page_x002e_data-actions_x002e_task-details_x0023_default-edit-button"));
+		element(editBtn).waitUntilVisible();
 		editBtn.click();
 	}
 
@@ -156,10 +231,12 @@ public class PublishArticlePage extends AbstractPage {
 		WebElement status = getDriver()
 				.findElement(
 						By.cssSelector("select#page_x002e_data-form_x002e_task-edit_x0023_default_prop_bpm_status"));
+		element(status).waitUntilVisible();
 		status.click();
 		WebElement statusType = getDriver()
 				.findElement(
 						By.cssSelector("#page_x002e_data-form_x002e_task-edit_x0023_default_prop_bpm_status > option:nth-child(5)"));
+		element(statusType).waitUntilVisible();
 		statusType.click();
 	}
 
@@ -167,6 +244,7 @@ public class PublishArticlePage extends AbstractPage {
 		WebElement publishBtn = getDriver()
 				.findElement(
 						By.cssSelector("#page_x002e_data-form_x002e_task-edit_x0023_default_prop_ixpdc_publishOutcome-Publish"));
+		element(publishBtn).waitUntilVisible();
 		publishBtn.click();
 	}
 

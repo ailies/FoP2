@@ -12,9 +12,13 @@ public class DownloadFilesSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void downloadFiles(String term) {
-		downloadFilesPage().clickOnDownload(".xml");
-		downloadFilesPage().clickOnDownload(".indd");
+	public void downloadFiles() {
+//		downloadFilesPage().clickOnDownload(".xml");
+//		downloadFilesPage().clickOnDownload(".indd");
+		downloadFilesPage().clickOnSelect();
+		downloadFilesPage().clickOnAll();
+		downloadFilesPage().clickOnSelectedItems();
+		downloadFilesPage().clickOnDownloadAsZIP();
 	}
 
 }

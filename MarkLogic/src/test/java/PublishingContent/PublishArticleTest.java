@@ -42,6 +42,6 @@ public class PublishArticleTest {
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder(".xml");
-		publishArticleSteps.publishArticle();
+		publishArticleSteps.publishArticle("publisher");
 	}
 }

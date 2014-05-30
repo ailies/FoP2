@@ -71,11 +71,13 @@ public class AlfrescoCreateFolderPage extends AbstractPage {
 	}
 
 	public void inputContentFolderName(String contentName) {
+		element(contentFolderName).waitUntilVisible();
 		contentFolderName.clear();
 		contentFolderName.sendKeys(contentName);
 	}
 
 	public void clickOnSaveContentFolder() {
+		element(saveContentFolderBtn).waitUntilVisible();
 		saveContentFolderBtn.click();
 	}
 
