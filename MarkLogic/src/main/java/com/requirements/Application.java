@@ -17,7 +17,8 @@ public class Application {
 	public class Articles {
 		public class SearchArticles {}
 		public class ImportArticles {}
-		public class ReorderArticles {}
+		public class GenerateXML {}
+		public class VerifyRenditions{}
 		public class EditFiles {}
 		public class PublishArticle {}
 		public class AddAnnotation {}

@@ -30,18 +30,25 @@ import XMLRoundTripping.UploadFilesTest;
 		MarkLogicSearchTest.class,
 
 		// Alfresco Customisations
-		GenerateXMLTest.class, VerifyRenditionsTest.class,
-		AddAnnotationTest.class, CropImageTest.class,
-		GenerateImageRenditionsTest.class, UploadVideoTest.class,
+		GenerateXMLTest.class, 
+		VerifyRenditionsTest.class,
+		AddAnnotationTest.class, 
+		CropImageTest.class,
+		GenerateImageRenditionsTest.class, 
+		UploadVideoTest.class,
 
 		// XML round-tripping
-		EditMasterXMLTest.class, DownloadFilesTest.class,
+		EditMasterXMLTest.class, 
+		DownloadFilesTest.class,
 
-		UploadFilesTest.class, EditHTMLFilesFromRenditionsFolderTest.class,
+		UploadFilesTest.class, 
+		EditHTMLFilesFromRenditionsFolderTest.class,
 
 		// Publishing content
-		PublishArticleTest.class, CheckTagsTest.class,
+		PublishArticleTest.class, 
+		CheckTagsTest.class,
 		GenerateCollectionTest.class })
+
 public class testScriptSuite {
 
 }
