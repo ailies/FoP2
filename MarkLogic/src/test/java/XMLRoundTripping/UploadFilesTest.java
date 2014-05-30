@@ -9,6 +9,6 @@ import com.requirements.Application;
 
 @Story(Application.FilesActions.UploadMultipleFiles.class)
 @RunWith(ThucydidesRunner.class)
-public class ImportFilesToIDFolderTest {
+public class UploadFilesTest {
 
 }

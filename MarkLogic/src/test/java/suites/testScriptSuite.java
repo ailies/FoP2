@@ -19,7 +19,7 @@ import Research.MarkLogicSearchTest;
 import XMLRoundTripping.DownloadFilesTest;
 import XMLRoundTripping.EditHTMLFilesFromRenditionsFolderTest;
 import XMLRoundTripping.EditMasterXMLTest;
-import XMLRoundTripping.ImportFilesToIDFolderTest;
+import XMLRoundTripping.UploadFilesTest;
 
 
 
@@ -43,7 +43,7 @@ import XMLRoundTripping.ImportFilesToIDFolderTest;
 	EditMasterXMLTest.class,
 	DownloadFilesTest.class,
 	
-	ImportFilesToIDFolderTest.class,
+	UploadFilesTest.class,
 	EditHTMLFilesFromRenditionsFolderTest.class,
 	
 //	Publishing content
