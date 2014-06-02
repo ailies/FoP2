@@ -41,16 +41,16 @@ public class MarkLogicSearchPage extends AbstractPage {
 
 	@FindBy(css = ".yui-dt29-col-actions.yui-dt-col-actions.yui-dt-last .yui-dt-liner .action-set .internal-show-more")
 	WebElement moremoremore;
-	
+
 	@FindBy(css = ".actions .move.up")
 	WebElement upArrow;
-	
+
 	@FindBy(css = ".actions .move.down")
 	WebElement downArrow;
-	
+
 	@FindBy(css = ".list .remove")
 	WebElement removeArticle;
-	
+
 	@FindBy(css = ".clear")
 	WebElement clearSearchBtn;
 
@@ -127,7 +127,7 @@ public class MarkLogicSearchPage extends AbstractPage {
 		getDriver().switchTo().frame(
 				getDriver().findElement(By.id("mlSearchArticleIframe")));
 		WebElement searchIframe = getDriver().switchTo().activeElement();
-				element(searchIframe).waitUntilVisible();
+		element(searchIframe).waitUntilVisible();
 		searchIframe.click();
 		element(inputSearch).waitUntilVisible();
 		inputSearch.sendKeys(term);
@@ -142,30 +142,30 @@ public class MarkLogicSearchPage extends AbstractPage {
 	public void getARandomLink() {
 		List<WebElement> listOfLinks = new ArrayList<WebElement>();
 		Random r = new Random();
-		
+
 		listOfLinks.addAll(getDriver().findElements(
 				By.cssSelector(".block.articles .view ul li")));
 		int listSize = listOfLinks.size();
 		System.out.println(String.valueOf(listSize));
-		
+
 		int index = r.nextInt(listSize);
 		System.out.println(listOfLinks.get(index).getText());
 		String compare = listOfLinks.get(index).getText().toLowerCase()
 				.toString();
-		
+
 		List<WebElement> searchResults = getDriver().findElements(
 				By.cssSelector(".block.articles .view ul li"));
 		try {
 			for (WebElement searchResult : searchResults) {
 				String var = searchResult.getText().toLowerCase().toString();
 				System.out.println(var);
-				
+
 				if (var.contains(compare)) {
 					System.out.println(searchResult);
 					searchResult.findElement(By.cssSelector("a")).click();
-					
+
 				} else {
-					
+
 					System.out.println("Element not found!");
 				}
 			}
@@ -183,24 +183,25 @@ public class MarkLogicSearchPage extends AbstractPage {
 		element(addFullContent).waitUntilVisible();
 		addFullContent.click();
 	}
-	
-	public void clickOnUpArrow(){
+
+	public void clickOnUpArrow() {
 		element(upArrow).waitUntilVisible();
 		upArrow.click();
 	}
-	
-	public void clickOnRemoveArticle(){
+
+	public void clickOnRemoveArticle() {
 		element(removeArticle).waitUntilVisible();
 		removeArticle.click();
 	}
-	
-	public void clickOnClearSearchBtn(){
+
+	public void clickOnClearSearchBtn() {
 		element(clearSearchBtn).waitUntilVisible();
 		clearSearchBtn.click();
 	}
 
 	public void clickOnImportDocuments() {
-			importDocuments.click();
-			waitABit(2000);
+		element(importDocuments).waitUntilVisible();
+		importDocuments.click();
+		waitABit(2000);
 	}
 }

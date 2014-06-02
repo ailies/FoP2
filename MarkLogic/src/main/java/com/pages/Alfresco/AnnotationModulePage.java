@@ -41,9 +41,12 @@ public class AnnotationModulePage extends AbstractPage {
 
 	public void verifyIfFilePreviewIsDisplayed() {
 		element(filePreview).isCurrentlyVisible();
+		Assert.assertTrue("File preview is displayed",
+				filePreview.isDisplayed());
 	}
 
 	public void clickOnAnnotations() {
+		element(annotationsBtn).waitUntilVisible();
 		annotationsBtn.click();
 		waitABit(2000);
 	}
@@ -64,6 +67,7 @@ public class AnnotationModulePage extends AbstractPage {
 
 	public void clickOnSubmitCommentButton() {
 		getDriver().switchTo().defaultContent();
+		element(submitCommentButton).waitUntilVisible();
 		submitCommentButton.click();
 	}
 
@@ -71,11 +75,13 @@ public class AnnotationModulePage extends AbstractPage {
 		WebElement nextButton = getDriver()
 				.findElement(
 						By.cssSelector("div[id*='ice-main'] > div:nth-child(8)>div:first-child>button:nth-child(3)"));
+		element(nextButton).waitUntilVisible();
 		nextButton.click();
 		waitABit(5000);
 	}
 
 	public void nativateToMainPage() {
+		element(goBackLink).waitUntilVisible();
 		goBackLink.click();
 	}
 

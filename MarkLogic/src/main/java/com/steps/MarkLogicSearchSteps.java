@@ -23,7 +23,7 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 
 		markLogicSearchPage().clickOnMoreOptions("Research");
 
-		markLogicSearchPage().inputSearchTerm("music");
+		markLogicSearchPage().inputSearchTerm("book");
 		markLogicSearchPage().clickOnDocumentContainer();
 
 		markLogicSearchPage().getARandomLink();

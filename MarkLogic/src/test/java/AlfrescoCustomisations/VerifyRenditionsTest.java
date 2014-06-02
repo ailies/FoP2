@@ -45,6 +45,13 @@ public class VerifyRenditionsTest {
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
-		xmlCustomizeSteps.checkRenditions(".xml");
+//		xmlCustomizeSteps.checkRenditions(".xml");
+		
+		xmlCustomizeSteps.verifyIfXMLFileExists("DemoTesting.xml");
+		xmlCustomizeSteps.clickOnElement("DemoTesting.xml");
+		xmlCustomizeSteps.verifyIfRenditionsExists();
+		xmlCustomizeSteps.clickOnFirstRendition();
+		xmlCustomizeSteps.clickOnSecondRendition();
+		xmlCustomizeSteps.clickOnThirdRendition();
 	}
 }

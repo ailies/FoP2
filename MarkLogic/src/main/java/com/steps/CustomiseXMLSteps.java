@@ -25,7 +25,32 @@ public class CustomiseXMLSteps extends AbstractSteps {
 	public boolean verifyIfXMLFileExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
-
+	
+	@Step
+	public void clickOnElement(String element) {
+		 alfrescoCreateNewFolderPage().clickOnElement(element);
+	}
+	
+	@Step
+	public void verifyIfRenditionsExists() {
+		customizeXMLPage().verifyIfRenditionsExists();
+	}
+	
+	@Step
+	public void clickOnFirstRendition() {
+		customizeXMLPage().clickOnFirstRendition();
+	}
+	
+	@Step
+	public void clickOnSecondRendition() {
+		customizeXMLPage().clickOnSecondRendition();
+	}
+	
+	@Step
+	public void clickOnThirdRendition() {
+		customizeXMLPage().clickOnThirdRendition();
+	}
+	
 	@StepGroup
 	public void checkRenditions(String term) {
 		verifyIfXMLFileExists("DemoTesting.xml");

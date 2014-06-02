@@ -25,7 +25,7 @@ public class DownloadFilesPage extends AbstractPage {
 			WebElement download = element.findElement(By
 					.cssSelector("a[title='Download']"));
 			mouseOver.click(element).build().perform();
-
+			element(download).waitUntilVisible();
 			download.click();
 		}
 	}

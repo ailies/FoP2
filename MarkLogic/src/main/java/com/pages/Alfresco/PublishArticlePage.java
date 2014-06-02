@@ -50,7 +50,7 @@ public class PublishArticlePage extends AbstractPage {
 			WebElement moreButton = element.findElement(By
 					.cssSelector("#onActionShowMore a"));
 			mouseOver.click(element).build().perform();
-
+			element(moreButton).waitUntilVisible();
 			moreButton.click();
 
 			WebElement submitToPublish = element.findElement(By
@@ -156,6 +156,7 @@ public class PublishArticlePage extends AbstractPage {
 
 		for (WebElement item : list) {
 			if (item.getText().equals(workflowType)) {
+				element(item).waitUntilVisible();
 				item.sendKeys("");
 				item.click();
 				break;
@@ -171,6 +172,7 @@ public class PublishArticlePage extends AbstractPage {
 
 		for (WebElement item : list) {
 			if (item.getText().equals(workflowName)) {
+				element(item).waitUntilVisible();
 				item.sendKeys("");
 				item.click();
 				break;
@@ -195,6 +197,7 @@ public class PublishArticlePage extends AbstractPage {
 		for (WebElement elementNow : workflowOptions) {
 
 			if (elementNow.getText().contentEquals(workflow)) {
+				element(elementNow).click();
 				elementNow.click();
 				break;
 			}

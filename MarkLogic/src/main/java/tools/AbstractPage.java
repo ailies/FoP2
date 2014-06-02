@@ -195,6 +195,7 @@ public class AbstractPage extends PageObject {
 		WebElement folder = element.findElement(By.cssSelector("span a"));
 		System.out.println(folder.getText());
 		if (element != null) {
+			element(folder).waitUntilVisible();
 			folder.click();
 		} else {
 			Assert.fail("The folder was not found!!!!");

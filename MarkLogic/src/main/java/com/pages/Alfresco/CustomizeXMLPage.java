@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import com.gargoylesoftware.htmlunit.javascript.host.MimeType;
+
 import tools.AbstractPage;
 
 public class CustomizeXMLPage extends AbstractPage {
@@ -21,6 +23,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement assemblyViewButton = getDriver()
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button"));
+		element(assemblyViewButton).waitUntilVisible();
 		assemblyViewButton.click();
 	}
 
@@ -28,6 +31,8 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement assemblyViewTree = getDriver().findElement(
 				By.cssSelector("div#assembly-view-tree"));
 		element(assemblyViewTree).shouldBeVisible();
+		Assert.assertTrue("Assembly View Tree is displayed",
+				assemblyViewTree.isDisplayed());
 	}
 
 	public void reorderXMLFilesInTree(String fileTitle) {
@@ -93,10 +98,11 @@ public class CustomizeXMLPage extends AbstractPage {
 				.findElements(By.cssSelector("a"));
 
 		if (searchResults.size() == 3) {
-			System.out.println(searchResults.size());
+			Assert.assertEquals("3 Renditions were generated",
+					searchResults.size());
 
 		} else {
-			System.out.println("Less than 3 renditions were generated!");
+			Assert.assertFalse("Less than 3 renditions were generated", false);
 		}
 		return null;
 
@@ -110,7 +116,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		firstRendition.click();
 		waitABit(2000);
 		checkTheMimetype();
-//		goBack();
+		goBack();
 	}
 
 	public void clickOnSecondRendition() {
@@ -139,16 +145,17 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement mimetype = getDriver().findElement(
 				By.cssSelector("div:nth-child(4) > div > span.viewmode-value"));
 		if (mimetype.getText().contains("Adobe PDF Document")) {
-			System.out.println("PDF rendition was generated");
+			element(mimetype).isDisplayed();
 		} else {
 			if (mimetype.getText().contains("HTML")) {
-				System.out.println("HTML rendition was generated");
+				element(mimetype).isDisplayed();
 			} else {
 				if (mimetype.getText().contains(
 						"{http://www.alfresco.org/model/content/1.0}content")) {
-					System.out.println("Thumbnail is visible");
+					element(mimetype).isDisplayed();
 				} else {
-					System.out.println(mimetype);
+					Assert.assertFalse("Mimetype is not available",
+							mimetype.isDisplayed());
 				}
 			}
 		}
@@ -166,7 +173,7 @@ public class CustomizeXMLPage extends AbstractPage {
 			WebElement moreOptionsButton = element.findElement(By
 					.cssSelector("#onActionShowMore a"));
 			mouseOver.click(element).build().perform();
-
+			element(moreOptionsButton).waitUntilVisible();
 			moreOptionsButton.click();
 			scrollPageDown();
 			WebElement inlineEditButton = element.findElement(By
@@ -183,23 +190,21 @@ public class CustomizeXMLPage extends AbstractPage {
 				getDriver().findElement(By.cssSelector("#xopusFrame")));
 		WebElement xopusFrame = getDriver().switchTo().activeElement();
 		waitABit(6000);
+		element(xopusFrame).waitUntilVisible();
 		xopusFrame.click();
 
 		getDriver().switchTo().frame(
 				getDriver().findElement(By.cssSelector(".iframe")));
 		WebElement iframe = getDriver().switchTo().activeElement();
+		element(iframe).waitUntilVisible();
 		iframe.click();
 
 		waitABit(6000);
 		WebElement fileTitle = getDriver().findElement(
 				By.id("a0#*b42[a0*]b45b248[a1*]b48b257[a0#*]b32|x0"));
-
-//		fileTitle.click();
-		// fileTitle.clear();
+		element(fileTitle).waitUntilVisible();
 		fileTitle.sendKeys(title);
 		scrollToPageBottom();
-
-		System.out.println(iframe.getSize());
 
 		waitABit(2000);
 
@@ -211,10 +216,11 @@ public class CustomizeXMLPage extends AbstractPage {
 				.findElement(
 						By.id("template_x002e_inline-edit_x002e_inline-edit_x0023_default-form-submit-button"));
 		scrollPageDown();
+		element(submitUpdate).waitUntilVisible();
 		submitUpdate.click();
 	}
-	
-//	---------------Verify if tags were generated---------------
+
+	// ---------------Verify if tags were generated---------------
 
 	public void verifyIfSemanticTagsWereGenerated() {
 		WebElement semanticTagsContainer = getDriver().findElement(

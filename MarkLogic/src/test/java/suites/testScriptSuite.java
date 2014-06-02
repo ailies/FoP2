@@ -10,22 +10,15 @@ import AlfrescoCustomisations.GenerateImageRenditionsTest;
 import AlfrescoCustomisations.GenerateXMLTest;
 import AlfrescoCustomisations.UploadVideoTest;
 import AlfrescoCustomisations.VerifyRenditionsTest;
-import PublishingContent.CheckTagsTest;
-import PublishingContent.GenerateCollectionTest;
-import PublishingContent.PublishArticleTest;
-import Research.AuthenticationTest;
 import Research.CreateFolderTest;
 import Research.MarkLogicSearchTest;
-import XMLRoundTripping.DownloadFilesTest;
-import XMLRoundTripping.EditHTMLFilesFromRenditionsFolderTest;
 import XMLRoundTripping.EditMasterXMLTest;
-import XMLRoundTripping.UploadFilesTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
 
 		// Research
-		AuthenticationTest.class,
+//		AuthenticationTest.class,
 		CreateFolderTest.class,
 		MarkLogicSearchTest.class,
 
@@ -38,17 +31,10 @@ import XMLRoundTripping.UploadFilesTest;
 		UploadVideoTest.class,
 
 		// XML round-tripping
-		EditMasterXMLTest.class, 
-//		DownloadFilesTest.class,
+		EditMasterXMLTest.class
+})
+		
 
-//		UploadFilesTest.class, 
-//		EditHTMLFilesFromRenditionsFolderTest.class,
-
-		// Publishing content
-		PublishArticleTest.class, 
-//		CheckTagsTest.class,
-		GenerateCollectionTest.class })
-
-public class testScriptSuite {
+ public class testScriptSuite {
 
 }

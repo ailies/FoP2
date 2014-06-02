@@ -15,11 +15,12 @@ import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.AnnotationModuleSteps;
 import com.steps.CreateFolderSteps;
+import com.steps.CustomiseXMLSteps;
 
 @Story(Application.Articles.AddAnnotation.class)
 @RunWith(ThucydidesRunner.class)
 public class AddAnnotationTest {
-	
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -31,17 +32,18 @@ public class AddAnnotationTest {
 
 	@Steps
 	public CreateFolderSteps createNewFolderSteps;
-	
+
 	@Steps
 	public AnnotationModuleSteps annotationModuleSteps;
-	
+
 	@Test
-	public void createAnnotation(){
+	public void addAnnotation() {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
 		createNewFolderSteps.clickOnFolder("DemoTesting");
 		createNewFolderSteps.clickOnFolder(".xml");
-		annotationModuleSteps.createAnnotation("message", "admin", "");
+		annotationModuleSteps.addAnnotation("message", "admin", "");
+
 	}
 }

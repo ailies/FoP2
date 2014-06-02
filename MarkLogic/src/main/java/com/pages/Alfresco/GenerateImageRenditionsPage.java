@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.thucydides.core.annotations.findby.FindBy;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,7 +35,9 @@ public class GenerateImageRenditionsPage extends AbstractPage {
 				.findElement(
 						By.id("template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl"))
 				.findElements(By.cssSelector("a"));
-		System.out.println(renditions.size());
+		Assert.assertTrue("Image renditions were generated",
+				renditions.contains("a"));
+		renditions.size();
 		return null;
 
 	}

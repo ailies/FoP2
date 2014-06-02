@@ -28,6 +28,7 @@ public class GenerateVideoFramesPage extends AbstractPage {
 		WebElement video = element.findElement(By.cssSelector("span a"));
 		System.out.println(video.getText());
 		if (element != null) {
+			element(video).waitUntilVisible();
 			video.click();
 		} else {
 			Assert.fail("Video was not found!!!!");
@@ -36,6 +37,7 @@ public class GenerateVideoFramesPage extends AbstractPage {
 	}
 
 	public void clickOnGenerateVideoFrames() {
+		element(generateFramesBtn).waitUntilVisible();
 		generateFramesBtn.click();
 		generateFramesBtn.click();
 		waitABit(10000);
@@ -46,8 +48,9 @@ public class GenerateVideoFramesPage extends AbstractPage {
 				.findElement(
 						By.id("template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_ixpdc_frames-cntrl"))
 				.findElements(By.cssSelector("a href"));
-		System.out.println(frames.size());
-		return null;
-
+		Assert.assertTrue("Video frames were generated",
+				frames.contains("a href"));
+		frames.size();
+		return generateFramesBtn;
 	}
 }

@@ -1,5 +1,6 @@
 package com.steps;
 
+import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
 import tools.AbstractSteps;
@@ -12,8 +13,7 @@ public class AnnotationModuleSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void createAnnotation(String annotation, String userName,
-			String message) {
+	public void addAnnotation(String annotation, String userName, String message) {
 		annotationsModulePage().verifyIfFilePreviewIsDisplayed();
 		customizeXMLPage().clickOnFirstRendition();
 		annotationsModulePage().clickOnAnnotations();
@@ -28,5 +28,4 @@ public class AnnotationModuleSteps extends AbstractSteps {
 		annotationsModulePage().checkIfCommentIsPresent(userName, message);
 		// annotationsModulePage().checkThatDateCorespondWithSystemTime(systemDate);
 	}
-
 }
