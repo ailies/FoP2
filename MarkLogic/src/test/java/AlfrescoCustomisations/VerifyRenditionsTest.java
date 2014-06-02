@@ -17,7 +17,6 @@ import com.steps.CreateFolderSteps;
 import com.steps.CustomiseXMLSteps;
 import com.steps.MarkLogicSearchSteps;
 
-
 @Story(Application.Articles.VerifyRenditions.class)
 @RunWith(ThucydidesRunner.class)
 public class VerifyRenditionsTest {
@@ -44,14 +43,7 @@ public class VerifyRenditionsTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
-//		xmlCustomizeSteps.checkRenditions(".xml");
-		
-		xmlCustomizeSteps.verifyIfXMLFileExists("DemoTesting.xml");
-		xmlCustomizeSteps.clickOnElement("DemoTesting.xml");
-		xmlCustomizeSteps.verifyIfRenditionsExists();
-		xmlCustomizeSteps.clickOnFirstRendition();
-		xmlCustomizeSteps.clickOnSecondRendition();
-		xmlCustomizeSteps.clickOnThirdRendition();
+		createNewFolderSteps.clickOnFolder("Ami");
+		xmlCustomizeSteps.checkRenditions(".xml");
 	}
 }

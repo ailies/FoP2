@@ -48,7 +48,7 @@ public class GenerateImageRenditionsTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Ami");
 		createNewFolderSteps.clickOnFolder("Research");
 		cropImageAndGemerateRenditionsSteps.GenerateImageRenditions(".jpg");
 	}

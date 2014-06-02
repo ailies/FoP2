@@ -35,6 +35,6 @@ public class CreateFolderTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.createNewFolderTest("Test", "Test", "Test",
-				"DemoTesting");
+				"Ami");
 	}
 }

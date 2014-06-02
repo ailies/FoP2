@@ -39,7 +39,7 @@ public class CropImageTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("Ami");
 		createNewFolderSteps.clickOnFolder("Research");
 		cropImageSteps.cropImage(".jpg");
 	}

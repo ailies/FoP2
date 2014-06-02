@@ -43,7 +43,7 @@ public class GenerateXMLTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolder.clickOnFolder("Test");
-		createNewFolder.clickOnFolder("DemoTesting");
+		createNewFolder.clickOnFolder("Ami");
 		createNewFolder.clickOnFolder("Research");
 		customizeXMLSteps.reorderFiles(".xml");
 
