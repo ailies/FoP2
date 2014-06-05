@@ -41,7 +41,7 @@ public class AddAnnotationTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("Ami");
+		createNewFolderSteps.clickOnFolder("Demo");
 		createNewFolderSteps.clickOnFolder(".xml");
 		annotationModuleSteps.addAnnotation("message", "admin", "");
 

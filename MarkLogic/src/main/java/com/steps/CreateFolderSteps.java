@@ -29,12 +29,12 @@ public class CreateFolderSteps extends AbstractSteps {
 		alfrescoCreateNewFolderPage().clickOnCreate();
 		alfrescoCreateNewFolderPage().clickOnCreateFolderFromTemplate();
 		alfrescoCreateNewFolderPage().clickOnCreateContentFolder();
-		alfrescoCreateNewFolderPage().inputContentFolderName("Ami");
+		alfrescoCreateNewFolderPage().inputContentFolderName("Demo");
 		alfrescoCreateNewFolderPage().clickOnSaveContentFolder();
 		waitABit(10000);
-		clickOnFolder("Ami");
+		clickOnFolder("Demo");
 		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(
-				"Ami");
+				"Demo");
 
 	}
 

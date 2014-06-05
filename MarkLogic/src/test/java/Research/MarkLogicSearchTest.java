@@ -39,9 +39,8 @@ public class MarkLogicSearchTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("Ami");
-//		createNewFolderSteps.clickOnFolder("Research");
-		markLogicSearchSteps.searchAndImportWikiDocument("Research", "test",
-				"Ami");
+		createNewFolderSteps.clickOnFolder("Demo");
+		markLogicSearchSteps.searchAndImportWikiDocument("Research", "book",
+				"Demo.xml");
 	}
 }

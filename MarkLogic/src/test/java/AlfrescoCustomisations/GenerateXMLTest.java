@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import tools.Delay;
+
 import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
@@ -43,7 +45,7 @@ public class GenerateXMLTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolder.clickOnFolder("Test");
-		createNewFolder.clickOnFolder("Ami");
+		createNewFolder.clickOnFolder("Demo");
 		createNewFolder.clickOnFolder("Research");
 		customizeXMLSteps.reorderFiles(".xml");
 

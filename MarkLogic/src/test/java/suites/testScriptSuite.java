@@ -18,23 +18,17 @@ import XMLRoundTripping.EditMasterXMLTest;
 @SuiteClasses({
 
 		// Research
-//		AuthenticationTest.class,
 		CreateFolderTest.class,
 		MarkLogicSearchTest.class,
-
 		// Alfresco Customisations
-		GenerateXMLTest.class, 
+//		GenerateXMLTest.class, 
 		VerifyRenditionsTest.class,
 		AddAnnotationTest.class, 
 		CropImageTest.class,
 		GenerateImageRenditionsTest.class, 
 		UploadVideoTest.class,
-
 		// XML round-tripping
 		EditMasterXMLTest.class
 })
-		
 
- public class testScriptSuite {
-
-}
+ public class testScriptSuite {}

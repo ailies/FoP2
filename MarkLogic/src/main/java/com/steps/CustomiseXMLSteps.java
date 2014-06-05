@@ -53,8 +53,8 @@ public class CustomiseXMLSteps extends AbstractSteps {
 	
 	@StepGroup
 	public void checkRenditions(String term) {
-		verifyIfXMLFileExists("DemoTesting.xml");
-		alfrescoCreateNewFolderPage().clickOnElement("DemoTesting.xml");
+		verifyIfXMLFileExists("Demo.xml");
+		alfrescoCreateNewFolderPage().clickOnElement("Demo.xml");
 		customizeXMLPage().verifyIfRenditionsExists();
 		customizeXMLPage().clickOnFirstRendition();
 		getDriver().navigate().back();

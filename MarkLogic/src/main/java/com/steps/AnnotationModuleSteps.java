@@ -14,7 +14,7 @@ public class AnnotationModuleSteps extends AbstractSteps {
 
 	@StepGroup
 	public void addAnnotation(String annotation, String userName, String message) {
-		annotationsModulePage().verifyIfFilePreviewIsDisplayed();
+//		annotationsModulePage().verifyIfFilePreviewIsDisplayed();
 		customizeXMLPage().clickOnFirstRendition();
 		annotationsModulePage().clickOnAnnotations();
 		annotationsModulePage().drawALine();

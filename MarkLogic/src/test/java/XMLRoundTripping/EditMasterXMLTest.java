@@ -39,7 +39,7 @@ public class EditMasterXMLTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
-		xmlCustomizeSteps.editWithXopus("DemoTesting.xml", "Test");
+		createNewFolderSteps.clickOnFolder("Demo");
+		xmlCustomizeSteps.editWithXopus("Demo.xml", "Test");
 	}
 }

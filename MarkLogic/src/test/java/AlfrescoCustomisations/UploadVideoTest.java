@@ -41,7 +41,7 @@ public class UploadVideoTest {
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("Ami");
+		createNewFolderSteps.clickOnFolder("Demo");
 		createNewFolderSteps.clickOnFolder("Research");
 		uploadVideoSteps.uploadVideo(
 				"C:/Users/seleniumadmin/Videos/Sample Videos/Wildlife.wmv",

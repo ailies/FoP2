@@ -21,9 +21,9 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 	public void searchAndImportWikiDocument(String fileName, String searchTerm,
 			String term) {
 
-		markLogicSearchPage().clickOnMoreOptions("Research");
+		markLogicSearchPage().clickOnMoreOptions(fileName);
 
-		markLogicSearchPage().inputSearchTerm("book");
+		markLogicSearchPage().inputSearchTerm(searchTerm);
 		markLogicSearchPage().clickOnDocumentContainer();
 
 		markLogicSearchPage().getARandomLink();
@@ -41,14 +41,14 @@ public class MarkLogicSearchSteps extends AbstractSteps {
 		markLogicSearchPage().clickOnImportDocuments();
 		waitABit(6000);
 
-		if (verifyIfXMLFileExists(term)) {
-
-			alfrescoCreateNewFolderPage().clickOnElement("DemoTesting.xml");
-
-		} else {
-
-			System.out.println("Master XML does not exist!");
-
-		}
+//		if (verifyIfXMLFileExists(term)) {
+//
+//			alfrescoCreateNewFolderPage().clickOnElement("Demo.xml");
+//
+//		} else {
+//
+//			System.out.println("Master XML does not exist!");
+//
+//		}
 	}
 }
