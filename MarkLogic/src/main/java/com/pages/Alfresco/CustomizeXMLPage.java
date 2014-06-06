@@ -1,5 +1,6 @@
 package com.pages.Alfresco;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.junit.Assert;
@@ -98,7 +99,8 @@ public class CustomizeXMLPage extends AbstractPage {
 				.findElements(By.cssSelector("a"));
 
 		if (searchResults.size() == 3) {
-//			Assert.assertTrue("3 Renditions were generated", searchResults.size());
+			// Assert.assertTrue("3 Renditions were generated",
+			// searchResults.size());
 			System.out.println(searchResults.size());
 		} else {
 			Assert.assertFalse("Less than 3 renditions were generated", false);
@@ -115,7 +117,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		firstRendition.click();
 		waitABit(2000);
 		checkTheMimetype();
-//		goBack();
+		// goBack();
 	}
 
 	public void clickOnSecondRendition() {
@@ -145,16 +147,20 @@ public class CustomizeXMLPage extends AbstractPage {
 				By.cssSelector("div:nth-child(4) > div > span.viewmode-value"));
 		if (mimetype.getText().contains("Adobe PDF Document")) {
 			element(mimetype).isDisplayed();
+			System.out.println("Adobe PDF Document");
 		} else {
 			if (mimetype.getText().contains("HTML")) {
 				element(mimetype).isDisplayed();
+				System.out.println("HTML");
 			} else {
 				if (mimetype.getText().contains(
 						"{http://www.alfresco.org/model/content/1.0}content")) {
 					element(mimetype).isDisplayed();
+					System.out.println("Thumbnail");
 				} else {
-					Assert.assertFalse("Mimetype is not available",
+					Assert.assertTrue("Mimetype is not available",
 							mimetype.isDisplayed());
+					System.out.println("N/A");
 				}
 			}
 		}
@@ -222,13 +228,20 @@ public class CustomizeXMLPage extends AbstractPage {
 	// ---------------Verify if tags were generated---------------
 
 	public void verifyIfSemanticTagsWereGenerated() {
-		WebElement semanticTagsContainer = getDriver().findElement(
-				By.cssSelector(".form-field.inlineable"));
-
-		Assert.assertTrue("! Semantic Tags were not generated "
-				+ semanticTagsContainer.isDisplayed(),
-				semanticTagsContainer.isDisplayed());
-
+		try {
+			WebElement semanticTagsContainer = getDriver().findElement(
+					By.cssSelector(".form-field.inlineable"));
+			if (semanticTagsContainer.isDisplayed()) {
+				Assert.assertTrue("! Semantic Tags available "
+						+ semanticTagsContainer.isDisplayed(),
+						semanticTagsContainer.isDisplayed());
+			} else {
+				Assert.assertFalse("! Semantic Tags weren't generated !"
+						+ semanticTagsContainer.isEnabled(),
+						semanticTagsContainer.isEnabled());
+			}
+		} catch (Exception e) {
+			Assert.fail("Tags were not found!");
+		}
 	}
-
 }

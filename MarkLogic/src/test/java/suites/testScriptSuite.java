@@ -7,7 +7,6 @@ import org.junit.runners.Suite.SuiteClasses;
 import AlfrescoCustomisations.AddAnnotationTest;
 import AlfrescoCustomisations.CropImageTest;
 import AlfrescoCustomisations.GenerateImageRenditionsTest;
-import AlfrescoCustomisations.GenerateXMLTest;
 import AlfrescoCustomisations.UploadVideoTest;
 import AlfrescoCustomisations.VerifyRenditionsTest;
 import Research.CreateFolderTest;

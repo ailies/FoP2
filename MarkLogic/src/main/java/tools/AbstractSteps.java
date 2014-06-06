@@ -6,11 +6,12 @@ import net.thucydides.core.steps.ScenarioSteps;
 import com.pages.Alfresco.AlfrescoActionsPage;
 import com.pages.Alfresco.AlfrescoCreateFolderPage;
 import com.pages.Alfresco.AlfrescoCreateUserPage;
-import com.pages.Alfresco.AuthenticationPage;
 import com.pages.Alfresco.AnnotationModulePage;
+import com.pages.Alfresco.AuthenticationPage;
 import com.pages.Alfresco.CropImagePage;
 import com.pages.Alfresco.CustomizeXMLPage;
 import com.pages.Alfresco.DownloadFilesPage;
+import com.pages.Alfresco.EditHTMLPage;
 import com.pages.Alfresco.GenerateImageRenditionsPage;
 import com.pages.Alfresco.GenerateVideoFramesPage;
 import com.pages.Alfresco.MarkLogicSearchPage;
@@ -93,5 +94,9 @@ public class AbstractSteps extends ScenarioSteps {
 
 	protected BuildMyBookActionsPage buildMyBookActionsPage() {
 		return getPages().currentPageAt(BuildMyBookActionsPage.class);
+	}
+	
+	protected EditHTMLPage editHTMLPage() {
+		return getPages().currentPageAt(EditHTMLPage.class);
 	}
 }

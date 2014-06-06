@@ -3,7 +3,6 @@ package XMLRoundTripping;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.runners.ThucydidesRunner;
 
@@ -11,15 +10,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.requirements.Application;
 import com.steps.AlfrescoLoginSteps;
 import com.steps.CreateFolderSteps;
-import com.steps.EditHTMLSteps;
+import com.steps.CustomiseXMLSteps;
 
-@Story(Application.Articles.EditFiles.class)
+
+//@Story(Application...class)
 @RunWith(ThucydidesRunner.class)
-public class EditHTMLFilesFromRenditionsFolderTest {
-
+public class CheckIfFilesExistsTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -31,19 +29,28 @@ public class EditHTMLFilesFromRenditionsFolderTest {
 
 	@Steps
 	public CreateFolderSteps createNewFolderSteps;
-
+	
 	@Steps
-	public EditHTMLSteps editHTMLSteps;
+	public CustomiseXMLSteps customiseXMLSteps;
 
+//	@Test
+//	public void checkIfRenditionsWereGenerated(){
+//		loginSteps.authentication("admin", "admin");
+//		loginSteps.navigateToFolder();
+//		createNewFolderSteps.clickOnFolder("Test");
+//		createNewFolderSteps.clickOnFolder("Demo");
+//		createNewFolderSteps.clickOnFolder("renditions");
+//		customiseXMLSteps.checkRenditionsInRenditionsFolder(".html", ".epub");
+//	}
+	
 	@Test
-	public void editHTMLRendition() {
+	public void checkIfRenditionsWereGenerated(){
 		loginSteps.authentication("admin", "admin");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("People");
 		createNewFolderSteps.clickOnFolder("Ami");
-		createNewFolderSteps.clickOnFolder("6-6-2014-1");
+		createNewFolderSteps.clickOnFolder("4-6-2014-1");
 		createNewFolderSteps.clickOnFolder("renditions");
-		editHTMLSteps.editHTMLRendition("6-6-2014-1.html", "edit");
+		customiseXMLSteps.checkRenditionsInRenditionsFolder(".html", ".epub");
 	}
-
 }

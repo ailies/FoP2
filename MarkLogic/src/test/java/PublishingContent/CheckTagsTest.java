@@ -34,12 +34,23 @@ public class CheckTagsTest {
 	@Steps
 	public CustomiseXMLSteps customizeXMLSteps;
 
+//	@Test
+//	public void verifyFileTags() {
+//		loginSteps.authentication("publisher", "demo");
+//		loginSteps.navigateToFolder();
+//		createNewFolderSteps.clickOnFolder("Test");
+//		createNewFolderSteps.clickOnFolder("Demo");
+//		createNewFolderSteps.clickOnFolder(".xml");
+//		customizeXMLSteps.verifyTags();
+//	}
+	
 	@Test
 	public void verifyFileTags() {
 		loginSteps.authentication("publisher", "demo");
 		loginSteps.navigateToFolder();
-		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
+		createNewFolderSteps.clickOnFolder("People");
+		createNewFolderSteps.clickOnFolder("Ami");
+		createNewFolderSteps.clickOnFolder("4-6-2014-1");
 		createNewFolderSteps.clickOnFolder(".xml");
 		customizeXMLSteps.verifyTags();
 	}

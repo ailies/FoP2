@@ -25,32 +25,7 @@ public class CustomiseXMLSteps extends AbstractSteps {
 	public boolean verifyIfXMLFileExists(String term) {
 		return alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
-	
-	@Step
-	public void clickOnElement(String element) {
-		 alfrescoCreateNewFolderPage().clickOnElement(element);
-	}
-	
-	@Step
-	public void verifyIfRenditionsExists() {
-		customizeXMLPage().verifyIfRenditionsExists();
-	}
-	
-	@Step
-	public void clickOnFirstRendition() {
-		customizeXMLPage().clickOnFirstRendition();
-	}
-	
-	@Step
-	public void clickOnSecondRendition() {
-		customizeXMLPage().clickOnSecondRendition();
-	}
-	
-	@Step
-	public void clickOnThirdRendition() {
-		customizeXMLPage().clickOnThirdRendition();
-	}
-	
+
 	@StepGroup
 	public void checkRenditions(String term) {
 		verifyIfXMLFileExists("Demo.xml");
@@ -73,12 +48,25 @@ public class CustomiseXMLSteps extends AbstractSteps {
 	public void verifyTags() {
 		customizeXMLPage().verifyIfSemanticTagsWereGenerated();
 	}
-	
+
 	@StepGroup
 	public void uploadFiles(String filePath, String term) {
 		uploadFile().uploadDocument(filePath);
 		alfrescoCreateNewFolderPage().verifyIfElementExists(term);
 	}
 
+	@StepGroup
+	public void checkRenditionsInRenditionsFolder(String term, String string) {
+		verifyIfXMLFileExists("Demo.html");
+		System.out.println(".html");
+		verifyIfXMLFileExists("Demo.epub");
+		System.out.println(".epub");
+	}
+
+	@StepGroup
+	public void editHTMLFile(String term) {
+		verifyIfXMLFileExists("Demo.html");
+		customizeXMLPage().clickOnInlineEdit("Demo.html");
+	}
 
 }
