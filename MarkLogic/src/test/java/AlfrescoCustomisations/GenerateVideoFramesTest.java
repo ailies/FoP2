@@ -11,12 +11,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.CreateFolderSteps;
+import AlfrescoSteps.CustomiseXMLSteps;
+import AlfrescoSteps.MarkLogicSearchSteps;
+import AlfrescoSteps.UploadVideoSteps;
+
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.CustomiseXMLSteps;
-import com.steps.MarkLogicSearchSteps;
-import com.steps.UploadVideoSteps;
 
 @Story(Application.MediaFiles.GenerateVideoFrames.class)
 @RunWith(ThucydidesRunner.class)

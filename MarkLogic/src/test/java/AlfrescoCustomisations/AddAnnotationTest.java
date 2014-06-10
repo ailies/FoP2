@@ -11,11 +11,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.AnnotationModuleSteps;
+import AlfrescoSteps.CreateFolderSteps;
+import AlfrescoSteps.CustomiseXMLSteps;
+
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
-import com.steps.AnnotationModuleSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.CustomiseXMLSteps;
 
 @Story(Application.Articles.AddAnnotation.class)
 @RunWith(ThucydidesRunner.class)

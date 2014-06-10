@@ -1,4 +1,4 @@
-package PublishingContent;
+package IDH;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -11,24 +11,25 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import BuildMyBookSteps.BuildMyBookActionSteps;
+import IDHSteps.idhAuthenticationSteps;
 
 import com.requirements.Application;
 
-@Story(Application.BuildMyBook.CreateCollection.class)
+
+@Story(Application.IDHActions.Authentication.class)
 @RunWith(ThucydidesRunner.class)
-public class GenerateCollectionTest {
+public class idhAuthenticationTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
-	@ManagedPages(defaultUrl = "http://admin:admin@172.16.10.116:9002/")
+	@ManagedPages(defaultUrl = "http://172.16.10.116:9003/")
 	public Pages pages;
 
 	@Steps
-	BuildMyBookActionSteps buildMyBookActionsSteps;
+	public idhAuthenticationSteps idhAuthenticationSteps;
 
 	@Test
-	public void searchArticle() {
-		buildMyBookActionsSteps.buildMyBook("2014");
+	public void Authentication() {
+		idhAuthenticationSteps.IDHauthentication("admin", "admin");
 	}
 }

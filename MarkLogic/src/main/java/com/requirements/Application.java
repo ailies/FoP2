@@ -43,5 +43,11 @@ public class Application {
 		public class SearchArticles {}
 		public class CreateCollection {}
 	}
+	
+	@Feature
+	public class IDHActions {
+		public class Authentication {}
+		public class Users {}
+	}
 
 }

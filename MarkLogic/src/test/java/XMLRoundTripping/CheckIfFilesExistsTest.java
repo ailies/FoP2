@@ -10,9 +10,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.CustomiseXMLSteps;
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.CreateFolderSteps;
+import AlfrescoSteps.CustomiseXMLSteps;
 
 
 //@Story(Application...class)
@@ -33,15 +33,15 @@ public class CheckIfFilesExistsTest {
 	@Steps
 	public CustomiseXMLSteps customiseXMLSteps;
 
-//	@Test
-//	public void checkIfRenditionsWereGenerated(){
-//		loginSteps.authentication("admin", "admin");
-//		loginSteps.navigateToFolder();
-//		createNewFolderSteps.clickOnFolder("Test");
-//		createNewFolderSteps.clickOnFolder("Demo");
-//		createNewFolderSteps.clickOnFolder("renditions");
-//		customiseXMLSteps.checkRenditionsInRenditionsFolder(".html", ".epub");
-//	}
+/*	@Test
+	public void checkIfRenditionsWereGenerated(){
+		loginSteps.authentication("admin", "admin");
+		loginSteps.navigateToFolder();
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("Demo");
+		createNewFolderSteps.clickOnFolder("renditions");
+		customiseXMLSteps.checkRenditionsInRenditionsFolder(".html", ".epub");
+	}*/
 	
 	@Test
 	public void checkIfRenditionsWereGenerated(){

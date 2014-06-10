@@ -11,10 +11,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.CreateFolderSteps;
+import AlfrescoSteps.EditHTMLSteps;
+
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.EditHTMLSteps;
 
 @Story(Application.Articles.EditFiles.class)
 @RunWith(ThucydidesRunner.class)

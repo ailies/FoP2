@@ -11,9 +11,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.CreateFolderSteps;
+
 import com.requirements.Application;
-import com.steps.CreateFolderSteps;
-import com.steps.AlfrescoLoginSteps;
 
 @Story(Application.BasicFunctionality.CreateFolder.class)
 @RunWith(ThucydidesRunner.class)

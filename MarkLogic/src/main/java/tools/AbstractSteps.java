@@ -2,22 +2,21 @@ package tools;
 
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
-
-import com.pages.Alfresco.AlfrescoActionsPage;
-import com.pages.Alfresco.AlfrescoCreateFolderPage;
-import com.pages.Alfresco.AlfrescoCreateUserPage;
-import com.pages.Alfresco.AnnotationModulePage;
-import com.pages.Alfresco.AuthenticationPage;
-import com.pages.Alfresco.CropImagePage;
-import com.pages.Alfresco.CustomizeXMLPage;
-import com.pages.Alfresco.DownloadFilesPage;
-import com.pages.Alfresco.EditHTMLPage;
-import com.pages.Alfresco.GenerateImageRenditionsPage;
-import com.pages.Alfresco.GenerateVideoFramesPage;
-import com.pages.Alfresco.MarkLogicSearchPage;
-import com.pages.Alfresco.PublishArticlePage;
-import com.pages.Alfresco.UploadFilePage;
-import com.pages.BuildMyBook.BuildMyBookActionsPage;
+import AlfrescoPages.AlfrescoActionsPage;
+import AlfrescoPages.AlfrescoCreateFolderPage;
+import AlfrescoPages.AlfrescoCreateUserPage;
+import AlfrescoPages.AnnotationModulePage;
+import AlfrescoPages.AuthenticationPage;
+import AlfrescoPages.CropImagePage;
+import AlfrescoPages.CustomizeXMLPage;
+import AlfrescoPages.DownloadFilesPage;
+import AlfrescoPages.EditHTMLPage;
+import AlfrescoPages.GenerateImageRenditionsPage;
+import AlfrescoPages.GenerateVideoFramesPage;
+import AlfrescoPages.MarkLogicSearchPage;
+import AlfrescoPages.PublishArticlePage;
+import AlfrescoPages.UploadFilePage;
+import BuildMyBookPages.BuildMyBookActionsPage;
 
 @SuppressWarnings("serial")
 public class AbstractSteps extends ScenarioSteps {
@@ -95,8 +94,18 @@ public class AbstractSteps extends ScenarioSteps {
 	protected BuildMyBookActionsPage buildMyBookActionsPage() {
 		return getPages().currentPageAt(BuildMyBookActionsPage.class);
 	}
-	
+
 	protected EditHTMLPage editHTMLPage() {
 		return getPages().currentPageAt(EditHTMLPage.class);
+	}
+
+	// -------------IDH-------------
+
+	protected IDHPages.idhAuthenticationPage idhAuthenticationPage() {
+		return getPages().currentPageAt(IDHPages.idhAuthenticationPage.class);
+	}
+
+	protected IDHPages.idhCreateUsersPage idhCreateUsersPage() {
+		return getPages().currentPageAt(IDHPages.idhCreateUsersPage.class);
 	}
 }

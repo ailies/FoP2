@@ -11,10 +11,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.CreateFolderSteps;
+import AlfrescoSteps.CustomiseXMLSteps;
+
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.CustomiseXMLSteps;
 
 @Story(Application.FilesActions.UploadMultipleFiles.class)
 @RunWith(ThucydidesRunner.class)

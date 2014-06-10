@@ -11,11 +11,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.CreateFolderSteps;
+import AlfrescoSteps.CustomiseXMLSteps;
+import AlfrescoSteps.MarkLogicSearchSteps;
+
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.CustomiseXMLSteps;
-import com.steps.MarkLogicSearchSteps;
 
 @Story(Application.Articles.VerifyRenditions.class)
 @RunWith(ThucydidesRunner.class)

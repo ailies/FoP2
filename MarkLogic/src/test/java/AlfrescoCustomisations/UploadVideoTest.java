@@ -1,7 +1,6 @@
 package AlfrescoCustomisations;
 
 import net.thucydides.core.annotations.Managed;
-
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
@@ -12,10 +11,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+import AlfrescoSteps.CreateFolderSteps;
+import AlfrescoSteps.UploadVideoSteps;
+
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
-import com.steps.CreateFolderSteps;
-import com.steps.UploadVideoSteps;
 
 @Story(Application.MediaFiles.UploadVideo.class)
 @RunWith(ThucydidesRunner.class)

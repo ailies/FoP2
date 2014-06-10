@@ -11,8 +11,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import AlfrescoSteps.AlfrescoLoginSteps;
+
 import com.requirements.Application;
-import com.steps.AlfrescoLoginSteps;
 
 @Story(Application.BasicFunctionality.Authentication.class)
 @RunWith(ThucydidesParameterizedRunner.class)
