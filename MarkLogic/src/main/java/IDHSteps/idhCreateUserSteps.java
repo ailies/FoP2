@@ -13,6 +13,7 @@ public class idhCreateUserSteps extends AbstractSteps {
 
 	@StepGroup
 	public void AddUser(String username, String password, String...terms) {
+		idhCreateUsersPage().clickOnUsersMenu();
 		idhCreateUsersPage().clickOnAddUserButton();
 		idhCreateUsersPage().assertNewUserPanelShouldBeVisible();
 		idhCreateUsersPage().inputNewUserName(username);

@@ -52,5 +52,6 @@ public class CreateUserTest {
 	public void Authentication() {
 		idhAuthenticationSteps.IDHauthentication("admin", "admin");
 		idhCreateUserSteps.AddUser(username, password, username);
+		
 	}
 }

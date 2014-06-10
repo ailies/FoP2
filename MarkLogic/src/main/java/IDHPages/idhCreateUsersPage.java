@@ -16,6 +16,9 @@ public class idhCreateUsersPage extends AbstractPage {
 	public idhCreateUsersPage(WebDriver driver) {
 		super(driver);
 	}
+	
+	@FindBy(css = "a[href*='USERS']")
+	WebElement usersMenu;
 
 	@FindBy(css = ".PanelHeader > a > img")
 	WebElement addUserMenuButton;
@@ -34,10 +37,15 @@ public class idhCreateUsersPage extends AbstractPage {
 
 	@FindBy(css = "body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(5) > td:nth-child(2) > div > a")
 	WebElement addUserButton;
+	
+	public void clickOnUsersMenu(){
+		element(usersMenu).waitUntilVisible();
+		usersMenu.click();
+	}
 
 	public void clickOnAddUserButton() {
-		element(addUserButton).shouldBeVisible();
-		addUserButton.click();
+		element(addUserMenuButton).shouldBeVisible();
+		addUserMenuButton.click();
 	}
 
 	public void assertNewUserPanelShouldBeVisible() {
