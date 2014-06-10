@@ -25,14 +25,14 @@ public class idhAuthenticationPage extends AbstractPage{
 	@FindBy(css = ".InfoText > u > a")
 	WebElement logoutButton;
 	
-	public void inputUsername(String u)	{
+	public void inputUsername(String username)	{
 		element(usernameField).waitUntilVisible();
-		usernameField.sendKeys(u);
+		usernameField.sendKeys(username);
 	}
 	
-	public void inputPassword(String p)	{
+	public void inputPassword(String password)	{
 		element(passwordField).waitUntilVisible();
-		passwordField.sendKeys(p);
+		passwordField.sendKeys(password);
 	}
 	
 	public void clickOnLoginButton()	{
