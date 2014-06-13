@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 
 import tools.AbstractPage;
 
-public class idhAuthenticationPage extends AbstractPage{
+public class IdhAuthenticationPage extends AbstractPage{
 
-	public idhAuthenticationPage(WebDriver driver) {
+	public IdhAuthenticationPage(WebDriver driver) {
 		super(driver);
 	}
 	

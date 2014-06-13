@@ -1,25 +1,33 @@
 package IDH;
 
+import java.io.IOException;
+
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.junit.annotations.Qualifier;
 import net.thucydides.junit.runners.ThucydidesRunner;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import IDHSteps.idhAuthenticationSteps;
 import IDHSteps.idhCreateUserSteps;
+import static net.thucydides.core.steps.StepData.withTestDataFrom;
 
 import com.requirements.Application;
 
 @Story(Application.IDHActions.Authentication.class)
 @RunWith(ThucydidesRunner.class)
+// @UseTestDataFrom("resources/idhUsers.csv")
 public class CreateUserTest {
+
+	String username;
+	String password;
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -28,30 +36,21 @@ public class CreateUserTest {
 
 	@Steps
 	public idhAuthenticationSteps idhAuthenticationSteps;
-	
+
 	@Steps
 	public idhCreateUserSteps idhCreateUserSteps;
-	
-	private String username;
-	private String password;
-	
-	@Qualifier
-    public String getQualifier() {
-        return username;
-    }
-	
-	public void setUsername(String username){
-		this.username = username;
-	}
-	
-	public void setPassword(String password){
-		this.password = password;
-	}
 
 	@Test
-	public void Authentication() {
+	public void createUsers() {
 		idhAuthenticationSteps.IDHauthentication("admin", "admin");
-		idhCreateUserSteps.AddUser(username, password, username);
-		
+		idhCreateUserSteps.getToMenu();
+		try {
+			withTestDataFrom("resources/idhUsers.csv").run(idhCreateUserSteps)
+					.addUserCSV();
+		} catch (IOException e) {
+			e.printStackTrace();
+			Assert.fail("An IOException has occured!");
+		}
+
 	}
 }

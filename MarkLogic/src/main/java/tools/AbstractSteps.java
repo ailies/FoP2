@@ -101,11 +101,11 @@ public class AbstractSteps extends ScenarioSteps {
 
 	// -------------IDH-------------
 
-	protected IDHPages.idhAuthenticationPage idhAuthenticationPage() {
-		return getPages().currentPageAt(IDHPages.idhAuthenticationPage.class);
+	protected IDHPages.IdhAuthenticationPage idhAuthenticationPage() {
+		return getPages().currentPageAt(IDHPages.IdhAuthenticationPage.class);
 	}
 
-	protected IDHPages.idhCreateUsersPage idhCreateUsersPage() {
-		return getPages().currentPageAt(IDHPages.idhCreateUsersPage.class);
+	protected IDHPages.IdhCreateUsersPage idhCreateUsersPage() {
+		return getPages().currentPageAt(IDHPages.IdhCreateUsersPage.class);
 	}
 }

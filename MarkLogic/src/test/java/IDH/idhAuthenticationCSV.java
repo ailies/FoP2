@@ -19,7 +19,7 @@ import com.requirements.Application;
 
 @Story(Application.IDHActions.Authentication.class)
 @RunWith(ThucydidesParameterizedRunner.class)
-@UseTestDataFrom("/resources/idhUsers.cvs")
+@UseTestDataFrom("resources/idhUsers.csv")
 public class idhAuthenticationCSV {
 
 	String username;

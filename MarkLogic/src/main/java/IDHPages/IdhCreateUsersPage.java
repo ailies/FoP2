@@ -11,9 +11,9 @@ import org.openqa.selenium.WebElement;
 import tools.AbstractPage;
 import tools.StringUtils;
 
-public class idhCreateUsersPage extends AbstractPage {
+public class IdhCreateUsersPage extends AbstractPage {
 
-	public idhCreateUsersPage(WebDriver driver) {
+	public IdhCreateUsersPage(WebDriver driver) {
 		super(driver);
 	}
 	
@@ -54,6 +54,7 @@ public class idhCreateUsersPage extends AbstractPage {
 
 	public void inputNewUserName(String username) {
 		element(addName).waitUntilVisible();
+		addName.click();
 		addName.clear();
 		addName.sendKeys(username);
 	}
@@ -91,6 +92,7 @@ public class idhCreateUsersPage extends AbstractPage {
 			}
 			if (foundRow)
 				return searchResult;
+			System.out.println(addName + "username");
 		}
 
 		return null;
