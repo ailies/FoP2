@@ -49,9 +49,8 @@ public class CheckTagsTest {
 	public void verifyFileTags() {
 		loginSteps.authentication("publisher", "demo");
 		loginSteps.navigateToFolder();
-		createNewFolderSteps.clickOnFolder("People");
-		createNewFolderSteps.clickOnFolder("Ami");
-		createNewFolderSteps.clickOnFolder("4-6-2014-1");
+		createNewFolderSteps.clickOnFolder("Test");
+		createNewFolderSteps.clickOnFolder("Demo");
 		createNewFolderSteps.clickOnFolder(".xml");
 		customizeXMLSteps.verifyTags();
 	}

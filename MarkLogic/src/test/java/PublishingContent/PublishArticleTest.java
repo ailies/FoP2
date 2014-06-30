@@ -41,8 +41,7 @@ public class PublishArticleTest {
 		loginSteps.authentication("publisher", "demo");
 		loginSteps.navigateToFolder();
 		createNewFolderSteps.clickOnFolder("Test");
-		createNewFolderSteps.clickOnFolder("DemoTesting");
-		createNewFolderSteps.clickOnFolder(".xml");
-		publishArticleSteps.publishArticle("publisher");
+		createNewFolderSteps.clickOnFolder("Demo");
+		publishArticleSteps.publishArticle(".xml");
 	}
 }

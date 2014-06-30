@@ -12,28 +12,17 @@ public class PublishArticleSteps extends AbstractSteps {
 	}
 
 	@StepGroup
-	public void publishArticle(String assignee) {
-		publishOnBuildMyBookPage().clickOnSubmitToPublish();
-		waitABit(2000);
-
-		publishOnBuildMyBookPage().clickOnWorkflowDropDown();
-		publishOnBuildMyBookPage().clickOnWorkflowType();
-		publishOnBuildMyBookPage().clickOnSelectAssignee();
-		publishOnBuildMyBookPage().inputOnSearchAssigneeLabel(assignee);
-		publishOnBuildMyBookPage().clickOnSearchAssigneeButton();
-		publishOnBuildMyBookPage().clickOnGroupAssignee();
-		publishOnBuildMyBookPage().clickOnGroupAssigneeOkButton();
-		publishOnBuildMyBookPage().clickOnStartWorkflowButton();
-
-		// publishOnBuildMyBookPage().clickOnTasksMenu();
-		// publishOnBuildMyBookPage().clickOnWorkflowsStartedSubmenu();
-		// abstractPage().scrollToPageBottom();
-		// publishOnBuildMyBookPage().clickOnTask();
-		// abstractPage().scrollToPageBottom();
-		// publishOnBuildMyBookPage().clickOnEditCurrentTask();
-		// abstractPage().scrollToPageBottom();
-		// publishOnBuildMyBookPage().clickOnEditBtn();
-		// publishOnBuildMyBookPage().editWorkflowStatus();
-		// publishOnBuildMyBookPage().clickOnPublishBtn();
+	public void publishArticle(String term) {
+//		publishOnBuildMyBookPage().clickOnSubmitToPublishOption(term);
+//		waitABit(2000);
+		publishOnBuildMyBookPage().clickOnTasksMenu();
+		publishOnBuildMyBookPage().clickOnWorkflowsStartedSubmenu();
+		publishOnBuildMyBookPage().clickOnWorkflow();
+		publishOnBuildMyBookPage().clickOnEditWorkflow();
+		publishOnBuildMyBookPage().clickOnDropDownStatus();
+		publishOnBuildMyBookPage().clickOnPublishEditedWorkflowBtn();
+		publishOnBuildMyBookPage().clickOnEditWorkflow();
+		publishOnBuildMyBookPage().clickOnDropDownStatus();
+		publishOnBuildMyBookPage().clickOnTaskDoneBtn();
 	}
 }
