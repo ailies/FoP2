@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 
 import tools.AbstractPage;
 
-public class idhSelectedPage extends AbstractPage {
+public class IdhSelectedPage extends AbstractPage {
 
-	public idhSelectedPage(WebDriver driver) {
+	public IdhSelectedPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -34,64 +34,64 @@ public class idhSelectedPage extends AbstractPage {
 	@FindBy(css = "a[href*='DownloadXML']")
 	WebElement downloadReport;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='ViewFile']")
 	WebElement viewHTMLLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='DownloadHTML.']")
 	WebElement downloadHTMLLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='ViewXMLFile.']")
 	WebElement viewXMLLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='idml.xml']")
 	WebElement downloadXMLLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='ViewCSSFile']")
 	WebElement viewCSSLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='idml.css']")
 	WebElement downloadCSSLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "input[name='ID']")
 	WebElement bookIDCreateEPUBField;
 
-	@FindBy(css = "")
+	@FindBy(css = "input[name='DocumentTitle']")
 	WebElement titleCreateEPUBField;
 
-	@FindBy(css = "")
+	@FindBy(css = "input[name='AuthorName']")
 	WebElement authorCreateEPUBField;
 
-	@FindBy(css = "")
+	@FindBy(css = "input[name='Publisher']")
 	WebElement publisherCreateEPUBField;
 
-	@FindBy(css = "")
+	@FindBy(css = "input[name='PublishDate']")
 	WebElement publishDateCreateEPUBField;
 
-	@FindBy(css = "")
+	@FindBy(css = "input[name='UpdateDate']")
 	WebElement updateDateCreateEPUBField;
 
-	@FindBy(css = "")
+	@FindBy(css = "input[value='Update Metadata']")
 	WebElement updateMetadataButton;
 
-	@FindBy(css = "")
+	@FindBy(css = "div.IndentedSubPanel > table > tbody >tr > td > div > form >  input[name='ReplacementHeading']")
 	WebElement tocEntryField;
 
-	@FindBy(css = "")
+	@FindBy(css = "div.IndentedSubPanel > table > tbody >tr > td > div > form >  input[value='Update']")
 	WebElement updateTocEntryButton;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='DownloadEPub']")
 	WebElement downloadEPUBLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "div[onclick*='Paragraph Styles']")
 	WebElement showParagraphStylesLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "div[onclick*='Character Styles']")
 	WebElement showCharacterStylesLink;
 
-	@FindBy(css = "")
+	@FindBy(css = "a[href*='ReportSummaryPanel']")
 	WebElement reportSummary;
 
-	@FindBy(css = "")
+	@FindBy(css = "DebuggingPanel")
 	WebElement debugging;
 
 	public void clickOnDownloadIDMLButton() {

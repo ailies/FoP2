@@ -20,14 +20,10 @@ import XMLRoundTripping.EditMasterXMLTest;
 		CreateFolderTest.class,
 		MarkLogicSearchTest.class,
 		// Alfresco Customisations
-//		GenerateXMLTest.class, 
-		VerifyRenditionsTest.class,
-		AddAnnotationTest.class, 
-		CropImageTest.class,
-		GenerateImageRenditionsTest.class, 
+		VerifyRenditionsTest.class, AddAnnotationTest.class,
+		CropImageTest.class, GenerateImageRenditionsTest.class,
 		UploadVideoTest.class,
 		// XML round-tripping
-		EditMasterXMLTest.class
-})
-
- public class testScriptSuite {}
+		EditMasterXMLTest.class })
+public class testScriptSuite {
+}
