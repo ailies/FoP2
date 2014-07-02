@@ -4,7 +4,6 @@ import java.io.File;
 
 import net.thucydides.core.annotations.findby.FindBy;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

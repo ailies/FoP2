@@ -25,7 +25,7 @@ public class CreateFolderSteps extends AbstractSteps {
 	@StepGroup
 	public void createFolderFromTemplate(String contentFolderName,
 			String folderName, String... nodes) {
-		alfrescoActionsPage().clickOnCreateFolder();
+		alfrescoActionsPage().clickOnCreateDropDown();
 		alfrescoActionsPage().clickOnCreateFolderFromTemplate();
 		alfrescoActionsPage().clickOnCreateContentFolder();
 		alfrescoActionsPage().inputContentFolderName("Demo");

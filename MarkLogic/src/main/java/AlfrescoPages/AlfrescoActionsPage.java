@@ -41,7 +41,7 @@ public class AlfrescoActionsPage extends PageObject {
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createContent-button-button")
 	WebElement createDropDown;
 
-	@FindBy(css = ".folder-file")
+	@FindBy(css = ".yuimenuitemlabel .folder-file")
 	WebElement createFolder;
 
 	@FindBy(css = ".text-file")
@@ -56,7 +56,7 @@ public class AlfrescoActionsPage extends PageObject {
 	@FindBy(css = "")
 	WebElement createDocumentFromTemplate;
 
-	@FindBy(css = ".yuimenu.yui-module.yui-overlay.yui-button-menu.yui-menu-button-menu.visible >.bd ul:nth-child(2) li:nth-child(2) a")
+	@FindBy(css = ".yuimenu.yui-module.yui-overlay.yui-button-menu.yui-menu-button-menu.visible >.bd ul:nth-child(2) > li:nth-child(2) > a")
 	WebElement createFolderFromTemplate;
 
 	@FindBy(css = "span[title='']")
@@ -178,8 +178,8 @@ public class AlfrescoActionsPage extends PageObject {
 	}
 
 	public void clickOnCreateDocumentFromTemplate() {
-		element(createDocumentFromTemplate).waitUntilVisible();
-		createDocumentFromTemplate.click();
+		element(createDropDown).waitUntilVisible();
+		createDropDown.click();
 	}
 
 	public void clickOnCreateFolderFromTemplate() {
