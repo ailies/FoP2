@@ -1,10 +1,9 @@
 package AlfrescoSteps;
 
-import tools.AbstractSteps;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.Pages;
+import tools.AbstractSteps;
 
 @SuppressWarnings("serial")
 public class CreateFolderSteps extends AbstractSteps {
@@ -26,15 +25,14 @@ public class CreateFolderSteps extends AbstractSteps {
 	@StepGroup
 	public void createFolderFromTemplate(String contentFolderName,
 			String folderName, String... nodes) {
-		alfrescoCreateNewFolderPage().clickOnCreate();
-		alfrescoCreateNewFolderPage().clickOnCreateFolderFromTemplate();
-		alfrescoCreateNewFolderPage().clickOnCreateContentFolder();
-		alfrescoCreateNewFolderPage().inputContentFolderName("Demo");
-		alfrescoCreateNewFolderPage().clickOnSaveContentFolder();
+		alfrescoActionsPage().clickOnCreateFolder();
+		alfrescoActionsPage().clickOnCreateFolderFromTemplate();
+		alfrescoActionsPage().clickOnCreateContentFolder();
+		alfrescoActionsPage().inputContentFolderName("Demo");
+		alfrescoActionsPage().clickOnSaveContentFolder();
 		waitABit(10000);
 		clickOnFolder("Demo");
-		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs(
-				"Demo");
+		alfrescoCreateNewFolderPage().verifyIfNodesExistInBreadcrumbs("Demo");
 
 	}
 

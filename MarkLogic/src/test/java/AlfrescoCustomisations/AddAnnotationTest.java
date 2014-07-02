@@ -14,7 +14,6 @@ import org.openqa.selenium.WebDriver;
 import AlfrescoSteps.AlfrescoLoginSteps;
 import AlfrescoSteps.AnnotationModuleSteps;
 import AlfrescoSteps.CreateFolderSteps;
-import AlfrescoSteps.CustomiseXMLSteps;
 
 import com.requirements.Application;
 

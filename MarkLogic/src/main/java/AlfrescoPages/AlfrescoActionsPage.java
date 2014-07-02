@@ -18,6 +18,283 @@ public class AlfrescoActionsPage extends PageObject {
 	@FindBy(css = "div[id*='default-actionSet']")
 	private WebElement docActionsContainer;
 
+	// ---------------------------------------
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileSelect-button-button")
+	WebElement selectDropDown;
+
+	@FindBy(css = ".selectDocuments")
+	WebElement selectDocuments;
+
+	@FindBy(css = ".selectFolders")
+	WebElement selectFolders;
+
+	@FindBy(css = ".selectAll")
+	WebElement selectALL;
+
+	@FindBy(css = ".selectInvert")
+	WebElement selectInvertSelection;
+
+	@FindBy(css = ".selectNone")
+	WebElement selectNone;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createContent-button-button")
+	WebElement createDropDown;
+
+	@FindBy(css = ".folder-file")
+	WebElement createFolder;
+
+	@FindBy(css = ".text-file")
+	WebElement createPlainText;
+
+	@FindBy(css = ".html-file")
+	WebElement createHTML;
+
+	@FindBy(css = ".xml-file")
+	WebElement createXML;
+
+	@FindBy(css = "")
+	WebElement createDocumentFromTemplate;
+
+	@FindBy(css = ".yuimenu.yui-module.yui-overlay.yui-button-menu.yui-menu-button-menu.visible >.bd ul:nth-child(2) li:nth-child(2) a")
+	WebElement createFolderFromTemplate;
+
+	@FindBy(css = "span[title='']")
+	WebElement createContentFolder;
+
+	@FindBy(css = "#template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name")
+	private WebElement contentFolderName;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")
+	private WebElement saveContentFolderBtn;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button")
+	WebElement uploadOption;
+
+	@FindBy(css = "#template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-upload-button-button")
+	WebElement selectFilesToUpload;
+
+	@FindBy(css = "#template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-cancelOk-button-button")
+	WebElement cancelUpload;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-syncToCloud-button")
+	WebElement syncToCloud;
+
+	@FindBy(css = "input[id='username']")
+	WebElement emailField;
+
+	@FindBy(css = "input[id='password']")
+	WebElement passwordField;
+
+	@FindBy(css = "#alf-id111-authForm-button-ok-button")
+	WebElement connectToCloudButton;
+
+	@FindBy(css = "#alf-id111-authForm-button-cancel-button")
+	WebElement cancelConnectionToCloudButton;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-selectedItems-button-button")
+	WebElement selectedItemDropDown;
+
+	@FindBy(css = ".onActionDownload")
+	WebElement downloadAsZipSelectedItems;
+
+	@FindBy(css = ".onActionCopyTo")
+	WebElement copySelectedItems;
+
+	@FindBy(css = ".onActionMoveTo")
+	WebElement moveToSelectedItems;
+
+	@FindBy(css = ".onActionAssignWorkflow")
+	WebElement startWorkflowForSelectedItems;
+
+	@FindBy(css = ".onActionDelete")
+	WebElement deleteSelectedItems;
+
+	@FindBy(css = ".onActionCloudSync")
+	WebElement syncToCloudSelectedItems;
+
+	@FindBy(css = ".onActionLinkTo")
+	WebElement linkToSelectedItems;
+
+	@FindBy(css = ".onActionAnnotate")
+	WebElement annotationsForSelectedItems;
+
+	@FindBy(css = ".onActionDeselectAll")
+	WebElement deselectAllSelectedItems;
+
+	public void clickOnSelectDropDown() {
+		element(selectDropDown).waitUntilVisible();
+		selectDropDown.click();
+	}
+
+	public void clickOnSelectDocuments() {
+		element(selectDocuments).waitUntilVisible();
+		selectDocuments.click();
+	}
+
+	public void clickOnSelectFolders() {
+		element(selectFolders).waitUntilVisible();
+		selectFolders.click();
+	}
+
+	public void clickOnSelectALL() {
+		element(selectALL).waitUntilVisible();
+		selectALL.click();
+	}
+
+	public void clickOnSelectInvertSelection() {
+		element(selectInvertSelection).waitUntilVisible();
+		selectInvertSelection.click();
+	}
+
+	public void clickOnSelectNone() {
+		element(selectNone).waitUntilVisible();
+		selectNone.click();
+	}
+
+	public void clickOnCreateDropDown() {
+		element(createDropDown).waitUntilVisible();
+		createDropDown.click();
+	}
+
+	public void clickOnCreateFolder() {
+		element(createFolder).waitUntilVisible();
+		createFolder.click();
+	}
+
+	public void clickOnCreatePlainText() {
+		element(createPlainText).waitUntilVisible();
+		createPlainText.click();
+	}
+
+	public void clickOnCreateHTML() {
+		element(createHTML).waitUntilVisible();
+		createHTML.click();
+	}
+
+	public void clickOnCreateXML() {
+		element(createXML).waitUntilVisible();
+		createXML.click();
+	}
+
+	public void clickOnCreateDocumentFromTemplate() {
+		element(createDocumentFromTemplate).waitUntilVisible();
+		createDocumentFromTemplate.click();
+	}
+
+	public void clickOnCreateFolderFromTemplate() {
+		element(createFolderFromTemplate).waitUntilVisible();
+		createFolderFromTemplate.click();
+	}
+
+	public void clickOnCreateContentFolder() {
+		element(createContentFolder).waitUntilVisible();
+		element(createContentFolder).click();
+	}
+
+	public void inputContentFolderName(String contentName) {
+		element(contentFolderName).waitUntilVisible();
+		contentFolderName.clear();
+		contentFolderName.sendKeys(contentName);
+	}
+
+	public void clickOnSaveContentFolder() {
+		element(saveContentFolderBtn).waitUntilVisible();
+		saveContentFolderBtn.click();
+	}
+
+	public void clickOnUploadOption() {
+		element(uploadOption).waitUntilVisible();
+		uploadOption.click();
+	}
+
+	public void clickOnSelectFilesToUpload() {
+		element(selectFilesToUpload).waitUntilVisible();
+		selectFilesToUpload.click();
+	}
+
+	public void clickOnCancelUpload() {
+		element(cancelUpload).waitUntilVisible();
+		cancelUpload.click();
+	}
+
+	public void clickOnSyncToCloud() {
+		element(syncToCloud).waitUntilVisible();
+		syncToCloud.click();
+	}
+
+	public void inputEmail(String em) {
+		element(emailField).waitUntilVisible();
+		emailField.clear();
+		emailField.sendKeys(em);
+	}
+
+	public void inputPassword(String ps) {
+		element(passwordField).waitUntilVisible();
+		passwordField.clear();
+		passwordField.sendKeys(ps);
+	}
+
+	public void clickOnConnectToCloudButton() {
+		element(connectToCloudButton).waitUntilVisible();
+		connectToCloudButton.click();
+	}
+
+	public void clickOnCancelConnectionToCloudButton() {
+		element(cancelConnectionToCloudButton).waitUntilVisible();
+		cancelConnectionToCloudButton.click();
+	}
+
+	public void clickOnSelectedItemDropDown() {
+		element(selectedItemDropDown).waitUntilVisible();
+		selectedItemDropDown.click();
+	}
+
+	public void clickOnDownloadAsZipSelectedItems() {
+		element(downloadAsZipSelectedItems).waitUntilVisible();
+		downloadAsZipSelectedItems.click();
+	}
+
+	public void clickOnCopySelectedItems() {
+		element(copySelectedItems).waitUntilVisible();
+		copySelectedItems.click();
+	}
+
+	public void clickOnMoveToSelectedItems() {
+		element(moveToSelectedItems).waitUntilVisible();
+		moveToSelectedItems.click();
+	}
+
+	public void clickOnStartWorkflowForSelectedItems() {
+		element(startWorkflowForSelectedItems).waitUntilVisible();
+		startWorkflowForSelectedItems.click();
+	}
+
+	public void clickOnDeleteSelectedItems() {
+		element(deleteSelectedItems).waitUntilVisible();
+		deleteSelectedItems.click();
+	}
+
+	public void clickOnSyncToCloudSelectedItems() {
+		element(syncToCloudSelectedItems).waitUntilVisible();
+		syncToCloudSelectedItems.click();
+	}
+
+	public void clickOnLinkToSelectedItems() {
+		element(linkToSelectedItems).waitUntilVisible();
+		linkToSelectedItems.click();
+	}
+
+	public void clickOnAnnotationsForSelectedItems() {
+		element(annotationsForSelectedItems).waitUntilVisible();
+		annotationsForSelectedItems.click();
+	}
+
+	public void clickOnDeselectAllSelectedItems() {
+		element(deselectAllSelectedItems).waitUntilVisible();
+		deselectAllSelectedItems.click();
+	}
+
 	// -----------folder actions -------------
 	@FindBy(css = "a[title='Download as Zip']")
 	private WebElement downloadAsZip;

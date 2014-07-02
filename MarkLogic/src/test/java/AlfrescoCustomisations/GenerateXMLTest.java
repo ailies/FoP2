@@ -11,7 +11,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import tools.Delay;
 import AlfrescoSteps.AlfrescoLoginSteps;
 import AlfrescoSteps.CreateFolderSteps;
 import AlfrescoSteps.CustomiseXMLSteps;
