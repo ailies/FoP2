@@ -1,4 +1,4 @@
-/*package IDHPages;
+package IDHPages;
 
 import net.thucydides.core.annotations.findby.By;
 import net.thucydides.core.annotations.findby.FindBy;
@@ -18,6 +18,12 @@ public class IdhConfigurePage extends AbstractPage {
 	@FindBy(css = "body > div.Screen > form > div:nth-child(3) > div.IndentedSubPanel > div > input[type='text']")
 	WebElement productNameField;
 
+	public void insertProductName(String pName) {
+		element(productNameField).waitUntilVisible();
+		productNameField.clear();
+		productNameField.sendKeys(pName);
+	}
+
 	// admin details
 	@FindBy(css = "body > div.Screen > form > div:nth-child(4) > div.IndentedSubPanel > div:nth-child(1) > input[type='text']")
 	WebElement administratorNameField;
@@ -25,9 +31,32 @@ public class IdhConfigurePage extends AbstractPage {
 	@FindBy(css = "body > div.Screen > form > div:nth-child(4) > div.IndentedSubPanel > div:nth-child(2) > input[type='text']")
 	WebElement emailAddressField;
 
+	public void insertAdministratorName(String adminName) {
+		element(administratorNameField).waitUntilVisible();
+		administratorNameField.clear();
+		administratorNameField.sendKeys(adminName);
+	}
+
+	public void insertEmailAddressName(String emailAddressName) {
+		element(emailAddressField).waitUntilVisible();
+		emailAddressField.clear();
+		emailAddressField.sendKeys(emailAddressName);
+	}
+
 	// Home Page Message
 	@FindBy(css = ".cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders")
 	WebElement homePageMessage;
+
+	public void inputHomePageMessage(String message) {
+		getDriver().switchTo().frame(
+				getDriver().findElement(By.id("mlSearchArticleIframe")));
+		WebElement searchIframe = getDriver().switchTo().activeElement();
+		element(searchIframe).waitUntilVisible();
+		searchIframe.click();
+		element(homePageMessage).waitUntilVisible();
+		homePageMessage.clear();
+		homePageMessage.sendKeys(message);
+	}
 
 	// Delete Old Files
 	@FindBy(css = "input[value='Never']")
@@ -41,6 +70,26 @@ public class IdhConfigurePage extends AbstractPage {
 
 	@FindBy(css = "input[value='Hourly']")
 	WebElement hourlyDeleteOldFiles;
+
+	public void clickOnNeverDeleteOldFiles() {
+		element(neverDeleteOldFiles).waitUntilVisible();
+		neverDeleteOldFiles.click();
+	}
+
+	public void clickOnMonthlyDeleteOldFiles() {
+		element(monthlyDeleteOldFiles).waitUntilVisible();
+		monthlyDeleteOldFiles.click();
+	}
+
+	public void clickOnDailyDeleteOldFiles() {
+		element(dailyDeleteOldFiles).waitUntilVisible();
+		dailyDeleteOldFiles.click();
+	}
+
+	public void clickOnHourlyDeleteOldFiles() {
+		element(hourlyDeleteOldFiles).waitUntilVisible();
+		hourlyDeleteOldFiles.click();
+	}
 
 	// In and Out Folders
 	@FindBy(css = "input[name='Import']")
@@ -308,95 +357,154 @@ public class IdhConfigurePage extends AbstractPage {
 
 	@FindBy(css = "input[value='Both']")
 	WebElement representLineBreaksWithLineFeedAndBreakTagRadioButton;
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+
+	public void clickOnExtractXMLRadioButton() {
+		element(extractXMLRadioButton).waitUntilVisible();
+		extractXMLRadioButton.clear();
+		extractXMLRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnIgnoreXMLRadioButton() {
+		element(ignoreXMLRadioButton).waitUntilVisible();
+		ignoreXMLRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
-	}
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnDocumentMetadataSuppressMetadataRadioButton() {
+		element(documentMetadataSuppressMetadataRadioButton).waitUntilVisible();
+		documentMetadataSuppressMetadataRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnDocumentMetadataCommentsRadioButton() {
+		element(documentMetadataCommentsRadioButton).waitUntilVisible();
+		documentMetadataCommentsRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
-	}
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnDocumentMetadataProcessingInstructionsRadioButton() {
+		element(documentMetadataProcessingInstructionsRadioButton)
+				.waitUntilVisible();
+		documentMetadataProcessingInstructionsRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnDocumentMetadataOxygenAnnotationsRadioButton() {
+		element(documentMetadataOxygenAnnotationsRadioButton)
+				.waitUntilVisible();
+		documentMetadataOxygenAnnotationsRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
-	}
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnNotesMetadataSuppressNotesRadioButton() {
+		element(notesMetadataSuppressNotesRadioButton).waitUntilVisible();
+		notesMetadataSuppressNotesRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnNotesMetadataCommentsRadioButton() {
+		element(notesMetadataCommentsRadioButton).waitUntilVisible();
+		notesMetadataCommentsRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
-	}
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnNotesMetadataProcessingInstructionsRadioButton() {
+		element(notesMetadataProcessingInstructionsRadioButton)
+				.waitUntilVisible();
+		notesMetadataProcessingInstructionsRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnNotesMetadataOxygenAnnotationsRadioButton() {
+		element(notesMetadataOxygenAnnotationsRadioButton).waitUntilVisible();
+		notesMetadataOxygenAnnotationsRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
-	}
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnIncludeFloatingImagesRadioButton() {
+		element(includeFloatingImagesRadioButton).waitUntilVisible();
+		includeFloatingImagesRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnExcludeFloatingImagesRadioButton() {
+		element(excludeFloatingImagesRadioButton).waitUntilVisible();
+		excludeFloatingImagesRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnCreateElementsToRepresentUntaggedParagraphLevelAndInlineRangesYESRadioButton() {
+		element(
+				createElementsToRepresentUntaggedParagraphLevelAndInlineRangesYESRadioButton)
+				.waitUntilVisible();
+		createElementsToRepresentUntaggedParagraphLevelAndInlineRangesYESRadioButton
+				.click();
+	}
+
+	public void clickOnCreateElementsToRepresentUntaggedParagraphLevelAndInlineRangesNORadioButton() {
+		element(
+				createElementsToRepresentUntaggedParagraphLevelAndInlineRangesNORadioButton)
+				.waitUntilVisible();
+		createElementsToRepresentUntaggedParagraphLevelAndInlineRangesNORadioButton
+				.click();
+	}
+
+	public void clickOnMoveAnyNewlyCreatedInlineRangesYesRadioButton() {
+		element(moveAnyNewlyCreatedInlineRangesYesRadioButton)
+				.waitUntilVisible();
+		moveAnyNewlyCreatedInlineRangesYesRadioButton.click();
+	}
+
+	public void clickOnMoveAnyNewlyCreatedInlineRangesNoRadioButton() {
+		element(moveAnyNewlyCreatedInlineRangesNoRadioButton)
+				.waitUntilVisible();
+		moveAnyNewlyCreatedInlineRangesNoRadioButton.click();
+	}
+
+	public void clickOnSplitAndJoinParagraphYESRadioButton() {
+		element(splitAndJoinParagraphYESRadioButton).waitUntilVisible();
+		splitAndJoinParagraphYESRadioButton.click();
+	}
+
+	public void clickOnSplitAndJoinParagraphNORadioButton() {
+		element(splitAndJoinParagraphNORadioButton).waitUntilVisible();
+		splitAndJoinParagraphNORadioButton.click();
+	}
+
+	public void clickOnMoveTextYESRadioButton() {
+		element(moveTextYESRadioButton).waitUntilVisible();
+		moveTextYESRadioButton.click();
+	}
+
+	public void clickOnMoveTextNORadioButton() {
+		element(moveTextNORadioButton).waitUntilVisible();
+		moveTextNORadioButton.click();
+	}
+
+	public void clickOnCreateIxxOrphanElementsYesRadioButton() {
+		element(createIxxOrphanElementsYesRadioButton).waitUntilVisible();
+		createIxxOrphanElementsYesRadioButton.click();
+	}
+
+	public void clickOnCreateIxxOrphanElementsNoRadioButton() {
+		element(createIxxOrphanElementsNoRadioButton).waitUntilVisible();
+		createIxxOrphanElementsNoRadioButton.click();
+	}
+
+	public void clickOnIncludeCSSStylesWithinElementsYesRadioButton() {
+		element(includeCSSStylesWithinElementsYesRadioButton)
+				.waitUntilVisible();
+		includeCSSStylesWithinElementsYesRadioButton.click();
+	}
+
+	public void clickOnIncludeCSSStylesWithinElementsNoRadioButton() {
+		element(includeCSSStylesWithinElementsNoRadioButton).waitUntilVisible();
+		includeCSSStylesWithinElementsNoRadioButton.click();
+	}
+
+	public void clickOnRepresentLineBreaksWithLineFeedRadioButton() {
+		element(representLineBreaksWithLineFeedRadioButton).waitUntilVisible();
+		representLineBreaksWithLineFeedRadioButton.click();
+	}
+
+	public void clickOnRepresentLineBreaksWithBreakTagRadioButton() {
+		element(representLineBreaksWithBreakTagRadioButton).waitUntilVisible();
+		representLineBreaksWithBreakTagRadioButton.click();
+	}
+
+	public void clickOnRepresentLineBreaksWithLineFeedAndBreakTagRadioButton() {
+		element(representLineBreaksWithLineFeedAndBreakTagRadioButton)
+				.waitUntilVisible();
+		representLineBreaksWithLineFeedAndBreakTagRadioButton.click();
 	}
 
 	// CSS Output
@@ -411,44 +519,34 @@ public class IdhConfigurePage extends AbstractPage {
 
 	@FindBy(css = "body > div.Screen > form > div:nth-child(12) > div.IndentedSubPanel > div:nth-child(3) > div:nth-child(2) > input:nth-child(4)")
 	WebElement excludeClassBasedCSSRulesRadioButton;
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+
+	public void clickOnIncludeIdBasedCSSRulesRadioButton() {
+		element(includeIdBasedCSSRulesRadioButton).waitUntilVisible();
+		includeIdBasedCSSRulesRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnExcludeIdBasedCSSRulesRadioButton() {
+		element(excludeIdBasedCSSRulesRadioButton).waitUntilVisible();
+		excludeIdBasedCSSRulesRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
-	}
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnIncludeClassBasedCSSRulesRadioButton() {
+		element(includeClassBasedCSSRulesRadioButton).waitUntilVisible();
+		includeClassBasedCSSRulesRadioButton.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
-	}
-
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnExcludeClassBasedCSSRulesRadioButton() {
+		element(excludeClassBasedCSSRulesRadioButton).waitUntilVisible();
+		excludeClassBasedCSSRulesRadioButton.click();
 	}
 
 	// Images
 	@FindBy(css = "input[name='ImagePath']")
 	WebElement imagesPathField;
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+
+	public void clickOnImagesPathField() {
+		element(imagesPathField).waitUntilVisible();
+		imagesPathField.click();
 	}
 
 	// Web Services
@@ -463,25 +561,25 @@ public class IdhConfigurePage extends AbstractPage {
 
 	@FindBy(css = "body > div.Screen > form > div:nth-child(14) > div:nth-child(3) > div > div:nth-child(2) > input:nth-child(4)")
 	WebElement sendEmailNo;
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+
+	public void clickOnremoteSystemUsernameField() {
+		element(remoteSystemUsernameField).waitUntilVisible();
+		remoteSystemUsernameField.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnRemoteSystemPasswordField() {
+		element(remoteSystemPasswordField).waitUntilVisible();
+		remoteSystemPasswordField.click();
 	}
 
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+	public void clickOnSendEmailYes() {
+		element(sendEmailYes).waitUntilVisible();
+		sendEmailYes.click();
 	}
-	
-	public void clickOn() {
-		element(createWatchedPathsLink).waitUntilVisible();
-		createWatchedPathsLink.click();
+
+	public void clickOnSendEmailNo() {
+		element(sendEmailNo).waitUntilVisible();
+		sendEmailNo.click();
 	}
 
 	// Submit changes
@@ -491,54 +589,14 @@ public class IdhConfigurePage extends AbstractPage {
 	@FindBy(css = "body > div.Screen > form > div:nth-child(15) > div.Para > input[type='button']")
 	WebElement saveChangesBottomBtn;
 
-	public void updateProductName(String product) {
-		element(productNameField).waitUntilVisible();
-		productNameField.clear();
-		productNameField.sendKeys(product);
+	public void clickOnSaveChangesTopButton() {
+		element(saveChangesTopButton).waitUntilVisible();
+		saveChangesTopButton.click();
 	}
 
-	public void updateaAministratorName(String admin) {
-		element(administratorNameField).waitUntilVisible();
-		administratorNameField.clear();
-		administratorNameField.sendKeys(admin);
-	}
-
-	public void updateEmailAddress(String email) {
-		element(emailAddressField).waitUntilVisible();
-		emailAddressField.clear();
-		emailAddressField.sendKeys(email);
-	}
-
-	public void inputHomePageMessage(String message) {
-		getDriver().switchTo().frame(
-				getDriver().findElement(By.id("mlSearchArticleIframe")));
-		WebElement searchIframe = getDriver().switchTo().activeElement();
-		element(searchIframe).waitUntilVisible();
-		searchIframe.click();
-		element(homePageMessage).waitUntilVisible();
-		homePageMessage.clear();
-		homePageMessage.sendKeys(message);
-	}
-
-	public void checkMonthlyDeleteOldFilesRadioButton() {
-		element(neverDeleteOldFiles).waitUntilVisible();
-		neverDeleteOldFiles.click();
-	}
-
-	public void checkDailyDeleteOldFilesRadioButton() {
-		element(monthlyDeleteOldFiles).waitUntilVisible();
-		monthlyDeleteOldFiles.click();
-	}
-
-	public void checkHourlyDeleteOldFilesRadioButton() {
-		element(dailyDeleteOldFiles).waitUntilVisible();
-		dailyDeleteOldFiles.click();
-	}
-
-	public void checkNeverDeleteOldFilesRadioButton() {
-		element(hourlyDeleteOldFiles).waitUntilVisible();
-		hourlyDeleteOldFiles.click();
+	public void clickOnSaveChangesBottomBtn() {
+		element(saveChangesBottomBtn).waitUntilVisible();
+		saveChangesBottomBtn.click();
 	}
 
 }
-*/
