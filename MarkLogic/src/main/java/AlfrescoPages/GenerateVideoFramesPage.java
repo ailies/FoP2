@@ -33,7 +33,6 @@ public class GenerateVideoFramesPage extends AbstractPage {
 		} else {
 			Assert.fail("Video was not found!!!!");
 		}
-
 	}
 
 	public void clickOnGenerateVideoFrames() {
