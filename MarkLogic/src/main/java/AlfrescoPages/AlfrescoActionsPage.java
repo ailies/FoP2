@@ -18,7 +18,7 @@ public class AlfrescoActionsPage extends PageObject {
 	@FindBy(css = "div[id*='default-actionSet']")
 	private WebElement docActionsContainer;
 
-	// ---------------------------------------
+	// ---------Documents Container Menu-------------
 
 	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileSelect-button-button")
 	WebElement selectDropDown;
