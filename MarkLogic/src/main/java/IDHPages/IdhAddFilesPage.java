@@ -51,7 +51,7 @@ public class IdhAddFilesPage extends AbstractPage {
 		uploadIDMLButton.sendKeys(" ");
 		File idml = new File(IDMLfilePath);
 		String idmlFile = idml.getAbsolutePath();
-		System.out.println("File path absolute : " + idml);
+		System.out.println("File path absolute : " + idmlFile);
 		waitABit(Constants.WAIT_TIME_LONG);
 	}
 
@@ -66,7 +66,7 @@ public class IdhAddFilesPage extends AbstractPage {
 		uploadJPEGButton.sendKeys(" ");
 		File jpeg = new File(JPEGfilePath);
 		String jpegFile = jpeg.getAbsolutePath();
-		System.out.println("File path absolute : " + jpeg);
+		System.out.println("File path absolute : " + jpegFile);
 		waitABit(Constants.WAIT_TIME_LONG);
 	}
 
@@ -81,7 +81,7 @@ public class IdhAddFilesPage extends AbstractPage {
 		uploadJPEGButton.sendKeys(" ");
 		File zip = new File(ZIPfilePath);
 		String zipFile = zip.getAbsolutePath();
-		System.out.println("File path absolute : " + zip);
+		System.out.println("File path absolute : " + zipFile);
 		waitABit(Constants.WAIT_TIME_LONG);
 	}
 
