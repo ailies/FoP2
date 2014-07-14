@@ -21,14 +21,14 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement assemblyViewButton = getDriver()
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button"));
-		element(assemblyViewButton).waitUntilVisible();
+		$(assemblyViewButton).waitUntilVisible();
 		assemblyViewButton.click();
 	}
 
 	public void verifyIfAssemblyViewTreeIsDisplayed() {
 		WebElement assemblyViewTree = getDriver().findElement(
 				By.cssSelector("div#assembly-view-tree"));
-		element(assemblyViewTree).shouldBeVisible();
+		$(assemblyViewTree).shouldBeVisible();
 		Assert.assertTrue("Assembly View Tree is displayed",
 				assemblyViewTree.isDisplayed());
 	}
@@ -44,49 +44,6 @@ public class CustomizeXMLPage extends AbstractPage {
 		action.dragAndDrop(files, xmlFile).build().perform();
 
 	}
-
-	// public void checkIfXMLFileIsPresent(String XMLFiles) {
-	// List<WebElement> files = getDriver()
-	// .findElements(
-	// By.cssSelector("div#assembly-view-container > div > div > div > ul > li > ul > li > span > a"));
-	// boolean foundXMLFiles = false;
-	//
-	// System.out.println(files.size());
-	//
-	// for (WebElement file : files) {
-	// // if (file.getText().contains(XMLFiles)) {
-	// // foundXMLFiles = true;
-	// // break;
-	// }
-	// }
-
-	// public boolean verifyIfXMLExists(String term) {
-	// List<WebElement> searchResults = getDriver().findElements(
-	// By.cssSelector(".dynatree-node"));
-	// for (WebElement searchResult : searchResults) {
-	// boolean foundRow = true;
-	// if ($(searchResult).isCurrentlyVisible()) {
-	//
-	// if (!searchResult.getText().toLowerCase()
-	// .contains(term.toLowerCase())) {
-	// foundRow = false;
-	// }
-	// }
-	// if (foundRow)
-	// return true;
-	// }
-	// return false;
-	// }
-
-	// public WebElement getTheXML(String... terms) {
-	// List<WebElement> searchResults = getDriver().findElements(
-	// By.cssSelector(".treeview ul .dynatree-node"));
-	// System.out.println(searchResults.size());
-	// if(searchResults.contains(terms)){
-	// System.out.println(searchResults.size()); }
-	// return searchResult;
-	// return null;
-	// }
 
 	// ----------------verify Renditions----------------
 	public WebElement verifyIfRenditionsExists() {
@@ -110,7 +67,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement firstRendition = getDriver()
 				.findElement(
 						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(1) > img"));
-		element(firstRendition).waitUntilVisible();
+		$(firstRendition).waitUntilVisible();
 		firstRendition.click();
 		waitABit(2000);
 		checkTheMimetype();
@@ -121,7 +78,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement secondRendition = getDriver()
 				.findElement(
 						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(2) > img"));
-		element(secondRendition).waitUntilVisible();
+		$(secondRendition).waitUntilVisible();
 		secondRendition.click();
 		waitABit(2000);
 		checkTheMimetype();
@@ -132,7 +89,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement thirdRendition = getDriver()
 				.findElement(
 						By.cssSelector("#template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_rn_rendition-cntrl > a:nth-child(3) > img"));
-		element(thirdRendition).waitUntilVisible();
+		$(thirdRendition).waitUntilVisible();
 		thirdRendition.click();
 		waitABit(2000);
 		checkTheMimetype();
@@ -143,7 +100,7 @@ public class CustomizeXMLPage extends AbstractPage {
 		WebElement mimetype = getDriver().findElement(
 				By.cssSelector("div:nth-child(4) > div > span.viewmode-value"));
 		if (mimetype.getText().contains("Adobe PDF Document")) {
-			element(mimetype).isDisplayed();
+			$(mimetype).isDisplayed();
 			System.out.println("Adobe PDF Document");
 		} else {
 			if (mimetype.getText().contains("HTML")) {
@@ -175,7 +132,7 @@ public class CustomizeXMLPage extends AbstractPage {
 			WebElement moreOptionsButton = element.findElement(By
 					.cssSelector("#onActionShowMore a"));
 			mouseOver.click(element).build().perform();
-			element(moreOptionsButton).waitUntilVisible();
+			$(moreOptionsButton).waitUntilVisible();
 			moreOptionsButton.click();
 			scrollPageDown();
 			WebElement inlineEditButton = element.findElement(By
@@ -192,19 +149,19 @@ public class CustomizeXMLPage extends AbstractPage {
 				getDriver().findElement(By.cssSelector("#xopusFrame")));
 		WebElement xopusFrame = getDriver().switchTo().activeElement();
 		waitABit(6000);
-		element(xopusFrame).waitUntilVisible();
+		$(xopusFrame).waitUntilVisible();
 		xopusFrame.click();
 
 		getDriver().switchTo().frame(
 				getDriver().findElement(By.cssSelector(".iframe")));
 		WebElement iframe = getDriver().switchTo().activeElement();
-		element(iframe).waitUntilVisible();
+		$(iframe).waitUntilVisible();
 		iframe.click();
 
 		waitABit(6000);
 		WebElement fileTitle = getDriver().findElement(
 				By.id("a0#*b42[a0*]b45b248[a1*]b48b257[a0#*]b32|x0"));
-		element(fileTitle).waitUntilVisible();
+		$(fileTitle).waitUntilVisible();
 		fileTitle.sendKeys(title);
 		scrollToPageBottom();
 
@@ -218,7 +175,7 @@ public class CustomizeXMLPage extends AbstractPage {
 				.findElement(
 						By.id("template_x002e_inline-edit_x002e_inline-edit_x0023_default-form-submit-button"));
 		scrollPageDown();
-		element(submitUpdate).waitUntilVisible();
+		$(submitUpdate).waitUntilVisible();
 		submitUpdate.click();
 	}
 

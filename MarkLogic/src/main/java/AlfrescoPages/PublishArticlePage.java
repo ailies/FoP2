@@ -1,7 +1,6 @@
 package AlfrescoPages;
 
 import net.thucydides.core.annotations.findby.By;
-import net.thucydides.core.annotations.findby.FindBy;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -16,27 +15,6 @@ public class PublishArticlePage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "#HEADER_TASKS_text")
-	WebElement tasksMenu;
-
-	@FindBy(css = "#HEADER_MY_WORKFLOWS > td > a")
-	WebElement workflowsStartedSubmenu;
-
-	@FindBy(css = ".yui-dt-rec.yui-dt-last.yui-dt-odd > td > div > h3 > a")
-	WebElement workflow;
-
-	@FindBy(css = ".yui-dt-liner > .task-edit")
-	WebElement workflowEdit;
-
-	@FindBy(css = "#page_x002e_data-form_x002e_task-edit_x0023_default_prop_bpm_status > option[value='Completed']")
-	WebElement status;
-
-	@FindBy(css = "#page_x002e_data-form_x002e_task-edit_x0023_default_prop_ixpdc_publishOutcome-Publish-button")
-	WebElement publishBtn;
-
-	@FindBy(css = "#page_x002e_data-form_x002e_task-edit_x0023_default_prop_transitions-Next-button")
-	WebElement taskDoneBtn;
-
 	public void clickOnSubmitToPublishOption(String term) {
 		WebElement element = getTheSearchedElement(term);
 		if (element == null) {
@@ -47,7 +25,7 @@ public class PublishArticlePage extends AbstractPage {
 			WebElement moreButton = element.findElement(By
 					.cssSelector("#onActionShowMore a"));
 			mouseOver.click(element).build().perform();
-			element(moreButton).waitUntilVisible();
+			$(moreButton).waitUntilVisible();
 			moreButton.click();
 
 			scrollPageDown();
@@ -62,38 +40,56 @@ public class PublishArticlePage extends AbstractPage {
 	}
 
 	public void clickOnTasksMenu() {
-		element(tasksMenu).waitUntilVisible();
+		WebElement tasksMenu = getDriver().findElement(
+				By.cssSelector("#HEADER_TASKS_text"));
+		$(tasksMenu).waitUntilVisible();
 		tasksMenu.click();
 		tasksMenu.click();
 	}
 
 	public void clickOnWorkflowsStartedSubmenu() {
-		element(workflowsStartedSubmenu).waitUntilVisible();
+		WebElement workflowsStartedSubmenu = getDriver().findElement(
+				By.cssSelector("#HEADER_MY_WORKFLOWS > td > a"));
+		$(workflowsStartedSubmenu).waitUntilVisible();
 		workflowsStartedSubmenu.click();
 	}
 
 	public void clickOnWorkflow() {
-		element(workflow).waitUntilVisible();
+		WebElement workflow = getDriver()
+				.findElement(
+						By.cssSelector(".yui-dt-rec.yui-dt-last.yui-dt-odd > td > div > h3 > a"));
+		$(workflow).waitUntilVisible();
 		workflow.click();
 	}
 
 	public void clickOnEditWorkflow() {
-		element(workflowEdit).waitUntilVisible();
+		WebElement workflowEdit = getDriver().findElement(
+				By.cssSelector(".yui-dt-liner > .task-edit"));
+		$(workflowEdit).waitUntilVisible();
 		workflowEdit.click();
 	}
 
 	public void clickOnDropDownStatus() {
-		element(status).waitUntilVisible();
+		WebElement status = getDriver()
+				.findElement(
+						By.cssSelector("#page_x002e_data-form_x002e_task-edit_x0023_default_prop_bpm_status > option[value='Completed']"));
+		$(status).waitUntilVisible();
 		status.click();
 	}
 
 	public void clickOnPublishEditedWorkflowBtn() {
-		element(publishBtn).waitUntilVisible();
+		WebElement publishBtn = getDriver()
+				.findElement(
+						By.cssSelector("#page_x002e_data-form_x002e_task-edit_x0023_default_prop_ixpdc_publishOutcome-Publish-button"));
+		$(publishBtn).waitUntilVisible();
 		publishBtn.click();
 	}
 
 	public void clickOnTaskDoneBtn() {
-		element(taskDoneBtn).waitUntilVisible();
+		WebElement taskDoneBtn = getDriver()
+				.findElement(
+						By.cssSelector("#page_x002e_data-form_x002e_task-edit_x0023_default_prop_transitions-Next-button"));
+		$(taskDoneBtn).waitUntilVisible();
 		taskDoneBtn.click();
 	}
 

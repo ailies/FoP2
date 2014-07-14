@@ -4,9 +4,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import net.thucydides.core.annotations.findby.FindBy;
-import tools.DateUtils;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import tools.AbstractPage;
+import tools.DateUtils;
 
 public class AnnotationModulePage extends AbstractPage {
 
@@ -21,32 +19,19 @@ public class AnnotationModulePage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(id = "template_x002e_web-preview_x002e_document-details_x0023_default-previewer-div")
-	WebElement filePreview;
-
-	@FindBy(css = "#onActionAnnotate > a > span")
-	WebElement annotationsBtn;
-
-	@FindBy(css = "#ice-note-panel > textarea")
-	WebElement commentContentInput;
-
-	@FindBy(css = "#ice-note-add-button > span.ui-button-icon-primary.ui-icon.ice-icon-check")
-	WebElement submitCommentButton;
-
-	@FindBy(css = "#ice-note-cancel-button > span")
-	WebElement cancelAnnotation;
-
-	@FindBy(css = "div.navigation-bar > div > span")
-	WebElement goBackLink;
-
 	public void verifyIfFilePreviewIsDisplayed() {
-		element(filePreview).isCurrentlyVisible();
+		WebElement filePreview = getDriver()
+				.findElement(
+						By.id("template_x002e_web-preview_x002e_document-details_x0023_default-previewer-div"));
+		$(filePreview).isCurrentlyVisible();
 		Assert.assertTrue("File preview is displayed",
 				filePreview.isDisplayed());
 	}
 
 	public void clickOnAnnotations() {
-		element(annotationsBtn).waitUntilVisible();
+		WebElement annotationsBtn = getDriver().findElement(
+				By.cssSelector("#onActionAnnotate > a > span"));
+		$(annotationsBtn).waitUntilVisible();
 		annotationsBtn.click();
 		waitABit(2000);
 	}
@@ -60,14 +45,19 @@ public class AnnotationModulePage extends AbstractPage {
 	}
 
 	public void insertCommentForAnnotation(String annotation) {
-		element(commentContentInput).waitUntilVisible();
+		WebElement commentContentInput = getDriver().findElement(
+				By.cssSelector("#ice-note-panel > textarea"));
+		$(commentContentInput).waitUntilVisible();
 		commentContentInput.sendKeys(annotation);
 		waitABit(5000);
 	}
 
 	public void clickOnSubmitCommentButton() {
+		WebElement submitCommentButton = getDriver()
+				.findElement(
+						By.cssSelector("#ice-note-add-button > span.ui-button-icon-primary.ui-icon.ice-icon-check"));
 		getDriver().switchTo().defaultContent();
-		element(submitCommentButton).waitUntilVisible();
+		$(submitCommentButton).waitUntilVisible();
 		submitCommentButton.click();
 	}
 
@@ -75,13 +65,15 @@ public class AnnotationModulePage extends AbstractPage {
 		WebElement nextButton = getDriver()
 				.findElement(
 						By.cssSelector("div[id*='ice-main'] > div:nth-child(8)>div:first-child>button:nth-child(3)"));
-		element(nextButton).waitUntilVisible();
+		$(nextButton).waitUntilVisible();
 		nextButton.click();
 		waitABit(5000);
 	}
 
 	public void nativateToMainPage() {
-		element(goBackLink).waitUntilVisible();
+		WebElement goBackLink = getDriver().findElement(
+				By.cssSelector("div.navigation-bar > div > span"));
+		$(goBackLink).waitUntilVisible();
 		goBackLink.click();
 	}
 

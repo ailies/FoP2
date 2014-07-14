@@ -3,7 +3,6 @@ package AlfrescoPages;
 import java.util.List;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.findby.FindBy;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -19,16 +18,13 @@ public class GenerateVideoFramesPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "a[title='Generate Frames'] > span")
-	WebElement generateFramesBtn;
-
 	public void clickOnVideo(String... terms) {
 		WebElement element = selectVideo(terms);
 		System.out.println(element.getText());
 		WebElement video = element.findElement(By.cssSelector("span a"));
 		System.out.println(video.getText());
 		if (element != null) {
-			element(video).waitUntilVisible();
+			$(video).waitUntilVisible();
 			video.click();
 		} else {
 			Assert.fail("Video was not found!!!!");
@@ -36,13 +32,17 @@ public class GenerateVideoFramesPage extends AbstractPage {
 	}
 
 	public void clickOnGenerateVideoFrames() {
-		element(generateFramesBtn).waitUntilVisible();
+		WebElement generateFramesBtn = getDriver().findElement(
+				By.cssSelector("a[title='Generate Frames'] > span"));
+		$(generateFramesBtn).waitUntilVisible();
 		generateFramesBtn.click();
 		generateFramesBtn.click();
 		waitABit(10000);
 	}
 
 	public WebElement verifyIfVideoFramesWereGenerated() {
+		WebElement generateFramesBtn = getDriver().findElement(
+				By.cssSelector("a[title='Generate Frames'] > span"));
 		List<WebElement> frames = getDriver()
 				.findElement(
 						By.id("template_x002e_document-metadata_x002e_document-details_x0023_default-formContainer_assoc_ixpdc_frames-cntrl"))

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import net.thucydides.core.annotations.findby.By;
-import net.thucydides.core.annotations.findby.FindBy;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -21,46 +20,10 @@ public class MarkLogicSearchPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "input#searchTermInput")
-	WebElement inputSearch;
-
-	@FindBy(css = "button:nth-child(1) > span")
-	WebElement researchBtn;
-
-	@FindBy(css = ".view")
-	WebElement documentContainer;
-
-	@FindBy(css = ".block.articles .view ul li")
-	WebElement documentLink;
-
-	@FindBy(css = ".button.view-article")
-	WebElement viewFullContent;
-
-	@FindBy(css = ".button.add-article")
-	WebElement addFullContent;
-
-	@FindBy(css = ".yui-dt29-col-actions.yui-dt-col-actions.yui-dt-last .yui-dt-liner .action-set .internal-show-more")
-	WebElement moremoremore;
-
-	@FindBy(css = ".actions .move.up")
-	WebElement upArrow;
-
-	@FindBy(css = ".actions .move.down")
-	WebElement downArrow;
-
-	@FindBy(css = ".list .remove")
-	WebElement removeArticle;
-
-	@FindBy(css = ".clear")
-	WebElement clearSearchBtn;
-
-	@FindBy(css = ".button.generate")
-	WebElement importDocuments;
-
-	@FindBy(linkText = "http://172.16.10.115:8080/share/page/site/test-site/mlsearch?nodeRef=workspace://SpacesStore/abca693e-a8bc-4f2f-9b7a-f2b3b5b4779a&#filter=path|/Test/DemoTesting|&page=1")
-	WebElement link;
-
 	public void getToURL() {
+		WebElement link = getDriver()
+				.findElement(
+						By.linkText("http://172.16.10.115:8080/share/page/site/test-site/mlsearch?nodeRef=workspace://SpacesStore/abca693e-a8bc-4f2f-9b7a-f2b3b5b4779a&#filter=path|/Test/DemoTesting|&page=1"));
 		link.submit();
 	}
 
@@ -127,15 +90,21 @@ public class MarkLogicSearchPage extends AbstractPage {
 		getDriver().switchTo().frame(
 				getDriver().findElement(By.id("mlSearchArticleIframe")));
 		WebElement searchIframe = getDriver().switchTo().activeElement();
-		element(searchIframe).waitUntilVisible();
+		$(searchIframe).waitUntilVisible();
 		searchIframe.click();
-		element(inputSearch).waitUntilVisible();
+		WebElement inputSearch = getDriver().findElement(
+				By.cssSelector("input#searchTermInput"));
+		$(inputSearch).waitUntilVisible();
 		inputSearch.sendKeys(term);
+		WebElement researchBtn = getDriver().findElement(
+				By.cssSelector("button:nth-child(1) > span"));
 		researchBtn.click();
 	}
 
 	public void clickOnDocumentContainer() {
-		element(documentContainer).waitUntilVisible();
+		WebElement documentContainer = getDriver().findElement(
+				By.cssSelector(".view"));
+		$(documentContainer).waitUntilVisible();
 		documentContainer.click();
 	}
 
@@ -175,32 +144,44 @@ public class MarkLogicSearchPage extends AbstractPage {
 	}
 
 	public void clickOnViewFullContent() {
-		element(viewFullContent).waitUntilVisible();
+		WebElement viewFullContent = getDriver().findElement(
+				By.cssSelector(".button.view-article"));
+		$(viewFullContent).waitUntilVisible();
 		viewFullContent.click();
 	}
 
 	public void clickOnAddFullContent() {
-		element(addFullContent).waitUntilVisible();
+		WebElement addFullContent = getDriver().findElement(
+				By.cssSelector(".button.add-article"));
+		$(addFullContent).waitUntilVisible();
 		addFullContent.click();
 	}
 
 	public void clickOnUpArrow() {
-		element(upArrow).waitUntilVisible();
+		WebElement upArrow = getDriver().findElement(
+				By.cssSelector(".actions .move.up"));
+		$(upArrow).waitUntilVisible();
 		upArrow.click();
 	}
 
 	public void clickOnRemoveArticle() {
-		element(removeArticle).waitUntilVisible();
+		WebElement removeArticle = getDriver().findElement(
+				By.cssSelector(".list .remove"));
+		$(removeArticle).waitUntilVisible();
 		removeArticle.click();
 	}
 
 	public void clickOnClearSearchBtn() {
-		element(clearSearchBtn).waitUntilVisible();
+		WebElement clearSearchBtn = getDriver().findElement(
+				By.cssSelector(".clear"));
+		$(clearSearchBtn).waitUntilVisible();
 		clearSearchBtn.click();
 	}
 
 	public void clickOnImportDocuments() {
-		element(importDocuments).waitUntilVisible();
+		WebElement importDocuments = getDriver().findElement(
+				By.cssSelector(".button.generate"));
+		$(importDocuments).waitUntilVisible();
 		importDocuments.click();
 		waitABit(2000);
 	}

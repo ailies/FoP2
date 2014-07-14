@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.List;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.findby.FindBy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,17 +20,11 @@ public class UploadFilePage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button")
-	WebElement uploadButton;
-
-	@FindBy(css = "input.dnd-file-selection-button")
-	WebElement selectFilesToUpload;
-
-	@FindBy(id = "template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-cancelOk-button-button")
-	WebElement cancelUploadFiles;
-
 	public void uploadDocument(String filePath) {
 		disableFlash();
+		WebElement uploadButton = getDriver()
+				.findElement(
+						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button"));
 		element(uploadButton).waitUntilVisible();
 		uploadButton.click();
 		uploadButton.sendKeys(" ");

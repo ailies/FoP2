@@ -1,7 +1,5 @@
 package AlfrescoPages;
 
-import net.thucydides.core.annotations.findby.FindBy;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,14 +13,10 @@ public class CropImagePage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "#cropImage > a")
-	WebElement cropImage;
-
-	@FindBy(id = "save-crop-button")
-	WebElement saveCroppedImageBtn;
-
 	public void clickOnCropImage() {
-		element(cropImage).waitUntilVisible();
+		WebElement cropImage = getDriver().findElement(
+				By.cssSelector("#cropImage > a"));
+		$(cropImage).waitUntilVisible();
 		cropImage.click();
 	}
 
@@ -36,7 +30,9 @@ public class CropImagePage extends AbstractPage {
 	}
 
 	public void clickOnSaveCroppedImageBtn() {
-		element(saveCroppedImageBtn).waitUntilVisible();
+		WebElement saveCroppedImageBtn = getDriver().findElement(
+				By.id("save-crop-button"));
+		$(saveCroppedImageBtn).waitUntilVisible();
 		saveCroppedImageBtn.click();
 	}
 }

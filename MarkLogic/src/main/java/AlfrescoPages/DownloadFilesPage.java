@@ -25,7 +25,7 @@ public class DownloadFilesPage extends AbstractPage {
 			WebElement download = element.findElement(By
 					.cssSelector("a[title='Download']"));
 			mouseOver.click(element).build().perform();
-			element(download).waitUntilVisible();
+			$(download).waitUntilVisible();
 			download.click();
 		}
 	}
@@ -34,14 +34,14 @@ public class DownloadFilesPage extends AbstractPage {
 		WebElement selectButton = getDriver()
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_repository_x0023_default-fileSelect-button-button"));
-		element(selectButton).waitUntilVisible();
+		$(selectButton).waitUntilVisible();
 		selectButton.click();
 	}
 
 	public void clickOnAll() {
 		WebElement allButton = getDriver().findElement(
 				By.cssSelector(".selectAll"));
-		element(allButton).waitUntilVisible();
+		$(allButton).waitUntilVisible();
 		allButton.click();
 	}
 
@@ -49,14 +49,14 @@ public class DownloadFilesPage extends AbstractPage {
 		WebElement selectedItems = getDriver()
 				.findElement(
 						By.cssSelector("#template_x002e_documentlist_v2_x002e_repository_x0023_default-selectedItems-button-button"));
-		element(selectedItems).waitUntilVisible();
+		$(selectedItems).waitUntilVisible();
 		selectedItems.click();
 	}
 
 	public void clickOnDownloadAsZIP() {
 		WebElement downloadAsZIP = getDriver().findElement(
 				By.cssSelector(".onActionDownload"));
-		element(downloadAsZIP).waitUntilVisible();
+		$(downloadAsZIP).waitUntilVisible();
 		downloadAsZIP.click();
 	}
 

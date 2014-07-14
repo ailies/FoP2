@@ -2,8 +2,6 @@ package AlfrescoPages;
 
 import java.util.List;
 
-import net.thucydides.core.annotations.findby.FindBy;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,14 +15,10 @@ public class GenerateImageRenditionsPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "[attribute*='value']")
-	WebElement image;
-
-	@FindBy(css = "#generateImgRenditions > a")
-	WebElement generateImageRenditions;
-
 	public void clickOnGenerateImageRenditions() {
-		element(generateImageRenditions).waitUntilVisible();
+		WebElement generateImageRenditions = getDriver().findElement(
+				By.cssSelector("#generateImgRenditions > a"));
+		$(generateImageRenditions).waitUntilVisible();
 		generateImageRenditions.click();
 		generateImageRenditions.click();
 		waitABit(10000);
