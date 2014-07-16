@@ -3,7 +3,6 @@ package IDHPages;
 import java.util.List;
 
 import net.thucydides.core.annotations.findby.By;
-import net.thucydides.core.annotations.findby.FindBy;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,73 +15,66 @@ public class IdhUsersPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "a[href*='USERS']")
-	WebElement usersMenu;
-
-	@FindBy(css = ".PanelHeader > a > img")
-	WebElement addUserMenuButton;
-
-	@FindBy(css = ".IndentedSubPanel")
-	WebElement newUserPanel;
-
-	@FindBy(css = "body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(2) > td:nth-child(2) > input")
-	WebElement addName;
-
-	@FindBy(css = "body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(3) > td:nth-child(2) > input[type='password']")
-	WebElement addPassword;
-
-	@FindBy(css = "body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > div > input:nth-child(1)")
-	WebElement addRole;
-
-	@FindBy(css = "body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(5) > td:nth-child(2) > div > a")
-	WebElement addUserButton;
-
-	@FindBy(css = "tr > td > div.Para > form > input[name='Password']")
-	WebElement newPasswordField;
-
-	@FindBy(css = "tr > td > div.Para > form > a[href*='ChangeThePassword']")
-	WebElement changePasswordBtn;
-
 	public void clickOnUsersMenu() {
-		element(usersMenu).waitUntilVisible();
+		WebElement usersMenu = getDriver().findElement(
+				By.cssSelector("a[href*='USERS']"));
+		$(usersMenu).waitUntilVisible();
 		usersMenu.click();
 	}
 
 	public void clickOnAddUserButton() {
-		element(addUserMenuButton).shouldBeVisible();
+		WebElement addUserMenuButton = getDriver().findElement(
+				By.cssSelector(".PanelHeader > a > img"));
+		$(addUserMenuButton).shouldBeVisible();
 		addUserMenuButton.click();
 	}
 
 	public void assertNewUserPanelShouldBeVisible() {
-		element(newUserPanel).shouldBeVisible();
+		WebElement newUserPanel = getDriver().findElement(
+				By.cssSelector(".IndentedSubPanel"));
+		$(newUserPanel).shouldBeVisible();
 	}
 
 	public void inputNewUserName(String username) {
-		element(addName).waitUntilVisible();
-		addName.click();
+		WebElement addName = getDriver()
+				.findElement(
+						By.cssSelector("body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(2) > td:nth-child(2) > input"));
+		$(addName).waitUntilVisible();
 		addName.clear();
 		addName.sendKeys(username);
 	}
 
 	public void inputNewUserPassword(String password) {
-		element(addPassword).waitUntilVisible();
+		WebElement addPassword = getDriver()
+				.findElement(
+						By.cssSelector("body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(3) > td:nth-child(2) > input[type='password']"));
+		$(addPassword).waitUntilVisible();
 		addPassword.clear();
 		addPassword.sendKeys(password);
 	}
 
 	public void clickOnUserRole() {
-		element(addRole).shouldBeVisible();
+		WebElement addRole = getDriver()
+				.findElement(
+						By.cssSelector("body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > div > input:nth-child(1)"));
+		$(addRole).shouldBeVisible();
 		addRole.click();
 	}
 
 	public void clickOnAddUsern() {
-		element(addUserButton).shouldBeVisible();
+		WebElement addUserButton = getDriver()
+				.findElement(
+						By.cssSelector("body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(5) > td:nth-child(2) > div > a"));
+		$(addUserButton).shouldBeVisible();
 		addUserButton.click();
 	}
 
 	public WebElement verifyIfUserWasCreated(String... terms) {
 		List<WebElement> searchResults = getDriver().findElements(
 				By.cssSelector(".Para > img"));
+		WebElement addName = getDriver()
+				.findElement(
+						By.cssSelector("body > div.Screen > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > form > table > tbody > tr:nth-child(2) > td:nth-child(2) > input"));
 		System.out.println(searchResults.size());
 		for (WebElement searchResult : searchResults) {
 			System.out.println(searchResult.getText());
@@ -104,13 +96,19 @@ public class IdhUsersPage extends AbstractPage {
 	}
 
 	public void inputNewPassword(String newpass) {
-		element(newPasswordField).waitUntilVisible();
+		WebElement newPasswordField = getDriver()
+				.findElement(
+						By.cssSelector("tr > td > div.Para > form > input[name='Password']"));
+		$(newPasswordField).waitUntilVisible();
 		newPasswordField.clear();
 		newPasswordField.sendKeys(newpass);
 	}
 
 	public void clickOnChangePasswordBtn() {
-		element(changePasswordBtn).waitUntilVisible();
+		WebElement changePasswordBtn = getDriver()
+				.findElement(
+						By.cssSelector("tr > td > div.Para > form > a[href*='ChangeThePassword']"));
+		$(changePasswordBtn).waitUntilVisible();
 		changePasswordBtn.click();
 	}
 

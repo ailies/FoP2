@@ -104,12 +104,12 @@ public class CustomizeXMLPage extends AbstractPage {
 			System.out.println("Adobe PDF Document");
 		} else {
 			if (mimetype.getText().contains("HTML")) {
-				element(mimetype).isDisplayed();
+				$(mimetype).isDisplayed();
 				System.out.println("HTML");
 			} else {
 				if (mimetype.getText().contains(
 						"{http://www.alfresco.org/model/content/1.0}content")) {
-					element(mimetype).isDisplayed();
+					$(mimetype).isDisplayed();
 					System.out.println("Thumbnail");
 				} else {
 					Assert.assertTrue("Mimetype is not available",
@@ -138,7 +138,7 @@ public class CustomizeXMLPage extends AbstractPage {
 			WebElement inlineEditButton = element.findElement(By
 					.cssSelector("a[title='Inline Edit']"));
 
-			element(inlineEditButton).waitUntilVisible();
+			$(inlineEditButton).waitUntilVisible();
 			inlineEditButton.click();
 		}
 	}

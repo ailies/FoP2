@@ -23,14 +23,6 @@ public class Constants {
 	// Default wait time
 	public static final long WAIT_TIME = 2000;
 
-	// MODEL Related
-	public static final String TYPE_FOLDER = "cm:folder";
-	public static final String ASPECT_COLLECTABLE = "ixc:collectable";
-
-	public static final String ALFRESCO_API_BASE_URL = "http://alfresco.int.pson.ixxus.co.uk";
-
-	public static final String MY_DASHBOARD_SUFIX = "user/admin/dashboard";
-
 	// New User
 	public static final String TEST_USERNAME = "username";
 	public static final String TEST_LASTNAME = "lastNameField";

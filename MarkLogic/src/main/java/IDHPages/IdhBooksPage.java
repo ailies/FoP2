@@ -1,7 +1,6 @@
 package IDHPages;
 
-import net.thucydides.core.annotations.findby.FindBy;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -13,56 +12,47 @@ public class IdhBooksPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "a[href*='BooksPanel'] > img")
-	WebElement booksIcon;
-
-	@FindBy(css = "input[name='Name']")
-	WebElement bookName;
-
-	@FindBy(css = "select[name='AssignTo']")
-	WebElement addToCollectionDropDown;
-
-	@FindBy(css = "a[href*='submit()']")
-	WebElement addBookBtn;
-
-	@FindBy(css = "a[href*='CollectionsPanel'] > img")
-	WebElement collectionsIcon;
-
-	@FindBy(css = "input[name='Name']")
-	WebElement collectionName;
-
-	@FindBy(css = "a[href*='AddNewCollection.submit()']")
-	WebElement addCollection;
-
 	public void clickOnBooksIcon() {
-		element(booksIcon).waitUntilVisible();
+		WebElement booksIcon = getDriver().findElement(
+				By.cssSelector("a[href*='BooksPanel'] > img"));
+		$(booksIcon).waitUntilVisible();
 		booksIcon.click();
 	}
 
 	public void inputBooksName(String bname) {
-		element(bookName).waitUntilVisible();
+		WebElement bookName = getDriver().findElement(
+				By.cssSelector("input[name='Name']"));
+		$(bookName).waitUntilVisible();
 		bookName.clear();
 		bookName.sendKeys(bname);
 	}
 
 	public void clickOnAddToCollectionDropDown() {
-		element(addToCollectionDropDown).waitUntilVisible();
+		WebElement addToCollectionDropDown = getDriver().findElement(
+				By.cssSelector("select[name='AssignTo']"));
+		$(addToCollectionDropDown).waitUntilVisible();
 		addToCollectionDropDown.click();
 	}
 
 	public void clickOnAddBookBtn() {
-		element(addBookBtn).waitUntilVisible();
+		WebElement addBookBtn = getDriver().findElement(
+				By.cssSelector("a[href*='submit()']"));
+		$(addBookBtn).waitUntilVisible();
 		addBookBtn.click();
 	}
 
 	public void inputCollectionName(String cname) {
-		element(collectionName).waitUntilVisible();
+		WebElement collectionName = getDriver().findElement(
+				By.cssSelector("input[name='Name']"));
+		$(collectionName).waitUntilVisible();
 		collectionName.clear();
 		collectionName.sendKeys(cname);
 	}
 
 	public void clickOnAddCollection() {
-		element(addCollection).waitUntilVisible();
+		WebElement addCollection = getDriver().findElement(
+				By.cssSelector("a[href*='AddNewCollection.submit()']"));
+		$(addCollection).waitUntilVisible();
 		addCollection.click();
 	}
 }

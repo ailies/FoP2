@@ -80,7 +80,7 @@ public class MarkLogicSearchPage extends AbstractPage {
 
 			markLogicSearch.isDisplayed();
 			waitABit(2000);
-			element(markLogicSearch).waitUntilVisible();
+			$(markLogicSearch).waitUntilVisible();
 			markLogicSearch.click();
 			waitABit(2000);
 		}

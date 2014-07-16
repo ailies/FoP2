@@ -1,46 +1,39 @@
 package IDHPages;
 
-import net.thucydides.core.annotations.findby.FindBy;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import tools.AbstractPage;
 
-public class IdhAuthenticationPage extends AbstractPage{
+public class IdhAuthenticationPage extends AbstractPage {
 
 	public IdhAuthenticationPage(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(id = "UserName")
-	WebElement usernameField;
 
-	@FindBy(id = "Password")
-	WebElement passwordField;
-	
-	@FindBy(css = ".LoginSubmitLine > input")
-	WebElement loginButton;
-	
-	@FindBy(css = ".InfoText > u > a")
-	WebElement logoutButton;
-	
-	public void inputUsername(String username)	{
-		element(usernameField).waitUntilVisible();
+	public void inputUsername(String username) {
+		WebElement usernameField = getDriver().findElement(By.id("UserName"));
+		$(usernameField).waitUntilVisible();
 		usernameField.sendKeys(username);
 	}
-	
-	public void inputPassword(String password)	{
-		element(passwordField).waitUntilVisible();
+
+	public void inputPassword(String password) {
+		WebElement passwordField = getDriver().findElement(By.id("Password"));
+		$(passwordField).waitUntilVisible();
 		passwordField.sendKeys(password);
 	}
-	
-	public void clickOnLoginButton()	{
-		element(loginButton).waitUntilVisible();
+
+	public void clickOnLoginButton() {
+		WebElement loginButton = getDriver().findElement(
+				By.cssSelector(".LoginSubmitLine > input"));
+		$(loginButton).waitUntilVisible();
 		loginButton.click();
 	}
-	
-	public void verifyIfUserIsLoggedIn()	{
-		element(logoutButton).shouldBeVisible();
+
+	public void verifyIfUserIsLoggedIn() {
+		WebElement logoutButton = getDriver().findElement(
+				By.cssSelector(".InfoText > u > a"));
+		$(logoutButton).shouldBeVisible();
 	}
 }

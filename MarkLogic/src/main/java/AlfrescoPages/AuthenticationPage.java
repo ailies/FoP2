@@ -48,7 +48,7 @@ public class AuthenticationPage extends PageObject {
 	public void clickOnSitesMenuTab() {
 		WebElement sitesTab = getDriver().findElement(
 				By.cssSelector("HEADER_SITES_MENU"));
-		element(sitesTab).waitUntilVisible();
+		$(sitesTab).waitUntilVisible();
 		sitesTab.click();
 	}
 
@@ -56,14 +56,14 @@ public class AuthenticationPage extends PageObject {
 		WebElement userInput = getDriver().findElement(
 				By.cssSelector("input[name='username']"));
 		Assert.assertTrue("The username field is not empty ",
-				element(userInput).getText().isEmpty());
+				$(userInput).getText().isEmpty());
 	}
 
 	public void verifyThatPasswordFieldIsEmpty() {
 		WebElement passwordInput = getDriver().findElement(
 				By.cssSelector("input[name='password']"));
 		Assert.assertTrue("The username field is not empty ",
-				element(passwordInput).getText().isEmpty());
+				$(passwordInput).getText().isEmpty());
 	}
 
 	public void verifyThatTheErrorMessageBoxIsDisplayed() {

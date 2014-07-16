@@ -25,7 +25,7 @@ public class UploadFilePage extends AbstractPage {
 		WebElement uploadButton = getDriver()
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button"));
-		element(uploadButton).waitUntilVisible();
+		$(uploadButton).waitUntilVisible();
 		uploadButton.click();
 		uploadButton.sendKeys(" ");
 		File fNewTwo = new File(filePath);

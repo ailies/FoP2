@@ -1,7 +1,6 @@
 package IDHPages;
 
-import net.thucydides.core.annotations.findby.FindBy;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -13,83 +12,63 @@ public class IdhMainMenuPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "a[href*='WELCOME']")
-	WebElement homeTab;
-
-	@FindBy(css = "a[href*='UPLOAD']")
-	WebElement addTab;
-
-	@FindBy(css = "a[href*='LIBRARY']")
-	WebElement documentsTab;
-
-	@FindBy(css = "a[href*='SEARCH']")
-	WebElement searchTab;
-
-	@FindBy(css = "a[href*='SelectedFile']")
-	WebElement selectedTab;
-
-	@FindBy(css = "a[href*='CONSTRUCT_LARGE_EPUB']")
-	WebElement largeEPubsTab;
-
-	@FindBy(css = "a[href*='SHELVES']")
-	WebElement booksTab;
-
-	@FindBy(css = "a[href*='USERS']")
-	WebElement usersTab;
-
-	@FindBy(css = "a[href*='LOGS']")
-	WebElement logsTab;
-
-	@FindBy(css = "a[href*='CONFIG']")
-	WebElement configureTab;
-
 	public void clickOnHomeTab() {
-		element(homeTab).waitUntilVisible();
+		WebElement homeTab = getDriver().findElement(By.cssSelector("a[href*='WELCOME']"));
+		$(homeTab).waitUntilVisible();
 		homeTab.click();
 	}
 
 	public void clickOnAddTab() {
-		element(addTab).waitUntilVisible();
+		WebElement addTab = getDriver().findElement(By.cssSelector("a[href*='UPLOAD']"));
+		$(addTab).waitUntilVisible();
 		addTab.click();
 	}
 
 	public void clickOnDocumentsTab() {
-		element(documentsTab).waitUntilVisible();
+		WebElement documentsTab = getDriver().findElement(By.cssSelector("a[href*='LIBRARY']"));
+		$(documentsTab).waitUntilVisible();
 		documentsTab.click();
 	}
 
 	public void clickOnSearchTab() {
-		element(searchTab).waitUntilVisible();
+		WebElement searchTab = getDriver().findElement(By.cssSelector("a[href*='SEARCH']"));
+		$(searchTab).waitUntilVisible();
 		searchTab.click();
 	}
 
 	public void clickOnSelectedTab() {
-		element(selectedTab).waitUntilVisible();
+		WebElement selectedTab = getDriver().findElement(By.cssSelector("a[href*='SelectedFile']"));
+		$(selectedTab).waitUntilVisible();
 		selectedTab.click();
 	}
 
 	public void clickOnLargeEPubsTab() {
-		element(largeEPubsTab).waitUntilVisible();
+		WebElement largeEPubsTab = getDriver().findElement(By.cssSelector("a[href*='CONSTRUCT_LARGE_EPUB']"));
+		$(largeEPubsTab).waitUntilVisible();
 		largeEPubsTab.click();
 	}
 
 	public void clickOnBooksTab() {
-		element(booksTab).waitUntilVisible();
+		WebElement booksTab = getDriver().findElement(By.cssSelector("a[href*='SHELVES']"));
+		$(booksTab).waitUntilVisible();
 		booksTab.click();
 	}
 
 	public void clickOnUsersTab() {
-		element(usersTab).waitUntilVisible();
+		WebElement usersTab = getDriver().findElement(By.cssSelector("a[href*='USERS']"));
+		$(usersTab).waitUntilVisible();
 		usersTab.click();
 	}
 
 	public void clickOnLogsTab() {
-		element(logsTab).waitUntilVisible();
+		WebElement logsTab = getDriver().findElement(By.cssSelector("a[href*='LOGS']"));
+		$(logsTab).waitUntilVisible();
 		logsTab.click();
 	}
 
 	public void clickOnConfigureTab() {
-		element(configureTab).waitUntilVisible();
+		WebElement configureTab = getDriver().findElement(By.cssSelector("a[href*='CONFIG']"));
+		$(configureTab).waitUntilVisible();
 		configureTab.click();
 	}
 

@@ -21,12 +21,12 @@ public class IdhLogsPage extends AbstractPage {
 	WebElement logsContainer;
 
 	public void clickOnClearLogBtn() {
-		element(clearLogBtn).waitUntilVisible();
+		$(clearLogBtn).waitUntilVisible();
 		clearLogBtn.click();
 	}
 
 	public void verifyIfLogWasCleared() {
-		if (element(logsContainer).isCurrentlyVisible())
+		if ($(logsContainer).isCurrentlyVisible())
 			Assert.assertFalse("Logs container was wiped",
 					logsContainer.isDisplayed());
 	}

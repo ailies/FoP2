@@ -275,77 +275,77 @@ public class AlfrescoActionsPage extends PageObject {
 	public void clickOnDownloadAsZip() {
 		WebElement downloadAsZip = getDriver().findElement(
 				By.cssSelector("a[title='Download as Zip']"));
-		element(downloadAsZip).waitUntilVisible();
+		$(downloadAsZip).waitUntilVisible();
 		downloadAsZip.click();
 	}
 
 	public void clickOnViewDetails() {
 		WebElement viewDetails = getDriver().findElement(
 				By.cssSelector("a[title='View Details]"));
-		element(viewDetails).waitUntilVisible();
+		$(viewDetails).waitUntilVisible();
 		viewDetails.click();
 	}
 
 	public void clickOnEditProperties() {
 		WebElement editProperties = getDriver().findElement(
 				By.cssSelector("a[title='Edit Properties']"));
-		element(editProperties).waitUntilVisible();
+		$(editProperties).waitUntilVisible();
 		editProperties.click();
 	}
 
 	public void clickOnCopyTo() {
 		WebElement copyTo = getDriver().findElement(
 				By.cssSelector("a[title='Copy to']"));
-		element(copyTo).waitUntilVisible();
+		$(copyTo).waitUntilVisible();
 		copyTo.click();
 	}
 
 	public void clickOnMoveTo() {
 		WebElement moveTo = getDriver().findElement(
 				By.cssSelector("a[title*='Move to']"));
-		element(moveTo).waitUntilVisible();
+		$(moveTo).waitUntilVisible();
 		moveTo.click();
 	}
 
 	public void clickOnLinkTo() {
 		WebElement linkTo = getDriver().findElement(
 				By.cssSelector("a[title='Link To']"));
-		element(linkTo).waitUntilVisible();
+		$(linkTo).waitUntilVisible();
 		linkTo.click();
 	}
 
 	public void clickOnManageRules() {
 		WebElement manageRules = getDriver().findElement(
 				By.cssSelector("div.action-set"));
-		element(manageRules).waitUntilVisible();
+		$(manageRules).waitUntilVisible();
 		manageRules.click();
 	}
 
 	public void clickOnDeleteFolder() {
 		WebElement deleteFolder = getDriver().findElement(
 				By.cssSelector("div.action-set"));
-		element(deleteFolder).waitUntilVisible();
+		$(deleteFolder).waitUntilVisible();
 		deleteFolder.click();
 	}
 
 	public void clickOnManagePermissions() {
 		WebElement managePermissions = getDriver().findElement(
 				By.cssSelector("a[title='Manage Permissions']"));
-		element(managePermissions).waitUntilVisible();
+		$(managePermissions).waitUntilVisible();
 		managePermissions.click();
 	}
 
 	public void clickOnManageAspects() {
 		WebElement manageAspects = getDriver().findElement(
 				By.cssSelector("div.action-set"));
-		element(manageAspects).waitUntilVisible();
+		$(manageAspects).waitUntilVisible();
 		manageAspects.click();
 	}
 
 	public void clickOnMarkLogicSearch() {
 		WebElement markLogicSearch = getDriver().findElement(
 				By.cssSelector("div.action-set"));
-		element(markLogicSearch).waitUntilVisible();
+		$(markLogicSearch).waitUntilVisible();
 		markLogicSearch.click();
 	}
 
@@ -353,77 +353,77 @@ public class AlfrescoActionsPage extends PageObject {
 	public void clickOnDownload() {
 		WebElement download = getDriver().findElement(
 				By.cssSelector("a[title='Download']"));
-		element(download).waitUntilVisible();
+		$(download).waitUntilVisible();
 		download.click();
 	}
 
 	public void clickOnFindeDuplicates() {
 		WebElement findDuplicates = getDriver().findElement(
 				By.cssSelector("a[title='Find Duplicates']"));
-		element(findDuplicates).waitUntilVisible();
+		$(findDuplicates).waitUntilVisible();
 		findDuplicates.click();
 	}
 
 	public void clickOnViewInBrowser() {
 		WebElement viewInBrowser = getDriver().findElement(
 				By.cssSelector("a[title='View In Browser']"));
-		element(viewInBrowser).waitUntilVisible();
+		$(viewInBrowser).waitUntilVisible();
 		viewInBrowser.click();
 	}
 
 	public void clickOnUploadNewVersion() {
 		WebElement uploadNewVersion = getDriver().findElement(
 				By.cssSelector("a[title='Upload New Version'"));
-		element(uploadNewVersion).waitUntilVisible();
+		$(uploadNewVersion).waitUntilVisible();
 		uploadNewVersion.click();
 	}
 
 	public void clickOnInlineEdit() {
 		WebElement inlineEdit = getDriver().findElement(
 				By.cssSelector("a[title='Inline Edit']"));
-		element(inlineEdit).waitUntilVisible();
+		$(inlineEdit).waitUntilVisible();
 		inlineEdit.click();
 	}
 
 	public void clickOnEditOffline() {
 		WebElement editOffline = getDriver().findElement(
 				By.cssSelector("a[title='Edit Offline']"));
-		element(editOffline).waitUntilVisible();
+		$(editOffline).waitUntilVisible();
 		editOffline.click();
 	}
 
 	public void clickOnDeleteDocument() {
 		WebElement deleteDocument = getDriver().findElement(
 				By.cssSelector("a[title='Delete Document']"));
-		element(deleteDocument).waitUntilVisible();
+		$(deleteDocument).waitUntilVisible();
 		deleteDocument.click();
 	}
 
 	public void clickOnStartWorkFlow() {
 		WebElement startWorkFlow = getDriver().findElement(
 				By.cssSelector("a[title='Start Workflow']"));
-		element(startWorkFlow).waitUntilVisible();
+		$(startWorkFlow).waitUntilVisible();
 		startWorkFlow.click();
 	}
 
 	public void clickOnPublish() {
 		WebElement publish = getDriver().findElement(
 				By.cssSelector("a[title='Publish']"));
-		element(publish).waitUntilVisible();
+		$(publish).waitUntilVisible();
 		publish.click();
 	}
 
 	public void clickOnAutomaticallyTag() {
 		WebElement automaticallyTag = getDriver().findElement(
 				By.cssSelector("a[title='Automatically Tag']"));
-		element(automaticallyTag).waitUntilVisible();
+		$(automaticallyTag).waitUntilVisible();
 		automaticallyTag.click();
 	}
 
 	public void clickOnSubmitToReview() {
 		WebElement submitToReview = getDriver().findElement(
 				By.cssSelector("a[title='Submit to review']"));
-		element(submitToReview).waitUntilVisible();
+		$(submitToReview).waitUntilVisible();
 		submitToReview.click();
 	}
 
@@ -437,7 +437,7 @@ public class AlfrescoActionsPage extends PageObject {
 	public void clickOnAnnotations() {
 		WebElement annotations = getDriver().findElement(
 				By.cssSelector("#onActionAnnotate > a > span"));
-		element(annotations).waitUntilVisible();
+		$(annotations).waitUntilVisible();
 		annotations.click();
 	}
 
@@ -445,7 +445,7 @@ public class AlfrescoActionsPage extends PageObject {
 		WebElement assemblyView = getDriver()
 				.findElement(
 						By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-assembly-view-button-button"));
-		element(assemblyView).waitUntilVisible();
+		$(assemblyView).waitUntilVisible();
 		assemblyView.click();
 	}
 

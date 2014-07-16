@@ -1,7 +1,6 @@
 package IDHPages;
 
-import net.thucydides.core.annotations.findby.FindBy;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -13,36 +12,32 @@ public class IdhLargeEPubsPage extends AbstractPage {
 		super(driver);
 	}
 
-	@FindBy(css = "a[href*='OpenNewLargeEPubPanel']")
-	WebElement largeEPubPanel;
-
-	@FindBy(css = "input[name*='DocumentTitle']")
-	WebElement ePubTitle;
-
-	@FindBy(css = "input[value='Create']")
-	WebElement createEPubBtn;
-
-	@FindBy(css = "a[href*='OpenEPubsListPanel']")
-	WebElement ePubsListPanel;
-
 	public void clickOnLargeEPubPanel() {
-		element(largeEPubPanel).waitUntilVisible();
+		WebElement largeEPubPanel = getDriver().findElement(
+				By.cssSelector("a[href*='OpenNewLargeEPubPanel']"));
+		$(largeEPubPanel).waitUntilVisible();
 		largeEPubPanel.click();
 	}
 
 	public void inputEPubTitle(String eTitle) {
-		element(ePubTitle).waitUntilVisible();
+		WebElement ePubTitle = getDriver().findElement(
+				By.cssSelector("input[name*='DocumentTitle']"));
+		$(ePubTitle).waitUntilVisible();
 		ePubTitle.clear();
 		ePubTitle.sendKeys(eTitle);
 	}
 
 	public void clickOnCreateEPubButton() {
-		element(createEPubBtn).waitUntilVisible();
+		WebElement createEPubBtn = getDriver().findElement(
+				By.cssSelector("input[value='Create']"));
+		$(createEPubBtn).waitUntilVisible();
 		createEPubBtn.click();
 	}
 
 	public void clickOnEPubsListPanel() {
-		element(ePubsListPanel).waitUntilVisible();
+		WebElement ePubsListPanel = getDriver().findElement(
+				By.cssSelector("a[href*='OpenEPubsListPanel']"));
+		$(ePubsListPanel).waitUntilVisible();
 		ePubsListPanel.click();
 	}
 

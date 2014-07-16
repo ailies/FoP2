@@ -34,7 +34,7 @@ public class EditHTMLPage extends AbstractPage {
 		mceIframeContainer.click();
 		WebElement summaryField = getDriver().findElement(
 				By.cssSelector("#Seq_6647_874"));
-		element(summaryField).waitUntilVisible();
+		$(summaryField).waitUntilVisible();
 		summaryField.click();
 		summaryField.click();
 		summaryField.sendKeys("SUMMARY");
