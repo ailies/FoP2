@@ -21,6 +21,66 @@ public class AlfrescoActionsPage extends PageObject {
 
 	// ---------Documents Container Menu-------------
 
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileSelect-button-button")
+	WebElement selectDropDown;
+
+	@FindBy(css = ".selectDocuments")
+	WebElement selectDocuments;
+
+	@FindBy(css = ".selectFolders")
+	WebElement selectFolders;
+
+	@FindBy(css = ".selectAll")
+	WebElement selectALL;
+
+	@FindBy(css = ".selectInvert")
+	WebElement selectInvertSelection;
+
+	@FindBy(css = ".selectNone")
+	WebElement selectNone;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createContent-button-button")
+	WebElement createDropDown;
+
+	@FindBy(css = ".yuimenuitemlabel .folder-file")
+	WebElement createFolder;
+
+	@FindBy(css = ".text-file")
+	WebElement createPlainText;
+
+	@FindBy(css = ".html-file")
+	WebElement createHTML;
+
+	@FindBy(css = ".xml-file")
+	WebElement createXML;
+
+	@FindBy(css = "")
+	WebElement createDocumentFromTemplate;
+
+	@FindBy(css = ".yuimenu.yui-module.yui-overlay.yui-button-menu.yui-menu-button-menu.visible >.bd ul:nth-child(2) > li:nth-child(2) > a")
+	WebElement createFolderFromTemplate;
+
+	@FindBy(css = "span[title='']")
+	WebElement createContentFolder;
+
+	@FindBy(css = "#template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder_prop_cm_name")
+	private WebElement contentFolderName;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-createFolder-form-submit-button")
+	private WebElement saveContentFolderBtn;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button")
+	WebElement uploadOption;
+
+	@FindBy(css = "#template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-upload-button-button")
+	WebElement selectFilesToUpload;
+
+	@FindBy(css = "#template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-cancelOk-button-button")
+	WebElement cancelUpload;
+
+	@FindBy(id = "template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-syncToCloud-button")
+	WebElement syncToCloud;
+
 	public void clickOnSelectDropDown() {
 		WebElement selectDropDown = getDriver()
 				.findElement(
